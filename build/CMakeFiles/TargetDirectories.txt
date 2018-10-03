@@ -1,0 +1,4 @@
+C:/Users/i7464614/Source/Repos/MyEngine/build/CMakeFiles/game.dir
+C:/Users/i7464614/Source/Repos/MyEngine/build/CMakeFiles/engine.dir
+C:/Users/i7464614/Source/Repos/MyEngine/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/i7464614/Source/Repos/MyEngine/build/CMakeFiles/ZERO_CHECK.dir
