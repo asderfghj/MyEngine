@@ -1,14 +1,9 @@
 #include <memory>
 #include <vector>
 
-class Environment
-{};
-
-class Entity
-{};
-
-class Input
-{};
+class Environment;
+class Entity;
+class Input;
 
 class Core
 {
