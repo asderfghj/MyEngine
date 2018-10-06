@@ -9,11 +9,12 @@ class Entity
 private:
 	std::vector<std::shared_ptr<Component>> _components;
 	std::weak_ptr<Core> _core;
-	void tick();
 	void display();
 
 public:
+	void init(std::weak_ptr<Core> _corePtr);
 	std::shared_ptr<Core> getCore();
+	void tick();
 
 	template <typename T>
 	std::shared_ptr<T> addComponent()

@@ -1,0 +1,8 @@
+﻿  Checking Build System
+  CMake is re-running because W:/Uni/Level 6/GEP/Repos/MyEngine/build/CMakeFiles/generate.stamp is out-of-date.
+    the file 'W:/Uni/Level 6/GEP/Repos/MyEngine/CMakeLists.txt'
+    is newer than 'W:/Uni/Level 6/GEP/Repos/MyEngine/build/CMakeFiles/generate.stamp.depend'
+    result='-1'
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: W:/Uni/Level 6/GEP/Repos/MyEngine/build

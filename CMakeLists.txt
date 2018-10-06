@@ -28,6 +28,10 @@ add_library(engine
 	src/myengine/Entity.h
 	src/myengine/Component.cpp
 	src/myengine/Component.h
+	src/myengine/Input.cpp
+	src/myengine/Input.h
+	src/myengine/Environment.cpp
+	src/myengine/Environment.h
 )
 
 if(MSVC)

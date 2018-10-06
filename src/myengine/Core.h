@@ -18,4 +18,6 @@ public:
 	void Start();
 	void Stop();
 	std::shared_ptr<Entity> addEntity();
+	std::shared_ptr<Environment> getEnvironment();
+	std::shared_ptr<Input> getInput();
 };

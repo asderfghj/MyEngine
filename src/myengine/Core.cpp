@@ -21,7 +21,19 @@ void Core::Stop()
 std::shared_ptr<Entity> Core::addEntity()
 {
 	std::shared_ptr <Entity> newEntity(new Entity());
+	newEntity->init(std::shared_ptr<Core>(this));
 	_entities.push_back(newEntity);
 	return newEntity;
+}
+
+
+std::shared_ptr<Environment> Core::getEnvironment()
+{
+	return _environment;
+}
+
+std::shared_ptr<Input> Core::getInput()
+{
+	return _input;
 }
 

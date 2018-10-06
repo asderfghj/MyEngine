@@ -1,24 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\i7464614\Source\Repos\MyEngine\src\myengine\Core.cpp">
+    <ClCompile Include="W:\Uni\Level 6\GEP\Repos\MyEngine\src\myengine\Core.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="W:\Uni\Level 6\GEP\Repos\MyEngine\src\myengine\Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="W:\Uni\Level 6\GEP\Repos\MyEngine\src\myengine\Component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="W:\Uni\Level 6\GEP\Repos\MyEngine\src\myengine\Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="W:\Uni\Level 6\GEP\Repos\MyEngine\src\myengine\Environment.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\i7464614\Source\Repos\MyEngine\src\myengine\Core.h">
+    <ClInclude Include="W:\Uni\Level 6\GEP\Repos\MyEngine\src\myengine\Core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="W:\Uni\Level 6\GEP\Repos\MyEngine\src\myengine\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="W:\Uni\Level 6\GEP\Repos\MyEngine\src\myengine\Component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="W:\Uni\Level 6\GEP\Repos\MyEngine\src\myengine\Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="W:\Uni\Level 6\GEP\Repos\MyEngine\src\myengine\Environment.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\i7464614\Source\Repos\MyEngine\CMakeLists.txt" />
+    <CustomBuild Include="W:\Uni\Level 6\GEP\Repos\MyEngine\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{6F92B06D-28AC-3B90-A8F7-1FCEF7DFB21E}</UniqueIdentifier>
+      <UniqueIdentifier>{3FB70EDD-B028-3D4F-85FA-BF0455A3D25B}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{577374AE-A191-3EA2-BCFA-1144FE75983C}</UniqueIdentifier>
+      <UniqueIdentifier>{EFBCF533-EE94-3E07-A85A-D6040C991DA5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
