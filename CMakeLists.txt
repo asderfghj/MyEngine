@@ -44,9 +44,9 @@ else()
   )
 endif()
 
-target_link_libraries(game
-	engine
-)
+target_link_libraries(game engine)
+
+ADD_DEPENDENCIES(game engine)
 
 if(MSVC)
   add_custom_command(TARGET engine POST_BUILD

@@ -12,8 +12,11 @@ private:
 	std::vector<std::shared_ptr<Entity>> _entities;
 	std::shared_ptr<Input> _input;
 	bool _running;
+	void GameLoop();
 
 public:
+	Core();
+	~Core();
 	std::shared_ptr<Core> Init();
 	void Start();
 	void Stop();

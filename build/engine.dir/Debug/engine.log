@@ -1,3 +1,0 @@
-﻿  Component.cpp
-w:\uni\level 6\gep\repos\myengine\src\myengine\component.cpp(16): warning C4715: 'Component::getCore': not all control paths return a value
-  engine.vcxproj -> W:\Uni\Level 6\GEP\Repos\MyEngine\build\Debug\engine.lib

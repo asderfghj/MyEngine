@@ -1,6 +1,17 @@
 #include "Component.h"
 #include "Entity.h"
 #include "Core.h"
+#include <iostream>
+
+Component::Component()
+{
+	std::cout << "Created Component" << std::endl;
+}
+
+Component::~Component()
+{
+	std::cout << "Destroyed Component" << std::endl;
+}
 
 std::shared_ptr<Entity> Component::getEntity()
 {

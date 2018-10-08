@@ -17,6 +17,8 @@ protected:
 	std::shared_ptr<Environment> getEnvironment();
 
 public:
+	Component();
+	~Component();
 	void OnInit(std::weak_ptr<Entity> _parent);
 	virtual void OnBegin();
 	virtual void OnTick();

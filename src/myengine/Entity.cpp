@@ -1,8 +1,20 @@
 #include "Entity.h"
 #include "Component.h"
+#include <iostream>
+
+Entity::Entity()
+{
+	std::cout << "Entity Created" << std::endl;
+}
+
+Entity::~Entity()
+{
+	std::cout << "Entity Destroyed" << std::endl;
+}
 
 void Entity::tick()
 {
+	std::cout << "Entity Ticking" << std::endl;
 	for each (std::shared_ptr<Component> _c in _components)
 	{
 		_c->OnTick();
