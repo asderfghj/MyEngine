@@ -1,10 +1,13 @@
 #include "Core.h"
 #include "Entity.h"
+#include "Environment.h"
 #include <iostream>
+#include <GL/glew.h>
 
 Core::Core()
 {
 	std::cout << "Created Core" << std::endl;
+	this->Init();
 }
 
 Core::~Core()
@@ -12,10 +15,21 @@ Core::~Core()
 	std::cout << "Destroyed Core, Game Ended" << std::endl;
 }
 
-std::shared_ptr<Core> Core::Init()
+void Core::Init()
 {
 	//put other setup stuff here
-	return std::shared_ptr<Core>(this);
+	_environment = std::make_shared<Environment>();
+	_window = SDL_CreateWindow("window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 480, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+
+	if (!SDL_GL_CreateContext(_window))
+	{
+		throw std::exception();
+	}
+
+	if (glewInit() != GLEW_OK)
+	{
+		throw std::exception();
+	}
 }
 
 void Core::Start()
@@ -26,24 +40,31 @@ void Core::Start()
 
 void Core::GameLoop()
 {
-	int _counter = 0;
 	while (_running)
 	{
-		for (int i = 0; i < sizeof(_entities); i++)
+		SDL_Event _event = { 0 };
+
+		glClear(GL_COLOR_BUFFER_BIT);
+
+		for (int i = 0; i < _entities.size(); i++)
 		{
 			_entities[i]->tick();
 		}
 
-		if (_counter > 3)
+		SDL_GL_SwapWindow(_window);
+
+		while (SDL_PollEvent(&_event))
 		{
-			std::cout << "This is a break point before stopping" << std::endl;
-			Stop();
+			if (_event.type == SDL_QUIT)
+			{
+				Stop();
+			}
 		}
-		else
-		{
-			_counter++;
-		}
+
 	}
+
+	SDL_DestroyWindow(_window);
+	SDL_Quit();
 }
 
 void Core::Stop()
@@ -54,7 +75,8 @@ void Core::Stop()
 std::shared_ptr<Entity> Core::addEntity()
 {
 	std::shared_ptr <Entity> newEntity = std::make_shared<Entity>();
-	newEntity->init(std::shared_ptr<Core>(this));
+	newEntity->init(_self);
+
 	_entities.push_back(newEntity);
 	return newEntity;
 }
@@ -68,5 +90,10 @@ std::shared_ptr<Environment> Core::getEnvironment()
 std::shared_ptr<Input> Core::getInput()
 {
 	return _input;
+}
+
+void Core::SetSelf(std::weak_ptr<Core> _selfPtr)
+{
+	_self = _selfPtr;
 }
 

@@ -2,14 +2,14 @@
 
 class Environment
 {
+private:
+	double _deltatime;
+	Uint64 LAST, NOW;
+
 public:
 	Environment();
 	~Environment();
 	float getDeltaTime();
 	void tick();
-
-private:
-	double _deltatime;
-	Uint64 LAST, NOW;
 
 };

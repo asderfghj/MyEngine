@@ -1,3 +1,7 @@
+#ifndef COMPONENT_H_
+#define COMPONENT_H_
+
+
 #include <memory>
 
 class Entity;
@@ -19,8 +23,10 @@ protected:
 public:
 	Component();
 	~Component();
-	void OnInit(std::weak_ptr<Entity> _parent);
+	virtual void OnInit(std::weak_ptr<Entity> _parent);
 	virtual void OnBegin();
 	virtual void OnTick();
 	virtual void OnDisplay();
 };
+
+#endif

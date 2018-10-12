@@ -1,4 +1,20 @@
 #include "Environment.h"
+#include <iostream>
+
+Environment::Environment()
+{
+	std::cout << "Environment created" << std::endl;
+}
+
+Environment::~Environment()
+{
+	std::cout << "Environment destroyed" << std::endl;
+}
+
+float Environment::getDeltaTime()
+{
+	return _deltatime;
+}
 
 void Environment::tick()
 {

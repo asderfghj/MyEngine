@@ -5,12 +5,12 @@
 
 Component::Component()
 {
-	std::cout << "Created Component" << std::endl;
+	std::cout << "Component Created" << std::endl;
 }
 
 Component::~Component()
 {
-	std::cout << "Destroyed Component" << std::endl;
+	std::cout << "Component Destroyed" << std::endl;
 }
 
 std::shared_ptr<Entity> Component::getEntity()
@@ -48,7 +48,6 @@ void Component::OnBegin()
 
 void Component::OnTick()
 {
-
 }
 
 void Component::OnDisplay()

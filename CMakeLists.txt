@@ -1,10 +1,16 @@
 cmake_minimum_required(VERSION 2.6)
 project (MYENGINE)
 
+include_directories(
+	src
+	contrib/glm
+)
+
 if(MSVC)
   include_directories(
     contrib/msvc-windows-x86/glew/include
     contrib/msvc-windows-x86/SDL2/include
+    
   )
 
   link_directories(
@@ -32,6 +38,10 @@ add_library(engine
 	src/myengine/Input.h
 	src/myengine/Environment.cpp
 	src/myengine/Environment.h
+	src/myengine/BackgroundColor.cpp
+	src/myengine/BackgroundColor.h
+	src/myengine/TriangleRenderer.cpp
+	src/myengine/TriangleRenderer.h
 )
 
 if(MSVC)
