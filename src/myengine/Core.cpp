@@ -12,6 +12,8 @@ Core::Core()
 
 Core::~Core()
 {
+	_entities.clear();
+
 	std::cout << "Destroyed Core, Game Ended" << std::endl;
 }
 

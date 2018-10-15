@@ -5,10 +5,10 @@
 
 class Entity;
 
-class TriangleRenderer : Component
+class TriangleRenderer : public Component
 {
 private:
-	glm::uvec4 _color;
+	glm::fvec4 _color;
 	GLuint _vboID;
 	GLuint _vaoID;
 	GLuint _programID;
@@ -26,6 +26,6 @@ public:
 	void OnBegin() override;
 	void OnTick() override;
 	void OnDisplay() override;
-	void SetColor(glm::uvec4 _newColor);
+	void SetColor(glm::fvec4 _newColor);
 
 };

@@ -9,6 +9,7 @@ Entity::Entity()
 
 Entity::~Entity()
 {
+	_components.clear();
 	std::cout << "Entity Destroyed" << std::endl;
 }
 

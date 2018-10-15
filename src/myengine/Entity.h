@@ -1,6 +1,8 @@
 #include <vector>
 #include <memory>
 #include <type_traits>
+#include <typeinfo>
+#include <iostream>
 #include "Component.h"
 
 class Core;
@@ -103,6 +105,21 @@ public:
 		{
 			return std::exception;
 		}
+	}
+
+	template <typename T>
+	std::shared_ptr<T> getComponent()
+	{
+		for (int i = 0; i < _components.size(); i++)
+		{
+			std::shared_ptr<T> returnPtr = std::dynamic_pointer_cast<T>(_components.at(i));
+
+			if (returnPtr)
+			{
+				return returnPtr;
+			}
+		}
+		
 	}
 
 };

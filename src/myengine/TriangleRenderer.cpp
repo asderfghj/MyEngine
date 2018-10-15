@@ -1,4 +1,16 @@
 #include "TriangleRenderer.h"
+#include <iostream>
+
+TriangleRenderer::TriangleRenderer()
+{
+}
+
+
+TriangleRenderer::~TriangleRenderer()
+{
+	std::cout << "Triangle Renderer Destroyed" << std::endl;
+}
+
 
 void TriangleRenderer::OnInit(std::weak_ptr<Entity> _parent)
 {
@@ -54,21 +66,16 @@ void TriangleRenderer::OnInit(std::weak_ptr<Entity> _parent)
 
 	const GLchar *vertexShaderSrc =
 		"attribute vec3 in_Position;				"\
-		"out vec4 FragColor							"\
-		"											"\
-		"uniform vec4 uni_color						"\
 		"											"\
 		"void main()								"\
 		"{											"\
 		"	gl_Position = vec4(in_Position, 1.0);	"\
-		"											"\
-		"	out_color = uni_color					"\
 		"}											";
 
-	GLuint vertexShaderId = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(vertexShaderId, 1, &vertexShaderSrc, NULL);
-	glCompileShader(vertexShaderId);
-	glGetShaderiv(vertexShaderId, GL_COMPILE_STATUS, &ShaderSuccess);
+	GLuint vertexShaderID = glCreateShader(GL_VERTEX_SHADER);
+	glShaderSource(vertexShaderID, 1, &vertexShaderSrc, NULL);
+	glCompileShader(vertexShaderID);
+	glGetShaderiv(vertexShaderID, GL_COMPILE_STATUS, &ShaderSuccess);
 
 	if (!ShaderSuccess)
 	{
@@ -77,14 +84,73 @@ void TriangleRenderer::OnInit(std::weak_ptr<Entity> _parent)
 
 	//Fragment Shader
 	const GLchar *fragmentShaderSrc =
-		"										"\
-		"in vec4 FragColor						"\
-		"										"\
 		"void main()							"\
 		"{										"\
-		"	gl_FragColor = FragColor;			"\
+		"	gl_FragColor = vec4(0, 0, 1, 1);	"\
 		"}										";
 
+	GLuint fragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
+	glShaderSource(fragmentShaderID, 1, &fragmentShaderSrc, NULL);
+	glCompileShader(fragmentShaderID);
+	glGetShaderiv(fragmentShaderID, GL_COMPILE_STATUS, &ShaderSuccess);
 
+	if (!ShaderSuccess)
+	{
+		throw std::exception();
+	}
 
+	//program creation
+
+	_programID = glCreateProgram();
+	glAttachShader(_programID, vertexShaderID);
+	glAttachShader(_programID, fragmentShaderID);
+
+	glBindAttribLocation(_programID, 0, "in_position");
+
+	glLinkProgram(_programID);
+	glGetProgramiv(_programID, GL_LINK_STATUS, &ShaderSuccess);
+
+	if (!ShaderSuccess)
+	{
+		throw std::exception();
+	}
+
+	glDetachShader(_programID, vertexShaderID);
+	glDeleteShader(vertexShaderID);
+	glDetachShader(_programID, fragmentShaderID);
+	glDeleteShader(fragmentShaderID);
+
+	if (!ShaderSuccess)
+	{
+		throw std::exception();
+	}
+
+}
+
+void TriangleRenderer::OnBegin()
+{
+	Component::OnBegin();
+}
+
+void TriangleRenderer::OnTick()
+{
+	Component::OnTick();
+	glUseProgram(_programID);
+	//int vertexColorLocation = glGetUniformLocation(_programID, "uni_color");
+	//glUniform4f(vertexColorLocation, _color.x, _color.y, _color.z, _color.w);
+	glBindVertexArray(_vaoID);
+	glDrawArrays(GL_TRIANGLES, 0, 3);
+	glBindVertexArray(0);
+	glUseProgram(0);
+}
+
+void TriangleRenderer::OnDisplay()
+{
+	Component::OnDisplay();
+}
+
+void TriangleRenderer::SetColor(glm::fvec4 _newColor)
+{
+	std::cout << "Color Changed" << std::endl;
+	_color = _newColor;
 }
