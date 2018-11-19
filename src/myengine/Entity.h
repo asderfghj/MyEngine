@@ -3,123 +3,142 @@
 #include <type_traits>
 #include <typeinfo>
 #include <iostream>
+#include <assert.h>
 #include "Component.h"
+#include "glm.hpp"
 
-class Core;
-
-class Entity: std::enable_shared_from_this<Entity>
+namespace myengine
 {
-private:
-	std::vector<std::shared_ptr<Component>> _components;
-	std::weak_ptr<Core> _core;
-	std::weak_ptr<Entity> _self;
-	void display();
 
+	class Core;
 
-public:
-
-	Entity();
-	~Entity();
-	void init(std::weak_ptr<Core> _corePtr);
-	std::shared_ptr<Core> getCore();
-	void tick();
-	void setSelf(std::weak_ptr<Entity> _selfPtr);
-
-	template <typename T>
-	std::shared_ptr<T> addComponent()
+	class Entity : std::enable_shared_from_this<Entity>
 	{
-		if (std::is_base_of<Component, T>())
+	private:
+		std::vector<std::shared_ptr<Component>> _components;
+		std::weak_ptr<Core> _core;
+		std::weak_ptr<Entity> _self;
+		void display();
+
+
+	public:
+
+		Entity();
+		~Entity();
+		void init(std::weak_ptr<Core> _corePtr);
+		void init(std::weak_ptr<Core> _corePtr, glm::vec3 _position);
+		void init(std::weak_ptr<Core> _corePtr, glm::vec3 _position, glm::vec3 _rotation);
+		void init(std::weak_ptr<Core> _corePtr, glm::vec3 _position, glm::vec3 _rotation, glm::vec3 _scale);
+		std::shared_ptr<Core> getCore();
+		void tick();
+		void setSelf(std::weak_ptr<Entity> _selfPtr);
+
+		template <typename T>
+		std::shared_ptr<T> addComponent()
 		{
+			//speak to graham, not working correctly
+			//assert(std::is_base_of<Component, T>());
+			static_assert(std::is_base_of<Component, T>(), "Must be derived of component");
 			std::shared_ptr <T> t = std::make_shared<T>();
-			
+
 			_components.push_back(t);
 
 			t->OnInit(_self);
 			return t;
 		}
-		else
-		{
-			return NULL;
-		}
-	}
 
-	template <typename T, typename A>
-	std::shared_ptr<T> addComponent(A _a)
-	{
-		if (std::is_base_of<Component, T>())
+		template <typename T, typename A>
+		std::shared_ptr<T> addComponent(A _a)
 		{
-			std::shared_ptr <T> t = std::make_shared<T>();
-			t->OnInit(_self, _a);
-			_components.push_back(t);
-			return t;
-		}
-		else
-		{
-			return std::exception;
-		}
-	}
-
-	template <typename T, typename A, typename B>
-	std::shared_ptr<T> addComponent(A _a, B _b)
-	{
-		if (std::is_base_of<Component, T>())
-		{
-			std::shared_ptr <T> t = std::make_shared<T>();
-			t->OnInit(_self, _a, _b);
-			_components.push_back(t);
-			return t;
-		}
-		else
-		{
-			return std::exception;
-		}
-	}
-
-	template <typename T, typename A, typename B, typename C>
-	std::shared_ptr<T> addComponent(A _a, B _b, C _c)
-	{
-		if (std::is_base_of<Component, T>())
-		{
-			std::shared_ptr <T> t = std::make_shared<T>();
-			t->OnInit(_self, _a, _b, _c);
-			_components.push_back(t);
-			return t;
-		}
-		else
-		{
-			return std::exception;
-		}
-	}
-
-	template <typename T, typename A, typename B, typename C, typename D>
-	std::shared_ptr<T> addComponent(A _a, B _b, C _c, D _d)
-	{
-		if (std::is_base_of<Component, T>())
-		{
-			std::shared_ptr <T> t = std::make_shared<T>();
-			t->OnInit(_self, _a, _b, _c, _d);
-			_components.push_back(t);
-			return t;
-		}
-		else
-		{
-			return std::exception;
-		}
-	}
-
-	template <typename T>
-	std::shared_ptr<T> getComponent()
-	{
-		for (int i = 0; i < _components.size(); i++)
-		{
-			std::shared_ptr<T> returnPtr = std::dynamic_pointer_cast<T>(_components.at(i));
-
-			if (returnPtr)
+			//assert(std::is_base_of<Component, T>());
+			if (std::is_base_of<Component, T>())
 			{
-				return returnPtr;
+				std::shared_ptr <T> t = std::make_shared<T>();
+				t->OnInit(_self, _a);
+				_components.push_back(t);
+				return t;
 			}
-		}
-		
-	}
+			else
+			{
+				throw std::exception();
+			}
 
-};
+		}
+
+		template <typename T, typename A, typename B>
+		std::shared_ptr<T> addComponent(A _a, B _b)
+		{
+			//assert(std::is_base_of<Component, T>());
+			if (std::is_base_of<Component, T>())
+			{
+				std::shared_ptr <T> t = std::make_shared<T>();
+				t->OnInit(_self, _a, _b);
+				_components.push_back(t);
+				return t;
+			}
+			else
+			{
+				throw std::exception();
+			}
+
+		}
+
+		template <typename T, typename A, typename B, typename C>
+		std::shared_ptr<T> addComponent(A _a, B _b, C _c)
+		{
+			//assert(std::is_base_of<Component, T>());
+			if (std::is_base_of<Component, T>())
+			{
+
+				std::shared_ptr <T> t = std::make_shared<T>();
+				t->OnInit(_self, _a, _b, _c);
+				_components.push_back(t);
+				return t;
+			}
+			else
+			{
+				throw std::exception();
+			}
+
+
+		}
+
+		template <typename T, typename A, typename B, typename C, typename D>
+		std::shared_ptr<T> addComponent(A _a, B _b, C _c, D _d)
+		{
+			//assert(std::is_base_of<Component, T>());
+			if (std::is_base_of<Component, T>())
+			{
+				std::shared_ptr <T> t = std::make_shared<T>();
+				t->OnInit(_self, _a, _b, _c, _d);
+				_components.push_back(t);
+				return t;
+			}
+			else
+			{
+				throw std::exception();
+			}
+
+		}
+
+		template <typename T>
+		std::shared_ptr<T> getComponent()
+		{
+			for (size_t i = 0; i < _components.size(); i++)
+			{
+				std::shared_ptr<T> returnPtr = std::dynamic_pointer_cast<T>(_components.at(i));
+
+				if (returnPtr)
+				{
+					return returnPtr;
+				}
+				std::cout << "this is iterating" << std::endl;
+			}
+			throw std::exception();
+
+
+		}
+
+	};
+
+}

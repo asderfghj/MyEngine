@@ -4,18 +4,26 @@ project (MYENGINE)
 include_directories(
 	src
 	contrib/glm
+	contrib/stb_image
+	contrib/tinyobj
 )
+
 
 if(MSVC)
   include_directories(
     contrib/msvc-windows-x86/glew/include
     contrib/msvc-windows-x86/SDL2/include
-    
+    contrib/msvc-windows-x86/openal-soft/include
+    contrib/msvc-windows-x86/ogg/include
+    contrib/msvc-windows-x86/vorbis/include
   )
 
   link_directories(
     ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/SDL2/lib
     ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/glew/lib
+    ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/openal-soft/lib
+    ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/ogg/lib
+    ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/vorbis/lib
   )
 endif()
 
@@ -28,6 +36,8 @@ add_executable(game
 )
 
 add_library(engine
+	src/myengine/Camera.cpp
+	src/myengine/Camera.h
 	src/myengine/Core.cpp
 	src/myengine/Core.h
 	src/myengine/Entity.cpp
@@ -40,17 +50,44 @@ add_library(engine
 	src/myengine/Environment.h
 	src/myengine/BackgroundColor.cpp
 	src/myengine/BackgroundColor.h
+	src/myengine/Timer.cpp
+	src/myengine/Timer.h
 	src/myengine/TriangleRenderer.cpp
 	src/myengine/TriangleRenderer.h
+	src/myengine/MeshRenderer.cpp
+	src/myengine/MeshRenderer.h
+	src/myengine/Resource.cpp
+	src/myengine/Resource.h
+	src/myengine/Resources.cpp
+	src/myengine/Resources.h
+	src/myengine/Shader.cpp
+	src/myengine/Shader.h
+	src/myengine/Texture.cpp
+	src/myengine/Texture.h
+	src/myengine/Transform.cpp
+	src/myengine/Transform.h
+	src/myengine/MyEngine.h
+	src/myengine/Mesh.cpp
+	src/myengine/Mesh.h
+	src/myengine/Model.cpp
+	src/myengine/Model.h
+	src/myengine/Sound.cpp
+	src/myengine/Sound.h
+	src/myengine/AudioPlayer.cpp
+	src/myengine/AudioPlayer.h
+	src/myengine/Skybox.cpp
+	src/myengine/Skybox.h
+	src/myengine/CubemapTexture.cpp
+	src/myengine/CubemapTexture.h
 )
 
 if(MSVC)
   target_link_libraries(engine
-    SDL2 glew32 opengl32 
+    SDL2 glew32 opengl32 OpenAL32 ogg vorbis vorbisfile
   )
 else()
   target_link_libraries(engine
-    SDL2 GLU GLEW GL
+    SDL2 GLU GLEW GL AL ogg vorbis vorbisfile
   )
 endif()
 
@@ -68,6 +105,12 @@ if(MSVC)
   add_custom_command(TARGET engine POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
       "${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/glew/bin/glew32.dll"
+      "$<TARGET_FILE_DIR:engine>"
+  )
+
+  add_custom_command(TARGET engine POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+      "${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/openal-soft/bin/OpenAL32.dll"
       "$<TARGET_FILE_DIR:engine>"
   )
 endif()

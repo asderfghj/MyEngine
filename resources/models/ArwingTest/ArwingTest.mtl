@@ -1,0 +1,135 @@
+newmtl Arwing:M_7CF8406C_c
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd M_7CF8406C_c.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl Arwing:Material1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Material1.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl Arwing:Material2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Material2.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl Arwing:Material3
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Material3.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl Arwing:Material4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Material4.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl Arwing:Material5
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Material5.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl Arwing:Material6
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Material6.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl Arwing:Material7
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Material7.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl Arwing:Material8
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Material8.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl Arwing:Material9
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Material9.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl Arwing:Material10
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Material10.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl Arwing:Material11
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Material11.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl Arwing:Material12
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Material12.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl Arwing:Material14
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Material14.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl Arwing:Material15
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Material15.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06

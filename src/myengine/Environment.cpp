@@ -1,29 +1,65 @@
 #include "Environment.h"
+#include "Timer.h"
 #include <iostream>
 
-Environment::Environment()
+namespace myengine
 {
-	std::cout << "Environment created" << std::endl;
-}
 
-Environment::~Environment()
-{
-	std::cout << "Environment destroyed" << std::endl;
-}
-
-float Environment::getDeltaTime()
-{
-	return _deltatime;
-}
-
-void Environment::tick()
-{
-	LAST = NOW;
-	NOW = SDL_GetPerformanceCounter();
-	_deltatime = (double)((NOW - LAST) * 1000 / (double)SDL_GetPerformanceFrequency());
-	if (_deltatime > 0.15)
+	Environment::Environment()
 	{
-		_deltatime = 0.15;
+		std::cout << "Environment created" << std::endl;
+		NOW = SDL_GetPerformanceCounter();
+		LAST = 0;
+		_deltatime = 0;
+		_timer = std::make_shared<Timer>();
+		_countedFrames = 0;
 	}
-	//primarily for deltatime but if other stuff needs updating add it here as this will be called every frame from core.
+
+	Environment::~Environment()
+	{
+		std::cout << "Environment destroyed" << std::endl;
+	}
+
+	float Environment::getDeltaTime()
+	{
+		return _deltatime;
+	}
+
+	void Environment::tick()
+	{
+		LAST = NOW;
+		NOW = SDL_GetPerformanceCounter();
+		_deltatime = (double)((NOW - LAST) * 1000 / (double)SDL_GetPerformanceFrequency());
+		if (_deltatime > 0.15)
+		{
+			_deltatime = 0.15;
+		}
+		//primarily for deltatime but if other stuff needs updating add it here as this will be called every frame from core.
+	}
+
+	std::shared_ptr<Timer> Environment::GetTimer()
+	{
+		return _timer;
+	}
+
+	void Environment::IncrementFrameCounter()
+	{
+		_countedFrames++;
+	}
+
+	int Environment::GetCountedFrames()
+	{
+		return _countedFrames;
+	}
+
+	float Environment::getFPS()
+	{
+		float avgFPS = _countedFrames / (GetTimer()->GetTicks() / 1000.0f);
+		if (avgFPS > 2000000)
+		{
+			avgFPS = 0;
+		}
+		return avgFPS;
+	}
+
 }

@@ -1,0 +1,10 @@
+
+namespace myengine
+{
+
+	class AudioPlayer
+	{
+
+	};
+
+}
