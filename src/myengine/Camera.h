@@ -21,6 +21,7 @@ namespace myengine
 	private:
 		bool _controlable;
 		bool _main;
+		bool _isTargetingOtherTransform;
 		float _FOV;
 		float _near;
 		float _far;

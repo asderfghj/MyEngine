@@ -71,6 +71,8 @@ void safe_main()
 
 	_entity1->getComponent<myengine::MeshRenderer>()->AttachTexture(_texture1);
 
+	_entity1->addComponent<myengine::PlayerController>();
+
 	_core->getMainCamera()->setTarget(_entity1->getComponent<myengine::Transform>());
 
 	std::cout << "Program Start" << std::endl;

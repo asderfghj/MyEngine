@@ -31,6 +31,7 @@ namespace myengine
 		glm::vec3 getScale();
 		void setScale(glm::vec3 _sca);
 		glm::mat4 getModelMatrix();
+		glm::mat4 getPositionMatrix();
 		void setTransformParent(std::weak_ptr<Transform> _parent);
 		void addChild(std::weak_ptr<Transform> _child);
 		void setSelf(std::weak_ptr<Transform> self);

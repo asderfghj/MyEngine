@@ -21,5 +21,6 @@
 #include "AudioPlayer.h"
 #include "Skybox.h"
 #include "CubemapTexture.h"
+#include "PlayerController.h"
 
 #endif

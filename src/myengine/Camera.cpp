@@ -17,6 +17,10 @@ namespace myengine
 		glm::mat4 view;
 		glm::vec3 camPos = getEntity()->getComponent<Transform>()->getPosition();
 		view = glm::lookAt(camPos, camPos + camFront, camUp);
+		//if (_isTargetingOtherTransform)
+		//{
+		//	view = view * target.lock()->getPositionMatrix();
+		//}
 		return view;
 	}
 
@@ -42,6 +46,7 @@ namespace myengine
 		_yaw = -90.0f;
 		_controllerRotationForce = 10.0f;
 		_cameraRangeLock = 3.0f;
+		_isTargetingOtherTransform = false;
 	}
 
 	bool Camera::getMain()
@@ -194,6 +199,7 @@ namespace myengine
 	void Camera::setTarget(std::weak_ptr<Transform> _target)
 	{
 		target = _target;
+		_isTargetingOtherTransform = true;
 	}
 
 }

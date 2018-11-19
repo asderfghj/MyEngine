@@ -36,9 +36,7 @@ namespace myengine
 		template <typename T>
 		std::shared_ptr<T> addComponent()
 		{
-			//speak to graham, not working correctly
-			//assert(std::is_base_of<Component, T>());
-			static_assert(std::is_base_of<Component, T>(), "Must be derived of component");
+			static_assert(std::is_base_of<Component, T>(), "Datatype must be derived of component");
 			std::shared_ptr <T> t = std::make_shared<T>();
 
 			_components.push_back(t);
@@ -50,75 +48,42 @@ namespace myengine
 		template <typename T, typename A>
 		std::shared_ptr<T> addComponent(A _a)
 		{
-			//assert(std::is_base_of<Component, T>());
-			if (std::is_base_of<Component, T>())
-			{
-				std::shared_ptr <T> t = std::make_shared<T>();
-				t->OnInit(_self, _a);
-				_components.push_back(t);
-				return t;
-			}
-			else
-			{
-				throw std::exception();
-			}
 
+			static_assert(std::is_base_of<Component, T>(), "Datatype must be derived of component");
+			std::shared_ptr <T> t = std::make_shared<T>();
+			t->OnInit(_self, _a);
+			_components.push_back(t);
+			return t;
 		}
 
 		template <typename T, typename A, typename B>
 		std::shared_ptr<T> addComponent(A _a, B _b)
 		{
-			//assert(std::is_base_of<Component, T>());
-			if (std::is_base_of<Component, T>())
-			{
-				std::shared_ptr <T> t = std::make_shared<T>();
-				t->OnInit(_self, _a, _b);
-				_components.push_back(t);
-				return t;
-			}
-			else
-			{
-				throw std::exception();
-			}
-
+			static_assert(std::is_base_of<Component, T>(), "Datatype must be derived of component");
+			std::shared_ptr <T> t = std::make_shared<T>();
+			t->OnInit(_self, _a, _b);
+			_components.push_back(t);
+			return t;
 		}
 
 		template <typename T, typename A, typename B, typename C>
 		std::shared_ptr<T> addComponent(A _a, B _b, C _c)
 		{
-			//assert(std::is_base_of<Component, T>());
-			if (std::is_base_of<Component, T>())
-			{
-
-				std::shared_ptr <T> t = std::make_shared<T>();
-				t->OnInit(_self, _a, _b, _c);
-				_components.push_back(t);
-				return t;
-			}
-			else
-			{
-				throw std::exception();
-			}
-
-
+			static_assert(std::is_base_of<Component, T>(), "Datatype must be derived of component");
+			std::shared_ptr <T> t = std::make_shared<T>();
+			t->OnInit(_self, _a, _b, _c);
+			_components.push_back(t);
+			return t;
 		}
 
 		template <typename T, typename A, typename B, typename C, typename D>
 		std::shared_ptr<T> addComponent(A _a, B _b, C _c, D _d)
 		{
-			//assert(std::is_base_of<Component, T>());
-			if (std::is_base_of<Component, T>())
-			{
-				std::shared_ptr <T> t = std::make_shared<T>();
-				t->OnInit(_self, _a, _b, _c, _d);
-				_components.push_back(t);
-				return t;
-			}
-			else
-			{
-				throw std::exception();
-			}
-
+			static_assert(std::is_base_of<Component, T>(), "Datatype must be derived of component");
+			std::shared_ptr <T> t = std::make_shared<T>();
+			t->OnInit(_self, _a, _b, _c, _d);
+			_components.push_back(t);
+			return t;
 		}
 
 		template <typename T>

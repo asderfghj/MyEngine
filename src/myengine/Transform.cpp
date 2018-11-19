@@ -92,6 +92,12 @@ namespace myengine
 		return rtn;
 	}
 
+	glm::mat4 Transform::getPositionMatrix()
+	{
+		glm::mat4 rtn = glm::translate(glm::mat4(1.0f), _position);
+		return rtn;
+	}
+
 	void Transform::setTransformParent(std::weak_ptr<Transform> _parent)
 	{
 		_transformParent = _parent;

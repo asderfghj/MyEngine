@@ -79,6 +79,8 @@ add_library(engine
 	src/myengine/Skybox.h
 	src/myengine/CubemapTexture.cpp
 	src/myengine/CubemapTexture.h
+	src/myengine/PlayerController.cpp
+	src/myengine/PlayerController.h
 )
 
 if(MSVC)
