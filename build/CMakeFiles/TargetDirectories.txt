@@ -1,4 +1,0 @@
-W:/Uni/Level 6/GEP/Repos/MyEngine/build/CMakeFiles/game.dir
-W:/Uni/Level 6/GEP/Repos/MyEngine/build/CMakeFiles/engine.dir
-W:/Uni/Level 6/GEP/Repos/MyEngine/build/CMakeFiles/ALL_BUILD.dir
-W:/Uni/Level 6/GEP/Repos/MyEngine/build/CMakeFiles/ZERO_CHECK.dir
