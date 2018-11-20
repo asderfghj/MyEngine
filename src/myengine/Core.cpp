@@ -18,6 +18,12 @@ namespace myengine
 		this->Init();
 	}
 
+	Core::Core(int width, int height)
+	{
+		std::cout << "Created Core" << std::endl;
+		this->Init(width, height);
+	}
+
 	Core::~Core()
 	{
 		_entities.clear();
@@ -124,6 +130,10 @@ namespace myengine
 				switch (_event.type)
 				{
 					case SDL_KEYDOWN:
+					{
+						_input->QueueKeyboardUpdate();
+						break;
+					}
 					case SDL_KEYUP:
 					{
 						_input->QueueKeyboardUpdate();
@@ -231,7 +241,7 @@ namespace myengine
 	void Core::SetSelf(std::weak_ptr<Core> _selfPtr)
 	{
 		_self = _selfPtr;
-		std::shared_ptr<Entity> _camera = addEntity(glm::vec3(0.0f, 0.0f, 10.0f));
+		std::shared_ptr<Entity> _camera = addEntity();
 		_camera->setSelf(_camera);
 		std::shared_ptr<Camera> _cameraComponent = _camera->addComponent<Camera, float, float, float>(45.0f, 0.01f, 100.0f);
 		setMainCamera(_cameraComponent);

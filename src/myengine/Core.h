@@ -38,6 +38,7 @@ namespace myengine
 
 	public:
 		Core();
+		Core(int width, int height);
 		~Core();
 		void Init();
 		void Init(int _width, int _height);
@@ -56,6 +57,23 @@ namespace myengine
 		std::shared_ptr<Camera> getMainCamera();
 		void setMainCamera(std::shared_ptr<Camera> _mainCameraToSet);
 		SDL_Event* getEvent();
+
+		template <typename T>
+		std::vector<std::weak_ptr<Entity>> getEntitiesWithComponent()
+		{
+			std::vector<std::weak_ptr<Entity>> returnEntities;
+			for (int i = 0; i < _entities.size(); i++)
+			{
+				if (_entities[i]->hasComponent<T>())
+				{
+					returnEntities.push_back(_entities[i]);
+				}
+			}
+
+			return returnEntities;
+		}
+
+
 	};
 
 }

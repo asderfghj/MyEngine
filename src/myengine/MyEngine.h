@@ -22,5 +22,6 @@
 #include "Skybox.h"
 #include "CubemapTexture.h"
 #include "PlayerController.h"
+#include "Collider.h"
 
 #endif

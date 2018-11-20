@@ -18,7 +18,7 @@ namespace myengine
 		std::weak_ptr<Entity> _entity;
 
 	protected:
-		std::shared_ptr<Entity> getEntity();
+		
 		std::shared_ptr<Core> getCore();
 		std::shared_ptr<Input> getInput();
 		std::shared_ptr<Environment> getEnvironment();
@@ -30,6 +30,7 @@ namespace myengine
 		virtual void OnBegin();
 		virtual void OnTick();
 		virtual void OnDisplay();
+		std::shared_ptr<Entity> getEntity();
 	};
 }
 #endif

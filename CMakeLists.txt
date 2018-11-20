@@ -81,6 +81,8 @@ add_library(engine
 	src/myengine/CubemapTexture.h
 	src/myengine/PlayerController.cpp
 	src/myengine/PlayerController.h
+	src/myengine/Collider.cpp
+	src/myengine/Collider.h
 )
 
 if(MSVC)

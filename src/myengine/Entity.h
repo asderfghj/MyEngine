@@ -97,11 +97,26 @@ namespace myengine
 				{
 					return returnPtr;
 				}
-				std::cout << "this is iterating" << std::endl;
 			}
 			throw std::exception();
 
 
+		}
+
+		template <typename T>
+		bool hasComponent()
+		{
+			for (size_t i = 0; i < _components.size(); i++)
+			{
+				std::shared_ptr<T> returnPtr = std::dynamic_pointer_cast<T>(_components.at(i));
+
+				if (returnPtr)
+				{
+					return true;
+				}
+			}
+
+			return false;
 		}
 
 	};

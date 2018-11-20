@@ -15,7 +15,7 @@ namespace myengine
 
 	private:
 
-		float RotateVelocity, ForwardVelocity, RotateFade, ForwardFade, RotateIncreaseAmount, ForwardIncreaseAmount; 
+		float RotateVelocity, ForwardVelocity, RotateFade, ForwardFade, RotateIncreaseAmount, ForwardIncreaseAmount, ForwardVelocityCap, RotateVelocityCap; 
 		glm::vec3 forwardVector;
 
 	};

@@ -72,7 +72,7 @@ namespace myengine
 		_position = _sca;
 	}
 
-	glm::mat4 Transform::getModelMatrix()
+	glm::mat4 Transform::getModelMatrix(bool applyRotationAfterTranslation)
 	{
 		glm::mat4 rtn = glm::mat4(1.0f), trans = glm::mat4(1.0f), rotx = glm::mat4(1.0f), roty = glm::mat4(1.0f), rotz = glm::mat4(1.0f), sca = glm::mat4(1.0f);
 		trans = glm::translate(trans, _position);
@@ -81,8 +81,15 @@ namespace myengine
 		roty = glm::rotate(roty, glm::radians(_rotation.y), glm::vec3(0.0f, 1.0f, 0.0f));
 		rotz = glm::rotate(rotz, glm::radians(_rotation.z), glm::vec3(0.0f, 0.0f, 1.0f));
 
+		if (!applyRotationAfterTranslation)
+		{
+			rtn = trans * rotz * rotx * roty * sca;
+		}
 
-		rtn = trans * rotz * rotx * roty * sca;
+		else
+		{
+			rtn =  rotz * rotx * roty * trans * sca;
+		}
 
 		if(_isChildOfOtherTransform)
 		{
@@ -92,9 +99,25 @@ namespace myengine
 		return rtn;
 	}
 
-	glm::mat4 Transform::getPositionMatrix()
+	glm::mat4 Transform::getPositionMatrix(int excludeaxis)
 	{
-		glm::mat4 rtn = glm::translate(glm::mat4(1.0f), _position);
+		glm::mat4 rtn;
+		if (excludeaxis == 1)
+		{
+			rtn = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, _position.y, _position.z));
+		}
+		else if (excludeaxis == 2)
+		{
+			rtn = glm::translate(glm::mat4(1.0f), glm::vec3(_position.x, 0.0f, _position.z));
+		}
+		else if (excludeaxis == 3)
+		{
+			rtn = glm::translate(glm::mat4(1.0f), glm::vec3(_position.x, _position.y, 0.0f));
+		}
+		else
+		{
+			rtn = glm::translate(glm::mat4(1.0f), _position);
+		}
 		return rtn;
 	}
 

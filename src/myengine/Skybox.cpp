@@ -87,7 +87,7 @@ namespace myengine
 		glUseProgram(_shaderProgram->getID());
 
 		_shaderProgram->SetUniform("projection", getEntity()->getCore()->getMainCamera()->getProjectionMatrix());
-		_shaderProgram->SetUniform("view", getEntity()->getCore()->getMainCamera()->getViewMatrix());
+		_shaderProgram->SetUniform("view", glm::mat4(glm::mat3(getEntity()->getCore()->getMainCamera()->getViewMatrix())));
 		glm::mat4 scaler = glm::scale(glm::mat4(1.0f), glm::vec3(50.0f, 50.0f, 50.0f));
 		
 
@@ -96,7 +96,8 @@ namespace myengine
 
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, skyboxVertices.size());
-
+		glBindVertexArray(0);
+		glUseProgram(0);
 		glDepthMask(true);
 
 	}
