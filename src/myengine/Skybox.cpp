@@ -72,7 +72,7 @@ namespace myengine
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		glBindVertexArray(0);
 
-		_shaderProgram = Shader::Create("../resources/fragmentshaders/skybox.fs", "../resources/vertexshaders/skybox.vs", { "in_position" }, _parent.lock()->getCore()->getResources());
+		_shaderProgram = getCore()->getSkyboxShader();
 
 	}
 

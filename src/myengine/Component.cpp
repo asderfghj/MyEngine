@@ -27,6 +27,10 @@ namespace myengine
 		{
 			return _entity.lock()->getCore();
 		}
+		else
+		{
+			throw std::exception();
+		}
 	}
 
 	std::shared_ptr<Input> Component::getInput()

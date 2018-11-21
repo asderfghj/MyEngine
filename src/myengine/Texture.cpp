@@ -33,6 +33,8 @@ namespace myengine
 			std::cout << "Failed to load texture" << std::endl;
 			throw std::exception();
 		}
+		rtn->setWidth(width);
+		rtn->setheight(height);
 		stbi_image_free(data);
 
 
@@ -66,4 +68,23 @@ namespace myengine
 		glBindTexture(GL_TEXTURE_2D, _id);
 	}
 
+	void Texture::setWidth(int _newWidth)
+	{
+		_width = _newWidth;
+	}
+
+	void Texture::setheight(int _newHeight)
+	{
+		_height = _newHeight;
+	}
+
+	int Texture::getWidth()
+	{
+		return _width;
+	}
+
+	int Texture::getHeight()
+	{
+		return _height;
+	}
 }

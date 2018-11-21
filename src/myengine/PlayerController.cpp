@@ -113,10 +113,10 @@ namespace myengine
 
 		if (getEntity()->hasComponent<Collider>())
 		{
-			if (getEntity()->getComponent<Collider>()->isColliding())
+			/*if (getEntity()->getComponent<Collider>()->isColliding())
 			{
 				std::cout << "Ship is colliding" << std::endl;
-			}
+			}*/
 		}
 		//std::cout << "Player: " << getEntity()->getComponent<Transform>()->getPosition().x << " | " << getEntity()->getComponent<Transform>()->getPosition().z << std::endl;
 

@@ -77,7 +77,7 @@ namespace myengine
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		glBindVertexArray(0);
 
-		_shaderProgram = Shader::Create("../resources/fragmentshaders/collider.fs", "../resources/vertexshaders/collider.vs", { "in_position" }, _parent.lock()->getCore()->getResources());
+		_shaderProgram = getCore()->getHitboxShader();
 
 		_drawWireframe = true;
 		_colliding = false;
@@ -88,7 +88,7 @@ namespace myengine
 		Component::OnTick();
 		_collidingEntities.clear();
 		std::vector<std::weak_ptr<Entity>> EntitiesWithColliders = getCore()->getEntitiesWithComponent<Collider>();
-		for (int i = 0; i < EntitiesWithColliders.size(); i++)
+		for (size_t i = 0; i < EntitiesWithColliders.size(); i++)
 		{
 			if (EntitiesWithColliders[i].lock()->getComponent<Collider>()->CheckIfColliding(getEntity()->getComponent<Transform>()->getPosition(), _boxScale))
 			{
@@ -113,15 +113,13 @@ namespace myengine
 			_shaderProgram->SetUniform("projection", getEntity()->getCore()->getMainCamera()->getProjectionMatrix());
 			_shaderProgram->SetUniform("view", getEntity()->getCore()->getMainCamera()->getViewMatrix());
 
-			glm::mat4 model = glm::mat4(1.0f), trans = glm::mat4(1.0f), rotx = glm::mat4(1.0f), roty = glm::mat4(1.0f), rotz = glm::mat4(1.0f), sca = glm::mat4(1.0f);
+			glm::mat4 model = glm::mat4(1.0f), trans = glm::mat4(1.0f), sca = glm::mat4(1.0f);
 
 			trans = glm::translate(trans, getEntity()->getComponent<Transform>()->getPosition());
-			rotx = glm::rotate(rotx, glm::radians(getEntity()->getComponent<Transform>()->getRotation().x), glm::vec3(1.0f, 0.0f, 0.0f));
-			roty = glm::rotate(roty, glm::radians(getEntity()->getComponent<Transform>()->getRotation().y), glm::vec3(0.0f, 1.0f, 0.0f));
-			rotz = glm::rotate(rotz, glm::radians(getEntity()->getComponent<Transform>()->getRotation().z), glm::vec3(0.0f, 0.0f, 1.0f));
+
 			sca = glm::scale(sca, _boxScale);
 
-			model = trans * rotz * rotx * roty * sca;
+			model = trans *  sca;
 
 			_shaderProgram->SetUniform("model", model);
 

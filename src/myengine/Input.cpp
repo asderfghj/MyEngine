@@ -43,17 +43,16 @@ namespace myengine
 		return keys[_keycode];
 	}
 
+	bool Input::getMouseButton(MouseButtonStates _btn)
+	{
+		return mouseBtnStates[_btn];
+	}
+
 	void Input::setCorePtr(std::weak_ptr<Core> _core)
 	{
 		_corePtr = _core;
 	}
 
-	void Input::UpdateMouse()
-	{
-		int x, y;
-		SDL_GetMouseState(&x, &y);
-		_mousePos = glm::vec2(x, y);
-	}
 
 	glm::vec2 Input::getMousePos()
 	{
@@ -77,7 +76,7 @@ namespace myengine
 
 	void Input::Tick()
 	{
-		if (!_queueKeyboardUpdate && !_queueJoystickUpdate && !_queueJoystickButtonUpdate && !_queueDpadUpdate)
+		if (!_queueKeyboardUpdate && !_queueJoystickUpdate && !_queueJoystickButtonUpdate && !_queueDpadUpdate && !_queueMouseMovementUpdate && !QueueMouseButtonUpdate)
 		{
 			return;
 		}
@@ -99,6 +98,19 @@ namespace myengine
 
 			keys[ESC] = SDL_KEYBOARDSTATE[SDL_SCANCODE_ESCAPE];
 
+		}
+
+		if (_queueMouseMovementUpdate)
+		{
+			int x, y;
+			SDL_GetMouseState(&x, &y);
+			_mousePos = glm::vec2(x, y);
+		}
+
+		if (_queueMouseButtonUpdate)
+		{
+			mouseBtnStates[LEFT_MOUSE_BUTTON] = (SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(SDL_BUTTON_LEFT));
+			mouseBtnStates[RIGHT_MOUSE_BUTTON] = (SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(SDL_BUTTON_RIGHT));
 		}
 
 		if(joystickConnected)
@@ -162,16 +174,28 @@ namespace myengine
 		_queueDpadUpdate = true;
 	}
 
+	void Input::QueueMouseMovementUpdate()
+	{
+
+	}
+
+	void Input::QueueMouseButtonUpdate()
+	{
+		_queueMouseButtonUpdate = true;
+	}
+
+
 	glm::vec2 Input::GetJoystickAxis(ControllerAxes _axis)
 	{
 		if (_axis == LEFTSTICK)
 		{
 			return leftStickAxes;
 		}
-		else if (_axis == RIGHTSTICK)
+		else
 		{
 			return rightStickAxes;
 		}
+
 	}
 
 }

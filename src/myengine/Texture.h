@@ -15,9 +15,15 @@ namespace myengine
 		GLuint GetTexture();
 		int GetTextureLocation();
 		void BindTexture();
+		void setWidth(int _newWidth);
+		void setheight(int _newHeight);
+		int getWidth();
+		int getHeight();
 	private:
 		GLuint _id;
 		int _textureLocation;
+		int _width;
+		int _height;
 	};
 
 }

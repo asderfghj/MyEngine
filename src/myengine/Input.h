@@ -58,10 +58,17 @@ namespace myengine
 			NUM_OF_STATES
 		};
 
+		enum MouseButtonStates
+		{
+			LEFT_MOUSE_BUTTON,
+			RIGHT_MOUSE_BUTTON,
+			NUM_OF_MOUSE_BUTTON_STATES
+		};
+
 		Input();
-		//void UpdateMap(std::map<int, bool> _newKeyboard);
 		
 		bool getKey(ListedButtons _keycode);
+		bool getMouseButton(MouseButtonStates _btn);
 		void setCorePtr(std::weak_ptr<Core> _core);
 		glm::vec2 getMousePos();
 		bool isJoystickConnected();
@@ -70,7 +77,8 @@ namespace myengine
 		void UpdateRightJoystick(glm::vec2 axes);
 		void Tick();
 
-		void UpdateMouse();
+		void QueueMouseMovementUpdate();
+		void QueueMouseButtonUpdate();
 		void QueueKeyboardUpdate();
 		void QueueControllerJoystickUpdate();
 		void QueueControllerButtonUpdate();
@@ -88,6 +96,7 @@ namespace myengine
 		uint8_t keys[NUM_OF_BUTTONS - 1] = { false };
 		uint8_t controllerBtns[NUM_OF_CONTROLLER_BUTTONS - 1] = { false };
 		uint8_t dpadStates[NUM_OF_STATES - 1] = { false };
+		uint8_t mouseBtnStates[NUM_OF_MOUSE_BUTTON_STATES - 1] = { false };
 		glm::vec2 _mousePos;
 
 		//joystick info (evetually make this a struct and have an array of pointer structs for multiple controllers
@@ -97,7 +106,7 @@ namespace myengine
 		glm::vec2 rightStickAxes;
 		Sint16 leftTrigger;
 		Sint16 rightTrigger;
-		bool _queueKeyboardUpdate, _queueJoystickUpdate, _queueJoystickButtonUpdate, _queueDpadUpdate;
+		bool _queueKeyboardUpdate, _queueJoystickUpdate, _queueJoystickButtonUpdate, _queueDpadUpdate, _queueMouseMovementUpdate, _queueMouseButtonUpdate;
 	};
 
 

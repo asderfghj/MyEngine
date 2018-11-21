@@ -27,10 +27,11 @@ namespace myengine
 		return proj;
 	}
 
-	/*glm::mat4 Camera::getOrthographicMatrix()
+	glm::mat4 Camera::getOrthographicMatrix()
 	{
-		glm::mat4 orth = glm::ortho()
-	}*/
+		glm::mat4 orth = glm::ortho(0.0f, (float)getCore()->getWidth(), 0.0f, (float)getCore()->getHeight(), 0.1f, 100.0f);
+		return orth;
+	}
 
 	void Camera::OnInit(std::weak_ptr<Entity> _parent, float fov, float near, float far)
 	{

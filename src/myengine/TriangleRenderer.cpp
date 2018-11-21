@@ -121,9 +121,12 @@ namespace myengine
 
 		_shaderProgram->SetUniform("model", getEntity()->getComponent<Transform>()->getModelMatrix());
 		_shaderProgram->SetUniform("view", getCore()->getMainCamera()->getViewMatrix());
-		_shaderProgram->SetUniform("projection", getCore()->getMainCamera()->getProjectionMatrix());
+		_shaderProgram->SetUniform("projection", getCore()->getMainCamera()->getOrthographicMatrix());
 
-		_texture->BindTexture();
+		if (_texture)
+		{
+			_texture->BindTexture();
+		}
 
 		glBindVertexArray(_vaoID);
 		glDrawArrays(GL_TRIANGLES, 0, 3);

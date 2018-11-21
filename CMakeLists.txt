@@ -83,6 +83,10 @@ add_library(engine
 	src/myengine/PlayerController.h
 	src/myengine/Collider.cpp
 	src/myengine/Collider.h
+	src/myengine/UIImage.cpp
+	src/myengine/UIImage.h
+	src/myengine/UIButton.cpp
+	src/myengine/UIButton.h
 )
 
 if(MSVC)

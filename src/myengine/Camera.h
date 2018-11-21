@@ -10,7 +10,7 @@ namespace myengine
 	public:
 		glm::mat4 getViewMatrix();
 		glm::mat4 getProjectionMatrix();
-		//glm::mat4 getOrthographicMatrix();
+		glm::mat4 getOrthographicMatrix();
 		using Component::OnInit;
 		void OnInit(std::weak_ptr<Entity> _parent, float fov, float near, float far);
 		bool getMain();
