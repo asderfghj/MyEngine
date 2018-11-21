@@ -4,7 +4,7 @@
 
 #include <memory>
 
-namespace myengine
+namespace frontier
 {
 
 	class Entity;

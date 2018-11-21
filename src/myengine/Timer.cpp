@@ -1,6 +1,6 @@
 #include "Timer.h"
 
-namespace myengine 
+namespace frontier 
 {
 	Timer::Timer()
 	{

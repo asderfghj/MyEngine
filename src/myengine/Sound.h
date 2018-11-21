@@ -2,7 +2,7 @@
 #include <string>
 #include "Resource.h"
 
-namespace myengine
+namespace frontier
 {
 	struct SoundImpl;
 	class Resources;

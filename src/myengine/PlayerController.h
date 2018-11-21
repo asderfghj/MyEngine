@@ -2,7 +2,7 @@
 #include "glm.hpp"
 
 
-namespace myengine
+namespace frontier
 {
 	class Entity;
 

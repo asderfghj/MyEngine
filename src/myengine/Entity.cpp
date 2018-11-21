@@ -3,7 +3,7 @@
 #include "Transform.h"
 #include <iostream>
 
-namespace myengine
+namespace frontier
 {
 
 	Entity::Entity()

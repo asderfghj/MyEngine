@@ -1,5 +1,5 @@
 
-namespace myengine
+namespace frontier
 {
 
 	class AudioPlayer

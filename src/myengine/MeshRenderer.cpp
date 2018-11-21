@@ -8,7 +8,7 @@
 #include "Model.h"
 
 
-namespace myengine
+namespace frontier
 {
 	void MeshRenderer::OnInit(std::weak_ptr<Entity> _parent, std::shared_ptr<Model> meshData)
 	{

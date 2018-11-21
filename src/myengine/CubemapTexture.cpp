@@ -4,7 +4,7 @@
 #include <iostream>
 #include <exception>
 
-namespace myengine
+namespace frontier
 {
 	std::shared_ptr<CubemapTexture> CubemapTexture::Create(std::vector<std::string> _paths, std::shared_ptr<Resources> _resources, int _TextureLocation)
 	{

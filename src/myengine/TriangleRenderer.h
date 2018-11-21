@@ -3,7 +3,7 @@
 #include "Component.h"
 #include "glm.hpp"
 
-namespace myengine
+namespace frontier
 {
 	class Shader;
 	class Texture;

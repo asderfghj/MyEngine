@@ -7,7 +7,7 @@
 #include <iostream>
 
 
-namespace myengine
+namespace frontier
 {
 	Model::Model()
 	{
@@ -24,7 +24,7 @@ namespace myengine
 
 	void Model::Draw(glm::mat4 _model, glm::mat4 _view, glm::mat4 _proj, std::shared_ptr<Texture> _tex, std::shared_ptr<Shader> _shader)
 	{
-		for (int i = 0; i < meshes.size(); i++)
+		for (size_t i = 0; i < meshes.size(); i++)
 		{
 			meshes[i]->Draw(_model, _view, _proj, _tex, _shader);
 		}
@@ -38,7 +38,7 @@ namespace myengine
 		std::string errorMsg;
 		int basePathEndIndex;
 
-		for (int i = 0; i < path.size(); i++)
+		for (size_t i = 0; i < path.size(); i++)
 		{
 			if (path[i] == '/')
 			{

@@ -2,7 +2,7 @@
 #include "Timer.h"
 #include <iostream>
 
-namespace myengine
+namespace frontier
 {
 
 	Environment::Environment()
@@ -22,7 +22,7 @@ namespace myengine
 
 	float Environment::getDeltaTime()
 	{
-		return _deltatime;
+		return (float)_deltatime;
 	}
 
 	void Environment::tick()

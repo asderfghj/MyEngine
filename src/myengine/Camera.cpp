@@ -10,7 +10,7 @@
 #include "gtc/matrix_transform.hpp"
 #include "gtc/type_ptr.hpp"
 
-namespace myengine
+namespace frontier
 {
 	glm::mat4 Camera::getViewMatrix()
 	{

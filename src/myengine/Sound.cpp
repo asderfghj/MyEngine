@@ -7,7 +7,7 @@
 #include <iostream>
 #include <vector>
 
-namespace myengine
+namespace frontier
 {
 	struct SoundImpl
 	{

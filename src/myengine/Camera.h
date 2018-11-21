@@ -1,7 +1,7 @@
 #include "glm.hpp"
 #include "Component.h"
 
-namespace myengine
+namespace frontier
 {
 	class Transform;
 

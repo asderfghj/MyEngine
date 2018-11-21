@@ -5,7 +5,7 @@
 #include "Transform.h"
 #include "Collider.h"
 
-namespace myengine
+namespace frontier
 {
 	void PlayerController::OnInit(std::weak_ptr<Entity> _parent)
 	{
@@ -119,6 +119,26 @@ namespace myengine
 			}*/
 		}
 		//std::cout << "Player: " << getEntity()->getComponent<Transform>()->getPosition().x << " | " << getEntity()->getComponent<Transform>()->getPosition().z << std::endl;
+
+		if (getEntity()->getComponent<Transform>()->getPosition().x > 50)
+		{
+			getEntity()->getComponent<Transform>()->setPosition(glm::vec3(-49, getEntity()->getComponent<Transform>()->getPosition().y, getEntity()->getComponent<Transform>()->getPosition().z));
+		}
+
+		if (getEntity()->getComponent<Transform>()->getPosition().x < -50)
+		{
+			getEntity()->getComponent<Transform>()->setPosition(glm::vec3(49, getEntity()->getComponent<Transform>()->getPosition().y, getEntity()->getComponent<Transform>()->getPosition().z));
+		}
+
+		if (getEntity()->getComponent<Transform>()->getPosition().z > 40)
+		{
+			getEntity()->getComponent<Transform>()->setPosition(glm::vec3( getEntity()->getComponent<Transform>()->getPosition().x, getEntity()->getComponent<Transform>()->getPosition().y, -39));
+		}
+
+		if (getEntity()->getComponent<Transform>()->getPosition().z < -40)
+		{
+			getEntity()->getComponent<Transform>()->setPosition(glm::vec3(getEntity()->getComponent<Transform>()->getPosition().x, getEntity()->getComponent<Transform>()->getPosition().y, 39));
+		}
 
 	}
 }

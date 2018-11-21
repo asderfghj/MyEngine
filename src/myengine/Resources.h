@@ -5,7 +5,7 @@
 #include <memory>
 #include "Resource.h"
 
-namespace myengine
+namespace frontier
 {
 
 	class Resources

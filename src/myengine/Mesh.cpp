@@ -7,7 +7,7 @@
 #include "Texture.h"
 #include <GL/glew.h>
 
-namespace myengine
+namespace frontier
 {
 	Mesh::Mesh(std::vector<GLfloat> _vertices, std::vector<GLfloat> _normals, std::vector<GLfloat> _texcoords)
 	{

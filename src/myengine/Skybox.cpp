@@ -6,7 +6,7 @@
 #include "Camera.h"
 #include <gtc/matrix_transform.hpp>
 
-namespace myengine
+namespace frontier
 {
 	void Skybox::OnInit(std::weak_ptr<Entity> _parent, std::shared_ptr<CubemapTexture> _skyboxTexture)
 	{
@@ -95,7 +95,7 @@ namespace myengine
 		_shaderProgram->SetUniform("scaler", scaler);
 
 		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, skyboxVertices.size());
+		glDrawArrays(GL_TRIANGLES, 0, skyboxVertices.size() / 3);
 		glBindVertexArray(0);
 		glUseProgram(0);
 		glDepthMask(true);

@@ -7,7 +7,7 @@
 #include <SDL2/SDL.h>
 #include "glm.hpp"
 
-namespace myengine
+namespace frontier
 {
 
 	class Environment;
@@ -30,8 +30,11 @@ namespace myengine
 		std::weak_ptr<Core> _self;
 		std::shared_ptr<Camera> _mainCamera;
 
+		//default Shaders
 		std::shared_ptr<Shader> HitboxShader;
 		std::shared_ptr<Shader> SkyboxShader;
+		std::shared_ptr<Shader> UntexturedUiImageShader;
+		std::shared_ptr<Shader> TexturedUiImageShader;
 
 		SDL_Window *_window;
 		SDL_Event _event;
@@ -48,7 +51,7 @@ namespace myengine
 		void Start();
 		void Stop();
 		std::shared_ptr<Entity> addEntity(glm::vec3 _position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _rotation = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _scale = glm::vec3(1.0f, 1.0f, 1.0f));
-		std::shared_ptr<Entity> addUiElement(glm::vec2 _position = glm::vec2(0.0f, 0.0f), float _rotation = 0.0f, glm::vec3 _scale = glm::vec3(0.0f, 0.0f, 0.0f));
+		std::shared_ptr<Entity> addUiElement(glm::vec2 _position = glm::vec2(0.0f, 0.0f), float _rotation = 0.0f, glm::vec3 _scale = glm::vec3(1.0f, 1.0f, 1.0f));
 		std::shared_ptr<Environment> getEnvironment();
 		std::shared_ptr<Input> getInput();
 		std::shared_ptr<Resources> getResources();
@@ -57,8 +60,12 @@ namespace myengine
 		int getHeight();
 		std::shared_ptr<Camera> getMainCamera();
 		void setMainCamera(std::shared_ptr<Camera> _mainCameraToSet);
+
+		//default shader getters
 		std::shared_ptr<Shader> getHitboxShader();
 		std::shared_ptr<Shader> getSkyboxShader();
+		std::shared_ptr<Shader> getUntexturedUiImageShader();
+		std::shared_ptr<Shader> getTexturedUiImageShader();
 
 
 		template <typename T>

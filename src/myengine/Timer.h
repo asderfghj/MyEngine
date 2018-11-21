@@ -1,7 +1,7 @@
 #include <SDL2/SDL.h>
 
 
-namespace myengine 
+namespace frontier 
 {
 	class Timer
 	{

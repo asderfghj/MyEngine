@@ -2,7 +2,7 @@
 #include "gtc/matrix_transform.hpp"
 #include "gtc/type_ptr.hpp"
 
-namespace myengine
+namespace frontier
 {
 	void Transform::OnInit(std::weak_ptr<Entity> parent)
 	{
@@ -92,6 +92,27 @@ namespace myengine
 		}
 
 		if(_isChildOfOtherTransform)
+		{
+			rtn = rtn * _transformParent.lock()->getModelMatrix();
+		}
+
+		return rtn;
+	}
+
+	glm::mat4 Transform::getModelMatrixModScale(glm::vec3 scaleModifier)
+	{
+		glm::vec3 modifiedScale = scaleModifier * _scale;
+
+		glm::mat4 rtn = glm::mat4(1.0f), trans = glm::mat4(1.0f), rotx = glm::mat4(1.0f), roty = glm::mat4(1.0f), rotz = glm::mat4(1.0f), sca = glm::mat4(1.0f);
+		trans = glm::translate(trans, _position);
+		sca = glm::scale(sca, modifiedScale);
+		rotx = glm::rotate(rotx, glm::radians(_rotation.x), glm::vec3(1.0f, 0.0f, 0.0f));
+		roty = glm::rotate(roty, glm::radians(_rotation.y), glm::vec3(0.0f, 1.0f, 0.0f));
+		rotz = glm::rotate(rotz, glm::radians(_rotation.z), glm::vec3(0.0f, 0.0f, 1.0f));
+
+		rtn = trans * rotz * rotx * roty * sca;
+
+		if (_isChildOfOtherTransform)
 		{
 			rtn = rtn * _transformParent.lock()->getModelMatrix();
 		}

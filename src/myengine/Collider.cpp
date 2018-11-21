@@ -9,7 +9,7 @@
 
 
 
-namespace myengine
+namespace frontier
 {
 	void Collider::OnInit(std::weak_ptr<Entity> _parent, glm::vec3 boxscale)
 	{

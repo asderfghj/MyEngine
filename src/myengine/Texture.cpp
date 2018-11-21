@@ -5,7 +5,7 @@
 #include "stb_image.h"
 
 
-namespace myengine
+namespace frontier
 {
 	std::shared_ptr<Texture> Texture::Create(const char* _path, std::shared_ptr<Resources> _resources, int _TextureLocation)
 	{
@@ -64,8 +64,12 @@ namespace myengine
 
 	void Texture::BindTexture()
 	{
+		/*glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);*/
+
 		glActiveTexture(GL_TEXTURE0 + _textureLocation);
 		glBindTexture(GL_TEXTURE_2D, _id);
+
 	}
 
 	void Texture::setWidth(int _newWidth)

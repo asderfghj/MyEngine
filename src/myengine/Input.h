@@ -5,7 +5,7 @@
 #include <SDL2/SDL.h>
 #include "glm.hpp"
 
-namespace myengine 
+namespace frontier 
 {
 	class Core;
 	

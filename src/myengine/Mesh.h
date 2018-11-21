@@ -6,7 +6,7 @@
 #include <glm.hpp>
 #include <GL/glew.h>
 
-namespace myengine
+namespace frontier
 {
 	class Model;
 	class Texture;

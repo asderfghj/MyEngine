@@ -3,7 +3,7 @@
 #include "Core.h"
 #include <iostream>
 
-namespace myengine
+namespace frontier
 {
 
 	Component::Component()

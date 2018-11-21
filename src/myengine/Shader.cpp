@@ -8,7 +8,7 @@
 #include "gtc/type_ptr.hpp"
 
 
-namespace myengine
+namespace frontier
 {
 
 	Shader::Shader()
@@ -87,7 +87,7 @@ namespace myengine
 		glAttachShader(ProgramId, vertexShaderID);
 		glAttachShader(ProgramId, fragmentShaderID);
 
-		for (int i = 0; i < _attributes.size(); i++)
+		for (size_t i = 0; i < _attributes.size(); i++)
 		{
 			glBindAttribLocation(ProgramId, i, _attributes[i]);
 		}
@@ -166,6 +166,17 @@ namespace myengine
 		GLint UniformLocation = glGetUniformLocation(_id, _name);
 		glUseProgram(_id);
 		glUniform3fv(UniformLocation, 1, &_value[0]);
+		if (_unsetProgram)
+		{
+			glUseProgram(0);
+		}
+	}
+
+	void Shader::SetUniform(const GLchar* _name, glm::vec4 _value, bool _unsetProgram)
+	{
+		GLint UniformLocation = glGetUniformLocation(_id, _name);
+		glUseProgram(_id);
+		glUniform4fv(UniformLocation, 1, &_value[0]);
 		if (_unsetProgram)
 		{
 			glUseProgram(0);

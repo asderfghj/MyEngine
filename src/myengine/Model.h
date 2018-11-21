@@ -10,7 +10,7 @@
 
 
 
-namespace myengine
+namespace frontier
 {
 
 	class Mesh;

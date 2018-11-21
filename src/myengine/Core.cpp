@@ -11,7 +11,7 @@
 #include <map>
 
 
-namespace myengine
+namespace frontier
 {
 
 	Core::Core()
@@ -66,6 +66,8 @@ namespace myengine
 
 		HitboxShader = Shader::Create("../resources/fragmentshaders/collider.fs", "../resources/vertexshaders/collider.vs", { "in_position" }, _resources);
 		SkyboxShader = Shader::Create("../resources/fragmentshaders/skybox.fs", "../resources/vertexshaders/skybox.vs", { "in_position" }, _resources);
+		UntexturedUiImageShader = Shader::Create("../resources/fragmentshaders/untexui.fs", "../resources/vertexshaders/untexui.vs", { "in_position" }, _resources);
+		TexturedUiImageShader = Shader::Create("../resources/fragmentshaders/texui.fs", "../resources/vertexshaders/texui.vs", { "in_position", "in_texCoord" }, _resources);
 
 	}
 
@@ -84,6 +86,11 @@ namespace myengine
 			_event = { 0 };
 
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+			for (size_t i = 0; i < _UIElements.size(); i++)
+			{
+				_UIElements[i]->tick();
+			}
 
 			for (size_t i = 0; i < _entities.size(); i++)
 			{
@@ -242,6 +249,16 @@ namespace myengine
 	std::shared_ptr<Shader> Core::getSkyboxShader()
 	{
 		return SkyboxShader;
+	}
+
+	std::shared_ptr<Shader> Core::getUntexturedUiImageShader()
+	{
+		return UntexturedUiImageShader;
+	}
+
+	std::shared_ptr<Shader> Core::getTexturedUiImageShader()
+	{
+		return TexturedUiImageShader;
 	}
 
 }

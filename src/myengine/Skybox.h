@@ -3,7 +3,7 @@
 #include <vector>
 #include <GL/glew.h>
 
-namespace myengine
+namespace frontier
 {
 	class Entity;
 	class CubemapTexture;

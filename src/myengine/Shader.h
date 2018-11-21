@@ -9,7 +9,7 @@
 #include <memory>
 #include <vector>
 
-namespace myengine
+namespace frontier
 {
 	class Texture;
 	class Resources;
@@ -30,6 +30,7 @@ namespace myengine
 		void SetUniform(const GLchar *_name, std::weak_ptr<CubemapTexture> _texture, bool _unsetprogram = false);
 		void SetUniform(const GLchar *_name, glm::mat4 _value, bool _unsetProgram = false, bool _transpose = false);
 		void SetUniform(const GLchar *_name, glm::vec3 _value, bool _unsetProgram = false);
+		void SetUniform(const GLchar *_name, glm::vec4 _value, bool _unsetProgram = false);
 		void SetUniform(const GLchar *_name, std::vector<std::weak_ptr<Texture>> _values, bool _unsetProgram = false);
 
 		void setID(GLuint _newID);

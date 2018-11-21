@@ -23,5 +23,7 @@
 #include "CubemapTexture.h"
 #include "PlayerController.h"
 #include "Collider.h"
+#include "UIImage.h"
+#include "UIButton.h"
 
 #endif

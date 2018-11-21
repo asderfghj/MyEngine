@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.6)
-project (MYENGINE)
+project (FRONTIERENGINE)
 
 include_directories(
 	src
@@ -35,7 +35,7 @@ add_executable(game
 	src/game/main.cpp
 )
 
-add_library(engine
+add_library(frontier
 	src/myengine/Camera.cpp
 	src/myengine/Camera.h
 	src/myengine/Core.cpp
@@ -90,36 +90,36 @@ add_library(engine
 )
 
 if(MSVC)
-  target_link_libraries(engine
+  target_link_libraries(frontier
     SDL2 glew32 opengl32 OpenAL32 ogg vorbis vorbisfile
   )
 else()
-  target_link_libraries(engine
+  target_link_libraries(frontier
     SDL2 GLU GLEW GL AL ogg vorbis vorbisfile
   )
 endif()
 
-target_link_libraries(game engine)
+target_link_libraries(game frontier)
 
-ADD_DEPENDENCIES(game engine)
+ADD_DEPENDENCIES(game frontier)
 
 if(MSVC)
-  add_custom_command(TARGET engine POST_BUILD
+  add_custom_command(TARGET frontier POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
       "${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/SDL2/bin/SDL2.dll"
-      "$<TARGET_FILE_DIR:engine>"
+      "$<TARGET_FILE_DIR:frontier>"
   )
 
-  add_custom_command(TARGET engine POST_BUILD
+  add_custom_command(TARGET frontier POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
       "${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/glew/bin/glew32.dll"
-      "$<TARGET_FILE_DIR:engine>"
+      "$<TARGET_FILE_DIR:frontier>"
   )
 
-  add_custom_command(TARGET engine POST_BUILD
+  add_custom_command(TARGET frontier POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
       "${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/openal-soft/bin/OpenAL32.dll"
-      "$<TARGET_FILE_DIR:engine>"
+      "$<TARGET_FILE_DIR:frontier>"
   )
 endif()
 

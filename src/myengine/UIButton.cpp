@@ -1,15 +1,21 @@
 #include "UIButton.h"
+#include "UIImage.h"
 #include "Input.h"
 #include "Entity.h"
 #include "Transform.h"
 #include <iostream>
 
-namespace myengine
+namespace frontier
 {
 
 	void UIButton::OnInit(std::weak_ptr<Entity> _parent)
 	{
 		Component::OnInit(_parent);
+		if (_parent.lock()->hasComponent<UIImage>())
+		{
+			_targetImage = _parent.lock()->getComponent<UIImage>();
+			
+		}
 	}
 
 	void UIButton::OnInit(std::weak_ptr<Entity> _parent, std::weak_ptr<UIImage> _targetimg)
@@ -23,6 +29,24 @@ namespace myengine
 		if (isMouseOverlapping() && getInput()->getMouseButton(Input::LEFT_MOUSE_BUTTON))
 		{
 			std::cout << "Button Clicked" << std::endl;
+			if (!_targetImage.expired())
+			{
+				_targetImage.lock()->setColor(glm::vec4(pressedColor, 1.0f));
+			}
+		}
+		else if (isMouseOverlapping())
+		{
+			if (!_targetImage.expired())
+			{
+				_targetImage.lock()->setColor(glm::vec4(overlapColor, 1.0f));
+			}
+		}
+		else
+		{
+			if (!_targetImage.expired())
+			{
+				_targetImage.lock()->setColor(glm::vec4(idleColor, 1.0f));
+			}
 		}
 	}
 
@@ -39,6 +63,11 @@ namespace myengine
 	void UIButton::setpressedColor(glm::vec3 _newPressedColor)
 	{
 		pressedColor = _newPressedColor;
+	}
+
+	void UIButton::setOverlapColor(glm::vec3 _newOverlapColor)
+	{
+		overlapColor = _newOverlapColor;
 	}
 
 	bool UIButton::isMouseOverlapping()

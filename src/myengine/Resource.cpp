@@ -1,7 +1,7 @@
 #include "Resource.h"
 #include <iostream>
 
-namespace myengine
+namespace frontier
 {
 
 	Resource::Resource()

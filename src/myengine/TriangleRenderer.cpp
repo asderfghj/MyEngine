@@ -7,7 +7,7 @@
 #include "Camera.h"
 #include <iostream>
 
-namespace myengine
+namespace frontier
 {
 
 	TriangleRenderer::TriangleRenderer()

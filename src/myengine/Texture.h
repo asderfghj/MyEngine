@@ -3,7 +3,7 @@
 #include <string>
 #include <GL/glew.h>
 
-namespace myengine
+namespace frontier
 {
 	class Resources;
 

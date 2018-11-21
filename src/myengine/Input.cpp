@@ -4,7 +4,7 @@
 
 
 
-namespace myengine
+namespace frontier
 {
 	Input::Input()
 	{
@@ -76,7 +76,7 @@ namespace myengine
 
 	void Input::Tick()
 	{
-		if (!_queueKeyboardUpdate && !_queueJoystickUpdate && !_queueJoystickButtonUpdate && !_queueDpadUpdate && !_queueMouseMovementUpdate && !QueueMouseButtonUpdate)
+		if (!_queueKeyboardUpdate && !_queueJoystickUpdate && !_queueJoystickButtonUpdate && !_queueDpadUpdate && !_queueMouseMovementUpdate && !_queueMouseButtonUpdate)
 		{
 			return;
 		}
