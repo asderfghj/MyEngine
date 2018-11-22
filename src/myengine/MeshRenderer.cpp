@@ -13,7 +13,17 @@ namespace frontier
 	void MeshRenderer::OnInit(std::weak_ptr<Entity> _parent, std::shared_ptr<Model> meshData)
 	{
 		Component::OnInit(_parent);
+		Copyable = true;
 		_meshData = meshData;
+	}
+
+	void MeshRenderer::OnInit(std::weak_ptr<Entity> _parent, std::weak_ptr<MeshRenderer> _original)
+	{
+		Component::OnInit(_parent);
+		Copyable = true;
+		_meshData = _original.lock()->getMeshData();
+		_shaderProgram = _original.lock()->getShader();
+		_texture = _original.lock()->getTexture();
 	}
 
 	void MeshRenderer::OnTick()
@@ -31,6 +41,21 @@ namespace frontier
 	void MeshRenderer::AttachTexture(std::shared_ptr<Texture> _newTexture)
 	{
 		_texture = _newTexture;
+	}
+
+	std::shared_ptr<Model> MeshRenderer::getMeshData()
+	{
+		return _meshData;
+	}
+
+	std::shared_ptr<Texture> MeshRenderer::getTexture()
+	{
+		return _texture;
+	}
+
+	std::shared_ptr<Shader> MeshRenderer::getShader()
+	{
+		return _shaderProgram;
 	}
 
 }

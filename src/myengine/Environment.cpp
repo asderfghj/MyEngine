@@ -62,4 +62,12 @@ namespace frontier
 		return avgFPS;
 	}
 
+	float Environment::getRandomBetweenTwoValues(float _val1, float _val2)
+	{
+		float random = ((float)rand()) / (float)RAND_MAX;
+		float diff = _val2 - _val1;
+		float r = random * diff;
+		return _val1 + r;
+	}
+
 }

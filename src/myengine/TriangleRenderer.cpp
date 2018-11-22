@@ -104,10 +104,6 @@ namespace frontier
 
 	}
 
-	void TriangleRenderer::OnBegin()
-	{
-		Component::OnBegin();
-	}
 
 	void TriangleRenderer::OnTick()
 	{

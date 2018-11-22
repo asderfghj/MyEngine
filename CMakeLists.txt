@@ -36,6 +36,8 @@ add_executable(game
 )
 
 add_library(frontier
+	src/myengine/asteroidbehavior.cpp
+	src/myengine/asteroidbehavior.h
 	src/myengine/Camera.cpp
 	src/myengine/Camera.h
 	src/myengine/Core.cpp
@@ -87,6 +89,8 @@ add_library(frontier
 	src/myengine/UIImage.h
 	src/myengine/UIButton.cpp
 	src/myengine/UIButton.h
+	src/myengine/Prefab.cpp
+	src/myengine/Prefab.h
 )
 
 if(MSVC)

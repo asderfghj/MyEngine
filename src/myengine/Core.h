@@ -16,12 +16,14 @@ namespace frontier
 	class Resources;
 	class Camera;
 	class Shader;
+	class Prefab;
 
 	class Core : public std::enable_shared_from_this<Core>
 	{
 	private:
 		std::vector<std::shared_ptr<Entity>> _entities;
 		std::vector<std::shared_ptr<Entity>> _UIElements;
+		std::vector<std::shared_ptr<Prefab>> _prefabs;
 		
 
 		std::shared_ptr<Environment> _environment;
@@ -51,13 +53,16 @@ namespace frontier
 		void Start();
 		void Stop();
 		std::shared_ptr<Entity> addEntity(glm::vec3 _position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _rotation = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _scale = glm::vec3(1.0f, 1.0f, 1.0f));
+		std::shared_ptr<Entity> addEntity(std::shared_ptr<Prefab> _prefab, glm::vec3 _position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _rotation = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _scale = glm::vec3(1.0f, 1.0f, 1.0f));
 		std::shared_ptr<Entity> addUiElement(glm::vec2 _position = glm::vec2(0.0f, 0.0f), float _rotation = 0.0f, glm::vec3 _scale = glm::vec3(1.0f, 1.0f, 1.0f));
+		std::shared_ptr<Prefab> addPrefab();
 		std::shared_ptr<Environment> getEnvironment();
 		std::shared_ptr<Input> getInput();
 		std::shared_ptr<Resources> getResources();
 		void SetSelf(std::weak_ptr<Core> _selfPtr);
 		int getWidth();
 		int getHeight();
+		void UpdateWindowSize(int _width, int _height);
 		std::shared_ptr<Camera> getMainCamera();
 		void setMainCamera(std::shared_ptr<Camera> _mainCameraToSet);
 

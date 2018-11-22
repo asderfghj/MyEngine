@@ -1,6 +1,10 @@
 #include "Entity.h"
 #include "Component.h"
 #include "Transform.h"
+#include "Prefab.h"
+#include "MeshRenderer.h"
+#include "Collider.h"
+#include "AsteroidBehavior.h"
 #include <iostream>
 
 namespace frontier
@@ -19,10 +23,14 @@ namespace frontier
 
 	void Entity::tick()
 	{
-		for each (std::shared_ptr<Component> _c in _components)
+		if (_active)
 		{
-			_c->OnTick();
+			for each (std::shared_ptr<Component> _c in _components)
+			{
+				_c->OnTick();
+			}
 		}
+
 	}
 
 	void Entity::display()
@@ -38,27 +46,67 @@ namespace frontier
 		trans->setSelf(trans);
 	}
 
-	void Entity::init(std::weak_ptr<Core> _corePtr, glm::vec3 _position)
-	{
-		_core = _corePtr;
-		addComponent<Transform, glm::vec3>(_position);
-	}
-
-	void Entity::init(std::weak_ptr<Core> _corePtr, glm::vec3 _position, glm::vec3 _rotation)
-	{
-		_core = _corePtr;
-		addComponent<Transform, glm::vec3, glm::vec3>(_position, _rotation);
-	}
-
 	void Entity::init(std::weak_ptr<Core> _corePtr, glm::vec3 _position, glm::vec3 _rotation, glm::vec3 _scale)
 	{
 		_core = _corePtr;
 		addComponent<Transform, glm::vec3, glm::vec3, glm::vec3>(_position, _rotation, _scale);
 	}
 
+	void Entity::init(std::weak_ptr<Core> _corePtr, std::shared_ptr<Prefab> _prefab, glm::vec3 _position, glm::vec3 _rotation, glm::vec3 _scale)
+	{
+		_core = _corePtr;
+		addComponent<Transform, glm::vec3, glm::vec3, glm::vec3>(_position, _rotation, _scale);
+		for (int i = 0; i < _prefab->getComponents().size(); i++)
+		{
+			std::cout << typeid(*_prefab->getComponents()[i]).name() << std::endl;
+
+
+			if (typeid(*_prefab->getComponents()[i]).name() == typeid(MeshRenderer).name())
+			{
+				addCopyOfComponent<MeshRenderer>(_prefab->getComponent<MeshRenderer>());
+			}
+
+			else if (typeid(*_prefab->getComponents()[i]).name() == typeid(Collider).name())
+			{
+				addCopyOfComponent<Collider>(_prefab->getComponent<Collider>());
+			}
+
+			else if (typeid(*_prefab->getComponents()[i]).name() == typeid(AsteroidBehavior).name())
+			{
+				addComponent<AsteroidBehavior>();
+			}
+
+			else
+			{
+				std::cout << "WARNING: Component type: " << typeid(*_prefab->getComponents()[i]).name() << " is not copyable, it will not be added to this enitity" << std::endl;
+			}
+		}
+	}
+
 	void Entity::setSelf(std::weak_ptr<Entity> _selfPtr)
 	{
 		_self = _selfPtr;
+	}
+
+	void Entity::setActive(bool active)
+	{
+		if (active && !_active)
+		{
+			_active = active;
+			for (int i = 0; i < _components.size(); i++)
+			{
+				_components[i]->OnActivate();
+			}
+		}
+		else
+		{
+			_active = active;
+		}
+	}
+
+	bool Entity::isActive()
+	{
+		return _active;
 	}
 
 	std::shared_ptr<Core> Entity::getCore()

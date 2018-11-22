@@ -1,68 +1,33 @@
-#ifndef ENTITY_H_
-#define ENTITY_H_
-
 #include <vector>
 #include <memory>
-#include <type_traits>
-#include <typeinfo>
-#include <iostream>
-#include <assert.h>
+#include "Transform.h"
 #include "Component.h"
-#include "glm.hpp"
+#include "Entity.h"
 
 namespace frontier
 {
-
 	class Core;
-	class Prefab;
 
-	class Entity : std::enable_shared_from_this<Entity>
+	class Prefab : public Entity
 	{
 	private:
 		std::vector<std::shared_ptr<Component>> _components;
 
-		void display();
-		bool _active;
-
-
-	protected:
-		std::weak_ptr<Core> _core;
-		std::weak_ptr<Entity> _self;
 
 	public:
-
-		Entity();
-		~Entity();
-		virtual void init(std::weak_ptr<Core> _corePtr);
-		void init(std::weak_ptr<Core> _corePtr, glm::vec3 _position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _rotation = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _scale = glm::vec3(1.0f, 1.0f, 1.0f));
-		void init(std::weak_ptr<Core> _corePtr, std::shared_ptr<Prefab> _prefab, glm::vec3 _position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _rotation = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _scale = glm::vec3(1.0f, 1.0f, 1.0f));
-		std::shared_ptr<Core> getCore();
-		void tick();
-		void setSelf(std::weak_ptr<Entity> _selfPtr);
-		void setActive(bool active);
-		bool isActive();
+		void init(std::weak_ptr<Core> _coreptr) override;
+		std::vector<std::shared_ptr<Component>> getComponents();
 
 		template <typename T>
 		std::shared_ptr<T> addComponent()
 		{
 			static_assert(std::is_base_of<Component, T>(), "Datatype must be derived of component");
+			//static_assert(std::is_base_of<Transform, T>(), "Prefabs cannot contain a transform, Transforms are applied in Entities");
 			std::shared_ptr <T> t = std::make_shared<T>();
 
 			_components.push_back(t);
 
 			t->OnInit(_self);
-			return t;
-		}
-
-		template <typename T>
-		std::shared_ptr<T> addCopyOfComponent(std::weak_ptr<T> _original)
-		{
-			static_assert(std::is_base_of<Component, T>(), "Datatype must be derived of component");
-			std::shared_ptr <T> t = std::make_shared<T>();
-
-			_components.push_back(t);
-
-			t->OnInit(_self, _original);
 			return t;
 		}
 
@@ -124,24 +89,5 @@ namespace frontier
 
 		}
 
-		template <typename T>
-		bool hasComponent()
-		{
-			for (size_t i = 0; i < _components.size(); i++)
-			{
-				std::shared_ptr<T> returnPtr = std::dynamic_pointer_cast<T>(_components.at(i));
-
-				if (returnPtr)
-				{
-					return true;
-				}
-			}
-
-			return false;
-		}
-
 	};
-
 }
-
-#endif // !ENTITY_H_

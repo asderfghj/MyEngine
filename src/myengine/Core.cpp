@@ -6,6 +6,7 @@
 #include "Input.h"
 #include "Timer.h"
 #include "Shader.h"
+#include "Prefab.h"
 #include <iostream>
 #include <GL/glew.h>
 #include <map>
@@ -154,6 +155,13 @@ namespace frontier
 						_input->QueueControllerDpadUpdate();
 						break;
 					}
+					/*case SDL_WINDOWEVENT:
+					{
+						if (_event.window.event == SDL_WINDOWEVENT_RESIZED || _event.window.event == SDL_WINDOWEVENT_SIZE_CHANGED)
+						{
+							UpdateWindowSize(_event.window.data1, _event.window.data2);
+						}
+					}*/
 				}
 			}
 				
@@ -188,6 +196,18 @@ namespace frontier
 		return newEntity;
 	}
 
+	std::shared_ptr<Entity> Core::addEntity(std::shared_ptr<Prefab> _prefab, glm::vec3 _position, glm::vec3 _rotation, glm::vec3 _scale)
+	{
+		std::shared_ptr <Entity> newEntity = std::make_shared<Entity>();
+
+		newEntity->setSelf(newEntity);
+
+		newEntity->init(_self, _prefab, _position, _rotation, _scale);
+
+		_entities.push_back(newEntity);
+		return newEntity;
+	}
+
 	std::shared_ptr<Entity> Core::addUiElement(glm::vec2 _position, float _rotation, glm::vec3 _scale)
 	{
 		std::shared_ptr<Entity> newUiEntity = std::make_shared<Entity>();
@@ -198,6 +218,18 @@ namespace frontier
 		_UIElements.push_back(newUiEntity);
 
 		return newUiEntity;
+	}
+
+	std::shared_ptr<Prefab> Core::addPrefab()
+	{
+		std::shared_ptr<Prefab> newPrefab = std::make_shared<Prefab>();
+		newPrefab->init(_self);
+
+		newPrefab->setSelf(newPrefab);
+
+		_prefabs.push_back(newPrefab);
+
+		return newPrefab;
 	}
 
 	std::shared_ptr<Environment> Core::getEnvironment()
@@ -229,6 +261,12 @@ namespace frontier
 	int Core::getHeight()
 	{
 		return _windowHeight;
+	}
+
+	void Core::UpdateWindowSize(int _width, int _height)
+	{
+		_windowWidth = _width;
+		_windowHeight = _height;
 	}
 
 	std::shared_ptr<Camera> Core::getMainCamera()

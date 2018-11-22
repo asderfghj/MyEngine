@@ -25,5 +25,7 @@
 #include "Collider.h"
 #include "UIImage.h"
 #include "UIButton.h"
+#include "Prefab.h"
+#include "AsteroidBehavior.h"
 
 #endif

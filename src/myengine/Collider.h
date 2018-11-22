@@ -11,9 +11,12 @@ namespace frontier
 	{
 	public:
 		void OnInit(std::weak_ptr<Entity> _parent, glm::vec3 boxscale = glm::vec3(1.0f,1.0f,1.0f));
+		void OnInit(std::weak_ptr<Entity> _parent, std::weak_ptr<Collider> _original);
 		void OnTick() override;
 		bool CheckIfColliding(glm::vec3 _position, glm::vec3 _scale);
+		std::vector<std::weak_ptr<Entity>> getCollidingEntities();
 		bool isColliding();
+		glm::vec3 getBoxScale();
 	private:
 		glm::vec3 _boxScale;
 		int _numOfVertices;

@@ -32,21 +32,21 @@ void safe_main()
 
 	_core->Init(_core, 1000, 800);
 
-	
 
-	std::shared_ptr<frontier::Shader> _shader1 = frontier::Shader::Create("../resources/fragmentshaders/fragmenttest.fs", "../resources/vertexshaders/vertextest.vs", { "in_Position" }, _core->getResources());
+	//resource initialisation
+	std::shared_ptr<frontier::Shader> DefaultModelShader = frontier::Shader::Create("../resources/fragmentshaders/fragmenttest.fs", "../resources/vertexshaders/vertextest.vs", { "in_Position" }, _core->getResources());
 
-	std::shared_ptr<frontier::Shader> _shader2 = frontier::Shader::Create("../resources/fragmentshaders/tritest.fs", "../resources/vertexshaders/tritest.vs", { "in_Position" }, _core->getResources());
+	std::shared_ptr<frontier::Texture> Fightertexture = frontier::Texture::Create("../resources/textures/fighter.png", _core->getResources(), 1);
 
-	std::shared_ptr<frontier::Texture> _texture1 = frontier::Texture::Create("../resources/textures/fighter.png", _core->getResources(), 1);
+	std::shared_ptr<frontier::Texture> AsteroidTexture = frontier::Texture::Create("../resources/textures/astroid.jpg", _core->getResources(), 3);
 
-	std::shared_ptr<frontier::Texture> _texture2 = frontier::Texture::Create("../resources/textures/astroid.jpg", _core->getResources(), 3);
+	std::shared_ptr<frontier::Texture> LivesImage = frontier::Texture::Create("../resources/textures/livestrans.png", _core->getResources(), 4);
 
-	std::shared_ptr<frontier::Texture> _texture3 = frontier::Texture::Create("../resources/textures/livestrans.png", _core->getResources(), 4);
+	std::shared_ptr<frontier::Model> FighterModel = frontier::Model::Create("../resources/models/Fighter/fighter01.obj", _core->getResources());
 
-	std::shared_ptr<frontier::Model> _model1 = frontier::Model::Create("../resources/models/Fighter/fighter01.obj", _core->getResources());
+	std::shared_ptr<frontier::Model> AsteroidModel = frontier::Model::Create("../resources/models/astroid/astroid.obj", _core->getResources());
 
-	std::shared_ptr<frontier::Model> _model2 = frontier::Model::Create("../resources/models/astroid/astroid.obj", _core->getResources());
+	std::shared_ptr<frontier::Model> LaserModel = frontier::Model::Create("../resources/models/Missile.obj", _core->getResources());
 
 	std::vector<std::string> faces =
 	{
@@ -58,57 +58,56 @@ void safe_main()
 		"../resources/textures/skybox/back.png",
 	};
 
+
+	//prefab initialisation 
 	std::shared_ptr<frontier::CubemapTexture> _cb1 = frontier::CubemapTexture::Create(faces, _core->getResources(), 2);
 
-	//entity 4
-	std::shared_ptr<frontier::Entity> _uiTester = _core->addUiElement(glm::vec3(_core->getWidth() / 2, _core->getHeight() / 2, -5.0f), 0.0f, glm::vec3(30.0f, 30.0f, 30.0f));
+	std::shared_ptr<frontier::Entity> skyBox = _core->addEntity();
 
-	_uiTester->addComponent<frontier::UIImage>();
+	skyBox->addComponent<frontier::Skybox, std::shared_ptr<frontier::CubemapTexture>>(_cb1);
 
-	_uiTester->getComponent<frontier::UIImage>()->setColor(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
+	std::shared_ptr<frontier::Prefab> _asteroidPrefab = _core->addPrefab();
 
-	_uiTester->addComponent<frontier::UIButton>();
+	_asteroidPrefab->addComponent<frontier::MeshRenderer, std::shared_ptr<frontier::Model>>(AsteroidModel);
 
-	_uiTester->getComponent<frontier::UIButton>()->setidleColor(glm::vec3(1.0f, 0.0f, 0.0f));
+	_asteroidPrefab->getComponent<frontier::MeshRenderer>()->AttachShaderProgram(DefaultModelShader);
 
-	_uiTester->getComponent<frontier::UIButton>()->setOverlapColor(glm::vec3(1.0f, 0.37f, 0.0f));
+	_asteroidPrefab->getComponent<frontier::MeshRenderer>()->AttachTexture(AsteroidTexture);
 
-	_uiTester->getComponent<frontier::UIButton>()->setpressedColor(glm::vec3(0.0f, 1.0f, 0.0f));
+	_asteroidPrefab->addComponent<frontier::Collider, glm::vec3>(glm::vec3(2.0f, 2.0f, 2.0f));
 
-	//entity 2, skybox
-	std::shared_ptr<frontier::Entity> _entity2 = _core->addEntity();
+	_asteroidPrefab->addComponent<frontier::AsteroidBehavior>();
 
-	_entity2->addComponent<frontier::Skybox, std::shared_ptr<frontier::CubemapTexture>>(_cb1);
+	std::shared_ptr<frontier::Prefab> _laserPrefab;
 
-	//entity 1, player
-	std::shared_ptr<frontier::Entity> _entity1 = _core->addEntity(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.7f, 0.7f, 0.7f));
+	//player
+	std::shared_ptr<frontier::Entity> _Player = _core->addEntity(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.7f, 0.7f, 0.7f));
 
-	_entity1->addComponent<frontier::MeshRenderer, std::shared_ptr<frontier::Model>>(_model1);
+	_Player->addComponent<frontier::MeshRenderer, std::shared_ptr<frontier::Model>>(FighterModel);
 
-	_entity1->getComponent<frontier::MeshRenderer>()->AttachShaderProgram(_shader1);
+	_Player->getComponent<frontier::MeshRenderer>()->AttachShaderProgram(DefaultModelShader);
 
-	_entity1->getComponent<frontier::MeshRenderer>()->AttachTexture(_texture1);
+	_Player->getComponent<frontier::MeshRenderer>()->AttachTexture(Fightertexture);
 
-	_entity1->addComponent<frontier::PlayerController>();
+	_Player->addComponent<frontier::PlayerController>();
 
-	_entity1->addComponent<frontier::Collider, glm::vec3>(glm::vec3(1.3f, 1.3f, 1.3f));
+	_Player->addComponent<frontier::Collider, glm::vec3>(glm::vec3(1.3f, 1.3f, 1.3f));
 
-	//entity 3, asteroid
-	std::shared_ptr<frontier::Entity> _entity3 = _core->addEntity(glm::vec3(0.0f, 0.0f, -15.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.1f, 0.1f, 0.1f));
+	//asteroids
+	std::shared_ptr<frontier::Entity> _asteroid1 = _core->addEntity(_asteroidPrefab, glm::vec3(0.0f, 0.0f, -15.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.1f, 0.1f, 0.1f));
 
-	_entity3->addComponent<frontier::MeshRenderer, std::shared_ptr<frontier::Model>>(_model2);
+	std::shared_ptr<frontier::Entity> _asteroid2 = _core->addEntity(_asteroidPrefab, glm::vec3(15.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.2f, 0.2f, 0.2f));
 
-	_entity3->getComponent<frontier::MeshRenderer>()->AttachShaderProgram(_shader1);
+	std::shared_ptr<frontier::Entity> _asteroid3 = _core->addEntity(_asteroidPrefab, glm::vec3(0.0f, 0.0f, 15.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.05f, 0.05f, 0.05f));
 
-	_entity3->getComponent<frontier::MeshRenderer>()->AttachTexture(_texture2);
+	std::shared_ptr<frontier::Entity> _asteroid4 = _core->addEntity(_asteroidPrefab, glm::vec3(-15.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.3f, 0.3f, 0.3f));
 
-	_entity3->addComponent<frontier::Collider, glm::vec3>(glm::vec3(2.0f, 2.0f, 2.0f));
-
-
-
+	//camera positioning
 	_core->getMainCamera()->getEntity()->getComponent<frontier::Transform>()->setPosition(glm::vec3(0.0f, 90.0f, 0.0f));
 	_core->getMainCamera()->getEntity()->getComponent<frontier::Transform>()->setRotation(glm::vec3(-90.0f, 0.0f, 0.0f));
 
+
+	//start button
 	std::cout << "Program Start" << std::endl;
 	_core->Start();
 

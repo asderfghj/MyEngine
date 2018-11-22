@@ -13,7 +13,7 @@ namespace frontier
 		RotateVelocity = 0.0f;
 		RotateVelocityCap = 10.0f;
 		ForwardVelocity = 0.0f;
-		ForwardVelocityCap = 8.0f;
+		ForwardVelocityCap = 5.0f;
 		RotateFade = 0.1f;
 		ForwardFade = 0.05f;
 		RotateIncreaseAmount = 0.3f;
@@ -107,7 +107,6 @@ namespace frontier
 
 		if (ForwardVelocity > 0)
 		{
-			glm::vec3 position = getEntity()->getComponent<Transform>()->getPosition();
 			getEntity()->getComponent<Transform>()->setPosition(getEntity()->getComponent<Transform>()->getPosition() + (forwardVector * (-ForwardVelocity * getEnvironment()->getDeltaTime())));
 		}
 

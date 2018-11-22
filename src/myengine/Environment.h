@@ -1,3 +1,6 @@
+#ifndef ENVIRONMENT_H_
+#define ENVIRONMENT_H_
+
 #include <SDL2/SDL.h>
 #include <memory>
 
@@ -22,6 +25,8 @@ namespace frontier
 		void IncrementFrameCounter();
 		int GetCountedFrames();
 		float getFPS();
-
+		float getRandomBetweenTwoValues(float _val1, float _val2);
 	};
 }
+
+#endif

@@ -22,15 +22,17 @@ namespace frontier
 		std::shared_ptr<Core> getCore();
 		std::shared_ptr<Input> getInput();
 		std::shared_ptr<Environment> getEnvironment();
+		bool Copyable = false;
 
 	public:
 		Component();
 		~Component();
 		virtual void OnInit(std::weak_ptr<Entity> _parent);
-		virtual void OnBegin();
+		virtual void OnActivate();
 		virtual void OnTick();
 		virtual void OnDisplay();
 		std::shared_ptr<Entity> getEntity();
+		bool isCopyable();
 	};
 }
 #endif

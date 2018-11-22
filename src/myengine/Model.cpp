@@ -37,6 +37,7 @@ namespace frontier
 		std::vector<tinyobj::material_t> inMats;
 		std::string errorMsg;
 		int basePathEndIndex;
+		bool hasTexCoords = true;
 
 		for (size_t i = 0; i < path.size(); i++)
 		{
@@ -73,13 +74,32 @@ namespace frontier
 				normals.push_back(inAttrib.normals[normalIndex + 1]);
 				normals.push_back(inAttrib.normals[normalIndex + 2]);
 
-				int texCoordsIndex = inShapes[i].mesh.indices[j].texcoord_index * 2;
-				texCoords.push_back(inAttrib.texcoords[texCoordsIndex]);
-				texCoords.push_back(inAttrib.texcoords[texCoordsIndex + 1]);
-
+				if (hasTexCoords)
+				{
+					int texCoordsIndex = inShapes[i].mesh.indices[j].texcoord_index * 2;
+					if (texCoordsIndex > -1)
+					{
+						texCoords.push_back(inAttrib.texcoords[texCoordsIndex]);
+						texCoords.push_back(inAttrib.texcoords[texCoordsIndex + 1]);
+					}
+					else
+					{
+						hasTexCoords = false;
+					}
+				}
 			}
 
-			std::shared_ptr<Mesh> mesh = std::make_shared<Mesh>(vertices, normals, texCoords);
+			std::shared_ptr<Mesh> mesh;
+
+			if (hasTexCoords)
+			{
+				mesh = std::make_shared<Mesh>(vertices, normals, texCoords);
+			}
+			else
+			{
+				mesh = std::make_shared<Mesh>(vertices, normals);
+			}
+
 			meshes.push_back(mesh);
 
 		}

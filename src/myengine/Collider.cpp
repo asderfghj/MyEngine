@@ -14,7 +14,81 @@ namespace frontier
 	void Collider::OnInit(std::weak_ptr<Entity> _parent, glm::vec3 boxscale)
 	{
 		Component::OnInit(_parent);
+		Copyable = true;
 		_boxScale = boxscale;
+
+		std::vector<GLfloat> colliderVertices = {
+			// cube positions          
+			-1.0f,  1.0f, -1.0f,
+			-1.0f, -1.0f, -1.0f,
+			 1.0f, -1.0f, -1.0f,
+			 1.0f, -1.0f, -1.0f,
+			 1.0f,  1.0f, -1.0f,
+			-1.0f,  1.0f, -1.0f,
+
+			-1.0f, -1.0f,  1.0f,
+			-1.0f, -1.0f, -1.0f,
+			-1.0f,  1.0f, -1.0f,
+			-1.0f,  1.0f, -1.0f,
+			-1.0f,  1.0f,  1.0f,
+			-1.0f, -1.0f,  1.0f,
+
+			 1.0f, -1.0f, -1.0f,
+			 1.0f, -1.0f,  1.0f,
+			 1.0f,  1.0f,  1.0f,
+			 1.0f,  1.0f,  1.0f,
+			 1.0f,  1.0f, -1.0f,
+			 1.0f, -1.0f, -1.0f,
+
+			-1.0f, -1.0f,  1.0f,
+			-1.0f,  1.0f,  1.0f,
+			 1.0f,  1.0f,  1.0f,
+			 1.0f,  1.0f,  1.0f,
+			 1.0f, -1.0f,  1.0f,
+			-1.0f, -1.0f,  1.0f,
+
+			-1.0f,  1.0f, -1.0f,
+			 1.0f,  1.0f, -1.0f,
+			 1.0f,  1.0f,  1.0f,
+			 1.0f,  1.0f,  1.0f,
+			-1.0f,  1.0f,  1.0f,
+			-1.0f,  1.0f, -1.0f,
+
+			-1.0f, -1.0f, -1.0f,
+			-1.0f, -1.0f,  1.0f,
+			 1.0f, -1.0f, -1.0f,
+			 1.0f, -1.0f, -1.0f,
+			-1.0f, -1.0f,  1.0f,
+			 1.0f, -1.0f,  1.0f
+		};
+
+		_numOfVertices = colliderVertices.size();
+
+		glGenVertexArrays(1, &VAO);
+		glGenBuffers(1, &VBO);
+
+		glBindVertexArray(VAO);
+		glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
+		glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * colliderVertices.size(), &colliderVertices.at(0), GL_STATIC_DRAW);
+
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (void*)0);
+
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		glBindVertexArray(0);
+
+		_shaderProgram = getCore()->getHitboxShader();
+
+		_drawWireframe = true;
+		_colliding = false;
+	}
+
+	void Collider::OnInit(std::weak_ptr<Entity> _parent, std::weak_ptr<Collider> _original)
+	{
+		Component::OnInit(_parent);
+		Copyable = true;
+		_boxScale = _original.lock()->getBoxScale();
 
 		std::vector<GLfloat> colliderVertices = {
 			// cube positions          
@@ -90,7 +164,7 @@ namespace frontier
 		std::vector<std::weak_ptr<Entity>> EntitiesWithColliders = getCore()->getEntitiesWithComponent<Collider>();
 		for (size_t i = 0; i < EntitiesWithColliders.size(); i++)
 		{
-			if (EntitiesWithColliders[i].lock()->getComponent<Collider>()->CheckIfColliding(getEntity()->getComponent<Transform>()->getPosition(), _boxScale))
+			if (EntitiesWithColliders[i].lock()->getComponent<Collider>()->CheckIfColliding(getEntity()->getComponent<Transform>()->getPosition(), _boxScale) && EntitiesWithColliders[i].lock()->isActive())
 			{
 				_collidingEntities.push_back(EntitiesWithColliders[i]);
 			}
@@ -148,8 +222,18 @@ namespace frontier
 			   (glm::abs(getEntity()->getComponent<Transform>()->getPosition().z - _position.z) < (_boxScale.z + _scale.z));
 	}
 
+	std::vector<std::weak_ptr<Entity>> Collider::getCollidingEntities()
+	{
+		return _collidingEntities;
+	}
+
 	bool Collider::isColliding()
 	{
 		return _colliding;
+	}
+
+	glm::vec3 Collider::getBoxScale()
+	{
+		return _boxScale;
 	}
 }

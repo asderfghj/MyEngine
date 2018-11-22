@@ -28,7 +28,6 @@ namespace frontier
 		//c++: classname::function(parameter);
 
 		void OnInit(std::weak_ptr<Entity> _parent) override;
-		void OnBegin() override;
 		void OnTick() override;
 		void OnDisplay() override;
 		void AttachShaderProgram(std::shared_ptr<Shader> _newShaderProgram);

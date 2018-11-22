@@ -23,9 +23,13 @@ namespace frontier
 
 	public:
 		void OnInit(std::weak_ptr<Entity> _parent, std::shared_ptr<Model> meshData);
+		void OnInit(std::weak_ptr<Entity> _parent, std::weak_ptr<MeshRenderer> _original);
 		void OnTick() override;
 		void AttachShaderProgram(std::shared_ptr<Shader> _newShaderProgram);
 		void AttachTexture(std::shared_ptr<Texture> _newTexture);
+		std::shared_ptr<Model> getMeshData();
+		std::shared_ptr<Texture> getTexture();
+		std::shared_ptr<Shader> getShader();
 	};
 }
 

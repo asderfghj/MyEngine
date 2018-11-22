@@ -1,3 +1,6 @@
+#ifndef TRANSFORM_H_
+#define TRANSFORM_H_
+
 #include "glm.hpp"
 #include "Component.h"
 #include <vector>
@@ -38,3 +41,5 @@ namespace frontier
 		void setSelf(std::weak_ptr<Transform> self);
 	};
 }
+
+#endif // !TRANSFORM_H_

@@ -24,8 +24,5 @@ namespace frontier
 		float _FOV;
 		float _near;
 		float _far;
-		bool moveForward, moveLeft, moveRight, moveBack, lockUpMovement, lockDownMovement;
-		float _lastx, _lasty, _sensitivity, _pitch, _yaw, _controllerRotationForce;
-		std::weak_ptr<Transform> target;
 	};
 }

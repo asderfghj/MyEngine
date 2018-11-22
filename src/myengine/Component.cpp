@@ -48,7 +48,7 @@ namespace frontier
 		_entity = _parent;
 	}
 
-	void Component::OnBegin()
+	void Component::OnActivate()
 	{
 
 	}
@@ -60,6 +60,11 @@ namespace frontier
 	void Component::OnDisplay()
 	{
 
+	}
+
+	bool Component::isCopyable()
+	{
+		return Copyable;
 	}
 
 }

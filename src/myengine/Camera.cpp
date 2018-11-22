@@ -39,12 +39,6 @@ namespace frontier
 		_FOV = fov;
 		_near = near;
 		_far = far;
-		_lastx = 320;
-		_lasty = 240;
-		_sensitivity = 0.5f;
-		_pitch = 0.0f;
-		_yaw = -90.0f;
-		_controllerRotationForce = 10.0f;
 	}
 
 	bool Camera::getMain()
