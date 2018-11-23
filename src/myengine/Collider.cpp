@@ -164,7 +164,7 @@ namespace frontier
 		std::vector<std::weak_ptr<Entity>> EntitiesWithColliders = getCore()->getEntitiesWithComponent<Collider>();
 		for (size_t i = 0; i < EntitiesWithColliders.size(); i++)
 		{
-			if (EntitiesWithColliders[i].lock()->getComponent<Collider>()->CheckIfColliding(getEntity()->getComponent<Transform>()->getPosition(), _boxScale) && EntitiesWithColliders[i].lock()->isActive())
+			if (EntitiesWithColliders[i].lock()->getComponent<Collider>()->CheckIfColliding(getEntity()->getComponent<Transform>()->getPosition(), _boxScale * getEntity()->getComponent<Transform>()->getScale()) && EntitiesWithColliders[i].lock()->isActive())
 			{
 				_collidingEntities.push_back(EntitiesWithColliders[i]);
 			}
@@ -191,7 +191,7 @@ namespace frontier
 
 			trans = glm::translate(trans, getEntity()->getComponent<Transform>()->getPosition());
 
-			sca = glm::scale(sca, _boxScale);
+			sca = glm::scale(sca, _boxScale * getEntity()->getComponent<Transform>()->getScale());
 
 			model = trans *  sca;
 
@@ -217,9 +217,9 @@ namespace frontier
 
 	bool Collider::CheckIfColliding(glm::vec3 _position, glm::vec3 _scale)
 	{
-		return (glm::abs(getEntity()->getComponent<Transform>()->getPosition().x - _position.x) < (_boxScale.x + _scale.x)) &&
-			   (glm::abs(getEntity()->getComponent<Transform>()->getPosition().y - _position.y) < (_boxScale.y + _scale.y)) &&
-			   (glm::abs(getEntity()->getComponent<Transform>()->getPosition().z - _position.z) < (_boxScale.z + _scale.z));
+		return (glm::abs(getEntity()->getComponent<Transform>()->getPosition().x - _position.x) < (_boxScale.x * getEntity()->getComponent<Transform>()->getScale().x + _scale.x)) &&
+			   (glm::abs(getEntity()->getComponent<Transform>()->getPosition().y - _position.y) < (_boxScale.y * getEntity()->getComponent<Transform>()->getScale().y + _scale.y)) &&
+			   (glm::abs(getEntity()->getComponent<Transform>()->getPosition().z - _position.z) < (_boxScale.z * getEntity()->getComponent<Transform>()->getScale().z + _scale.z));
 	}
 
 	std::vector<std::weak_ptr<Entity>> Collider::getCollidingEntities()

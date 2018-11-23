@@ -21,6 +21,7 @@ namespace frontier
 			RIGHT,
 			UP,
 			DOWN,
+			SHOOT,
 			ESC,
 			NUM_OF_BUTTONS
 		};
@@ -69,8 +70,12 @@ namespace frontier
 		
 		bool getKey(ListedButtons _keycode);
 		bool getMouseButton(MouseButtonStates _btn);
-		void setCorePtr(std::weak_ptr<Core> _core);
 		glm::vec2 getMousePos();
+		bool getJoystickButton(ControllerButtons _btn);
+		bool getJoystickDpadState(DpadStates _state);
+		glm::vec2 GetJoystickAxis(ControllerAxes _axis);
+
+		void setCorePtr(std::weak_ptr<Core> _core);
 		bool isJoystickConnected();
 		void FreeJoystick();
 		void UpdateLeftJoystick(glm::vec2 axes);
@@ -85,7 +90,7 @@ namespace frontier
 		void QueueControllerDpadUpdate();
 
 
-		glm::vec2 GetJoystickAxis(ControllerAxes _axis);
+		
 
 	private:
 		std::weak_ptr<Core> _corePtr;

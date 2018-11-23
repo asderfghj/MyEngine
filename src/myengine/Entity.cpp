@@ -5,6 +5,7 @@
 #include "MeshRenderer.h"
 #include "Collider.h"
 #include "AsteroidBehavior.h"
+#include "ProjectileBehavior.h"
 #include <iostream>
 
 namespace frontier
@@ -58,8 +59,6 @@ namespace frontier
 		addComponent<Transform, glm::vec3, glm::vec3, glm::vec3>(_position, _rotation, _scale);
 		for (int i = 0; i < _prefab->getComponents().size(); i++)
 		{
-			std::cout << typeid(*_prefab->getComponents()[i]).name() << std::endl;
-
 
 			if (typeid(*_prefab->getComponents()[i]).name() == typeid(MeshRenderer).name())
 			{
@@ -74,6 +73,11 @@ namespace frontier
 			else if (typeid(*_prefab->getComponents()[i]).name() == typeid(AsteroidBehavior).name())
 			{
 				addComponent<AsteroidBehavior>();
+			}
+
+			else if (typeid(*_prefab->getComponents()[i]).name() == typeid(ProjectileBehavior).name())
+			{
+				addCopyOfComponent<ProjectileBehavior>(_prefab->getComponent<ProjectileBehavior>());
 			}
 
 			else
@@ -104,9 +108,19 @@ namespace frontier
 		}
 	}
 
+	void Entity::setActivating(bool activating)
+	{
+		_activating = activating;
+	}
+
 	bool Entity::isActive()
 	{
 		return _active;
+	}
+
+	bool Entity::isActivating()
+	{
+		return _activating;
 	}
 
 	std::shared_ptr<Core> Entity::getCore()

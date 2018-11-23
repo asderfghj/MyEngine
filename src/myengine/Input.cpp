@@ -53,6 +53,15 @@ namespace frontier
 		_corePtr = _core;
 	}
 
+	bool Input::getJoystickButton(ControllerButtons _btn)
+	{
+		return controllerBtns[_btn];
+	}
+
+	bool Input::getJoystickDpadState(DpadStates _state)
+	{
+		return dpadStates[_state];
+	}
 
 	glm::vec2 Input::getMousePos()
 	{
@@ -95,6 +104,8 @@ namespace frontier
 			keys[BACK] = SDL_KEYBOARDSTATE[SDL_SCANCODE_S];
 
 			keys[RIGHT] = SDL_KEYBOARDSTATE[SDL_SCANCODE_D];
+
+			keys[SHOOT] = SDL_KEYBOARDSTATE[SDL_SCANCODE_Q];
 
 			keys[ESC] = SDL_KEYBOARDSTATE[SDL_SCANCODE_ESCAPE];
 

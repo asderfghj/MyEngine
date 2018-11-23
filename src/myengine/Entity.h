@@ -22,7 +22,8 @@ namespace frontier
 		std::vector<std::shared_ptr<Component>> _components;
 
 		void display();
-		bool _active;
+		bool _active = true;
+		bool _activating = false;
 
 
 	protected:
@@ -40,7 +41,9 @@ namespace frontier
 		void tick();
 		void setSelf(std::weak_ptr<Entity> _selfPtr);
 		void setActive(bool active);
+		void setActivating(bool activating);
 		bool isActive();
+		bool isActivating();
 
 		template <typename T>
 		std::shared_ptr<T> addComponent()

@@ -1,6 +1,7 @@
 #include "Environment.h"
 #include "Timer.h"
 #include <iostream>
+#include <time.h>
 
 namespace frontier
 {
@@ -13,6 +14,7 @@ namespace frontier
 		_deltatime = 0;
 		_timer = std::make_shared<Timer>();
 		_countedFrames = 0;
+		srand(time(NULL));
 	}
 
 	Environment::~Environment()
@@ -54,7 +56,7 @@ namespace frontier
 
 	float Environment::getFPS()
 	{
-		float avgFPS = _countedFrames / (GetTimer()->GetTicks() / 1000.0f);
+		float avgFPS = _countedFrames / (_timer->GetTicks() / 1000.0f);
 		if (avgFPS > 2000000)
 		{
 			avgFPS = 0;
@@ -62,9 +64,14 @@ namespace frontier
 		return avgFPS;
 	}
 
+	Uint32 Environment::getTime()
+	{
+		return _timer->GetTicks();
+	}
+
 	float Environment::getRandomBetweenTwoValues(float _val1, float _val2)
 	{
-		float random = ((float)rand()) / (float)RAND_MAX;
+		float random = ((float)rand() / (float)RAND_MAX);
 		float diff = _val2 - _val1;
 		float r = random * diff;
 		return _val1 + r;

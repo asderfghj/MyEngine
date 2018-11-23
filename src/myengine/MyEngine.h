@@ -27,5 +27,8 @@
 #include "UIButton.h"
 #include "Prefab.h"
 #include "AsteroidBehavior.h"
+#include "ProjectileBehavior.h"
+#include "Pooler.h"
+#include "AudioPlayer.h"
 
 #endif

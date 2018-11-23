@@ -2,6 +2,7 @@
 #include "gtc/matrix_transform.hpp"
 #include "gtc/type_ptr.hpp"
 
+
 namespace frontier
 {
 	void Transform::OnInit(std::weak_ptr<Entity> parent)
@@ -69,7 +70,7 @@ namespace frontier
 
 	void Transform::setScale(glm::vec3 _sca)
 	{
-		_position = _sca;
+		_scale = _sca;
 	}
 
 	glm::mat4 Transform::getModelMatrix(bool applyRotationAfterTranslation)

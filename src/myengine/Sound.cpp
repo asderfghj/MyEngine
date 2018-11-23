@@ -97,25 +97,25 @@ namespace frontier
 
 	}
 
-	void Sound::play()
+	void Sound::play(glm::vec3 _soundPosition, glm::vec3 _listenerPosition)
 	{
 		ALuint sid = 0;
 		alGenSources(1, &sid);
-		alListener3f(AL_POSITION, 0.0f, 0.0f, 0.0f);
-		alSource3f(sid, AL_POSITION, 0.0f, 0.0f, 0.0f);
+		alListener3f(AL_POSITION, _listenerPosition.x, _listenerPosition.y, _listenerPosition.z);
+		alSource3f(sid, AL_POSITION, _soundPosition.x, _soundPosition.y, _soundPosition.z);
 		alSourcei(sid, AL_BUFFER, impl->id);
 		alSourcePlay(sid);
 	}
 
-	void Sound::play(float vol, float varMin, float varMax)
+	void Sound::play(float vol, float varMin, float varMax, glm::vec3 _soundPosition, glm::vec3 _listenerPosition)
 	{
 		varMin *= 1000.0f;
 		varMax *= 1000.0f;
 		float variance = (std::rand() % ((int)varMin + 1 - (int)varMax) + (int)varMin) / 1000.0f;
 		ALuint sid = 0;
 		alGenSources(1, &sid);
-		alListener3f(AL_POSITION, 0.0f, 0.0f, 0.0f);
-		alSource3f(sid, AL_POSITION, 0.0f, 0.0f, 0.0f);
+		alListener3f(AL_POSITION, _listenerPosition.x, _listenerPosition.y, _listenerPosition.z);
+		alSource3f(sid, AL_POSITION, _soundPosition.x, _soundPosition.y, _soundPosition.z);
 		alSourcei(sid, AL_BUFFER, impl->id);
 		alSourcef(sid, AL_PITCH, variance);
 		alSourcef(sid, AL_GAIN, vol);

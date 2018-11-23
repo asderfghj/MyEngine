@@ -1,6 +1,7 @@
 #include <memory>
 #include <string>
 #include "Resource.h"
+#include "glm.hpp"
 
 namespace frontier
 {
@@ -17,7 +18,8 @@ namespace frontier
 		Sound();
 		static std::shared_ptr<Sound> Create(std::string path, std::shared_ptr<Resources> _resources);
 		void load(std::string path);
-		void play(float vol, float varMin, float varMax);
-		void play();
+		void play(float vol, float varMin, float varMax, glm::vec3 _soundPosition = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _listenerPosition = glm::vec3(0.0f, 0.0f, 0.0f));
+		void play(glm::vec3 _soundPosition = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _listenerPosition = glm::vec3(0.0f, 0.0f, 0.0f));
+		bool isPlaying();
 	};
 }

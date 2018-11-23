@@ -91,6 +91,12 @@ add_library(frontier
 	src/myengine/UIButton.h
 	src/myengine/Prefab.cpp
 	src/myengine/Prefab.h
+	src/myengine/ProjectileBehavior.cpp
+	src/myengine/ProjectileBehavior.h
+	src/myengine/Pooler.cpp
+	src/myengine/Pooler.h
+	src/myengine/AsteroidSpawner.cpp
+	src/myengine/AsteroidSpawner.h
 )
 
 if(MSVC)

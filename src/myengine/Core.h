@@ -6,6 +6,9 @@
 #include <vector>
 #include <SDL2/SDL.h>
 #include "glm.hpp"
+#include <string>
+#include <AL/al.h>
+#include <AL/alc.h>
 
 namespace frontier
 {
@@ -17,6 +20,7 @@ namespace frontier
 	class Camera;
 	class Shader;
 	class Prefab;
+	class Pooler;
 
 	class Core : public std::enable_shared_from_this<Core>
 	{
@@ -24,7 +28,8 @@ namespace frontier
 		std::vector<std::shared_ptr<Entity>> _entities;
 		std::vector<std::shared_ptr<Entity>> _UIElements;
 		std::vector<std::shared_ptr<Prefab>> _prefabs;
-		
+		std::vector<std::shared_ptr<Pooler>> _poolers;
+		std::vector<std::shared_ptr<Entity>> _entitiesToActivate;
 
 		std::shared_ptr<Environment> _environment;
 		std::shared_ptr<Input> _input;
@@ -40,9 +45,13 @@ namespace frontier
 
 		SDL_Window *_window;
 		SDL_Event _event;
+		ALCdevice* device;
+		ALCcontext* context;
 
 		int _windowWidth, _windowHeight;
 		bool _running;
+
+
 
 		void GameLoop();
 
@@ -56,6 +65,8 @@ namespace frontier
 		std::shared_ptr<Entity> addEntity(std::shared_ptr<Prefab> _prefab, glm::vec3 _position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _rotation = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _scale = glm::vec3(1.0f, 1.0f, 1.0f));
 		std::shared_ptr<Entity> addUiElement(glm::vec2 _position = glm::vec2(0.0f, 0.0f), float _rotation = 0.0f, glm::vec3 _scale = glm::vec3(1.0f, 1.0f, 1.0f));
 		std::shared_ptr<Prefab> addPrefab();
+		std::shared_ptr<Pooler> addPooler(std::string _id, std::shared_ptr<Prefab> _prefab, int initialPoolSize);
+		std::shared_ptr<Pooler> getPooler(std::string _poolID);
 		std::shared_ptr<Environment> getEnvironment();
 		std::shared_ptr<Input> getInput();
 		std::shared_ptr<Resources> getResources();
@@ -71,6 +82,8 @@ namespace frontier
 		std::shared_ptr<Shader> getSkyboxShader();
 		std::shared_ptr<Shader> getUntexturedUiImageShader();
 		std::shared_ptr<Shader> getTexturedUiImageShader();
+
+		void AddToEntitiesToActivate(std::shared_ptr<Entity> _entityToActivate);
 
 
 		template <typename T>

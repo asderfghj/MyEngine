@@ -26,6 +26,7 @@ namespace frontier
 		int GetCountedFrames();
 		float getFPS();
 		float getRandomBetweenTwoValues(float _val1, float _val2);
+		Uint32 getTime();
 	};
 }
 

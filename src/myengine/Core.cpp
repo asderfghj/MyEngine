@@ -7,9 +7,11 @@
 #include "Timer.h"
 #include "Shader.h"
 #include "Prefab.h"
+#include "Pooler.h"
 #include <iostream>
 #include <GL/glew.h>
 #include <map>
+#include <exception>
 
 
 namespace frontier
@@ -57,6 +59,28 @@ namespace frontier
 
 		glEnable(GL_DEPTH_TEST);
 
+		device = alcOpenDevice(NULL);
+
+		if (!device)
+		{
+			throw std::exception();
+		}
+
+		context = alcCreateContext(device, NULL);
+
+		if (!context)
+		{
+			alcCloseDevice(device);
+			throw std::exception();
+		}
+
+		if (!alcMakeContextCurrent(context))
+		{
+			alcDestroyContext(context);
+			alcCloseDevice(device);
+			throw std::exception();
+		}
+
 		_self = self;
 
 		std::shared_ptr<Entity> _camera = addEntity();
@@ -87,6 +111,15 @@ namespace frontier
 			_event = { 0 };
 
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			
+
+			for (size_t i = 0; i < _entitiesToActivate.size(); i++)
+			{
+				_entitiesToActivate[i]->setActive(true);
+				_entitiesToActivate[i]->setActivating(false);
+			}
+
+			_entitiesToActivate.clear();
 
 			for (size_t i = 0; i < _UIElements.size(); i++)
 			{
@@ -176,6 +209,9 @@ namespace frontier
 		}
 
 		_input->FreeJoystick();
+		alcMakeContextCurrent(NULL);
+		alcDestroyContext(context);
+		alcCloseDevice(device);
 		SDL_DestroyWindow(_window);
 		SDL_Quit();
 	}
@@ -230,6 +266,28 @@ namespace frontier
 		_prefabs.push_back(newPrefab);
 
 		return newPrefab;
+	}
+
+	std::shared_ptr<Pooler> Core::addPooler(std::string _id, std::shared_ptr<Prefab> _prefab, int initialPoolSize)
+	{
+		std::shared_ptr<Pooler> rtn = std::make_shared<Pooler>();
+		rtn->OnInit(_self, _id, _prefab, initialPoolSize);
+		_poolers.push_back(rtn);
+		return rtn;
+	}
+
+	std::shared_ptr<Pooler> Core::getPooler(std::string _poolID)
+	{
+		for (size_t i = 0; i < _poolers.size(); i++)
+		{
+			if (_poolers[i]->getID() == _poolID)
+			{
+				return _poolers[i];
+			}
+		}
+
+		std::cout << "No pooler exists with the ID: " << _poolID << std::endl;
+		throw std::exception();
 	}
 
 	std::shared_ptr<Environment> Core::getEnvironment()
@@ -297,6 +355,11 @@ namespace frontier
 	std::shared_ptr<Shader> Core::getTexturedUiImageShader()
 	{
 		return TexturedUiImageShader;
+	}
+
+	void Core::AddToEntitiesToActivate(std::shared_ptr<Entity> _entityToActivate)
+	{
+		_entitiesToActivate.push_back(_entityToActivate);
 	}
 
 }

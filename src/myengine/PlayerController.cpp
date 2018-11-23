@@ -4,6 +4,9 @@
 #include "Environment.h"
 #include "Transform.h"
 #include "Collider.h"
+#include "Core.h"
+#include "Pooler.h"
+#include "AudioPlayer.h"
 
 namespace frontier
 {
@@ -18,6 +21,8 @@ namespace frontier
 		ForwardFade = 0.05f;
 		RotateIncreaseAmount = 0.3f;
 		ForwardIncreaseAmount = 0.2f;
+		shotCooldownTime = 15;
+		countedFrames = 0;
 		forwardVector.x = cos(glm::radians(getEntity()->getComponent<Transform>()->getRotation().x)) * sin(glm::radians(getEntity()->getComponent<Transform>()->getRotation().y));
 		forwardVector.y = sin(glm::radians(getEntity()->getComponent<Transform>()->getRotation().x));
 		forwardVector.z = cos(glm::radians(getEntity()->getComponent<Transform>()->getRotation().x)) * cos(glm::radians(getEntity()->getComponent<Transform>()->getRotation().y));
@@ -33,12 +38,14 @@ namespace frontier
 			moveForward = getInput()->GetJoystickAxis(Input::LEFTSTICK).y < -8000;
 			rotateLeft = getInput()->GetJoystickAxis(Input::LEFTSTICK).x < -8000;
 			rotateRight = getInput()->GetJoystickAxis(Input::LEFTSTICK).x > 8000;
+			shooting = getInput()->getJoystickButton(Input::A_BUTTON);
 		}
 		else
 		{
 			moveForward = getInput()->getKey(Input::FORWARD);
 			rotateLeft = getInput()->getKey(Input::LEFT);
 			rotateRight = getInput()->getKey(Input::RIGHT);
+			shooting = getInput()->getKey(Input::SHOOT);
 		}
 
 		if (moveForward)
@@ -96,6 +103,8 @@ namespace frontier
 			glm::vec3 rotation = getEntity()->getComponent<Transform>()->getRotation();
 			getEntity()->getComponent<Transform>()->setRotation(glm::vec3(rotation.x, rotation.y + (RotateVelocity * getEnvironment()->getDeltaTime()), rotation.z));
 
+
+
 			forwardVector.x = cos(glm::radians(getEntity()->getComponent<Transform>()->getRotation().x)) * sin(glm::radians(getEntity()->getComponent<Transform>()->getRotation().y));
 			forwardVector.y = sin(glm::radians(getEntity()->getComponent<Transform>()->getRotation().x));
 			forwardVector.z = cos(glm::radians(getEntity()->getComponent<Transform>()->getRotation().x)) * cos(glm::radians(getEntity()->getComponent<Transform>()->getRotation().y));
@@ -103,21 +112,10 @@ namespace frontier
 
 		}
 
-		
-
 		if (ForwardVelocity > 0)
 		{
 			getEntity()->getComponent<Transform>()->setPosition(getEntity()->getComponent<Transform>()->getPosition() + (forwardVector * (-ForwardVelocity * getEnvironment()->getDeltaTime())));
 		}
-
-		if (getEntity()->hasComponent<Collider>())
-		{
-			/*if (getEntity()->getComponent<Collider>()->isColliding())
-			{
-				std::cout << "Ship is colliding" << std::endl;
-			}*/
-		}
-		//std::cout << "Player: " << getEntity()->getComponent<Transform>()->getPosition().x << " | " << getEntity()->getComponent<Transform>()->getPosition().z << std::endl;
 
 		if (getEntity()->getComponent<Transform>()->getPosition().x > 50)
 		{
@@ -139,5 +137,34 @@ namespace frontier
 			getEntity()->getComponent<Transform>()->setPosition(glm::vec3(getEntity()->getComponent<Transform>()->getPosition().x, getEntity()->getComponent<Transform>()->getPosition().y, 39));
 		}
 
+		//std::cout << "player pos: " << getEntity()->getComponent<Transform>()->getPosition().x << " " << getEntity()->getComponent<Transform>()->getPosition().y << " " << getEntity()->getComponent<Transform>()->getPosition().z << std::endl;
+
+		std::cout << "player rotation: " << getEntity()->getComponent<Transform>()->getRotation().x << " " << getEntity()->getComponent<Transform>()->getRotation().y << " " << getEntity()->getComponent<Transform>()->getRotation().z << std::endl;
+
+
+		//std::cout << "player forward: " << forwardVector.x << " " << forwardVector.y << " " << forwardVector.z << std::endl;
+
+		if (shooting && !hasshot)
+		{
+			getEntity()->getComponent<AudioPlayer>()->Play();
+			getCore()->getPooler("missilepooler")->Spawn(getEntity()->getComponent<Transform>()->getPosition());
+			hasshot = true;
+			countedFrames = 0;
+		}
+		else if (hasshot)
+		{
+			countedFrames++;
+			if (countedFrames > shotCooldownTime)
+			{
+				hasshot = false;
+			}
+		}
+
+
+	}
+
+	glm::vec3 PlayerController::getForwardVector()
+	{
+		return forwardVector;
 	}
 }
