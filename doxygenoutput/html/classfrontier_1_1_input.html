@@ -71,6 +71,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class for handling input, current input handled: keyboard, mouse, controller.  
+ <a href="classfrontier_1_1_input.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_input_8h_source.html">Input.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -88,11 +91,13 @@ Public Types</h2></td></tr>
 <br />
 &#160;&#160;<a class="el" href="classfrontier_1_1_input.html#ada5b6b09af9c827bacee6fbc69015096a0bf7f4342c9ece5810241620ccf09f45">NUM_OF_BUTTONS</a>
 <br />
- }</td></tr>
+ }<tr class="memdesc:ada5b6b09af9c827bacee6fbc69015096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum for keyboard buttons, currently configured for current game.  <a href="classfrontier_1_1_input.html#ada5b6b09af9c827bacee6fbc69015096">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:ada5b6b09af9c827bacee6fbc69015096"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa34e103eba0f13faf437863692310859"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#aa34e103eba0f13faf437863692310859">ControllerAxes</a> { <a class="el" href="classfrontier_1_1_input.html#aa34e103eba0f13faf437863692310859a7d1d161914b2562dfd89a471e7b8e62c">LEFTSTICK</a>, 
 <a class="el" href="classfrontier_1_1_input.html#aa34e103eba0f13faf437863692310859a14768741d70c19c7ae2e8dce9769bd1f">RIGHTSTICK</a>
- }</td></tr>
+ }<tr class="memdesc:aa34e103eba0f13faf437863692310859"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum for controller stick axes.  <a href="classfrontier_1_1_input.html#aa34e103eba0f13faf437863692310859">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:aa34e103eba0f13faf437863692310859"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affa0331a173268233d6630184a105bb6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#affa0331a173268233d6630184a105bb6">ControllerButtons</a> { <br />
 &#160;&#160;<a class="el" href="classfrontier_1_1_input.html#affa0331a173268233d6630184a105bb6ab98b6db8bb04b0cd9b060563de575431">A_BUTTON</a>, 
@@ -107,7 +112,8 @@ Public Types</h2></td></tr>
 <br />
 &#160;&#160;<a class="el" href="classfrontier_1_1_input.html#affa0331a173268233d6630184a105bb6aa9e5245811241b92209343b55b54c571">NUM_OF_CONTROLLER_BUTTONS</a>
 <br />
- }</td></tr>
+ }<tr class="memdesc:affa0331a173268233d6630184a105bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum for controller buttons.  <a href="classfrontier_1_1_input.html#affa0331a173268233d6630184a105bb6">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:affa0331a173268233d6630184a105bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53a85fe24f5b35e1a42ab370dcd0d94e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94e">DpadStates</a> { <br />
 &#160;&#160;<a class="el" href="classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94ea90e2661b34a449c518cca1ab5d1885a6">DPAD_LEFTUP</a>, 
@@ -123,56 +129,79 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94ea1ae57661e6161c2928171b0414b5db0b">DPAD_RIGHTDOWN</a>, 
 <a class="el" href="classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94eaefa7fef0e2de7538b95c3d1fe2128f96">NUM_OF_STATES</a>
 <br />
- }</td></tr>
+ }<tr class="memdesc:a53a85fe24f5b35e1a42ab370dcd0d94e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum for controller d-pad states.  <a href="classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94e">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:a53a85fe24f5b35e1a42ab370dcd0d94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae78744e8c0799230bc6533be5d4b40f7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#ae78744e8c0799230bc6533be5d4b40f7">MouseButtonStates</a> { <a class="el" href="classfrontier_1_1_input.html#ae78744e8c0799230bc6533be5d4b40f7af8f5828e820f88896b4983bfc1dc4528">LEFT_MOUSE_BUTTON</a>, 
 <a class="el" href="classfrontier_1_1_input.html#ae78744e8c0799230bc6533be5d4b40f7a0c6c60dbc5386980eb6023b111c0a640">RIGHT_MOUSE_BUTTON</a>, 
 <a class="el" href="classfrontier_1_1_input.html#ae78744e8c0799230bc6533be5d4b40f7aacc218f0e73c463a61b92ba1a7b7b7ba">NUM_OF_MOUSE_BUTTON_STATES</a>
- }</td></tr>
+ }<tr class="memdesc:ae78744e8c0799230bc6533be5d4b40f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum for mouse buttons.  <a href="classfrontier_1_1_input.html#ae78744e8c0799230bc6533be5d4b40f7">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:ae78744e8c0799230bc6533be5d4b40f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a42044ec5fabe49b52de3437eac14dab0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#a42044ec5fabe49b52de3437eac14dab0">Input</a> ()</td></tr>
+<tr class="memdesc:a42044ec5fabe49b52de3437eac14dab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for input, used for controller detection.  <a href="#a42044ec5fabe49b52de3437eac14dab0">More...</a><br /></td></tr>
 <tr class="separator:a42044ec5fabe49b52de3437eac14dab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9db590e5a79e86162f930f9d80cd70a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#a9db590e5a79e86162f930f9d80cd70a3">getKey</a> (<a class="el" href="classfrontier_1_1_input.html#ada5b6b09af9c827bacee6fbc69015096">ListedButtons</a> _keycode)</td></tr>
-<tr class="separator:a9db590e5a79e86162f930f9d80cd70a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0f4c13a20e12f8679666fb6e4f4ccaf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#ab0f4c13a20e12f8679666fb6e4f4ccaf">getMouseButton</a> (<a class="el" href="classfrontier_1_1_input.html#ae78744e8c0799230bc6533be5d4b40f7">MouseButtonStates</a> _btn)</td></tr>
-<tr class="separator:ab0f4c13a20e12f8679666fb6e4f4ccaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3330b7e20d086eb7b9da283dec779dc"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#ac3330b7e20d086eb7b9da283dec779dc">getMousePos</a> ()</td></tr>
-<tr class="separator:ac3330b7e20d086eb7b9da283dec779dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4204ad7ae1c395c26c8a5d397e99532"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#ac4204ad7ae1c395c26c8a5d397e99532">getJoystickButton</a> (<a class="el" href="classfrontier_1_1_input.html#affa0331a173268233d6630184a105bb6">ControllerButtons</a> _btn)</td></tr>
-<tr class="separator:ac4204ad7ae1c395c26c8a5d397e99532"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a4efb296d3f78e8eea6064da50af43b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#a8a4efb296d3f78e8eea6064da50af43b">getJoystickDpadState</a> (<a class="el" href="classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94e">DpadStates</a> _state)</td></tr>
-<tr class="separator:a8a4efb296d3f78e8eea6064da50af43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a010a90cb5ee5fe7c13e5e5fa74728bfa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#a010a90cb5ee5fe7c13e5e5fa74728bfa">GetKey</a> (<a class="el" href="classfrontier_1_1_input.html#ada5b6b09af9c827bacee6fbc69015096">ListedButtons</a> _keycode)</td></tr>
+<tr class="memdesc:a010a90cb5ee5fe7c13e5e5fa74728bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries a key from the ListedButtons enum, false is key up, true is key down.  <a href="#a010a90cb5ee5fe7c13e5e5fa74728bfa">More...</a><br /></td></tr>
+<tr class="separator:a010a90cb5ee5fe7c13e5e5fa74728bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7b944042e2bf83992b8347ea89a08c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#ab7b944042e2bf83992b8347ea89a08c6">GetMouseButton</a> (<a class="el" href="classfrontier_1_1_input.html#ae78744e8c0799230bc6533be5d4b40f7">MouseButtonStates</a> _btn)</td></tr>
+<tr class="memdesc:ab7b944042e2bf83992b8347ea89a08c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries a mouse button from the MouseButtonStates enum, false is key up, true is key down.  <a href="#ab7b944042e2bf83992b8347ea89a08c6">More...</a><br /></td></tr>
+<tr class="separator:ab7b944042e2bf83992b8347ea89a08c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56ffa5acb487fd1e1b7afe45760606cd"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#a56ffa5acb487fd1e1b7afe45760606cd">GetMousePos</a> ()</td></tr>
+<tr class="memdesc:a56ffa5acb487fd1e1b7afe45760606cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the mouse position.  <a href="#a56ffa5acb487fd1e1b7afe45760606cd">More...</a><br /></td></tr>
+<tr class="separator:a56ffa5acb487fd1e1b7afe45760606cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e208f9684151e5d11dcf3376e4b99a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#a1e208f9684151e5d11dcf3376e4b99a3">GetJoystickButton</a> (<a class="el" href="classfrontier_1_1_input.html#affa0331a173268233d6630184a105bb6">ControllerButtons</a> _btn)</td></tr>
+<tr class="memdesc:a1e208f9684151e5d11dcf3376e4b99a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries a controller button from the ControllerButtons enum, false is key up, true is key down.  <a href="#a1e208f9684151e5d11dcf3376e4b99a3">More...</a><br /></td></tr>
+<tr class="separator:a1e208f9684151e5d11dcf3376e4b99a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48d6f21151c9cc7ed93b386d0be25bf0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#a48d6f21151c9cc7ed93b386d0be25bf0">GetJoystickDpadState</a> (<a class="el" href="classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94e">DpadStates</a> _state)</td></tr>
+<tr class="memdesc:a48d6f21151c9cc7ed93b386d0be25bf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries a dpad button from the DpadStates enum, false is key up, true is key down.  <a href="#a48d6f21151c9cc7ed93b386d0be25bf0">More...</a><br /></td></tr>
+<tr class="separator:a48d6f21151c9cc7ed93b386d0be25bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60c4086a12484369d9e96c065b5cce52"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#a60c4086a12484369d9e96c065b5cce52">GetJoystickAxis</a> (<a class="el" href="classfrontier_1_1_input.html#aa34e103eba0f13faf437863692310859">ControllerAxes</a> _axis)</td></tr>
+<tr class="memdesc:a60c4086a12484369d9e96c065b5cce52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries a controller axis from the ControllerAxes enum, returns a vec2 of the controller joystick x and y.  <a href="#a60c4086a12484369d9e96c065b5cce52">More...</a><br /></td></tr>
 <tr class="separator:a60c4086a12484369d9e96c065b5cce52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3326fdae63e71c2d6c7e5bc8dad167c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#ab3326fdae63e71c2d6c7e5bc8dad167c">setCorePtr</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt; _core)</td></tr>
-<tr class="separator:ab3326fdae63e71c2d6c7e5bc8dad167c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac05050b8aef9b669840c69868c157019"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#ac05050b8aef9b669840c69868c157019">isJoystickConnected</a> ()</td></tr>
-<tr class="separator:ac05050b8aef9b669840c69868c157019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ce39c7eaf92aef7ea316483d797caf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#a5ce39c7eaf92aef7ea316483d797caf6">SetCorePtr</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt; _core)</td></tr>
+<tr class="memdesc:a5ce39c7eaf92aef7ea316483d797caf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the core pointer.  <a href="#a5ce39c7eaf92aef7ea316483d797caf6">More...</a><br /></td></tr>
+<tr class="separator:a5ce39c7eaf92aef7ea316483d797caf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5168ef99f137fc17cb277f78eed247f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#a5168ef99f137fc17cb277f78eed247f8">IsJoystickConnected</a> ()</td></tr>
+<tr class="memdesc:a5168ef99f137fc17cb277f78eed247f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries if a controller is connected.  <a href="#a5168ef99f137fc17cb277f78eed247f8">More...</a><br /></td></tr>
+<tr class="separator:a5168ef99f137fc17cb277f78eed247f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93acada680176426a09bd5cc4606fe6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#a93acada680176426a09bd5cc4606fe6c">FreeJoystick</a> ()</td></tr>
+<tr class="memdesc:a93acada680176426a09bd5cc4606fe6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes and joysicks attached.  <a href="#a93acada680176426a09bd5cc4606fe6c">More...</a><br /></td></tr>
 <tr class="separator:a93acada680176426a09bd5cc4606fe6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace92d811ccd65b1cccc8be927c840720"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#ace92d811ccd65b1cccc8be927c840720">UpdateLeftJoystick</a> (glm::vec2 axes)</td></tr>
-<tr class="separator:ace92d811ccd65b1cccc8be927c840720"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19763242a418ba60581b767eb4c40b78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#a19763242a418ba60581b767eb4c40b78">UpdateRightJoystick</a> (glm::vec2 axes)</td></tr>
-<tr class="separator:a19763242a418ba60581b767eb4c40b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af436dc35f51cc350434bb4b5bebbb863"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#af436dc35f51cc350434bb4b5bebbb863">UpdateLeftJoystick</a> (glm::vec2 _axes)</td></tr>
+<tr class="memdesc:af436dc35f51cc350434bb4b5bebbb863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the left joystick position.  <a href="#af436dc35f51cc350434bb4b5bebbb863">More...</a><br /></td></tr>
+<tr class="separator:af436dc35f51cc350434bb4b5bebbb863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd452bb826ade00ba984e249253c946d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#afd452bb826ade00ba984e249253c946d">UpdateRightJoystick</a> (glm::vec2 _axes)</td></tr>
+<tr class="memdesc:afd452bb826ade00ba984e249253c946d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the right joystick position.  <a href="#afd452bb826ade00ba984e249253c946d">More...</a><br /></td></tr>
+<tr class="separator:afd452bb826ade00ba984e249253c946d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3d78d816a9ae5ed02c9c91900097149"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#ab3d78d816a9ae5ed02c9c91900097149">Tick</a> ()</td></tr>
+<tr class="memdesc:ab3d78d816a9ae5ed02c9c91900097149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates inputs if any inputs have changed.  <a href="#ab3d78d816a9ae5ed02c9c91900097149">More...</a><br /></td></tr>
 <tr class="separator:ab3d78d816a9ae5ed02c9c91900097149"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adad2b084e3ddc0ddcf6db9d6f5ebf307"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#adad2b084e3ddc0ddcf6db9d6f5ebf307">QueueMouseMovementUpdate</a> ()</td></tr>
+<tr class="memdesc:adad2b084e3ddc0ddcf6db9d6f5ebf307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queues update for mouse movement.  <a href="#adad2b084e3ddc0ddcf6db9d6f5ebf307">More...</a><br /></td></tr>
 <tr class="separator:adad2b084e3ddc0ddcf6db9d6f5ebf307"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a78acf75eb63bfcd504b0eca34ce7c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#a3a78acf75eb63bfcd504b0eca34ce7c2">QueueMouseButtonUpdate</a> ()</td></tr>
+<tr class="memdesc:a3a78acf75eb63bfcd504b0eca34ce7c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queues update for mouse buttons.  <a href="#a3a78acf75eb63bfcd504b0eca34ce7c2">More...</a><br /></td></tr>
 <tr class="separator:a3a78acf75eb63bfcd504b0eca34ce7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3e8301699a5ba6d74fe78cab9410230"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#ae3e8301699a5ba6d74fe78cab9410230">QueueKeyboardUpdate</a> ()</td></tr>
+<tr class="memdesc:ae3e8301699a5ba6d74fe78cab9410230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queues update for keyboard buttons.  <a href="#ae3e8301699a5ba6d74fe78cab9410230">More...</a><br /></td></tr>
 <tr class="separator:ae3e8301699a5ba6d74fe78cab9410230"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adeb3f9c5c6e93ca7406a03314ccfede6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#adeb3f9c5c6e93ca7406a03314ccfede6">QueueControllerJoystickUpdate</a> ()</td></tr>
+<tr class="memdesc:adeb3f9c5c6e93ca7406a03314ccfede6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queues update for controller joysticks.  <a href="#adeb3f9c5c6e93ca7406a03314ccfede6">More...</a><br /></td></tr>
 <tr class="separator:adeb3f9c5c6e93ca7406a03314ccfede6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef3fb33e53dfad959d197f07dd3811ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#aef3fb33e53dfad959d197f07dd3811ce">QueueControllerButtonUpdate</a> ()</td></tr>
+<tr class="memdesc:aef3fb33e53dfad959d197f07dd3811ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queues update for controller buttons.  <a href="#aef3fb33e53dfad959d197f07dd3811ce">More...</a><br /></td></tr>
 <tr class="separator:aef3fb33e53dfad959d197f07dd3811ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99b2f7b890ffeb5f1079a57af7945892"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_input.html#a99b2f7b890ffeb5f1079a57af7945892">QueueControllerDpadUpdate</a> ()</td></tr>
+<tr class="memdesc:a99b2f7b890ffeb5f1079a57af7945892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queues update for the controller dpad.  <a href="#a99b2f7b890ffeb5f1079a57af7945892">More...</a><br /></td></tr>
 <tr class="separator:a99b2f7b890ffeb5f1079a57af7945892"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for handling input, current input handled: keyboard, mouse, controller. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="aa34e103eba0f13faf437863692310859"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa34e103eba0f13faf437863692310859">&#9670;&nbsp;</a></span>ControllerAxes</h2>
 
@@ -184,6 +213,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enum for controller stick axes. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa34e103eba0f13faf437863692310859a7d1d161914b2562dfd89a471e7b8e62c"></a>LEFTSTICK&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aa34e103eba0f13faf437863692310859a14768741d70c19c7ae2e8dce9769bd1f"></a>RIGHTSTICK&#160;</td><td class="fielddoc"></td></tr>
@@ -202,6 +233,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enum for controller buttons. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="affa0331a173268233d6630184a105bb6ab98b6db8bb04b0cd9b060563de575431"></a>A_BUTTON&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="affa0331a173268233d6630184a105bb6ab46fd416a811b0451b5a802bd9f1eb48"></a>B_BUTTON&#160;</td><td class="fielddoc"></td></tr>
@@ -227,6 +260,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enum for controller d-pad states. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a53a85fe24f5b35e1a42ab370dcd0d94ea90e2661b34a449c518cca1ab5d1885a6"></a>DPAD_LEFTUP&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a53a85fe24f5b35e1a42ab370dcd0d94eabe6be4880b0b1fc4751638cffecefd66"></a>DPAD_UP&#160;</td><td class="fielddoc"></td></tr>
@@ -253,16 +288,27 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enum for keyboard buttons, currently configured for current game. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096acf85ba7c8b56fe96ae704fcad0835413"></a>FORWARD&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096a854a2566d855b54f71c31b1a80af7f7f"></a>BACK&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096a054bf540c4446c6dd0ebfbc47d3b86d6"></a>LEFT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096a3f8c1b55a3e0fa5b9e49e013af3aa898"></a>RIGHT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096ab29a79dea09fc2efd9195b5bd9f9cb59"></a>UP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096ae77fe1ca5149c538bcbe2d3220e065d5"></a>DOWN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096ac8790ceaafc8368972a3d7129c0d08e9"></a>SHOOT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096aa10db7305f9845cff63ba11af6092c0c"></a>ESC&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096a0bf7f4342c9ece5810241620ccf09f45"></a>NUM_OF_BUTTONS&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096acf85ba7c8b56fe96ae704fcad0835413"></a>FORWARD&#160;</td><td class="fielddoc"><p>Bound to W button. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096a854a2566d855b54f71c31b1a80af7f7f"></a>BACK&#160;</td><td class="fielddoc"><p>Bound to S button. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096a054bf540c4446c6dd0ebfbc47d3b86d6"></a>LEFT&#160;</td><td class="fielddoc"><p>Bound to A button. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096a3f8c1b55a3e0fa5b9e49e013af3aa898"></a>RIGHT&#160;</td><td class="fielddoc"><p>Bound to D button. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096ab29a79dea09fc2efd9195b5bd9f9cb59"></a>UP&#160;</td><td class="fielddoc"><p>Currently not bound. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096ae77fe1ca5149c538bcbe2d3220e065d5"></a>DOWN&#160;</td><td class="fielddoc"><p>Currently not bound. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096ac8790ceaafc8368972a3d7129c0d08e9"></a>SHOOT&#160;</td><td class="fielddoc"><p>Bound to Q. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096aa10db7305f9845cff63ba11af6092c0c"></a>ESC&#160;</td><td class="fielddoc"><p>Bound to esc. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ada5b6b09af9c827bacee6fbc69015096a0bf7f4342c9ece5810241620ccf09f45"></a>NUM_OF_BUTTONS&#160;</td><td class="fielddoc"><p>Used for array size. </p>
+</td></tr>
 </table>
 
 </div>
@@ -278,6 +324,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enum for mouse buttons. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae78744e8c0799230bc6533be5d4b40f7af8f5828e820f88896b4983bfc1dc4528"></a>LEFT_MOUSE_BUTTON&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ae78744e8c0799230bc6533be5d4b40f7a0c6c60dbc5386980eb6023b111c0a640"></a>RIGHT_MOUSE_BUTTON&#160;</td><td class="fielddoc"></td></tr>
@@ -302,6 +350,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructor for input, used for controller detection. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -319,6 +369,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Closes and joysicks attached. </p>
 
 </div>
 </div>
@@ -338,16 +390,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Queries a controller axis from the ControllerAxes enum, returns a vec2 of the controller joystick x and y. </p>
+<p>/param _axis The axis that needs to be queried. </p>
+
 </div>
 </div>
-<a id="ac4204ad7ae1c395c26c8a5d397e99532"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4204ad7ae1c395c26c8a5d397e99532">&#9670;&nbsp;</a></span>getJoystickButton()</h2>
+<a id="a1e208f9684151e5d11dcf3376e4b99a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e208f9684151e5d11dcf3376e4b99a3">&#9670;&nbsp;</a></span>GetJoystickButton()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool frontier::Input::getJoystickButton </td>
+          <td class="memname">bool frontier::Input::GetJoystickButton </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classfrontier_1_1_input.html#affa0331a173268233d6630184a105bb6">ControllerButtons</a>&#160;</td>
           <td class="paramname"><em>_btn</em></td><td>)</td>
@@ -356,16 +411,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Queries a controller button from the ControllerButtons enum, false is key up, true is key down. </p>
+<p>/param _btn The controller button that needs to be queried. </p>
+
 </div>
 </div>
-<a id="a8a4efb296d3f78e8eea6064da50af43b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a4efb296d3f78e8eea6064da50af43b">&#9670;&nbsp;</a></span>getJoystickDpadState()</h2>
+<a id="a48d6f21151c9cc7ed93b386d0be25bf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48d6f21151c9cc7ed93b386d0be25bf0">&#9670;&nbsp;</a></span>GetJoystickDpadState()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool frontier::Input::getJoystickDpadState </td>
+          <td class="memname">bool frontier::Input::GetJoystickDpadState </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94e">DpadStates</a>&#160;</td>
           <td class="paramname"><em>_state</em></td><td>)</td>
@@ -374,16 +432,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Queries a dpad button from the DpadStates enum, false is key up, true is key down. </p>
+<p>/param _state The dpad state that needs to be queried. </p>
+
 </div>
 </div>
-<a id="a9db590e5a79e86162f930f9d80cd70a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9db590e5a79e86162f930f9d80cd70a3">&#9670;&nbsp;</a></span>getKey()</h2>
+<a id="a010a90cb5ee5fe7c13e5e5fa74728bfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a010a90cb5ee5fe7c13e5e5fa74728bfa">&#9670;&nbsp;</a></span>GetKey()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool frontier::Input::getKey </td>
+          <td class="memname">bool frontier::Input::GetKey </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classfrontier_1_1_input.html#ada5b6b09af9c827bacee6fbc69015096">ListedButtons</a>&#160;</td>
           <td class="paramname"><em>_keycode</em></td><td>)</td>
@@ -392,16 +453,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Queries a key from the ListedButtons enum, false is key up, true is key down. </p>
+<p>/param _keycode The keycode that needs to be queried. </p>
+
 </div>
 </div>
-<a id="ab0f4c13a20e12f8679666fb6e4f4ccaf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0f4c13a20e12f8679666fb6e4f4ccaf">&#9670;&nbsp;</a></span>getMouseButton()</h2>
+<a id="ab7b944042e2bf83992b8347ea89a08c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7b944042e2bf83992b8347ea89a08c6">&#9670;&nbsp;</a></span>GetMouseButton()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool frontier::Input::getMouseButton </td>
+          <td class="memname">bool frontier::Input::GetMouseButton </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classfrontier_1_1_input.html#ae78744e8c0799230bc6533be5d4b40f7">MouseButtonStates</a>&#160;</td>
           <td class="paramname"><em>_btn</em></td><td>)</td>
@@ -410,16 +474,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Queries a mouse button from the MouseButtonStates enum, false is key up, true is key down. </p>
+<p>/param _btn The mouse button that needs to be queried. </p>
+
 </div>
 </div>
-<a id="ac3330b7e20d086eb7b9da283dec779dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3330b7e20d086eb7b9da283dec779dc">&#9670;&nbsp;</a></span>getMousePos()</h2>
+<a id="a56ffa5acb487fd1e1b7afe45760606cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56ffa5acb487fd1e1b7afe45760606cd">&#9670;&nbsp;</a></span>GetMousePos()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">glm::vec2 frontier::Input::getMousePos </td>
+          <td class="memname">glm::vec2 frontier::Input::GetMousePos </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -427,22 +494,26 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the mouse position. </p>
+
 </div>
 </div>
-<a id="ac05050b8aef9b669840c69868c157019"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac05050b8aef9b669840c69868c157019">&#9670;&nbsp;</a></span>isJoystickConnected()</h2>
+<a id="a5168ef99f137fc17cb277f78eed247f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5168ef99f137fc17cb277f78eed247f8">&#9670;&nbsp;</a></span>IsJoystickConnected()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool frontier::Input::isJoystickConnected </td>
+          <td class="memname">bool frontier::Input::IsJoystickConnected </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Queries if a controller is connected. </p>
 
 </div>
 </div>
@@ -461,6 +532,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Queues update for controller buttons. </p>
+
 </div>
 </div>
 <a id="a99b2f7b890ffeb5f1079a57af7945892"></a>
@@ -477,6 +550,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Queues update for the controller dpad. </p>
 
 </div>
 </div>
@@ -495,6 +570,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Queues update for controller joysticks. </p>
+
 </div>
 </div>
 <a id="ae3e8301699a5ba6d74fe78cab9410230"></a>
@@ -511,6 +588,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Queues update for keyboard buttons. </p>
 
 </div>
 </div>
@@ -529,6 +608,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Queues update for mouse buttons. </p>
+
 </div>
 </div>
 <a id="adad2b084e3ddc0ddcf6db9d6f5ebf307"></a>
@@ -546,16 +627,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Queues update for mouse movement. </p>
+
 </div>
 </div>
-<a id="ab3326fdae63e71c2d6c7e5bc8dad167c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3326fdae63e71c2d6c7e5bc8dad167c">&#9670;&nbsp;</a></span>setCorePtr()</h2>
+<a id="a5ce39c7eaf92aef7ea316483d797caf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ce39c7eaf92aef7ea316483d797caf6">&#9670;&nbsp;</a></span>SetCorePtr()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void frontier::Input::setCorePtr </td>
+          <td class="memname">void frontier::Input::SetCorePtr </td>
           <td>(</td>
           <td class="paramtype">std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt;&#160;</td>
           <td class="paramname"><em>_core</em></td><td>)</td>
@@ -563,6 +646,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets the core pointer. </p>
+<p>/param _core Pointer to the core. </p>
 
 </div>
 </div>
@@ -581,10 +667,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Updates inputs if any inputs have changed. </p>
+
 </div>
 </div>
-<a id="ace92d811ccd65b1cccc8be927c840720"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace92d811ccd65b1cccc8be927c840720">&#9670;&nbsp;</a></span>UpdateLeftJoystick()</h2>
+<a id="af436dc35f51cc350434bb4b5bebbb863"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af436dc35f51cc350434bb4b5bebbb863">&#9670;&nbsp;</a></span>UpdateLeftJoystick()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -593,16 +681,24 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void frontier::Input::UpdateLeftJoystick </td>
           <td>(</td>
           <td class="paramtype">glm::vec2&#160;</td>
-          <td class="paramname"><em>axes</em></td><td>)</td>
+          <td class="paramname"><em>_axes</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Updates the left joystick position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_axes</td><td>Left joystick position. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a19763242a418ba60581b767eb4c40b78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19763242a418ba60581b767eb4c40b78">&#9670;&nbsp;</a></span>UpdateRightJoystick()</h2>
+<a id="afd452bb826ade00ba984e249253c946d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd452bb826ade00ba984e249253c946d">&#9670;&nbsp;</a></span>UpdateRightJoystick()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -611,11 +707,19 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void frontier::Input::UpdateRightJoystick </td>
           <td>(</td>
           <td class="paramtype">glm::vec2&#160;</td>
-          <td class="paramname"><em>axes</em></td><td>)</td>
+          <td class="paramname"><em>_axes</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Updates the right joystick position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_axes</td><td>Right joystick position. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

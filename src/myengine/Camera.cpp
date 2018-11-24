@@ -18,20 +18,20 @@ namespace frontier
 	{
 		glm::mat4 view;
 
-		view = glm::inverse(getEntity()->getComponent<Transform>()->getModelMatrix());
+		view = glm::inverse(GetEntity()->getComponent<Transform>()->GetModelMatrix());
 
 		return view;
 	}
 
 	glm::mat4 Camera::GetProjectionMatrix()
 	{
-		glm::mat4 proj = glm::perspective(glm::radians(m_FOV), (float)getCore()->getWidth() / (float)getCore()->getHeight(), m_near, m_far);
+		glm::mat4 proj = glm::perspective(glm::radians(m_FOV), (float)GetCore()->GetWidth() / (float)GetCore()->GetHeight(), m_near, m_far);
 		return proj;
 	}
 
 	glm::mat4 Camera::GetOrthographicMatrix()
 	{
-		glm::mat4 orth = glm::ortho(0.0f, (float)getCore()->getWidth(), 0.0f, (float)getCore()->getHeight(), m_near, m_far);
+		glm::mat4 orth = glm::ortho(0.0f, (float)GetCore()->GetWidth(), 0.0f, (float)GetCore()->GetHeight(), m_near, m_far);
 		return orth;
 	}
 

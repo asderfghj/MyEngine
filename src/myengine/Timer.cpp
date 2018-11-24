@@ -4,47 +4,47 @@ namespace frontier
 {
 	Timer::Timer()
 	{
-		_startTicks = 0;
-		_pausedTicks = 0;
+		m_startTicks = 0;
+		m_pausedTicks = 0;
 
-		_paused = false;
-		_started = false;
+		m_paused = false;
+		m_started = false;
 	}
 
 	void Timer::Start()
 	{
-		_started = true;
-		_paused = false;
+		m_started = true;
+		m_paused = false;
 
-		_startTicks = SDL_GetTicks();
-		_pausedTicks = 0;
+		m_startTicks = SDL_GetTicks();
+		m_pausedTicks = 0;
 	}
 
 	void Timer::Stop()
 	{
-		_started = false;
-		_paused = false;
-		_startTicks = 0;
-		_pausedTicks = 0;
+		m_started = false;
+		m_paused = false;
+		m_startTicks = 0;
+		m_pausedTicks = 0;
 	}
 
 	void Timer::Pause()
 	{
-		if (_started && !_paused)
+		if (m_started && !m_paused)
 		{
-			_paused = true;
-			_pausedTicks = SDL_GetTicks() - _startTicks;
-			_startTicks = 0;
+			m_paused = true;
+			m_pausedTicks = SDL_GetTicks() - m_startTicks;
+			m_startTicks = 0;
 		}
 	}
 
 	void Timer::Unpause()
 	{
-		if (_started && _paused)
+		if (m_started && m_paused)
 		{
-			_paused = false;
-			_startTicks = SDL_GetTicks() - _pausedTicks;
-			_pausedTicks = 0;
+			m_paused = false;
+			m_startTicks = SDL_GetTicks() - m_pausedTicks;
+			m_pausedTicks = 0;
 		}
 	}
 
@@ -52,15 +52,15 @@ namespace frontier
 	{
 		Uint32 time = 0;
 
-		if (_started)
+		if (m_started)
 		{
-			if (_paused)
+			if (m_paused)
 			{
-				time = _pausedTicks;
+				time = m_pausedTicks;
 			}
 			else
 			{
-				time = SDL_GetTicks() - _startTicks;
+				time = SDL_GetTicks() - m_startTicks;
 			}
 		}
 		
@@ -70,12 +70,12 @@ namespace frontier
 
 	bool Timer::IsStarted()
 	{
-		return _started;
+		return m_started;
 	}
 
 	bool Timer::IsPaused()
 	{
-		return _paused;
+		return m_paused;
 	}
 
 }

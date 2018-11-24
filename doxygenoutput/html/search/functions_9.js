@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['load',['load',['../classfrontier_1_1_sound.html#ac175fd9a053e4126ccfb3b5e008e059d',1,'frontier::Sound']]],
-  ['load_5fogg',['load_ogg',['../structfrontier_1_1_sound_impl.html#ae4f90e7fb56a7ad9b4d506071e90fa58',1,'frontier::SoundImpl']]]
+  ['load',['Load',['../classfrontier_1_1_sound.html#a9a34b2a30c3eb91702b07c35de9d140b',1,'frontier::Sound']]],
+  ['load_5fogg',['load_ogg',['../structfrontier_1_1_sound_impl.html#aa7170ec2e5d847deda459543a38670e0',1,'frontier::SoundImpl']]]
 ];

@@ -2,6 +2,11 @@
 \label{classfrontier_1_1_component}\index{frontier\+::\+Component@{frontier\+::\+Component}}
 
 
+Base component class, use for inheritance to other classes only. Useless on its own.  
+
+
+
+
 {\ttfamily \#include $<$Component.\+h$>$}
 
 Inheritance diagram for frontier\+:\+:Component\+:\begin{figure}[H]
@@ -13,83 +18,85 @@ Inheritance diagram for frontier\+:\+:Component\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classfrontier_1_1_component_a21f8f2b1292143a1e74d985024e34589}{Component} ()
-\item 
-\hyperlink{classfrontier_1_1_component_a919c8260a4e6c1a14165bf9d1b903423}{$\sim$\+Component} ()
-\item 
 virtual void \hyperlink{classfrontier_1_1_component_af3da02905c4d79219d9b12f260a35ad1}{On\+Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \+\_\+parent)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialises the component. Sets the pointer to the entity that this component is attached to. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classfrontier_1_1_component_a77fca7ba1960aafb9bc05905e300c79d}{On\+Activate} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Called when an entity\textquotesingle{}s active state is changed from false to true. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classfrontier_1_1_component_ab920f9bc07ce051ebb5559c5a66508d1}{On\+Tick} ()
-\item 
-virtual void \hyperlink{classfrontier_1_1_component_a8faf337be5ba5fa3ca65c4be79d904c4}{On\+Display} ()
-\item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \hyperlink{classfrontier_1_1_component_aad8262fcb8cd477f226d39c4df93f6d8}{get\+Entity} ()
-\item 
-bool \hyperlink{classfrontier_1_1_component_a1a32971a12ec277a519b30ba056c9d89}{is\+Copyable} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Called every frame, use for data that needs to be calculated each frame. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \hyperlink{classfrontier_1_1_component_a4d4193dbf06629b5e457fb8f7d460e49}{Get\+Entity} ()
+\begin{DoxyCompactList}\small\item\em Returns the entity that this component is attached to. \end{DoxyCompactList}\item 
+bool \hyperlink{classfrontier_1_1_component_a22a2ac83f030cd83415a51f584cf2d32}{Is\+Copyable} ()
+\begin{DoxyCompactList}\small\item\em Returns if the class is copyable for a prefab. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_core}{Core} $>$ \hyperlink{classfrontier_1_1_component_a22c7d6b053ca38af4ba1e2a9e16c9a57}{get\+Core} ()
-\item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_input}{Input} $>$ \hyperlink{classfrontier_1_1_component_a02d631ca43dd6d403cbd51ee8654d15a}{get\+Input} ()
-\item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_environment}{Environment} $>$ \hyperlink{classfrontier_1_1_component_acb3039046e8c62976723d6715a1905b6}{get\+Environment} ()
-\end{DoxyCompactItemize}
+std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_core}{Core} $>$ \hyperlink{classfrontier_1_1_component_a0006685ddaadb379360f7f28294d3806}{Get\+Core} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the core. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_input}{Input} $>$ \hyperlink{classfrontier_1_1_component_a25cc51fb97b0b4c5dad1401707d530ea}{Get\+Input} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the input class. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_environment}{Environment} $>$ \hyperlink{classfrontier_1_1_component_a24846c0ac8d4d607aff483ed7ffdf5f8}{Get\+Environment} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the environment class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-bool \hyperlink{classfrontier_1_1_component_a02ebe1c95395e16efa33ddc8499c259c}{Copyable} = false
-\end{DoxyCompactItemize}
+bool \hyperlink{classfrontier_1_1_component_ad15af6da45dff3b37abb83bd5697fd87}{m\+\_\+copyable} = false
+\begin{DoxyCompactList}\small\item\em Determines if a component has a copy constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classfrontier_1_1_component_a21f8f2b1292143a1e74d985024e34589}\label{classfrontier_1_1_component_a21f8f2b1292143a1e74d985024e34589}} 
-\index{frontier\+::\+Component@{frontier\+::\+Component}!Component@{Component}}
-\index{Component@{Component}!frontier\+::\+Component@{frontier\+::\+Component}}
-\subsubsection{\texorpdfstring{Component()}{Component()}}
-{\footnotesize\ttfamily frontier\+::\+Component\+::\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classfrontier_1_1_component_a919c8260a4e6c1a14165bf9d1b903423}\label{classfrontier_1_1_component_a919c8260a4e6c1a14165bf9d1b903423}} 
-\index{frontier\+::\+Component@{frontier\+::\+Component}!````~Component@{$\sim$\+Component}}
-\index{````~Component@{$\sim$\+Component}!frontier\+::\+Component@{frontier\+::\+Component}}
-\subsubsection{\texorpdfstring{$\sim$\+Component()}{~Component()}}
-{\footnotesize\ttfamily frontier\+::\+Component\+::$\sim$\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
+\subsection{Detailed Description}
+Base component class, use for inheritance to other classes only. Useless on its own. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classfrontier_1_1_component_a22c7d6b053ca38af4ba1e2a9e16c9a57}\label{classfrontier_1_1_component_a22c7d6b053ca38af4ba1e2a9e16c9a57}} 
-\index{frontier\+::\+Component@{frontier\+::\+Component}!get\+Core@{get\+Core}}
-\index{get\+Core@{get\+Core}!frontier\+::\+Component@{frontier\+::\+Component}}
-\subsubsection{\texorpdfstring{get\+Core()}{getCore()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_core}{Core} $>$ frontier\+::\+Component\+::get\+Core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{classfrontier_1_1_component_a0006685ddaadb379360f7f28294d3806}\label{classfrontier_1_1_component_a0006685ddaadb379360f7f28294d3806}} 
+\index{frontier\+::\+Component@{frontier\+::\+Component}!Get\+Core@{Get\+Core}}
+\index{Get\+Core@{Get\+Core}!frontier\+::\+Component@{frontier\+::\+Component}}
+\subsubsection{\texorpdfstring{Get\+Core()}{GetCore()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_core}{Core} $>$ frontier\+::\+Component\+::\+Get\+Core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classfrontier_1_1_component_aad8262fcb8cd477f226d39c4df93f6d8}\label{classfrontier_1_1_component_aad8262fcb8cd477f226d39c4df93f6d8}} 
-\index{frontier\+::\+Component@{frontier\+::\+Component}!get\+Entity@{get\+Entity}}
-\index{get\+Entity@{get\+Entity}!frontier\+::\+Component@{frontier\+::\+Component}}
-\subsubsection{\texorpdfstring{get\+Entity()}{getEntity()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ frontier\+::\+Component\+::get\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_component_acb3039046e8c62976723d6715a1905b6}\label{classfrontier_1_1_component_acb3039046e8c62976723d6715a1905b6}} 
-\index{frontier\+::\+Component@{frontier\+::\+Component}!get\+Environment@{get\+Environment}}
-\index{get\+Environment@{get\+Environment}!frontier\+::\+Component@{frontier\+::\+Component}}
-\subsubsection{\texorpdfstring{get\+Environment()}{getEnvironment()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_environment}{Environment} $>$ frontier\+::\+Component\+::get\+Environment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classfrontier_1_1_component_a02d631ca43dd6d403cbd51ee8654d15a}\label{classfrontier_1_1_component_a02d631ca43dd6d403cbd51ee8654d15a}} 
-\index{frontier\+::\+Component@{frontier\+::\+Component}!get\+Input@{get\+Input}}
-\index{get\+Input@{get\+Input}!frontier\+::\+Component@{frontier\+::\+Component}}
-\subsubsection{\texorpdfstring{get\+Input()}{getInput()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_input}{Input} $>$ frontier\+::\+Component\+::get\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+Returns a pointer to the core. 
 
-\mbox{\Hypertarget{classfrontier_1_1_component_a1a32971a12ec277a519b30ba056c9d89}\label{classfrontier_1_1_component_a1a32971a12ec277a519b30ba056c9d89}} 
-\index{frontier\+::\+Component@{frontier\+::\+Component}!is\+Copyable@{is\+Copyable}}
-\index{is\+Copyable@{is\+Copyable}!frontier\+::\+Component@{frontier\+::\+Component}}
-\subsubsection{\texorpdfstring{is\+Copyable()}{isCopyable()}}
-{\footnotesize\ttfamily bool frontier\+::\+Component\+::is\+Copyable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classfrontier_1_1_component_a4d4193dbf06629b5e457fb8f7d460e49}\label{classfrontier_1_1_component_a4d4193dbf06629b5e457fb8f7d460e49}} 
+\index{frontier\+::\+Component@{frontier\+::\+Component}!Get\+Entity@{Get\+Entity}}
+\index{Get\+Entity@{Get\+Entity}!frontier\+::\+Component@{frontier\+::\+Component}}
+\subsubsection{\texorpdfstring{Get\+Entity()}{GetEntity()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ frontier\+::\+Component\+::\+Get\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the entity that this component is attached to. 
+
+\mbox{\Hypertarget{classfrontier_1_1_component_a24846c0ac8d4d607aff483ed7ffdf5f8}\label{classfrontier_1_1_component_a24846c0ac8d4d607aff483ed7ffdf5f8}} 
+\index{frontier\+::\+Component@{frontier\+::\+Component}!Get\+Environment@{Get\+Environment}}
+\index{Get\+Environment@{Get\+Environment}!frontier\+::\+Component@{frontier\+::\+Component}}
+\subsubsection{\texorpdfstring{Get\+Environment()}{GetEnvironment()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_environment}{Environment} $>$ frontier\+::\+Component\+::\+Get\+Environment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Returns a pointer to the environment class. 
+
+\mbox{\Hypertarget{classfrontier_1_1_component_a25cc51fb97b0b4c5dad1401707d530ea}\label{classfrontier_1_1_component_a25cc51fb97b0b4c5dad1401707d530ea}} 
+\index{frontier\+::\+Component@{frontier\+::\+Component}!Get\+Input@{Get\+Input}}
+\index{Get\+Input@{Get\+Input}!frontier\+::\+Component@{frontier\+::\+Component}}
+\subsubsection{\texorpdfstring{Get\+Input()}{GetInput()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_input}{Input} $>$ frontier\+::\+Component\+::\+Get\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Returns a pointer to the input class. 
+
+\mbox{\Hypertarget{classfrontier_1_1_component_a22a2ac83f030cd83415a51f584cf2d32}\label{classfrontier_1_1_component_a22a2ac83f030cd83415a51f584cf2d32}} 
+\index{frontier\+::\+Component@{frontier\+::\+Component}!Is\+Copyable@{Is\+Copyable}}
+\index{Is\+Copyable@{Is\+Copyable}!frontier\+::\+Component@{frontier\+::\+Component}}
+\subsubsection{\texorpdfstring{Is\+Copyable()}{IsCopyable()}}
+{\footnotesize\ttfamily bool frontier\+::\+Component\+::\+Is\+Copyable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns if the class is copyable for a prefab. 
 
 \mbox{\Hypertarget{classfrontier_1_1_component_a77fca7ba1960aafb9bc05905e300c79d}\label{classfrontier_1_1_component_a77fca7ba1960aafb9bc05905e300c79d}} 
 \index{frontier\+::\+Component@{frontier\+::\+Component}!On\+Activate@{On\+Activate}}
@@ -99,17 +106,11 @@ bool \hyperlink{classfrontier_1_1_component_a02ebe1c95395e16efa33ddc8499c259c}{C
 
 
 
+Called when an entity\textquotesingle{}s active state is changed from false to true. 
+
+
+
 Reimplemented in \hyperlink{class_asteroid_behavior_a7c4f344a9461d1296d4dcfcd51ed3bbc}{Asteroid\+Behavior}, and \hyperlink{class_projectile_behavior_aa01c813e541f6069d7ca9c69848ca0a6}{Projectile\+Behavior}.
-
-\mbox{\Hypertarget{classfrontier_1_1_component_a8faf337be5ba5fa3ca65c4be79d904c4}\label{classfrontier_1_1_component_a8faf337be5ba5fa3ca65c4be79d904c4}} 
-\index{frontier\+::\+Component@{frontier\+::\+Component}!On\+Display@{On\+Display}}
-\index{On\+Display@{On\+Display}!frontier\+::\+Component@{frontier\+::\+Component}}
-\subsubsection{\texorpdfstring{On\+Display()}{OnDisplay()}}
-{\footnotesize\ttfamily void frontier\+::\+Component\+::\+On\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Reimplemented in \hyperlink{classfrontier_1_1_triangle_renderer_a2c899b9897b149dd1c7d351c11b53272}{frontier\+::\+Triangle\+Renderer}.
 
 \mbox{\Hypertarget{classfrontier_1_1_component_af3da02905c4d79219d9b12f260a35ad1}\label{classfrontier_1_1_component_af3da02905c4d79219d9b12f260a35ad1}} 
 \index{frontier\+::\+Component@{frontier\+::\+Component}!On\+Init@{On\+Init}}
@@ -119,7 +120,16 @@ Reimplemented in \hyperlink{classfrontier_1_1_triangle_renderer_a2c899b9897b149d
 
 
 
-Reimplemented in \hyperlink{classfrontier_1_1_triangle_renderer_af67946b8641608198ae92548b7c002b5}{frontier\+::\+Triangle\+Renderer}, \hyperlink{classfrontier_1_1_transform_a4fef98c5ccbe2bb6303714c7da2ba4ef}{frontier\+::\+Transform}, \hyperlink{class_asteroid_behavior_a79d9559f0d8e109e928acf7f8ff7acea}{Asteroid\+Behavior}, \hyperlink{classfrontier_1_1_u_i_button_a1c4555865094fdd2dd9dd595740c05b0}{frontier\+::\+U\+I\+Button}, \hyperlink{classfrontier_1_1_u_i_image_ad862e7dd5bcd1c2847001f5e1b56c114}{frontier\+::\+U\+I\+Image}, and \hyperlink{class_player_controller_a22c60d9e4464ee585f3592593f14bc50}{Player\+Controller}.
+Initialises the component. Sets the pointer to the entity that this component is attached to. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+parent} & The entity that the component will be attached to. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classfrontier_1_1_transform_a2d8181ec0003b04822124340fe7772c0}{frontier\+::\+Transform}, \hyperlink{classfrontier_1_1_u_i_image_ad862e7dd5bcd1c2847001f5e1b56c114}{frontier\+::\+U\+I\+Image}, \hyperlink{classfrontier_1_1_u_i_button_a1c4555865094fdd2dd9dd595740c05b0}{frontier\+::\+U\+I\+Button}, \hyperlink{class_asteroid_behavior_a79d9559f0d8e109e928acf7f8ff7acea}{Asteroid\+Behavior}, and \hyperlink{class_player_controller_a22c60d9e4464ee585f3592593f14bc50}{Player\+Controller}.
 
 \mbox{\Hypertarget{classfrontier_1_1_component_ab920f9bc07ce051ebb5559c5a66508d1}\label{classfrontier_1_1_component_ab920f9bc07ce051ebb5559c5a66508d1}} 
 \index{frontier\+::\+Component@{frontier\+::\+Component}!On\+Tick@{On\+Tick}}
@@ -129,16 +139,24 @@ Reimplemented in \hyperlink{classfrontier_1_1_triangle_renderer_af67946b86416081
 
 
 
-Reimplemented in \hyperlink{classfrontier_1_1_triangle_renderer_a1db716057c1fcc2c10500958a732963b}{frontier\+::\+Triangle\+Renderer}, \hyperlink{classfrontier_1_1_mesh_renderer_acffde7174ddb009751e360df5d346922}{frontier\+::\+Mesh\+Renderer}, \hyperlink{class_asteroid_spawner_acd2744a9a1ac8f13ac28220b33b9f750}{Asteroid\+Spawner}, \hyperlink{classfrontier_1_1_camera_a1f318703a68e4c070c85a1d9a27446d0}{frontier\+::\+Camera}, \hyperlink{class_asteroid_behavior_a3c1287599e132b49be851d9eeec6380e}{Asteroid\+Behavior}, \hyperlink{classfrontier_1_1_collider_ac03782c94e8f7a2064ea1441cbd12c81}{frontier\+::\+Collider}, \hyperlink{classfrontier_1_1_skybox_a38b2ec1a28314c901f4388745d8f0471}{frontier\+::\+Skybox}, \hyperlink{classfrontier_1_1_u_i_button_a8eda4323e4d0c2cd2c6a4639f39a1a09}{frontier\+::\+U\+I\+Button}, \hyperlink{classfrontier_1_1_u_i_image_a4e0d055c0add55fa5e63ae892ea59498}{frontier\+::\+U\+I\+Image}, \hyperlink{class_projectile_behavior_a7756651ba998e7f3c0abcafcf25796ae}{Projectile\+Behavior}, and \hyperlink{class_player_controller_a5641058df338563ff6bb6bce7645ef7b}{Player\+Controller}.
+Called every frame, use for data that needs to be calculated each frame. 
+
+
+
+Reimplemented in \hyperlink{classfrontier_1_1_collider_ac03782c94e8f7a2064ea1441cbd12c81}{frontier\+::\+Collider}, \hyperlink{classfrontier_1_1_mesh_renderer_acffde7174ddb009751e360df5d346922}{frontier\+::\+Mesh\+Renderer}, \hyperlink{classfrontier_1_1_u_i_image_a4e0d055c0add55fa5e63ae892ea59498}{frontier\+::\+U\+I\+Image}, \hyperlink{classfrontier_1_1_u_i_button_a8eda4323e4d0c2cd2c6a4639f39a1a09}{frontier\+::\+U\+I\+Button}, \hyperlink{classfrontier_1_1_skybox_a38b2ec1a28314c901f4388745d8f0471}{frontier\+::\+Skybox}, \hyperlink{class_asteroid_spawner_acd2744a9a1ac8f13ac28220b33b9f750}{Asteroid\+Spawner}, \hyperlink{class_asteroid_behavior_a3c1287599e132b49be851d9eeec6380e}{Asteroid\+Behavior}, \hyperlink{class_projectile_behavior_a7756651ba998e7f3c0abcafcf25796ae}{Projectile\+Behavior}, and \hyperlink{class_player_controller_a5641058df338563ff6bb6bce7645ef7b}{Player\+Controller}.
 
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classfrontier_1_1_component_a02ebe1c95395e16efa33ddc8499c259c}\label{classfrontier_1_1_component_a02ebe1c95395e16efa33ddc8499c259c}} 
-\index{frontier\+::\+Component@{frontier\+::\+Component}!Copyable@{Copyable}}
-\index{Copyable@{Copyable}!frontier\+::\+Component@{frontier\+::\+Component}}
-\subsubsection{\texorpdfstring{Copyable}{Copyable}}
-{\footnotesize\ttfamily bool frontier\+::\+Component\+::\+Copyable = false\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{classfrontier_1_1_component_ad15af6da45dff3b37abb83bd5697fd87}\label{classfrontier_1_1_component_ad15af6da45dff3b37abb83bd5697fd87}} 
+\index{frontier\+::\+Component@{frontier\+::\+Component}!m\+\_\+copyable@{m\+\_\+copyable}}
+\index{m\+\_\+copyable@{m\+\_\+copyable}!frontier\+::\+Component@{frontier\+::\+Component}}
+\subsubsection{\texorpdfstring{m\+\_\+copyable}{m\_copyable}}
+{\footnotesize\ttfamily bool frontier\+::\+Component\+::m\+\_\+copyable = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Determines if a component has a copy constructor. 
 
 
 

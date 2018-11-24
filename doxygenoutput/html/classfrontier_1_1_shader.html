@@ -71,6 +71,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>A container for a shader. Compiles a shader from filepaths.  
+ <a href="classfrontier_1_1_shader.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_shader_8h_source.html">Shader.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for frontier::Shader:</div>
@@ -78,91 +81,49 @@ Inheritance diagram for frontier::Shader:</div>
  <div class="center">
   <img src="classfrontier_1_1_shader.png" usemap="#frontier::Shader_map" alt=""/>
   <map id="frontier::Shader_map" name="frontier::Shader_map">
-<area href="classfrontier_1_1_resource.html" alt="frontier::Resource" shape="rect" coords="0,0,113,24"/>
+<area href="classfrontier_1_1_resource.html" title="Base class for a resource, all other resource types derive from this. " alt="frontier::Resource" shape="rect" coords="0,0,113,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab428b55b218efdedc1dc6445e43a286f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_shader.html#ab428b55b218efdedc1dc6445e43a286f">Shader</a> ()</td></tr>
-<tr class="separator:ab428b55b218efdedc1dc6445e43a286f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a447710cc5dee2e490e64d86201b114d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_shader.html#a447710cc5dee2e490e64d86201b114d7">~Shader</a> ()</td></tr>
-<tr class="separator:a447710cc5dee2e490e64d86201b114d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae893f9f790c70ef2abaa0f1ba58bfec1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_shader.html#ae893f9f790c70ef2abaa0f1ba58bfec1">SetUniform</a> (const GLchar *_name, float _value, bool _unsetProgram=false)</td></tr>
+<tr class="memdesc:ae893f9f790c70ef2abaa0f1ba58bfec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a float uniform.  <a href="#ae893f9f790c70ef2abaa0f1ba58bfec1">More...</a><br /></td></tr>
 <tr class="separator:ae893f9f790c70ef2abaa0f1ba58bfec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae11b17bf3cc75186024f9a058cf06cb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_shader.html#ae11b17bf3cc75186024f9a058cf06cb7">SetUniform</a> (const GLchar *_name, int _value, bool _unsetProgram=false)</td></tr>
+<tr class="memdesc:ae11b17bf3cc75186024f9a058cf06cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an int uniform.  <a href="#ae11b17bf3cc75186024f9a058cf06cb7">More...</a><br /></td></tr>
 <tr class="separator:ae11b17bf3cc75186024f9a058cf06cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9bb90b3f092c6925293cee5013c9400"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_shader.html#ad9bb90b3f092c6925293cee5013c9400">SetUniform</a> (const GLchar *_name, std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_texture.html">Texture</a> &gt; _texture, bool _unsetProgram=false)</td></tr>
+<tr class="memdesc:ad9bb90b3f092c6925293cee5013c9400"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a texture uniform.  <a href="#ad9bb90b3f092c6925293cee5013c9400">More...</a><br /></td></tr>
 <tr class="separator:ad9bb90b3f092c6925293cee5013c9400"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a801d8cdbe9d924c601fddcdf9744c0d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_shader.html#a801d8cdbe9d924c601fddcdf9744c0d3">SetUniform</a> (const GLchar *_name, std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_cubemap_texture.html">CubemapTexture</a> &gt; _texture, bool _unsetprogram=false)</td></tr>
+<tr class="memdesc:a801d8cdbe9d924c601fddcdf9744c0d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a cubemap uniform.  <a href="#a801d8cdbe9d924c601fddcdf9744c0d3">More...</a><br /></td></tr>
 <tr class="separator:a801d8cdbe9d924c601fddcdf9744c0d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adebc3dfdc6b24535ed01cfc5a8f69867"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_shader.html#adebc3dfdc6b24535ed01cfc5a8f69867">SetUniform</a> (const GLchar *_name, glm::mat4 _value, bool _unsetProgram=false, bool _transpose=false)</td></tr>
+<tr class="memdesc:adebc3dfdc6b24535ed01cfc5a8f69867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a mat4 uniform.  <a href="#adebc3dfdc6b24535ed01cfc5a8f69867">More...</a><br /></td></tr>
 <tr class="separator:adebc3dfdc6b24535ed01cfc5a8f69867"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad5527a4747c3dc7692a8cdaede42537"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_shader.html#aad5527a4747c3dc7692a8cdaede42537">SetUniform</a> (const GLchar *_name, glm::vec3 _value, bool _unsetProgram=false)</td></tr>
+<tr class="memdesc:aad5527a4747c3dc7692a8cdaede42537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a vec3 uniform.  <a href="#aad5527a4747c3dc7692a8cdaede42537">More...</a><br /></td></tr>
 <tr class="separator:aad5527a4747c3dc7692a8cdaede42537"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f1cc89390360779c0df68f2d10efff1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_shader.html#a2f1cc89390360779c0df68f2d10efff1">SetUniform</a> (const GLchar *_name, glm::vec4 _value, bool _unsetProgram=false)</td></tr>
+<tr class="memdesc:a2f1cc89390360779c0df68f2d10efff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a vec4 uniform.  <a href="#a2f1cc89390360779c0df68f2d10efff1">More...</a><br /></td></tr>
 <tr class="separator:a2f1cc89390360779c0df68f2d10efff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2c00404227e37fa33d031b6725d79fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_shader.html#ac2c00404227e37fa33d031b6725d79fb">SetUniform</a> (const GLchar *_name, std::vector&lt; std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_texture.html">Texture</a> &gt;&gt; _values, bool _unsetProgram=false)</td></tr>
-<tr class="separator:ac2c00404227e37fa33d031b6725d79fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dd496d4f828826d25ece1c02274625e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_shader.html#a0dd496d4f828826d25ece1c02274625e">setID</a> (GLuint _newID)</td></tr>
-<tr class="separator:a0dd496d4f828826d25ece1c02274625e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85d4e81088393b8cdfcd8d329ad23909"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_shader.html#a85d4e81088393b8cdfcd8d329ad23909">getID</a> ()</td></tr>
-<tr class="separator:a85d4e81088393b8cdfcd8d329ad23909"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classfrontier_1_1_resource"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classfrontier_1_1_resource')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classfrontier_1_1_resource.html">frontier::Resource</a></td></tr>
-<tr class="memitem:a4ff9f98abc38d11f70b688a9886988c2 inherit pub_methods_classfrontier_1_1_resource"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_resource.html#a4ff9f98abc38d11f70b688a9886988c2">Resource</a> ()</td></tr>
-<tr class="separator:a4ff9f98abc38d11f70b688a9886988c2 inherit pub_methods_classfrontier_1_1_resource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea4c158b678419246b21b69ef27ffca6 inherit pub_methods_classfrontier_1_1_resource"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_resource.html#aea4c158b678419246b21b69ef27ffca6">Resource</a> (std::string _pathStr)</td></tr>
-<tr class="separator:aea4c158b678419246b21b69ef27ffca6 inherit pub_methods_classfrontier_1_1_resource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bad96aa980d5300ddce81602a8d2f91 inherit pub_methods_classfrontier_1_1_resource"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_resource.html#a3bad96aa980d5300ddce81602a8d2f91">~Resource</a> ()</td></tr>
-<tr class="separator:a3bad96aa980d5300ddce81602a8d2f91 inherit pub_methods_classfrontier_1_1_resource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2485d4542cb287c9831558ed1cbd0d13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_shader.html#a2485d4542cb287c9831558ed1cbd0d13">SetID</a> (GLuint _newID)</td></tr>
+<tr class="memdesc:a2485d4542cb287c9831558ed1cbd0d13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new ID for the <a class="el" href="classfrontier_1_1_shader.html" title="A container for a shader. Compiles a shader from filepaths. ">Shader</a>.  <a href="#a2485d4542cb287c9831558ed1cbd0d13">More...</a><br /></td></tr>
+<tr class="separator:a2485d4542cb287c9831558ed1cbd0d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3536975966e61e614e544d1bba702383"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_shader.html#a3536975966e61e614e544d1bba702383">GetID</a> ()</td></tr>
+<tr class="memdesc:a3536975966e61e614e544d1bba702383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current ID for the <a class="el" href="classfrontier_1_1_shader.html" title="A container for a shader. Compiles a shader from filepaths. ">Shader</a>.  <a href="#a3536975966e61e614e544d1bba702383">More...</a><br /></td></tr>
+<tr class="separator:a3536975966e61e614e544d1bba702383"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:add4c33f617fa62cc1d0757a875bacd01"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_shader.html">Shader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_shader.html#add4c33f617fa62cc1d0757a875bacd01">Create</a> (std::string _fragScr, std::string _vertScr, std::vector&lt; GLchar *&gt; _attributes, std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_resources.html">Resources</a> &gt; _resources)</td></tr>
+<tr class="memdesc:add4c33f617fa62cc1d0757a875bacd01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and compiles a new shader and returns a pointer.  <a href="#add4c33f617fa62cc1d0757a875bacd01">More...</a><br /></td></tr>
 <tr class="separator:add4c33f617fa62cc1d0757a875bacd01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_attribs_classfrontier_1_1_resource"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classfrontier_1_1_resource')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classfrontier_1_1_resource.html">frontier::Resource</a></td></tr>
-<tr class="memitem:a69fe22a83fc57a08efd043e2c37edf7a inherit pro_attribs_classfrontier_1_1_resource"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_resource.html#a69fe22a83fc57a08efd043e2c37edf7a">_path</a></td></tr>
-<tr class="separator:a69fe22a83fc57a08efd043e2c37edf7a inherit pro_attribs_classfrontier_1_1_resource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab428b55b218efdedc1dc6445e43a286f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab428b55b218efdedc1dc6445e43a286f">&#9670;&nbsp;</a></span>Shader()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">frontier::Shader::Shader </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a447710cc5dee2e490e64d86201b114d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a447710cc5dee2e490e64d86201b114d7">&#9670;&nbsp;</a></span>~Shader()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">frontier::Shader::~Shader </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A container for a shader. Compiles a shader from filepaths. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="add4c33f617fa62cc1d0757a875bacd01"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#add4c33f617fa62cc1d0757a875bacd01">&#9670;&nbsp;</a></span>Create()</h2>
 
@@ -209,16 +170,27 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates and compiles a new shader and returns a pointer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_fragSrc</td><td>The filepath of the fragment shader. </td></tr>
+    <tr><td class="paramname">_vertSrc</td><td>The filepath of the vertex shader. </td></tr>
+    <tr><td class="paramname">_attributes</td><td>A list of the attributes used in the shader. </td></tr>
+    <tr><td class="paramname">_resources</td><td>A pointer to the resources class so that the shader can be refered back to later. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a85d4e81088393b8cdfcd8d329ad23909"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85d4e81088393b8cdfcd8d329ad23909">&#9670;&nbsp;</a></span>getID()</h2>
+<a id="a3536975966e61e614e544d1bba702383"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3536975966e61e614e544d1bba702383">&#9670;&nbsp;</a></span>GetID()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">GLuint frontier::Shader::getID </td>
+          <td class="memname">GLuint frontier::Shader::GetID </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -226,16 +198,18 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the current ID for the <a class="el" href="classfrontier_1_1_shader.html" title="A container for a shader. Compiles a shader from filepaths. ">Shader</a>. </p>
+
 </div>
 </div>
-<a id="a0dd496d4f828826d25ece1c02274625e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0dd496d4f828826d25ece1c02274625e">&#9670;&nbsp;</a></span>setID()</h2>
+<a id="a2485d4542cb287c9831558ed1cbd0d13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2485d4542cb287c9831558ed1cbd0d13">&#9670;&nbsp;</a></span>SetID()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void frontier::Shader::setID </td>
+          <td class="memname">void frontier::Shader::SetID </td>
           <td>(</td>
           <td class="paramtype">GLuint&#160;</td>
           <td class="paramname"><em>_newID</em></td><td>)</td>
@@ -244,10 +218,18 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets a new ID for the <a class="el" href="classfrontier_1_1_shader.html" title="A container for a shader. Compiles a shader from filepaths. ">Shader</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_newID</td><td>The new ID for the shader. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ae893f9f790c70ef2abaa0f1ba58bfec1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae893f9f790c70ef2abaa0f1ba58bfec1">&#9670;&nbsp;</a></span>SetUniform() <span class="overload">[1/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae893f9f790c70ef2abaa0f1ba58bfec1">&#9670;&nbsp;</a></span>SetUniform() <span class="overload">[1/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -278,10 +260,20 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets a float uniform. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_name</td><td>The name of the uniform </td></tr>
+    <tr><td class="paramname">_value</td><td>The value of the uniform </td></tr>
+    <tr><td class="paramname">_unsetProgram</td><td>Whether to set openGL back to a null shader after the uniform has been set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ae11b17bf3cc75186024f9a058cf06cb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae11b17bf3cc75186024f9a058cf06cb7">&#9670;&nbsp;</a></span>SetUniform() <span class="overload">[2/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae11b17bf3cc75186024f9a058cf06cb7">&#9670;&nbsp;</a></span>SetUniform() <span class="overload">[2/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -312,10 +304,20 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets an int uniform. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_name</td><td>The name of the uniform </td></tr>
+    <tr><td class="paramname">_value</td><td>The value of the uniform </td></tr>
+    <tr><td class="paramname">_unsetProgram</td><td>Whether to set openGL back to a null shader after the uniform has been set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ad9bb90b3f092c6925293cee5013c9400"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9bb90b3f092c6925293cee5013c9400">&#9670;&nbsp;</a></span>SetUniform() <span class="overload">[3/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9bb90b3f092c6925293cee5013c9400">&#9670;&nbsp;</a></span>SetUniform() <span class="overload">[3/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -346,10 +348,20 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets a texture uniform. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_name</td><td>The name of the uniform </td></tr>
+    <tr><td class="paramname">_texture</td><td>The value of the uniform </td></tr>
+    <tr><td class="paramname">_unsetProgram</td><td>Whether to set openGL back to a null shader after the uniform has been set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a801d8cdbe9d924c601fddcdf9744c0d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a801d8cdbe9d924c601fddcdf9744c0d3">&#9670;&nbsp;</a></span>SetUniform() <span class="overload">[4/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a801d8cdbe9d924c601fddcdf9744c0d3">&#9670;&nbsp;</a></span>SetUniform() <span class="overload">[4/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -380,10 +392,20 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets a cubemap uniform. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_name</td><td>The name of the uniform </td></tr>
+    <tr><td class="paramname">_texture</td><td>The value of the uniform </td></tr>
+    <tr><td class="paramname">_unsetProgram</td><td>Whether to set openGL back to a null shader after the uniform has been set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="adebc3dfdc6b24535ed01cfc5a8f69867"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adebc3dfdc6b24535ed01cfc5a8f69867">&#9670;&nbsp;</a></span>SetUniform() <span class="overload">[5/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adebc3dfdc6b24535ed01cfc5a8f69867">&#9670;&nbsp;</a></span>SetUniform() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -420,10 +442,21 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets a mat4 uniform. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_name</td><td>The name of the uniform </td></tr>
+    <tr><td class="paramname">_value</td><td>The value of the uniform </td></tr>
+    <tr><td class="paramname">_unsetProgram</td><td>Whether to set openGL back to a null shader after the uniform has been set. </td></tr>
+    <tr><td class="paramname">_transpose</td><td>Whether the matrix should be transposed or not </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aad5527a4747c3dc7692a8cdaede42537"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad5527a4747c3dc7692a8cdaede42537">&#9670;&nbsp;</a></span>SetUniform() <span class="overload">[6/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aad5527a4747c3dc7692a8cdaede42537">&#9670;&nbsp;</a></span>SetUniform() <span class="overload">[6/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -454,10 +487,20 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets a vec3 uniform. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_name</td><td>The name of the uniform </td></tr>
+    <tr><td class="paramname">_value</td><td>The value of the uniform </td></tr>
+    <tr><td class="paramname">_unsetProgram</td><td>Whether to set openGL back to a null shader after the uniform has been set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a2f1cc89390360779c0df68f2d10efff1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f1cc89390360779c0df68f2d10efff1">&#9670;&nbsp;</a></span>SetUniform() <span class="overload">[7/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f1cc89390360779c0df68f2d10efff1">&#9670;&nbsp;</a></span>SetUniform() <span class="overload">[7/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -488,39 +531,15 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ac2c00404227e37fa33d031b6725d79fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2c00404227e37fa33d031b6725d79fb">&#9670;&nbsp;</a></span>SetUniform() <span class="overload">[8/8]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void frontier::Shader::SetUniform </td>
-          <td>(</td>
-          <td class="paramtype">const GLchar *&#160;</td>
-          <td class="paramname"><em>_name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_texture.html">Texture</a> &gt;&gt;&#160;</td>
-          <td class="paramname"><em>_values</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>_unsetProgram</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Sets a vec4 uniform. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_name</td><td>The name of the uniform </td></tr>
+    <tr><td class="paramname">_value</td><td>The value of the uniform </td></tr>
+    <tr><td class="paramname">_unsetProgram</td><td>Whether to set openGL back to a null shader after the uniform has been set. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

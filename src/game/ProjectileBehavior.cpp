@@ -19,18 +19,18 @@ void ProjectileBehavior::OnInit(std::weak_ptr<frontier::Entity> _parent, std::we
 
 void ProjectileBehavior::OnTick()
 {
-	getEntity()->getComponent<frontier::Transform>()->setPosition(getEntity()->getComponent<frontier::Transform>()->getPosition() + (forwardVector * (-speed * getEnvironment()->getDeltaTime())));
+	GetEntity()->getComponent<frontier::Transform>()->SetPosition(GetEntity()->getComponent<frontier::Transform>()->GetPosition() + (forwardVector * (-speed * GetEnvironment()->GetDeltaTime())));
 
-	if (getEntity()->getComponent<frontier::Transform>()->getPosition().x > 50 || getEntity()->getComponent<frontier::Transform>()->getPosition().x < -50 || getEntity()->getComponent<frontier::Transform>()->getPosition().z > 40 || getEntity()->getComponent<frontier::Transform>()->getPosition().z < -40)
+	if (GetEntity()->getComponent<frontier::Transform>()->GetPosition().x > 50 || GetEntity()->getComponent<frontier::Transform>()->GetPosition().x < -50 || GetEntity()->getComponent<frontier::Transform>()->GetPosition().z > 40 || GetEntity()->getComponent<frontier::Transform>()->GetPosition().z < -40)
 	{
-		getEntity()->setActive(false);
+		GetEntity()->SetActive(false);
 	}
 
 }
 
 void ProjectileBehavior::OnActivate()
 {
-	getEntity()->getComponent<frontier::Transform>()->setPosition(player.lock()->getComponent<frontier::Transform>()->getPosition());
+	GetEntity()->getComponent<frontier::Transform>()->SetPosition(player.lock()->getComponent<frontier::Transform>()->GetPosition());
 	forwardVector = player.lock()->getComponent<PlayerController>()->getForwardVector();
 }
 

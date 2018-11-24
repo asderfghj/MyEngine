@@ -17,7 +17,7 @@ namespace frontier
 			alDeleteBuffers(1, &id);
 		}
 
-		void load_ogg(std::string fileName, std::vector<char> &buffer, ALenum &format, ALsizei &freq)
+		void load_ogg(std::string _fileName, std::vector<char> &_buffer, ALenum &_format, ALsizei &_freq)
 		{
 			int endian = 0;
 			int bitSream = 0;
@@ -26,9 +26,9 @@ namespace frontier
 			vorbis_info *pInfo = NULL;
 			OggVorbis_File oggFile = {0};
 
-			if (ov_fopen(fileName.c_str(), &oggFile) != 0)
+			if (ov_fopen(_fileName.c_str(), &oggFile) != 0)
 			{
-				std::cout << "Failed to open file '" << fileName << "' for decoding" << std::endl;
+				std::cout << "Failed to open file '" << _fileName << "' for decoding" << std::endl;
 				throw std::exception();
 			}
 
@@ -36,14 +36,14 @@ namespace frontier
 
 			if (pInfo->channels == 1)
 			{
-				format = AL_FORMAT_MONO16;
+				_format = AL_FORMAT_MONO16;
 			}
 			else
 			{
-				format = AL_FORMAT_STEREO16;
+				_format = AL_FORMAT_STEREO16;
 			}
 
-			freq = pInfo->rate;
+			_freq = pInfo->rate;
 
 			while (true)
 			{
@@ -52,14 +52,14 @@ namespace frontier
 				if (bytes < 0)
 				{
 					ov_clear(&oggFile);
-					std::cout << "Failed to decode file '" << fileName << "'." << std::endl;
+					std::cout << "Failed to decode file '" << _fileName << "'." << std::endl;
 				}
 				else if (bytes == 0)
 				{
 					break;
 				}
 
-				buffer.insert(buffer.end(), array, array + bytes);
+				_buffer.insert(_buffer.end(), array, array + bytes);
 			}
 
 			ov_clear(&oggFile);
@@ -67,64 +67,59 @@ namespace frontier
 
 	};
 
-	Sound::Sound()
-	{
-
-	}
-
-	std::shared_ptr<Sound> Sound::Create(std::string path, std::shared_ptr<Resources> _resources)
+	std::shared_ptr<Sound> Sound::Create(std::string _path, std::shared_ptr<Resources> _resources)
 	{
 		std::shared_ptr<Sound> rtn = std::make_shared<Sound>();
-		rtn->load(path);
+		rtn->Load(_path);
 		_resources->AddCreatedResource(rtn);
 		return rtn;
 	}
 
-	void Sound::load(std::string path)
+	void Sound::Load(std::string _path)
 	{
-		impl = std::make_shared <SoundImpl>();
+		m_impl = std::make_shared <SoundImpl>();
 
 		ALenum format = 0;
 		ALsizei freq = 0;
 		std::vector<char> bufferData;
 
-		alGenBuffers(1, &impl->id);
+		alGenBuffers(1, &m_impl->id);
 
-		impl->load_ogg(path.c_str(), bufferData, format, freq);
+		m_impl->load_ogg(_path.c_str(), bufferData, format, freq);
 
-		alBufferData(impl->id, format, &bufferData[0], static_cast<ALsizei>(bufferData.size()), freq);
+		alBufferData(m_impl->id, format, &bufferData[0], static_cast<ALsizei>(bufferData.size()), freq);
 
 	}
 
-	void Sound::play(glm::vec3 _soundPosition, glm::vec3 _listenerPosition, bool _looping)
+	void Sound::Play(float _vol, float _varMin, float _varMax, glm::vec3 _soundPosition, glm::vec3 _listenerPosition)
 	{
-		sid = 0;
-		alGenSources(1, &sid);
+		_varMin *= 1000.0f;
+		_varMax *= 1000.0f;
+		float variance = (std::rand() % ((int)_varMin + 1 - (int)_varMax) + (int)_varMin) / 1000.0f;
+		m_sid = 0;
+		alGenSources(1, &m_sid);
 		alListener3f(AL_POSITION, _listenerPosition.x, _listenerPosition.y, _listenerPosition.z);
-		alSource3f(sid, AL_POSITION, _soundPosition.x, _soundPosition.y, _soundPosition.z);
-		alSourcei(sid, AL_LOOPING, _looping);
-		alSourcei(sid, AL_BUFFER, impl->id);
-		alSourcePlay(sid);
+		alSource3f(m_sid, AL_POSITION, _soundPosition.x, _soundPosition.y, _soundPosition.z);
+		alSourcei(m_sid, AL_BUFFER, m_impl->id);
+		alSourcef(m_sid, AL_PITCH, variance);
+		alSourcef(m_sid, AL_GAIN, _vol);
+		alSourcePlay(m_sid);
 	}
 
-	void Sound::play(float vol, float varMin, float varMax, glm::vec3 _soundPosition, glm::vec3 _listenerPosition)
+	void Sound::Play(glm::vec3 _soundPosition, glm::vec3 _listenerPosition, bool _looping)
 	{
-		varMin *= 1000.0f;
-		varMax *= 1000.0f;
-		float variance = (std::rand() % ((int)varMin + 1 - (int)varMax) + (int)varMin) / 1000.0f;
-		sid = 0;
-		alGenSources(1, &sid);
+		m_sid = 0;
+		alGenSources(1, &m_sid);
 		alListener3f(AL_POSITION, _listenerPosition.x, _listenerPosition.y, _listenerPosition.z);
-		alSource3f(sid, AL_POSITION, _soundPosition.x, _soundPosition.y, _soundPosition.z);
-		alSourcei(sid, AL_BUFFER, impl->id);
-		alSourcef(sid, AL_PITCH, variance);
-		alSourcef(sid, AL_GAIN, vol);
-		alSourcePlay(sid);
+		alSource3f(m_sid, AL_POSITION, _soundPosition.x, _soundPosition.y, _soundPosition.z);
+		alSourcei(m_sid, AL_LOOPING, _looping);
+		alSourcei(m_sid, AL_BUFFER, m_impl->id);
+		alSourcePlay(m_sid);
 	}
 
-	void Sound::stop()
+	void Sound::Stop()
 	{
-		alSourceStop(sid);
+		alSourceStop(m_sid);
 	}
 
 }

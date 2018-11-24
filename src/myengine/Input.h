@@ -9,29 +9,32 @@ namespace frontier
 {
 	class Core;
 	
-
+	//!Class for handling input, current input handled: keyboard, mouse, controller
 	class Input
 	{
 	public:
+		//!Enum for keyboard buttons, currently configured for current game.
 		enum ListedButtons
 		{
-			FORWARD,
-			BACK,
-			LEFT,
-			RIGHT,
-			UP,
-			DOWN,
-			SHOOT,
-			ESC,
-			NUM_OF_BUTTONS
+			FORWARD, //!<Bound to W button.
+			BACK,	//!<Bound to S button.
+			LEFT,	//!<Bound to A button.
+			RIGHT,	//!<Bound to D button.
+			UP,		//!<Currently not bound.
+			DOWN,	//!<Currently not bound.
+			SHOOT,	//!<Bound to Q.
+			ESC,	//!<Bound to esc.
+			NUM_OF_BUTTONS	//!<Used for array size.
 		};
 
+		//!Enum for controller stick axes.
 		enum ControllerAxes
 		{
 			LEFTSTICK,
 			RIGHTSTICK
 		};
 
+		//!Enum for controller buttons.
 		enum ControllerButtons
 		{
 			A_BUTTON,
@@ -45,6 +48,7 @@ namespace frontier
 			NUM_OF_CONTROLLER_BUTTONS
 		};
 
+		//!Enum for controller d-pad states.
 		enum DpadStates
 		{
 			DPAD_LEFTUP,
@@ -59,6 +63,7 @@ namespace frontier
 			NUM_OF_STATES
 		};
 
+		//!Enum for mouse buttons.
 		enum MouseButtonStates
 		{
 			LEFT_MOUSE_BUTTON,
@@ -66,52 +71,107 @@ namespace frontier
 			NUM_OF_MOUSE_BUTTON_STATES
 		};
 
-		Input();
-		
-		bool getKey(ListedButtons _keycode);
-		bool getMouseButton(MouseButtonStates _btn);
-		glm::vec2 getMousePos();
-		bool getJoystickButton(ControllerButtons _btn);
-		bool getJoystickDpadState(DpadStates _state);
-		glm::vec2 GetJoystickAxis(ControllerAxes _axis);
-
-		void setCorePtr(std::weak_ptr<Core> _core);
-		bool isJoystickConnected();
-		void FreeJoystick();
-		void UpdateLeftJoystick(glm::vec2 axes);
-		void UpdateRightJoystick(glm::vec2 axes);
-		void Tick();
-
-		void QueueMouseMovementUpdate();
-		void QueueMouseButtonUpdate();
-		void QueueKeyboardUpdate();
-		void QueueControllerJoystickUpdate();
-		void QueueControllerButtonUpdate();
-		void QueueControllerDpadUpdate();
-
-
-		
 
 	private:
 		std::weak_ptr<Core> _corePtr;
-		//std::map<int, bool> _keyboard;
 
 		//keyboard info
-		const Uint8* SDL_KEYBOARDSTATE;
-		uint8_t keys[NUM_OF_BUTTONS - 1] = { false };
-		uint8_t controllerBtns[NUM_OF_CONTROLLER_BUTTONS - 1] = { false };
-		uint8_t dpadStates[NUM_OF_STATES - 1] = { false };
-		uint8_t mouseBtnStates[NUM_OF_MOUSE_BUTTON_STATES - 1] = { false };
-		glm::vec2 _mousePos;
+		const Uint8* m_sdlKeyboardState;
+		uint8_t m_keys[NUM_OF_BUTTONS - 1] = { false };
+		uint8_t m_controllerBtns[NUM_OF_CONTROLLER_BUTTONS - 1] = { false };
+		uint8_t m_dpadStates[NUM_OF_STATES - 1] = { false };
+		uint8_t m_mouseBtnStates[NUM_OF_MOUSE_BUTTON_STATES - 1] = { false };
+		glm::vec2 m_mousePos;
 
-		//joystick info (evetually make this a struct and have an array of pointer structs for multiple controllers
-		bool joystickConnected;
-		SDL_Joystick* Joystick;
-		glm::vec2 leftStickAxes;
-		glm::vec2 rightStickAxes;
-		Sint16 leftTrigger;
-		Sint16 rightTrigger;
-		bool _queueKeyboardUpdate, _queueJoystickUpdate, _queueJoystickButtonUpdate, _queueDpadUpdate, _queueMouseMovementUpdate, _queueMouseButtonUpdate;
+		bool m_joystickConnected;
+		SDL_Joystick* m_joystick;
+		glm::vec2 m_leftStickAxes;
+		glm::vec2 m_rightStickAxes;
+		Sint16 m_leftTrigger;
+		Sint16 m_rightTrigger;
+		bool m_queueKeyboardUpdate, m_queueJoystickUpdate, m_queueJoystickButtonUpdate, m_queueDpadUpdate, m_queueMouseMovementUpdate, m_queueMouseButtonUpdate;
+
+	public:
+		//!Constructor for input, used for controller detection. 
+		Input();
+		
+		//!Queries a key from the ListedButtons enum, false is key up, true is key down.
+		/*!
+			/param _keycode The keycode that needs to be queried.
+		*/
+		bool GetKey(ListedButtons _keycode);
+
+		//!Queries a mouse button from the MouseButtonStates enum, false is key up, true is key down.
+		/*!
+			/param _btn The mouse button that needs to be queried.
+		*/
+		bool GetMouseButton(MouseButtonStates _btn);
+
+		//!Returns the mouse position. 
+		glm::vec2 GetMousePos();
+
+		//!Queries a controller button from the ControllerButtons enum, false is key up, true is key down.
+		/*!
+			/param _btn The controller button that needs to be queried.
+		*/
+		bool GetJoystickButton(ControllerButtons _btn);
+
+		//!Queries a dpad button from the DpadStates enum, false is key up, true is key down.
+		/*!
+			/param _state The dpad state that needs to be queried.
+		*/
+		bool GetJoystickDpadState(DpadStates _state);
+
+		//!Queries a controller axis from the ControllerAxes enum, returns a vec2 of the controller joystick x and y.
+		/*!
+			/param _axis The axis that needs to be queried.
+		*/
+		glm::vec2 GetJoystickAxis(ControllerAxes _axis);
+
+		//!Sets the core pointer
+		/*!
+			/param _core Pointer to the core.
+		*/
+		void SetCorePtr(std::weak_ptr<Core> _core);
+
+		//!Queries if a controller is connected.
+		bool IsJoystickConnected();
+
+		//!Closes and joysicks attached.
+		void FreeJoystick();
+
+		//!Updates the left joystick position
+		/*!
+			\param _axes Left joystick position.
+		*/
+		void UpdateLeftJoystick(glm::vec2 _axes);
+
+		//!Updates the right joystick position
+		/*!
+			\param _axes Right joystick position.
+		*/
+		void UpdateRightJoystick(glm::vec2 _axes);
+
+		//!Updates inputs if any inputs have changed.
+		void Tick();
+
+		//!Queues update for mouse movement.
+		void QueueMouseMovementUpdate();
+
+		//!Queues update for mouse buttons.
+		void QueueMouseButtonUpdate();
+
+		//!Queues update for keyboard buttons.
+		void QueueKeyboardUpdate();
+
+		//!Queues update for controller joysticks.
+		void QueueControllerJoystickUpdate();
+
+		//!Queues update for controller buttons.
+		void QueueControllerButtonUpdate();
+
+		//!Queues update for the controller dpad.
+		void QueueControllerDpadUpdate();
 	};
 
 

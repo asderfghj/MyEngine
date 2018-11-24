@@ -64,36 +64,34 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classfrontier_1_1_mesh-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">frontier::Mesh Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
+<p>Contains vertices, normals and texcoords loaded from an obj.  
+ <a href="classfrontier_1_1_mesh.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_mesh_8h_source.html">Mesh.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6eaa947b29b59b45fca5fae502b04de7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_mesh.html#a6eaa947b29b59b45fca5fae502b04de7">Mesh</a> (std::vector&lt; GLfloat &gt; _vertices, std::vector&lt; GLfloat &gt; _normals, std::vector&lt; GLfloat &gt; _texcoords)</td></tr>
-<tr class="separator:a6eaa947b29b59b45fca5fae502b04de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae41b011b5af82b8413f7748693b709f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_mesh.html#ae41b011b5af82b8413f7748693b709f7">Mesh</a> (std::vector&lt; GLfloat &gt; _vertices, std::vector&lt; GLfloat &gt; _normals, std::vector&lt; GLfloat &gt; _texCoords)</td></tr>
+<tr class="memdesc:ae41b011b5af82b8413f7748693b709f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for a mesh, initialised with vertices, normals and texcoords.  <a href="#ae41b011b5af82b8413f7748693b709f7">More...</a><br /></td></tr>
+<tr class="separator:ae41b011b5af82b8413f7748693b709f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bc251528ec00975e49ba3f156955a3f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_mesh.html#a5bc251528ec00975e49ba3f156955a3f">Mesh</a> (std::vector&lt; GLfloat &gt; _vertices, std::vector&lt; GLfloat &gt; _normals)</td></tr>
+<tr class="memdesc:a5bc251528ec00975e49ba3f156955a3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for a mesh, initialised with vertices and normals.  <a href="#a5bc251528ec00975e49ba3f156955a3f">More...</a><br /></td></tr>
 <tr class="separator:a5bc251528ec00975e49ba3f156955a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37daa84e24b750bb8b488794fa34ed1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_mesh.html#a37daa84e24b750bb8b488794fa34ed1e">Draw</a> (glm::mat4 _model, glm::mat4 _view, glm::mat4 _proj, std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_texture.html">Texture</a> &gt; _tex, std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_shader.html">Shader</a> &gt; _shader)</td></tr>
+<tr class="memdesc:a37daa84e24b750bb8b488794fa34ed1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the mesh.  <a href="#a37daa84e24b750bb8b488794fa34ed1e">More...</a><br /></td></tr>
 <tr class="separator:a37daa84e24b750bb8b488794fa34ed1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:adb7547dcfcfeac9f058c54d278f8046a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; GLfloat &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_mesh.html#adb7547dcfcfeac9f058c54d278f8046a">vertices</a></td></tr>
-<tr class="separator:adb7547dcfcfeac9f058c54d278f8046a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4edd8881188aec021d81b60e7b240fe8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; GLfloat &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_mesh.html#a4edd8881188aec021d81b60e7b240fe8">normals</a></td></tr>
-<tr class="separator:a4edd8881188aec021d81b60e7b240fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67d643f39d706e80ae2d91d2eefea047"><td class="memItemLeft" align="right" valign="top">std::vector&lt; GLfloat &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_mesh.html#a67d643f39d706e80ae2d91d2eefea047">texCoords</a></td></tr>
-<tr class="separator:a67d643f39d706e80ae2d91d2eefea047"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a6eaa947b29b59b45fca5fae502b04de7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6eaa947b29b59b45fca5fae502b04de7">&#9670;&nbsp;</a></span>Mesh() <span class="overload">[1/2]</span></h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Contains vertices, normals and texcoords loaded from an obj. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae41b011b5af82b8413f7748693b709f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae41b011b5af82b8413f7748693b709f7">&#9670;&nbsp;</a></span>Mesh() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -114,7 +112,7 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::vector&lt; GLfloat &gt;&#160;</td>
-          <td class="paramname"><em>_texcoords</em>&#160;</td>
+          <td class="paramname"><em>_texCoords</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -123,6 +121,16 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructor for a mesh, initialised with vertices, normals and texcoords. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_vertices</td><td>Vertices from the obj model. </td></tr>
+    <tr><td class="paramname">_normals</td><td>Normals from the obj model. </td></tr>
+    <tr><td class="paramname">_texCoords</td><td>Texcoords from the obj model. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -151,6 +159,15 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructor for a mesh, initialised with vertices and normals. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_vertices</td><td>Vertices from the obj model. </td></tr>
+    <tr><td class="paramname">_normals</td><td>Normals from the obj model. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -199,48 +216,17 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a4edd8881188aec021d81b60e7b240fe8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4edd8881188aec021d81b60e7b240fe8">&#9670;&nbsp;</a></span>normals</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;GLfloat&gt; frontier::Mesh::normals</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a67d643f39d706e80ae2d91d2eefea047"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67d643f39d706e80ae2d91d2eefea047">&#9670;&nbsp;</a></span>texCoords</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;GLfloat&gt; frontier::Mesh::texCoords</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="adb7547dcfcfeac9f058c54d278f8046a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb7547dcfcfeac9f058c54d278f8046a">&#9670;&nbsp;</a></span>vertices</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;GLfloat&gt; frontier::Mesh::vertices</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Draws the mesh. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_model</td><td>The model matrix to draw the mesh to. </td></tr>
+    <tr><td class="paramname">_view</td><td>The view matrix from a camera. </td></tr>
+    <tr><td class="paramname">_proj</td><td>The projection matrix from a camera. </td></tr>
+    <tr><td class="paramname">_tex</td><td>The texture for the model. </td></tr>
+    <tr><td class="paramname">_shader</td><td>The shader for the model. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

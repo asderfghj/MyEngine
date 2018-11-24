@@ -1,62 +1,55 @@
-#include "Environment.h"
-#include "Timer.h"
 #include <iostream>
 #include <time.h>
+#include "Environment.h"
+#include "Timer.h"
 
 namespace frontier
 {
 
 	Environment::Environment()
 	{
-		std::cout << "Environment created" << std::endl;
-		NOW = SDL_GetPerformanceCounter();
-		LAST = 0;
-		_deltatime = 0;
-		_timer = std::make_shared<Timer>();
-		_countedFrames = 0;
+		m_now = SDL_GetPerformanceCounter();
+		m_last = 0;
+		m_deltaTime = 0;
+		m_timer = std::make_shared<Timer>();
+		m_countedFrames = 0;
 		srand(time(NULL));
 	}
 
-	Environment::~Environment()
+	float Environment::GetDeltaTime()
 	{
-		std::cout << "Environment destroyed" << std::endl;
+		return (float)m_deltaTime;
 	}
 
-	float Environment::getDeltaTime()
+	void Environment::Tick()
 	{
-		return (float)_deltatime;
-	}
-
-	void Environment::tick()
-	{
-		LAST = NOW;
-		NOW = SDL_GetPerformanceCounter();
-		_deltatime = (double)((NOW - LAST) * 1000 / (double)SDL_GetPerformanceFrequency());
-		if (_deltatime > 0.15)
+		m_last = m_now;
+		m_now = SDL_GetPerformanceCounter();
+		m_deltaTime = (double)((m_now - m_last) * 1000 / (double)SDL_GetPerformanceFrequency());
+		if (m_deltaTime > 0.15)
 		{
-			_deltatime = 0.15;
+			m_deltaTime = 0.15;
 		}
-		//primarily for deltatime but if other stuff needs updating add it here as this will be called every frame from core.
 	}
 
 	std::shared_ptr<Timer> Environment::GetTimer()
 	{
-		return _timer;
+		return m_timer;
 	}
 
 	void Environment::IncrementFrameCounter()
 	{
-		_countedFrames++;
+		m_countedFrames++;
 	}
 
 	int Environment::GetCountedFrames()
 	{
-		return _countedFrames;
+		return m_countedFrames;
 	}
 
-	float Environment::getFPS()
+	float Environment::GetFPS()
 	{
-		float avgFPS = _countedFrames / (_timer->GetTicks() / 1000.0f);
+		float avgFPS = m_countedFrames / (m_timer->GetTicks() / 1000.0f);
 		if (avgFPS > 2000000)
 		{
 			avgFPS = 0;
@@ -64,17 +57,17 @@ namespace frontier
 		return avgFPS;
 	}
 
-	Uint32 Environment::getTime()
-	{
-		return _timer->GetTicks();
-	}
-
-	float Environment::getRandomBetweenTwoValues(float _val1, float _val2)
+	float Environment::GetRandomBetweenTwoValues(float _val1, float _val2)
 	{
 		float random = ((float)rand() / (float)RAND_MAX);
 		float diff = _val2 - _val1;
 		float r = random * diff;
 		return _val1 + r;
+	}
+
+	Uint32 Environment::GetTime()
+	{
+		return m_timer->GetTicks();
 	}
 
 }

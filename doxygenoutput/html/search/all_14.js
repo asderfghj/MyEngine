@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vertices',['vertices',['../classfrontier_1_1_mesh.html#adb7547dcfcfeac9f058c54d278f8046a',1,'frontier::Mesh']]]
+  ['y_5fbutton',['Y_BUTTON',['../classfrontier_1_1_input.html#affa0331a173268233d6630184a105bb6a4f354b5fec8fc772cc16d2e4bc4bfe6c',1,'frontier::Input']]]
 ];

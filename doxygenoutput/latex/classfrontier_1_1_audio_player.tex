@@ -2,6 +2,11 @@
 \label{classfrontier_1_1_audio_player}\index{frontier\+::\+Audio\+Player@{frontier\+::\+Audio\+Player}}
 
 
+This class holds a sound resource which can then be attached to a entity can can be played in various different ways.  
+
+
+
+
 {\ttfamily \#include $<$Audio\+Player.\+h$>$}
 
 Inheritance diagram for frontier\+:\+:Audio\+Player\+:\begin{figure}[H]
@@ -14,7 +19,7 @@ Inheritance diagram for frontier\+:\+:Audio\+Player\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classfrontier_1_1_audio_player_a6a000a15e398c4de2eb767c4a4cbede7}{On\+Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \+\_\+parent, std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_sound}{Sound} $>$ \+\_\+sound)
-\begin{DoxyCompactList}\small\item\em Initialises the Audio player component, this will be called by Add\+Component in the \hyperlink{classfrontier_1_1_entity}{Entity} class, adds a sound to the audio player. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Initialises the audio player component, this will be called by Add\+Component in the \hyperlink{classfrontier_1_1_entity}{Entity} class, adds a sound to the audio player. \end{DoxyCompactList}\item 
 void \hyperlink{classfrontier_1_1_audio_player_ad5791ca0776113116a815f86bd630ad7}{Play} (bool \+\_\+looping=false)
 \begin{DoxyCompactList}\small\item\em Plays the currently attached sound. \end{DoxyCompactList}\item 
 void \hyperlink{classfrontier_1_1_audio_player_a757be1bd81df8c3885b03177946b38d1}{Play} (glm\+::vec3 \+\_\+sound\+Position, glm\+::vec3 \+\_\+listener\+Position, bool \+\_\+looping=false)
@@ -55,7 +60,7 @@ Attaches a new sound to the audio player.
 
 
 
-Initialises the Audio player component, this will be called by Add\+Component in the \hyperlink{classfrontier_1_1_entity}{Entity} class, adds a sound to the audio player. 
+Initialises the audio player component, this will be called by Add\+Component in the \hyperlink{classfrontier_1_1_entity}{Entity} class, adds a sound to the audio player. 
 
 
 \begin{DoxyParams}{Parameters}

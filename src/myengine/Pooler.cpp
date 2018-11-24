@@ -7,17 +7,17 @@ namespace frontier
 {
 	std::weak_ptr<Entity> Pooler::AddNewEntity()
 	{
-		std::weak_ptr<Entity> rtn = _corePtr.lock()->addEntity(poolPrefab);
-		rtn.lock()->setActive(false);
-		entities.push_back(rtn);
+		std::weak_ptr<Entity> rtn = m_corePtr.lock()->AddEntity(m_poolPrefab);
+		rtn.lock()->SetActive(false);
+		m_entities.push_back(rtn);
 		return rtn;
 	}
 
 	void Pooler::OnInit(std::weak_ptr<Core> _core, std::string _id, std::shared_ptr<Prefab> _prefab, int initialPoolSize)
 	{
-		_corePtr = _core;
-		poolID = _id;
-		poolPrefab = _prefab;
+		m_corePtr = _core;
+		m_poolID = _id;
+		m_poolPrefab = _prefab;
 		for (size_t i = 0; i < initialPoolSize; i++)
 		{
 			AddNewEntity();
@@ -29,13 +29,13 @@ namespace frontier
 		std::weak_ptr<Entity> newObject;
 		bool objectFound = false;
 
-		for (size_t i = 0; i < entities.size(); i++)
+		for (size_t i = 0; i < m_entities.size(); i++)
 		{
-			if (!entities[i].lock()->isActive() && !entities[i].lock()->isActivating())
+			if (!m_entities[i].lock()->IsActive() && !m_entities[i].lock()->IsActivating())
 			{
-				newObject = entities[i];
+				newObject = m_entities[i];
 				objectFound = true;
-				newObject.lock()->setActivating(true);
+				newObject.lock()->SetActivating(true);
 				break;
 			}
 		}
@@ -45,26 +45,26 @@ namespace frontier
 			newObject = AddNewEntity();
 		}
 
-		newObject.lock()->getComponent<Transform>()->setPosition(_position);
+		newObject.lock()->getComponent<Transform>()->SetPosition(_position);
 		if (_modifyScale)
 		{
-			newObject.lock()->getComponent<Transform>()->setScale(_scale);
+			newObject.lock()->getComponent<Transform>()->SetScale(_scale);
 		}
-		_corePtr.lock()->AddToEntitiesToActivate(newObject.lock());
+		m_corePtr.lock()->AddToEntitiesToActivate(newObject.lock());
 		return newObject;
 	}
 
-	std::string Pooler::getID()
+	std::string Pooler::GetID()
 	{
-		return poolID;
+		return m_poolID;
 	}
 
-	int Pooler::getActiveInPool()
+	int Pooler::GetActiveInPool()
 	{
 		int activeObjects = 0;
-		for (size_t i = 0; i < entities.size(); i++)
+		for (size_t i = 0; i < m_entities.size(); i++)
 		{
-			if (entities[i].lock()->isActive())
+			if (m_entities[i].lock()->IsActive())
 			{
 				activeObjects++;
 			}
@@ -73,13 +73,13 @@ namespace frontier
 		return activeObjects;
 	}
 
-	void Pooler::deactivateAllInstances()
+	void Pooler::DeactivateAllInstances()
 	{
-		for (size_t i = 0; i < entities.size(); i++)
+		for (size_t i = 0; i < m_entities.size(); i++)
 		{
-			if (entities[i].lock()->isActive())
+			if (m_entities[i].lock()->IsActive())
 			{
-				entities[i].lock()->setActive(false);
+				m_entities[i].lock()->SetActive(false);
 			}
 		}
 	}

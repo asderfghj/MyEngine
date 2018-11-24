@@ -14,11 +14,11 @@ Inheritance diagram for Asteroid\+Behavior\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_asteroid_behavior_a79d9559f0d8e109e928acf7f8ff7acea}{On\+Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{frontier\+::\+Entity} $>$ \+\_\+parent)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialises the component. Sets the pointer to the entity that this component is attached to. \end{DoxyCompactList}\item 
 void \hyperlink{class_asteroid_behavior_a3c1287599e132b49be851d9eeec6380e}{On\+Tick} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Called every frame, use for data that needs to be calculated each frame. \end{DoxyCompactList}\item 
 void \hyperlink{class_asteroid_behavior_a7c4f344a9461d1296d4dcfcd51ed3bbc}{On\+Activate} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Called when an entity\textquotesingle{}s active state is changed from false to true. \end{DoxyCompactList}\item 
 void \hyperlink{class_asteroid_behavior_ab1f0bf83f6291bda3934c1b48141908f}{Set\+Direction} (glm\+::vec3 new\+Direction)
 \item 
 void \hyperlink{class_asteroid_behavior_a6059686f8a09c3911187407143d3a3cf}{set\+Randomiser\+Override} (bool \+\_\+override)
@@ -35,6 +35,10 @@ void \hyperlink{class_asteroid_behavior_a6059686f8a09c3911187407143d3a3cf}{set\+
 
 
 
+Called when an entity\textquotesingle{}s active state is changed from false to true. 
+
+
+
 Reimplemented from \hyperlink{classfrontier_1_1_component_a77fca7ba1960aafb9bc05905e300c79d}{frontier\+::\+Component}.
 
 \mbox{\Hypertarget{class_asteroid_behavior_a79d9559f0d8e109e928acf7f8ff7acea}\label{class_asteroid_behavior_a79d9559f0d8e109e928acf7f8ff7acea}} 
@@ -45,6 +49,15 @@ Reimplemented from \hyperlink{classfrontier_1_1_component_a77fca7ba1960aafb9bc05
 
 
 
+Initialises the component. Sets the pointer to the entity that this component is attached to. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+parent} & The entity that the component will be attached to. \\
+\hline
+\end{DoxyParams}
+
+
 Reimplemented from \hyperlink{classfrontier_1_1_component_af3da02905c4d79219d9b12f260a35ad1}{frontier\+::\+Component}.
 
 \mbox{\Hypertarget{class_asteroid_behavior_a3c1287599e132b49be851d9eeec6380e}\label{class_asteroid_behavior_a3c1287599e132b49be851d9eeec6380e}} 
@@ -52,6 +65,10 @@ Reimplemented from \hyperlink{classfrontier_1_1_component_af3da02905c4d79219d9b1
 \index{On\+Tick@{On\+Tick}!Asteroid\+Behavior@{Asteroid\+Behavior}}
 \subsubsection{\texorpdfstring{On\+Tick()}{OnTick()}}
 {\footnotesize\ttfamily void Asteroid\+Behavior\+::\+On\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame, use for data that needs to be calculated each frame. 
 
 
 

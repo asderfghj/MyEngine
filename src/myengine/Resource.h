@@ -6,15 +6,9 @@
 
 namespace frontier
 {
-
+	//!Base class for a resource, all other resource types derive from this.
 	class Resource
 	{
-	protected:
-		std::string _path;
-	public:
-		Resource();
-		Resource(std::string _pathStr);
-		~Resource();
 	};
 
 }

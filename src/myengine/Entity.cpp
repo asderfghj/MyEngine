@@ -10,23 +10,16 @@
 
 namespace frontier
 {
-
-	Entity::Entity()
-	{
-		std::cout << "Entity Created" << std::endl;
-	}
-
 	Entity::~Entity()
 	{
-		_components.clear();
-		std::cout << "Entity Destroyed" << std::endl;
+		m_components.clear();
 	}
 
-	void Entity::tick()
+	void Entity::Tick()
 	{
-		if (_active)
+		if (m_active)
 		{
-			for each (std::shared_ptr<Component> _c in _components)
+			for each (std::shared_ptr<Component> _c in m_components)
 			{
 				_c->OnTick();
 			}
@@ -34,50 +27,44 @@ namespace frontier
 
 	}
 
-	void Entity::display()
+	void Entity::Init(std::weak_ptr<Core> _corePtr)
 	{
-		//I have absolutley no clue...
+		m_core = _corePtr;
+		std::shared_ptr<Transform> trans = AddComponent<Transform>();
+		trans->SetSelf(trans);
 	}
 
-	void Entity::init(std::weak_ptr<Core> _corePtr)
+	void Entity::Init(std::weak_ptr<Core> _corePtr, glm::vec3 _position, glm::vec3 _rotation, glm::vec3 _scale)
 	{
-		//any other stuff here
-		_core = _corePtr;
-		std::shared_ptr<Transform> trans = addComponent<Transform>();
-		trans->setSelf(trans);
+		m_core = _corePtr;
+		AddComponent<Transform, glm::vec3, glm::vec3, glm::vec3>(_position, _rotation, _scale);
 	}
 
-	void Entity::init(std::weak_ptr<Core> _corePtr, glm::vec3 _position, glm::vec3 _rotation, glm::vec3 _scale)
+	void Entity::Init(std::weak_ptr<Core> _corePtr, std::shared_ptr<Prefab> _prefab, glm::vec3 _position, glm::vec3 _rotation, glm::vec3 _scale)
 	{
-		_core = _corePtr;
-		addComponent<Transform, glm::vec3, glm::vec3, glm::vec3>(_position, _rotation, _scale);
-	}
-
-	void Entity::init(std::weak_ptr<Core> _corePtr, std::shared_ptr<Prefab> _prefab, glm::vec3 _position, glm::vec3 _rotation, glm::vec3 _scale)
-	{
-		_core = _corePtr;
-		addComponent<Transform, glm::vec3, glm::vec3, glm::vec3>(_position, _rotation, _scale);
+		m_core = _corePtr;
+		AddComponent<Transform, glm::vec3, glm::vec3, glm::vec3>(_position, _rotation, _scale);
 		for (size_t i = 0; i < _prefab->getComponents().size(); i++)
 		{
 
 			if (typeid(*_prefab->getComponents()[i]).name() == typeid(MeshRenderer).name())
 			{
-				addCopyOfComponent<MeshRenderer>(_prefab->getComponent<MeshRenderer>());
+				addCopyOfComponent<MeshRenderer>(_prefab->GetComponent<MeshRenderer>());
 			}
 
 			else if (typeid(*_prefab->getComponents()[i]).name() == typeid(Collider).name())
 			{
-				addCopyOfComponent<Collider>(_prefab->getComponent<Collider>());
+				addCopyOfComponent<Collider>(_prefab->GetComponent<Collider>());
 			}
 
 			else if (typeid(*_prefab->getComponents()[i]).name() == typeid(AsteroidBehavior).name())
 			{
-				addComponent<AsteroidBehavior>();
+				AddComponent<AsteroidBehavior>();
 			}
 
 			else if (typeid(*_prefab->getComponents()[i]).name() == typeid(ProjectileBehavior).name())
 			{
-				addCopyOfComponent<ProjectileBehavior>(_prefab->getComponent<ProjectileBehavior>());
+				addCopyOfComponent<ProjectileBehavior>(_prefab->GetComponent<ProjectileBehavior>());
 			}
 
 			else
@@ -87,45 +74,45 @@ namespace frontier
 		}
 	}
 
-	void Entity::setSelf(std::weak_ptr<Entity> _selfPtr)
+	void Entity::SetSelf(std::weak_ptr<Entity> _selfPtr)
 	{
-		_self = _selfPtr;
+		m_self = _selfPtr;
 	}
 
-	void Entity::setActive(bool active)
+	void Entity::SetActive(bool _active)
 	{
-		if (active && !_active)
+		if (_active && !m_active)
 		{
-			_active = active;
-			for (size_t i = 0; i < _components.size(); i++)
+			m_active = _active;
+			for (size_t i = 0; i < m_components.size(); i++)
 			{
-				_components[i]->OnActivate();
+				m_components[i]->OnActivate();
 			}
 		}
 		else
 		{
-			_active = active;
+			m_active = _active;
 		}
 	}
 
-	void Entity::setActivating(bool activating)
+	void Entity::SetActivating(bool _activating)
 	{
-		_activating = activating;
+		m_activating = _activating;
 	}
 
-	bool Entity::isActive()
+	bool Entity::IsActive()
 	{
-		return _active;
+		return m_active;
 	}
 
-	bool Entity::isActivating()
+	bool Entity::IsActivating()
 	{
-		return _activating;
+		return m_activating;
 	}
 
-	std::shared_ptr<Core> Entity::getCore()
+	std::shared_ptr<Core> Entity::GetCore()
 	{
-		return _core.lock();
+		return m_core.lock();
 	}
 
 }

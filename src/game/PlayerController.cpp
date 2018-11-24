@@ -17,9 +17,9 @@ void PlayerController::OnInit(std::weak_ptr<frontier::Entity> _parent)
 	countedFrames = 0;
 	life = 3;
 	gameOver = false;
-	forwardVector.x = cos(glm::radians(getEntity()->getComponent<frontier::Transform>()->getRotation().x)) * sin(glm::radians(getEntity()->getComponent<frontier::Transform>()->getRotation().y));
-	forwardVector.y = sin(glm::radians(getEntity()->getComponent<frontier::Transform>()->getRotation().x));
-	forwardVector.z = cos(glm::radians(getEntity()->getComponent<frontier::Transform>()->getRotation().x)) * cos(glm::radians(getEntity()->getComponent<frontier::Transform>()->getRotation().y));
+	forwardVector.x = cos(glm::radians(GetEntity()->getComponent<frontier::Transform>()->GetRotation().x)) * sin(glm::radians(GetEntity()->getComponent<frontier::Transform>()->GetRotation().y));
+	forwardVector.y = sin(glm::radians(GetEntity()->getComponent<frontier::Transform>()->GetRotation().x));
+	forwardVector.z = cos(glm::radians(GetEntity()->getComponent<frontier::Transform>()->GetRotation().x)) * cos(glm::radians(GetEntity()->getComponent<frontier::Transform>()->GetRotation().y));
 	forwardVector = glm::normalize(forwardVector);
 }
 
@@ -27,19 +27,19 @@ void PlayerController::OnTick()
 {
 	bool moveForward, rotateLeft, rotateRight;
 
-	if (getInput()->isJoystickConnected())
+	if (GetInput()->IsJoystickConnected())
 	{
-		moveForward = getInput()->GetJoystickAxis(frontier::Input::LEFTSTICK).y < -8000;
-		rotateLeft = getInput()->GetJoystickAxis(frontier::Input::LEFTSTICK).x < -8000;
-		rotateRight = getInput()->GetJoystickAxis(frontier::Input::LEFTSTICK).x > 8000;
-		shooting = getInput()->getJoystickButton(frontier::Input::A_BUTTON);
+		moveForward = GetInput()->GetJoystickAxis(frontier::Input::LEFTSTICK).y < -8000;
+		rotateLeft = GetInput()->GetJoystickAxis(frontier::Input::LEFTSTICK).x < -8000;
+		rotateRight = GetInput()->GetJoystickAxis(frontier::Input::LEFTSTICK).x > 8000;
+		shooting = GetInput()->GetJoystickButton(frontier::Input::A_BUTTON);
 	}
 	else
 	{
-		moveForward = getInput()->getKey(frontier::Input::FORWARD);
-		rotateLeft = getInput()->getKey(frontier::Input::LEFT);
-		rotateRight = getInput()->getKey(frontier::Input::RIGHT);
-		shooting = getInput()->getKey(frontier::Input::SHOOT);
+		moveForward = GetInput()->GetKey(frontier::Input::FORWARD);
+		rotateLeft = GetInput()->GetKey(frontier::Input::LEFT);
+		rotateRight = GetInput()->GetKey(frontier::Input::RIGHT);
+		shooting = GetInput()->GetKey(frontier::Input::SHOOT);
 	}
 
 	if (moveForward)
@@ -94,47 +94,47 @@ void PlayerController::OnTick()
 
 	if (RotateVelocity > 0 || RotateVelocity < 0)
 	{
-		glm::vec3 rotation = getEntity()->getComponent<frontier::Transform>()->getRotation();
-		getEntity()->getComponent<frontier::Transform>()->setRotation(glm::vec3(rotation.x, rotation.y + (RotateVelocity * getEnvironment()->getDeltaTime()), rotation.z));
+		glm::vec3 rotation = GetEntity()->getComponent<frontier::Transform>()->GetRotation();
+		GetEntity()->getComponent<frontier::Transform>()->SetRotation(glm::vec3(rotation.x, rotation.y + (RotateVelocity * GetEnvironment()->GetDeltaTime()), rotation.z));
 
 
 
-		forwardVector.x = cos(glm::radians(getEntity()->getComponent<frontier::Transform>()->getRotation().x)) * sin(glm::radians(getEntity()->getComponent<frontier::Transform>()->getRotation().y));
-		forwardVector.y = sin(glm::radians(getEntity()->getComponent<frontier::Transform>()->getRotation().x));
-		forwardVector.z = cos(glm::radians(getEntity()->getComponent<frontier::Transform>()->getRotation().x)) * cos(glm::radians(getEntity()->getComponent<frontier::Transform>()->getRotation().y));
+		forwardVector.x = cos(glm::radians(GetEntity()->getComponent<frontier::Transform>()->GetRotation().x)) * sin(glm::radians(GetEntity()->getComponent<frontier::Transform>()->GetRotation().y));
+		forwardVector.y = sin(glm::radians(GetEntity()->getComponent<frontier::Transform>()->GetRotation().x));
+		forwardVector.z = cos(glm::radians(GetEntity()->getComponent<frontier::Transform>()->GetRotation().x)) * cos(glm::radians(GetEntity()->getComponent<frontier::Transform>()->GetRotation().y));
 		forwardVector = glm::normalize(forwardVector);
 
 	}
 
 	if (ForwardVelocity > 0)
 	{
-		getEntity()->getComponent<frontier::Transform>()->setPosition(getEntity()->getComponent<frontier::Transform>()->getPosition() + (forwardVector * (-ForwardVelocity * getEnvironment()->getDeltaTime())));
+		GetEntity()->getComponent<frontier::Transform>()->SetPosition(GetEntity()->getComponent<frontier::Transform>()->GetPosition() + (forwardVector * (-ForwardVelocity * GetEnvironment()->GetDeltaTime())));
 	}
 
-	if (getEntity()->getComponent<frontier::Transform>()->getPosition().x > 50)
+	if (GetEntity()->getComponent<frontier::Transform>()->GetPosition().x > 50)
 	{
-		getEntity()->getComponent<frontier::Transform>()->setPosition(glm::vec3(-49, getEntity()->getComponent<frontier::Transform>()->getPosition().y, getEntity()->getComponent<frontier::Transform>()->getPosition().z));
+		GetEntity()->getComponent<frontier::Transform>()->SetPosition(glm::vec3(-49, GetEntity()->getComponent<frontier::Transform>()->GetPosition().y, GetEntity()->getComponent<frontier::Transform>()->GetPosition().z));
 	}
 
-	if (getEntity()->getComponent<frontier::Transform>()->getPosition().x < -50)
+	if (GetEntity()->getComponent<frontier::Transform>()->GetPosition().x < -50)
 	{
-		getEntity()->getComponent<frontier::Transform>()->setPosition(glm::vec3(49, getEntity()->getComponent<frontier::Transform>()->getPosition().y, getEntity()->getComponent<frontier::Transform>()->getPosition().z));
+		GetEntity()->getComponent<frontier::Transform>()->SetPosition(glm::vec3(49, GetEntity()->getComponent<frontier::Transform>()->GetPosition().y, GetEntity()->getComponent<frontier::Transform>()->GetPosition().z));
 	}
 
-	if (getEntity()->getComponent<frontier::Transform>()->getPosition().z > 40)
+	if (GetEntity()->getComponent<frontier::Transform>()->GetPosition().z > 40)
 	{
-		getEntity()->getComponent<frontier::Transform>()->setPosition(glm::vec3( getEntity()->getComponent<frontier::Transform>()->getPosition().x, getEntity()->getComponent<frontier::Transform>()->getPosition().y, -39));
+		GetEntity()->getComponent<frontier::Transform>()->SetPosition(glm::vec3( GetEntity()->getComponent<frontier::Transform>()->GetPosition().x, GetEntity()->getComponent<frontier::Transform>()->GetPosition().y, -39));
 	}
 
-	if (getEntity()->getComponent<frontier::Transform>()->getPosition().z < -40)
+	if (GetEntity()->getComponent<frontier::Transform>()->GetPosition().z < -40)
 	{
-		getEntity()->getComponent<frontier::Transform>()->setPosition(glm::vec3(getEntity()->getComponent<frontier::Transform>()->getPosition().x, getEntity()->getComponent<frontier::Transform>()->getPosition().y, 39));
+		GetEntity()->getComponent<frontier::Transform>()->SetPosition(glm::vec3(GetEntity()->getComponent<frontier::Transform>()->GetPosition().x, GetEntity()->getComponent<frontier::Transform>()->GetPosition().y, 39));
 	}
 
 	if (shooting && !hasshot)
 	{
 		shootSound.lock()->PlayWithVariance(1.0f, 0.9f, 1.1f);
-		getCore()->getPooler("missilepooler")->Spawn(getEntity()->getComponent<frontier::Transform>()->getPosition());
+		GetCore()->GetPooler("missilepooler")->Spawn(GetEntity()->getComponent<frontier::Transform>()->GetPosition());
 		hasshot = true;
 		countedFrames = 0;
 	}
@@ -182,34 +182,34 @@ void PlayerController::Hit()
 	crashSound.lock()->PlayWithVariance(1.0f, 0.9f, 1.1f);
 	if (life >= 3)
 	{
-		_lifeIcon1.lock()->setActive(true);
-		_lifeIcon2.lock()->setActive(true);
-		_lifeIcon3.lock()->setActive(true);
+		_lifeIcon1.lock()->SetActive(true);
+		_lifeIcon2.lock()->SetActive(true);
+		_lifeIcon3.lock()->SetActive(true);
 		isInvicible = true;
 	}
 	else if (life == 2)
 	{
-		_lifeIcon1.lock()->setActive(true);
-		_lifeIcon2.lock()->setActive(true);
-		_lifeIcon3.lock()->setActive(false);
+		_lifeIcon1.lock()->SetActive(true);
+		_lifeIcon2.lock()->SetActive(true);
+		_lifeIcon3.lock()->SetActive(false);
 		isInvicible = true;
 	}
 	else if (life == 1)
 	{
-		_lifeIcon1.lock()->setActive(true);
-		_lifeIcon2.lock()->setActive(false);
-		_lifeIcon3.lock()->setActive(false);
+		_lifeIcon1.lock()->SetActive(true);
+		_lifeIcon2.lock()->SetActive(false);
+		_lifeIcon3.lock()->SetActive(false);
 		isInvicible = true;
 	}
 	else
 	{
-		_lifeIcon1.lock()->setActive(false);
-		_lifeIcon2.lock()->setActive(false);
-		_lifeIcon3.lock()->setActive(false);
+		_lifeIcon1.lock()->SetActive(false);
+		_lifeIcon2.lock()->SetActive(false);
+		_lifeIcon3.lock()->SetActive(false);
 		gameOver = true;
-		getCore()->deactivateAllInstancesInPools();
-		_gameOverText.lock()->setActive(true);
-		getEntity()->setActive(false);
+		GetCore()->DeactivateAllInstancesInPools();
+		_gameOverText.lock()->SetActive(true);
+		GetEntity()->SetActive(false);
 	}
 }
 

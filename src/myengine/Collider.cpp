@@ -14,9 +14,11 @@ namespace frontier
 	void Collider::OnInit(std::weak_ptr<Entity> _parent, glm::vec3 boxscale)
 	{
 		Component::OnInit(_parent);
-		Copyable = true;
+		//used for prefabs
+		m_copyable = true;
 		m_boxScale = boxscale;
 
+		//initialisation of wireframe box for debugging.
 		std::vector<GLfloat> colliderVertices = {
 			// cube positions          
 			-1.0f,  1.0f, -1.0f,
@@ -78,7 +80,7 @@ namespace frontier
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		glBindVertexArray(0);
 
-		m_shaderProgram = getCore()->getHitboxShader();
+		m_shaderProgram = GetCore()->getHitboxShader();
 
 		m_drawWireframe = false;
 		m_colliding = false;
@@ -87,9 +89,10 @@ namespace frontier
 	void Collider::OnInit(std::weak_ptr<Entity> _parent, std::weak_ptr<Collider> _original)
 	{
 		Component::OnInit(_parent);
-		Copyable = true;
+		m_copyable = true;
 		m_boxScale = _original.lock()->GetBoxScale();
 
+		//initialisation of wireframe box for debugging.
 		std::vector<GLfloat> colliderVertices = {
 			// cube positions          
 			-1.0f,  1.0f, -1.0f,
@@ -151,7 +154,7 @@ namespace frontier
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		glBindVertexArray(0);
 
-		m_shaderProgram = getCore()->getHitboxShader();
+		m_shaderProgram = GetCore()->getHitboxShader();
 
 		m_drawWireframe = false;
 		m_colliding = false;
@@ -161,12 +164,13 @@ namespace frontier
 	{
 		Component::OnTick();
 		m_collidingEntities.clear();
-		std::vector<std::weak_ptr<Entity>> EntitiesWithColliders = getCore()->getEntitiesWithComponent<Collider>();
-		for (size_t i = 0; i < EntitiesWithColliders.size(); i++)
+		std::vector<std::weak_ptr<Entity>> entitiesWithColliders = GetCore()->getEntitiesWithComponent<Collider>();
+		for (size_t i = 0; i < entitiesWithColliders.size(); i++)
 		{
-			if (EntitiesWithColliders[i].lock()->getComponent<Collider>()->CheckIfColliding(getEntity()->getComponent<Transform>()->getPosition(), m_boxScale * getEntity()->getComponent<Transform>()->getScale()) && EntitiesWithColliders[i].lock()->isActive())
+			//checks every entity with a colldier for collsion
+			if (entitiesWithColliders[i].lock()->getComponent<Collider>()->CheckIfColliding(GetEntity()->getComponent<Transform>()->GetPosition(), m_boxScale * GetEntity()->getComponent<Transform>()->GetScale()) && entitiesWithColliders[i].lock()->IsActive())
 			{
-				m_collidingEntities.push_back(EntitiesWithColliders[i]);
+				m_collidingEntities.push_back(entitiesWithColliders[i]);
 			}
 		}
 		
@@ -183,15 +187,15 @@ namespace frontier
 		{
 			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-			glUseProgram(m_shaderProgram->getID());
-			m_shaderProgram->SetUniform("projection", getEntity()->getCore()->getMainCamera()->GetProjectionMatrix());
-			m_shaderProgram->SetUniform("view", getEntity()->getCore()->getMainCamera()->GetViewMatrix());
+			glUseProgram(m_shaderProgram->GetID());
+			m_shaderProgram->SetUniform("projection", GetEntity()->GetCore()->GetMainCamera()->GetProjectionMatrix());
+			m_shaderProgram->SetUniform("view", GetEntity()->GetCore()->GetMainCamera()->GetViewMatrix());
 
 			glm::mat4 model = glm::mat4(1.0f), trans = glm::mat4(1.0f), sca = glm::mat4(1.0f);
 
-			trans = glm::translate(trans, getEntity()->getComponent<Transform>()->getPosition());
+			trans = glm::translate(trans, GetEntity()->getComponent<Transform>()->GetPosition());
 
-			sca = glm::scale(sca, m_boxScale * getEntity()->getComponent<Transform>()->getScale());
+			sca = glm::scale(sca, m_boxScale * GetEntity()->getComponent<Transform>()->GetScale());
 
 			model = trans *  sca;
 
@@ -217,9 +221,10 @@ namespace frontier
 
 	bool Collider::CheckIfColliding(glm::vec3 _position, glm::vec3 _scale)
 	{
-		return (glm::abs(getEntity()->getComponent<Transform>()->getPosition().x - _position.x) < (m_boxScale.x * getEntity()->getComponent<Transform>()->getScale().x + _scale.x)) &&
-			   (glm::abs(getEntity()->getComponent<Transform>()->getPosition().y - _position.y) < (m_boxScale.y * getEntity()->getComponent<Transform>()->getScale().y + _scale.y)) &&
-			   (glm::abs(getEntity()->getComponent<Transform>()->getPosition().z - _position.z) < (m_boxScale.z * getEntity()->getComponent<Transform>()->getScale().z + _scale.z));
+
+		return (glm::abs(GetEntity()->getComponent<Transform>()->GetPosition().x - _position.x) < (m_boxScale.x * GetEntity()->getComponent<Transform>()->GetScale().x + _scale.x)) &&
+			   (glm::abs(GetEntity()->getComponent<Transform>()->GetPosition().y - _position.y) < (m_boxScale.y * GetEntity()->getComponent<Transform>()->GetScale().y + _scale.y)) &&
+			   (glm::abs(GetEntity()->getComponent<Transform>()->GetPosition().z - _position.z) < (m_boxScale.z * GetEntity()->getComponent<Transform>()->GetScale().z + _scale.z));
 	}
 
 	std::vector<std::weak_ptr<Entity>> Collider::GetCollidingEntities()

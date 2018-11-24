@@ -2,41 +2,64 @@
 \label{classfrontier_1_1_mesh}\index{frontier\+::\+Mesh@{frontier\+::\+Mesh}}
 
 
+Contains vertices, normals and texcoords loaded from an obj.  
+
+
+
+
 {\ttfamily \#include $<$Mesh.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classfrontier_1_1_mesh_a6eaa947b29b59b45fca5fae502b04de7}{Mesh} (std\+::vector$<$ G\+Lfloat $>$ \+\_\+vertices, std\+::vector$<$ G\+Lfloat $>$ \+\_\+normals, std\+::vector$<$ G\+Lfloat $>$ \+\_\+texcoords)
-\item 
+\hyperlink{classfrontier_1_1_mesh_ae41b011b5af82b8413f7748693b709f7}{Mesh} (std\+::vector$<$ G\+Lfloat $>$ \+\_\+vertices, std\+::vector$<$ G\+Lfloat $>$ \+\_\+normals, std\+::vector$<$ G\+Lfloat $>$ \+\_\+tex\+Coords)
+\begin{DoxyCompactList}\small\item\em Constructor for a mesh, initialised with vertices, normals and texcoords. \end{DoxyCompactList}\item 
 \hyperlink{classfrontier_1_1_mesh_a5bc251528ec00975e49ba3f156955a3f}{Mesh} (std\+::vector$<$ G\+Lfloat $>$ \+\_\+vertices, std\+::vector$<$ G\+Lfloat $>$ \+\_\+normals)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for a mesh, initialised with vertices and normals. \end{DoxyCompactList}\item 
 void \hyperlink{classfrontier_1_1_mesh_a37daa84e24b750bb8b488794fa34ed1e}{Draw} (glm\+::mat4 \+\_\+model, glm\+::mat4 \+\_\+view, glm\+::mat4 \+\_\+proj, std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_texture}{Texture} $>$ \+\_\+tex, std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_shader}{Shader} $>$ \+\_\+shader)
-\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-std\+::vector$<$ G\+Lfloat $>$ \hyperlink{classfrontier_1_1_mesh_adb7547dcfcfeac9f058c54d278f8046a}{vertices}
-\item 
-std\+::vector$<$ G\+Lfloat $>$ \hyperlink{classfrontier_1_1_mesh_a4edd8881188aec021d81b60e7b240fe8}{normals}
-\item 
-std\+::vector$<$ G\+Lfloat $>$ \hyperlink{classfrontier_1_1_mesh_a67d643f39d706e80ae2d91d2eefea047}{tex\+Coords}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Draws the mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Contains vertices, normals and texcoords loaded from an obj. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classfrontier_1_1_mesh_a6eaa947b29b59b45fca5fae502b04de7}\label{classfrontier_1_1_mesh_a6eaa947b29b59b45fca5fae502b04de7}} 
+\mbox{\Hypertarget{classfrontier_1_1_mesh_ae41b011b5af82b8413f7748693b709f7}\label{classfrontier_1_1_mesh_ae41b011b5af82b8413f7748693b709f7}} 
 \index{frontier\+::\+Mesh@{frontier\+::\+Mesh}!Mesh@{Mesh}}
 \index{Mesh@{Mesh}!frontier\+::\+Mesh@{frontier\+::\+Mesh}}
 \subsubsection{\texorpdfstring{Mesh()}{Mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily frontier\+::\+Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ G\+Lfloat $>$}]{\+\_\+vertices,  }\item[{std\+::vector$<$ G\+Lfloat $>$}]{\+\_\+normals,  }\item[{std\+::vector$<$ G\+Lfloat $>$}]{\+\_\+texcoords }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily frontier\+::\+Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ G\+Lfloat $>$}]{\+\_\+vertices,  }\item[{std\+::vector$<$ G\+Lfloat $>$}]{\+\_\+normals,  }\item[{std\+::vector$<$ G\+Lfloat $>$}]{\+\_\+tex\+Coords }\end{DoxyParamCaption})}
 
+
+
+Constructor for a mesh, initialised with vertices, normals and texcoords. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+vertices} & Vertices from the obj model. \\
+\hline
+{\em \+\_\+normals} & Normals from the obj model. \\
+\hline
+{\em \+\_\+tex\+Coords} & Texcoords from the obj model. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classfrontier_1_1_mesh_a5bc251528ec00975e49ba3f156955a3f}\label{classfrontier_1_1_mesh_a5bc251528ec00975e49ba3f156955a3f}} 
 \index{frontier\+::\+Mesh@{frontier\+::\+Mesh}!Mesh@{Mesh}}
 \index{Mesh@{Mesh}!frontier\+::\+Mesh@{frontier\+::\+Mesh}}
 \subsubsection{\texorpdfstring{Mesh()}{Mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily frontier\+::\+Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ G\+Lfloat $>$}]{\+\_\+vertices,  }\item[{std\+::vector$<$ G\+Lfloat $>$}]{\+\_\+normals }\end{DoxyParamCaption})}
 
+
+
+Constructor for a mesh, initialised with vertices and normals. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+vertices} & Vertices from the obj model. \\
+\hline
+{\em \+\_\+normals} & Normals from the obj model. \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
@@ -48,25 +71,21 @@ std\+::vector$<$ G\+Lfloat $>$ \hyperlink{classfrontier_1_1_mesh_a67d643f39d706e
 
 
 
-\subsection{Member Data Documentation}
-\mbox{\Hypertarget{classfrontier_1_1_mesh_a4edd8881188aec021d81b60e7b240fe8}\label{classfrontier_1_1_mesh_a4edd8881188aec021d81b60e7b240fe8}} 
-\index{frontier\+::\+Mesh@{frontier\+::\+Mesh}!normals@{normals}}
-\index{normals@{normals}!frontier\+::\+Mesh@{frontier\+::\+Mesh}}
-\subsubsection{\texorpdfstring{normals}{normals}}
-{\footnotesize\ttfamily std\+::vector$<$G\+Lfloat$>$ frontier\+::\+Mesh\+::normals}
+Draws the mesh. 
 
-\mbox{\Hypertarget{classfrontier_1_1_mesh_a67d643f39d706e80ae2d91d2eefea047}\label{classfrontier_1_1_mesh_a67d643f39d706e80ae2d91d2eefea047}} 
-\index{frontier\+::\+Mesh@{frontier\+::\+Mesh}!tex\+Coords@{tex\+Coords}}
-\index{tex\+Coords@{tex\+Coords}!frontier\+::\+Mesh@{frontier\+::\+Mesh}}
-\subsubsection{\texorpdfstring{tex\+Coords}{texCoords}}
-{\footnotesize\ttfamily std\+::vector$<$G\+Lfloat$>$ frontier\+::\+Mesh\+::tex\+Coords}
 
-\mbox{\Hypertarget{classfrontier_1_1_mesh_adb7547dcfcfeac9f058c54d278f8046a}\label{classfrontier_1_1_mesh_adb7547dcfcfeac9f058c54d278f8046a}} 
-\index{frontier\+::\+Mesh@{frontier\+::\+Mesh}!vertices@{vertices}}
-\index{vertices@{vertices}!frontier\+::\+Mesh@{frontier\+::\+Mesh}}
-\subsubsection{\texorpdfstring{vertices}{vertices}}
-{\footnotesize\ttfamily std\+::vector$<$G\+Lfloat$>$ frontier\+::\+Mesh\+::vertices}
-
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+model} & The model matrix to draw the mesh to. \\
+\hline
+{\em \+\_\+view} & The view matrix from a camera. \\
+\hline
+{\em \+\_\+proj} & The projection matrix from a camera. \\
+\hline
+{\em \+\_\+tex} & The texture for the model. \\
+\hline
+{\em \+\_\+shader} & The shader for the model. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

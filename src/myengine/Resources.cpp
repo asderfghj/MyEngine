@@ -3,19 +3,15 @@
 
 namespace frontier
 {
-	Resources::Resources()
-	{
-		std::cout << "Resources Created" << std::endl;
-	}
 
 	Resources::~Resources()
 	{
+		m_resources.clear();
 		std::cout << "Resources Destroyed" << std::endl;
 	}
 
 	void Resources::AddCreatedResource(std::shared_ptr<Resource> _resource)
 	{
-		_resources.push_back(_resource);
-		std::cout << "Resource Added" << std::endl;
+		m_resources.push_back(_resource);
 	}
 }

@@ -2,6 +2,11 @@
 \label{classfrontier_1_1_core}\index{frontier\+::\+Core@{frontier\+::\+Core}}
 
 
+The main core of the engine. This is where all entities, prefabs and resources get created.  
+
+
+
+
 {\ttfamily \#include $<$Core.\+h$>$}
 
 Inheritance diagram for frontier\+:\+:Core\+:\begin{figure}[H]
@@ -13,69 +18,62 @@ Inheritance diagram for frontier\+:\+:Core\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classfrontier_1_1_core_ad4bfe6cd519ba43996f9881598d63e50}{Core} ()
-\item 
 \hyperlink{classfrontier_1_1_core_a4d5ae078d34758c54c517bede518e2e4}{$\sim$\+Core} ()
-\item 
-void \hyperlink{classfrontier_1_1_core_a0f2b7feb2638d3bf3f67919f5596ab6c}{Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_core}{Core} $>$ self, int \+\_\+width=800, int \+\_\+height=600)
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor for the core, removes all entities from stored vector list. \end{DoxyCompactList}\item 
+void \hyperlink{classfrontier_1_1_core_a4faf575f20b1d83732da965476275371}{Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_core}{Core} $>$ \+\_\+self, int \+\_\+width=800, int \+\_\+height=600)
+\begin{DoxyCompactList}\small\item\em Initialisation for the core, sets up Open\+GL, S\+DL, Open\+AL and all other classes needed by the core. \end{DoxyCompactList}\item 
 void \hyperlink{classfrontier_1_1_core_a184b56e6f852d9670168111e5e1a1bc2}{Start} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Starts the game, this starts the game loop and makes everything run. Do not call this until everything has been set up. \end{DoxyCompactList}\item 
 void \hyperlink{classfrontier_1_1_core_af73d19f41d8316a7e0a6e11137201ed9}{Stop} ()
-\item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \hyperlink{classfrontier_1_1_core_a7224247d328741220fae73fc4893bdc3}{add\+Entity} (glm\+::vec3 \+\_\+position=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3 \+\_\+rotation=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3 \+\_\+scale=glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f))
-\item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \hyperlink{classfrontier_1_1_core_a1e419fcdea7e95bc334238d425bd8377}{add\+Entity} (std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_prefab}{Prefab} $>$ \+\_\+prefab, glm\+::vec3 \+\_\+position=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3 \+\_\+rotation=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3 \+\_\+scale=glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f))
-\item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \hyperlink{classfrontier_1_1_core_a2386af48e1509dc30a5636968732bf42}{add\+Ui\+Element} (glm\+::vec2 \+\_\+position=glm\+::vec2(0.\+0f, 0.\+0f), float \+\_\+rotation=0.\+0f, glm\+::vec3 \+\_\+scale=glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f))
-\item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_prefab}{Prefab} $>$ \hyperlink{classfrontier_1_1_core_af3e1d6b2e67d82f6cd34af637da7d957}{add\+Prefab} ()
-\item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_pooler}{Pooler} $>$ \hyperlink{classfrontier_1_1_core_a3447ae6e6cbb79e89e78fbdab36ce743}{add\+Pooler} (std\+::string \+\_\+id, std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_prefab}{Prefab} $>$ \+\_\+prefab, int initial\+Pool\+Size)
-\item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_pooler}{Pooler} $>$ \hyperlink{classfrontier_1_1_core_a25d135e58034991db392afbb585c46e3}{get\+Pooler} (std\+::string \+\_\+pool\+ID)
-\item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_environment}{Environment} $>$ \hyperlink{classfrontier_1_1_core_ad9e6e54c9ea2e9e29c15ea6b50fef89c}{get\+Environment} ()
-\item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_input}{Input} $>$ \hyperlink{classfrontier_1_1_core_ae1c1a6ee15d7a2062e23d993da2dc74f}{get\+Input} ()
-\item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_resources}{Resources} $>$ \hyperlink{classfrontier_1_1_core_ac001bac9de75ba256fd3ce3251c6d624}{get\+Resources} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Stops the game, closes down any classes that need to be de-\/initialised. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \hyperlink{classfrontier_1_1_core_a6e7da5742a26a76b46a6f02aa079929c}{Add\+Entity} (glm\+::vec3 \+\_\+position=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3 \+\_\+rotation=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3 \+\_\+scale=glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f))
+\begin{DoxyCompactList}\small\item\em Adds an entity and returns a pointer to it. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \hyperlink{classfrontier_1_1_core_a87217c1aa2c91e76d006c0f3dfeba309}{Add\+Entity} (std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_prefab}{Prefab} $>$ \+\_\+prefab, glm\+::vec3 \+\_\+position=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3 \+\_\+rotation=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3 \+\_\+scale=glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f))
+\begin{DoxyCompactList}\small\item\em Adds an entity using a prefab and returns a pointer to it. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \hyperlink{classfrontier_1_1_core_afa83f3a99653170b1f6f6e5661a2a5f5}{Add\+U\+I\+Element} (glm\+::vec2 \+\_\+position=glm\+::vec2(0.\+0f, 0.\+0f), float \+\_\+rotation=0.\+0f, glm\+::vec3 \+\_\+scale=glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f))
+\begin{DoxyCompactList}\small\item\em Adds a UI element entity, a UI element entity has it\textquotesingle{}s on tick function prioritised over non-\/ui entities. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_prefab}{Prefab} $>$ \hyperlink{classfrontier_1_1_core_a5be4be857929a89eee24411504038c72}{Add\+Prefab} ()
+\begin{DoxyCompactList}\small\item\em Adds a prefab and returns a pointer to it. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_pooler}{Pooler} $>$ \hyperlink{classfrontier_1_1_core_a75859114b2e1acae74a7ec0ab4175c14}{Add\+Pooler} (std\+::string \+\_\+id, std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_prefab}{Prefab} $>$ \+\_\+prefab, int \+\_\+initial\+Pool\+Size)
+\begin{DoxyCompactList}\small\item\em Adds a pooler for use with a lot of instances of entities. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_pooler}{Pooler} $>$ \hyperlink{classfrontier_1_1_core_a1ebe697a4700dfc8f3ba4749aa9bd854}{Get\+Pooler} (std\+::string \+\_\+pool\+ID)
+\begin{DoxyCompactList}\small\item\em Returns a pooler with the given ID. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_environment}{Environment} $>$ \hyperlink{classfrontier_1_1_core_a38ded93a4688d58e6e3ef2cdd7694a7a}{Get\+Environment} ()
+\begin{DoxyCompactList}\small\item\em Returns the instance of the environment class. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_input}{Input} $>$ \hyperlink{classfrontier_1_1_core_a4098db42dc9ad76fb1b7f579cea45bd2}{Get\+Input} ()
+\begin{DoxyCompactList}\small\item\em Returns the instance of the input class. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_resources}{Resources} $>$ \hyperlink{classfrontier_1_1_core_af05275451ce494dd3df46ed97b6f643a}{Get\+Resources} ()
+\begin{DoxyCompactList}\small\item\em Returns the instance of the resources class. \end{DoxyCompactList}\item 
 void \hyperlink{classfrontier_1_1_core_a92669a2d7754db9bcf3ff600f54952ae}{Set\+Self} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_core}{Core} $>$ \+\_\+self\+Ptr)
-\item 
-int \hyperlink{classfrontier_1_1_core_a33e04425e25f249efb46e116eedca8dc}{get\+Width} ()
-\item 
-int \hyperlink{classfrontier_1_1_core_a030aa01041c12b979420523b6be96d12}{get\+Height} ()
-\item 
-void \hyperlink{classfrontier_1_1_core_afc0055ffb384320d59e94003a5873b8c}{Update\+Window\+Size} (int \+\_\+width, int \+\_\+height)
-\item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_camera}{Camera} $>$ \hyperlink{classfrontier_1_1_core_aaac15b0d42e84ab56a18058721b275de}{get\+Main\+Camera} ()
-\item 
-void \hyperlink{classfrontier_1_1_core_ae141ff5c7d41cf7bc22c37bddb9087f9}{set\+Main\+Camera} (std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_camera}{Camera} $>$ \+\_\+main\+Camera\+To\+Set)
-\item 
-void \hyperlink{classfrontier_1_1_core_ac5a33059b33eec0ab216b45aa9772297}{deactivate\+All\+Instances\+In\+Pools} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the self pointer to be used in entity intialisation. \end{DoxyCompactList}\item 
+int \hyperlink{classfrontier_1_1_core_a92d5a3acd90860e5cdbbe0030a711b22}{Get\+Width} ()
+\begin{DoxyCompactList}\small\item\em Returns the width of the screen. \end{DoxyCompactList}\item 
+int \hyperlink{classfrontier_1_1_core_a30d2a3deec19493bba0e3a7a9d04a11b}{Get\+Height} ()
+\begin{DoxyCompactList}\small\item\em Returns the height of the screen. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_camera}{Camera} $>$ \hyperlink{classfrontier_1_1_core_a78b3939fe11820a0c041c984a25107b3}{Get\+Main\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the current main camera. \end{DoxyCompactList}\item 
+void \hyperlink{classfrontier_1_1_core_a601db94399406b9091a76972d948dc6b}{Set\+Main\+Camera} (std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_camera}{Camera} $>$ \+\_\+main\+Camera\+To\+Set)
+\begin{DoxyCompactList}\small\item\em Sets a new main camera and unsets the previous one. \end{DoxyCompactList}\item 
+void \hyperlink{classfrontier_1_1_core_a10aea6f8fa81b54595845386c3d3f6cf}{Deactivate\+All\+Instances\+In\+Pools} ()
+\begin{DoxyCompactList}\small\item\em Sets all entities in pools to inactive. \end{DoxyCompactList}\item 
 std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_shader}{Shader} $>$ \hyperlink{classfrontier_1_1_core_a5c92add403b305f061f691d9c21d63c0}{get\+Hitbox\+Shader} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the default hitbox shader. \end{DoxyCompactList}\item 
 std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_shader}{Shader} $>$ \hyperlink{classfrontier_1_1_core_a0da8b576b0d812148924827da5c05a3d}{get\+Skybox\+Shader} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the default skybox shader. \end{DoxyCompactList}\item 
 std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_shader}{Shader} $>$ \hyperlink{classfrontier_1_1_core_a6b61c169b75acd9a15bf3009bc838901}{get\+Untextured\+Ui\+Image\+Shader} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the default untextured UI shader. \end{DoxyCompactList}\item 
 std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_shader}{Shader} $>$ \hyperlink{classfrontier_1_1_core_aac07a29176bd8056e004f7be8c919d3f}{get\+Textured\+Ui\+Image\+Shader} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the default textured UI shader. \end{DoxyCompactList}\item 
 void \hyperlink{classfrontier_1_1_core_a0d510b25cca36dddb10b562913ae24c7}{Add\+To\+Entities\+To\+Activate} (std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \+\_\+entity\+To\+Activate)
-\item 
+\begin{DoxyCompactList}\small\item\em Adds an entity to activation list so that it can be activated next frame. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ $>$ \hyperlink{classfrontier_1_1_core_a8c42c287ec4a96ff3be194f92e82c367}{get\+Entities\+With\+Component} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em returns a vector with all entities with a specified component. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+The main core of the engine. This is where all entities, prefabs and resources get created. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classfrontier_1_1_core_ad4bfe6cd519ba43996f9881598d63e50}\label{classfrontier_1_1_core_ad4bfe6cd519ba43996f9881598d63e50}} 
-\index{frontier\+::\+Core@{frontier\+::\+Core}!Core@{Core}}
-\index{Core@{Core}!frontier\+::\+Core@{frontier\+::\+Core}}
-\subsubsection{\texorpdfstring{Core()}{Core()}}
-{\footnotesize\ttfamily frontier\+::\+Core\+::\+Core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
 \mbox{\Hypertarget{classfrontier_1_1_core_a4d5ae078d34758c54c517bede518e2e4}\label{classfrontier_1_1_core_a4d5ae078d34758c54c517bede518e2e4}} 
 \index{frontier\+::\+Core@{frontier\+::\+Core}!````~Core@{$\sim$\+Core}}
 \index{````~Core@{$\sim$\+Core}!frontier\+::\+Core@{frontier\+::\+Core}}
@@ -84,30 +82,79 @@ void \hyperlink{classfrontier_1_1_core_a0d510b25cca36dddb10b562913ae24c7}{Add\+T
 
 
 
+Destructor for the core, removes all entities from stored vector list. 
+
+
+
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classfrontier_1_1_core_a7224247d328741220fae73fc4893bdc3}\label{classfrontier_1_1_core_a7224247d328741220fae73fc4893bdc3}} 
-\index{frontier\+::\+Core@{frontier\+::\+Core}!add\+Entity@{add\+Entity}}
-\index{add\+Entity@{add\+Entity}!frontier\+::\+Core@{frontier\+::\+Core}}
-\subsubsection{\texorpdfstring{add\+Entity()}{addEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ frontier\+::\+Core\+::add\+Entity (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{\+\_\+position = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)},  }\item[{glm\+::vec3}]{\+\_\+rotation = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)},  }\item[{glm\+::vec3}]{\+\_\+scale = {\ttfamily glm\+:\+:vec3(1.0f,~1.0f,~1.0f)} }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classfrontier_1_1_core_a6e7da5742a26a76b46a6f02aa079929c}\label{classfrontier_1_1_core_a6e7da5742a26a76b46a6f02aa079929c}} 
+\index{frontier\+::\+Core@{frontier\+::\+Core}!Add\+Entity@{Add\+Entity}}
+\index{Add\+Entity@{Add\+Entity}!frontier\+::\+Core@{frontier\+::\+Core}}
+\subsubsection{\texorpdfstring{Add\+Entity()}{AddEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ frontier\+::\+Core\+::\+Add\+Entity (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{\+\_\+position = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)},  }\item[{glm\+::vec3}]{\+\_\+rotation = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)},  }\item[{glm\+::vec3}]{\+\_\+scale = {\ttfamily glm\+:\+:vec3(1.0f,~1.0f,~1.0f)} }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_core_a1e419fcdea7e95bc334238d425bd8377}\label{classfrontier_1_1_core_a1e419fcdea7e95bc334238d425bd8377}} 
-\index{frontier\+::\+Core@{frontier\+::\+Core}!add\+Entity@{add\+Entity}}
-\index{add\+Entity@{add\+Entity}!frontier\+::\+Core@{frontier\+::\+Core}}
-\subsubsection{\texorpdfstring{add\+Entity()}{addEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ frontier\+::\+Core\+::add\+Entity (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_prefab}{Prefab} $>$}]{\+\_\+prefab,  }\item[{glm\+::vec3}]{\+\_\+position = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)},  }\item[{glm\+::vec3}]{\+\_\+rotation = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)},  }\item[{glm\+::vec3}]{\+\_\+scale = {\ttfamily glm\+:\+:vec3(1.0f,~1.0f,~1.0f)} }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_core_a3447ae6e6cbb79e89e78fbdab36ce743}\label{classfrontier_1_1_core_a3447ae6e6cbb79e89e78fbdab36ce743}} 
-\index{frontier\+::\+Core@{frontier\+::\+Core}!add\+Pooler@{add\+Pooler}}
-\index{add\+Pooler@{add\+Pooler}!frontier\+::\+Core@{frontier\+::\+Core}}
-\subsubsection{\texorpdfstring{add\+Pooler()}{addPooler()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_pooler}{Pooler} $>$ frontier\+::\+Core\+::add\+Pooler (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+id,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_prefab}{Prefab} $>$}]{\+\_\+prefab,  }\item[{int}]{initial\+Pool\+Size }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_core_af3e1d6b2e67d82f6cd34af637da7d957}\label{classfrontier_1_1_core_af3e1d6b2e67d82f6cd34af637da7d957}} 
-\index{frontier\+::\+Core@{frontier\+::\+Core}!add\+Prefab@{add\+Prefab}}
-\index{add\+Prefab@{add\+Prefab}!frontier\+::\+Core@{frontier\+::\+Core}}
-\subsubsection{\texorpdfstring{add\+Prefab()}{addPrefab()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_prefab}{Prefab} $>$ frontier\+::\+Core\+::add\+Prefab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+Adds an entity and returns a pointer to it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+position} & The initial position of the entity (set to glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f) by default). \\
+\hline
+{\em \+\_\+rotation} & The initial rotation of the entity (set to glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f) by default). \\
+\hline
+{\em \+\_\+scale} & The initial scale of the entity (set to glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f) by default). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_core_a87217c1aa2c91e76d006c0f3dfeba309}\label{classfrontier_1_1_core_a87217c1aa2c91e76d006c0f3dfeba309}} 
+\index{frontier\+::\+Core@{frontier\+::\+Core}!Add\+Entity@{Add\+Entity}}
+\index{Add\+Entity@{Add\+Entity}!frontier\+::\+Core@{frontier\+::\+Core}}
+\subsubsection{\texorpdfstring{Add\+Entity()}{AddEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ frontier\+::\+Core\+::\+Add\+Entity (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_prefab}{Prefab} $>$}]{\+\_\+prefab,  }\item[{glm\+::vec3}]{\+\_\+position = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)},  }\item[{glm\+::vec3}]{\+\_\+rotation = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)},  }\item[{glm\+::vec3}]{\+\_\+scale = {\ttfamily glm\+:\+:vec3(1.0f,~1.0f,~1.0f)} }\end{DoxyParamCaption})}
+
+
+
+Adds an entity using a prefab and returns a pointer to it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+prefab} & The prefab which the entity will be copied from. \\
+\hline
+{\em \+\_\+position} & The initial position of the entity (set to glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f) by default). \\
+\hline
+{\em \+\_\+rotation} & The initial rotation of the entity (set to glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f) by default). \\
+\hline
+{\em \+\_\+scale} & The initial scale of the entity (set to glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f) by default). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_core_a75859114b2e1acae74a7ec0ab4175c14}\label{classfrontier_1_1_core_a75859114b2e1acae74a7ec0ab4175c14}} 
+\index{frontier\+::\+Core@{frontier\+::\+Core}!Add\+Pooler@{Add\+Pooler}}
+\index{Add\+Pooler@{Add\+Pooler}!frontier\+::\+Core@{frontier\+::\+Core}}
+\subsubsection{\texorpdfstring{Add\+Pooler()}{AddPooler()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_pooler}{Pooler} $>$ frontier\+::\+Core\+::\+Add\+Pooler (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+id,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_prefab}{Prefab} $>$}]{\+\_\+prefab,  }\item[{int}]{\+\_\+initial\+Pool\+Size }\end{DoxyParamCaption})}
+
+
+
+Adds a pooler for use with a lot of instances of entities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+id} & string identifier for the pooler. \\
+\hline
+{\em \+\_\+prefab} & The prefab that entities will be created from. \\
+\hline
+{\em \+\_\+inital\+Pool\+Size} & The intial number of entities to be created. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_core_a5be4be857929a89eee24411504038c72}\label{classfrontier_1_1_core_a5be4be857929a89eee24411504038c72}} 
+\index{frontier\+::\+Core@{frontier\+::\+Core}!Add\+Prefab@{Add\+Prefab}}
+\index{Add\+Prefab@{Add\+Prefab}!frontier\+::\+Core@{frontier\+::\+Core}}
+\subsubsection{\texorpdfstring{Add\+Prefab()}{AddPrefab()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_prefab}{Prefab} $>$ frontier\+::\+Core\+::\+Add\+Prefab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Adds a prefab and returns a pointer to it. 
 
 \mbox{\Hypertarget{classfrontier_1_1_core_a0d510b25cca36dddb10b562913ae24c7}\label{classfrontier_1_1_core_a0d510b25cca36dddb10b562913ae24c7}} 
 \index{frontier\+::\+Core@{frontier\+::\+Core}!Add\+To\+Entities\+To\+Activate@{Add\+To\+Entities\+To\+Activate}}
@@ -115,17 +162,38 @@ void \hyperlink{classfrontier_1_1_core_a0d510b25cca36dddb10b562913ae24c7}{Add\+T
 \subsubsection{\texorpdfstring{Add\+To\+Entities\+To\+Activate()}{AddToEntitiesToActivate()}}
 {\footnotesize\ttfamily void frontier\+::\+Core\+::\+Add\+To\+Entities\+To\+Activate (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$}]{\+\_\+entity\+To\+Activate }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_core_a2386af48e1509dc30a5636968732bf42}\label{classfrontier_1_1_core_a2386af48e1509dc30a5636968732bf42}} 
-\index{frontier\+::\+Core@{frontier\+::\+Core}!add\+Ui\+Element@{add\+Ui\+Element}}
-\index{add\+Ui\+Element@{add\+Ui\+Element}!frontier\+::\+Core@{frontier\+::\+Core}}
-\subsubsection{\texorpdfstring{add\+Ui\+Element()}{addUiElement()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ frontier\+::\+Core\+::add\+Ui\+Element (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{\+\_\+position = {\ttfamily glm\+:\+:vec2(0.0f,~0.0f)},  }\item[{float}]{\+\_\+rotation = {\ttfamily 0.0f},  }\item[{glm\+::vec3}]{\+\_\+scale = {\ttfamily glm\+:\+:vec3(1.0f,~1.0f,~1.0f)} }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_core_ac5a33059b33eec0ab216b45aa9772297}\label{classfrontier_1_1_core_ac5a33059b33eec0ab216b45aa9772297}} 
-\index{frontier\+::\+Core@{frontier\+::\+Core}!deactivate\+All\+Instances\+In\+Pools@{deactivate\+All\+Instances\+In\+Pools}}
-\index{deactivate\+All\+Instances\+In\+Pools@{deactivate\+All\+Instances\+In\+Pools}!frontier\+::\+Core@{frontier\+::\+Core}}
-\subsubsection{\texorpdfstring{deactivate\+All\+Instances\+In\+Pools()}{deactivateAllInstancesInPools()}}
-{\footnotesize\ttfamily void frontier\+::\+Core\+::deactivate\+All\+Instances\+In\+Pools (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Adds an entity to activation list so that it can be activated next frame. 
+
+\mbox{\Hypertarget{classfrontier_1_1_core_afa83f3a99653170b1f6f6e5661a2a5f5}\label{classfrontier_1_1_core_afa83f3a99653170b1f6f6e5661a2a5f5}} 
+\index{frontier\+::\+Core@{frontier\+::\+Core}!Add\+U\+I\+Element@{Add\+U\+I\+Element}}
+\index{Add\+U\+I\+Element@{Add\+U\+I\+Element}!frontier\+::\+Core@{frontier\+::\+Core}}
+\subsubsection{\texorpdfstring{Add\+U\+I\+Element()}{AddUIElement()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ frontier\+::\+Core\+::\+Add\+U\+I\+Element (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{\+\_\+position = {\ttfamily glm\+:\+:vec2(0.0f,~0.0f)},  }\item[{float}]{\+\_\+rotation = {\ttfamily 0.0f},  }\item[{glm\+::vec3}]{\+\_\+scale = {\ttfamily glm\+:\+:vec3(1.0f,~1.0f,~1.0f)} }\end{DoxyParamCaption})}
+
+
+
+Adds a UI element entity, a UI element entity has it\textquotesingle{}s on tick function prioritised over non-\/ui entities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+position} & The initial position of the entity in screen space (set to glm\+::vec2(0.\+0f, 0.\+0f) by default). \\
+\hline
+{\em \+\_\+rotation} & The initial rotation of the entity (set to 0.\+0f by default). \\
+\hline
+{\em \+\_\+scale} & The initial scale of the entity (set to glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f) by default). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_core_a10aea6f8fa81b54595845386c3d3f6cf}\label{classfrontier_1_1_core_a10aea6f8fa81b54595845386c3d3f6cf}} 
+\index{frontier\+::\+Core@{frontier\+::\+Core}!Deactivate\+All\+Instances\+In\+Pools@{Deactivate\+All\+Instances\+In\+Pools}}
+\index{Deactivate\+All\+Instances\+In\+Pools@{Deactivate\+All\+Instances\+In\+Pools}!frontier\+::\+Core@{frontier\+::\+Core}}
+\subsubsection{\texorpdfstring{Deactivate\+All\+Instances\+In\+Pools()}{DeactivateAllInstancesInPools()}}
+{\footnotesize\ttfamily void frontier\+::\+Core\+::\+Deactivate\+All\+Instances\+In\+Pools (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets all entities in pools to inactive. 
 
 \mbox{\Hypertarget{classfrontier_1_1_core_a8c42c287ec4a96ff3be194f92e82c367}\label{classfrontier_1_1_core_a8c42c287ec4a96ff3be194f92e82c367}} 
 \index{frontier\+::\+Core@{frontier\+::\+Core}!get\+Entities\+With\+Component@{get\+Entities\+With\+Component}}
@@ -134,17 +202,29 @@ void \hyperlink{classfrontier_1_1_core_a0d510b25cca36dddb10b562913ae24c7}{Add\+T
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 std\+::vector$<$std\+::weak\+\_\+ptr$<$\hyperlink{classfrontier_1_1_entity}{Entity}$>$ $>$ frontier\+::\+Core\+::get\+Entities\+With\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{classfrontier_1_1_core_ad9e6e54c9ea2e9e29c15ea6b50fef89c}\label{classfrontier_1_1_core_ad9e6e54c9ea2e9e29c15ea6b50fef89c}} 
-\index{frontier\+::\+Core@{frontier\+::\+Core}!get\+Environment@{get\+Environment}}
-\index{get\+Environment@{get\+Environment}!frontier\+::\+Core@{frontier\+::\+Core}}
-\subsubsection{\texorpdfstring{get\+Environment()}{getEnvironment()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_environment}{Environment} $>$ frontier\+::\+Core\+::get\+Environment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_core_a030aa01041c12b979420523b6be96d12}\label{classfrontier_1_1_core_a030aa01041c12b979420523b6be96d12}} 
-\index{frontier\+::\+Core@{frontier\+::\+Core}!get\+Height@{get\+Height}}
-\index{get\+Height@{get\+Height}!frontier\+::\+Core@{frontier\+::\+Core}}
-\subsubsection{\texorpdfstring{get\+Height()}{getHeight()}}
-{\footnotesize\ttfamily int frontier\+::\+Core\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+returns a vector with all entities with a specified component. 
+
+\mbox{\Hypertarget{classfrontier_1_1_core_a38ded93a4688d58e6e3ef2cdd7694a7a}\label{classfrontier_1_1_core_a38ded93a4688d58e6e3ef2cdd7694a7a}} 
+\index{frontier\+::\+Core@{frontier\+::\+Core}!Get\+Environment@{Get\+Environment}}
+\index{Get\+Environment@{Get\+Environment}!frontier\+::\+Core@{frontier\+::\+Core}}
+\subsubsection{\texorpdfstring{Get\+Environment()}{GetEnvironment()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_environment}{Environment} $>$ frontier\+::\+Core\+::\+Get\+Environment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the instance of the environment class. 
+
+\mbox{\Hypertarget{classfrontier_1_1_core_a30d2a3deec19493bba0e3a7a9d04a11b}\label{classfrontier_1_1_core_a30d2a3deec19493bba0e3a7a9d04a11b}} 
+\index{frontier\+::\+Core@{frontier\+::\+Core}!Get\+Height@{Get\+Height}}
+\index{Get\+Height@{Get\+Height}!frontier\+::\+Core@{frontier\+::\+Core}}
+\subsubsection{\texorpdfstring{Get\+Height()}{GetHeight()}}
+{\footnotesize\ttfamily int frontier\+::\+Core\+::\+Get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the height of the screen. 
 
 \mbox{\Hypertarget{classfrontier_1_1_core_a5c92add403b305f061f691d9c21d63c0}\label{classfrontier_1_1_core_a5c92add403b305f061f691d9c21d63c0}} 
 \index{frontier\+::\+Core@{frontier\+::\+Core}!get\+Hitbox\+Shader@{get\+Hitbox\+Shader}}
@@ -152,29 +232,54 @@ std\+::vector$<$std\+::weak\+\_\+ptr$<$\hyperlink{classfrontier_1_1_entity}{Enti
 \subsubsection{\texorpdfstring{get\+Hitbox\+Shader()}{getHitboxShader()}}
 {\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_shader}{Shader} $>$ frontier\+::\+Core\+::get\+Hitbox\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_core_ae1c1a6ee15d7a2062e23d993da2dc74f}\label{classfrontier_1_1_core_ae1c1a6ee15d7a2062e23d993da2dc74f}} 
-\index{frontier\+::\+Core@{frontier\+::\+Core}!get\+Input@{get\+Input}}
-\index{get\+Input@{get\+Input}!frontier\+::\+Core@{frontier\+::\+Core}}
-\subsubsection{\texorpdfstring{get\+Input()}{getInput()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_input}{Input} $>$ frontier\+::\+Core\+::get\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_core_aaac15b0d42e84ab56a18058721b275de}\label{classfrontier_1_1_core_aaac15b0d42e84ab56a18058721b275de}} 
-\index{frontier\+::\+Core@{frontier\+::\+Core}!get\+Main\+Camera@{get\+Main\+Camera}}
-\index{get\+Main\+Camera@{get\+Main\+Camera}!frontier\+::\+Core@{frontier\+::\+Core}}
-\subsubsection{\texorpdfstring{get\+Main\+Camera()}{getMainCamera()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_camera}{Camera} $>$ frontier\+::\+Core\+::get\+Main\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_core_a25d135e58034991db392afbb585c46e3}\label{classfrontier_1_1_core_a25d135e58034991db392afbb585c46e3}} 
-\index{frontier\+::\+Core@{frontier\+::\+Core}!get\+Pooler@{get\+Pooler}}
-\index{get\+Pooler@{get\+Pooler}!frontier\+::\+Core@{frontier\+::\+Core}}
-\subsubsection{\texorpdfstring{get\+Pooler()}{getPooler()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_pooler}{Pooler} $>$ frontier\+::\+Core\+::get\+Pooler (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+pool\+ID }\end{DoxyParamCaption})}
+Returns a pointer to the default hitbox shader. 
 
-\mbox{\Hypertarget{classfrontier_1_1_core_ac001bac9de75ba256fd3ce3251c6d624}\label{classfrontier_1_1_core_ac001bac9de75ba256fd3ce3251c6d624}} 
-\index{frontier\+::\+Core@{frontier\+::\+Core}!get\+Resources@{get\+Resources}}
-\index{get\+Resources@{get\+Resources}!frontier\+::\+Core@{frontier\+::\+Core}}
-\subsubsection{\texorpdfstring{get\+Resources()}{getResources()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_resources}{Resources} $>$ frontier\+::\+Core\+::get\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classfrontier_1_1_core_a4098db42dc9ad76fb1b7f579cea45bd2}\label{classfrontier_1_1_core_a4098db42dc9ad76fb1b7f579cea45bd2}} 
+\index{frontier\+::\+Core@{frontier\+::\+Core}!Get\+Input@{Get\+Input}}
+\index{Get\+Input@{Get\+Input}!frontier\+::\+Core@{frontier\+::\+Core}}
+\subsubsection{\texorpdfstring{Get\+Input()}{GetInput()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_input}{Input} $>$ frontier\+::\+Core\+::\+Get\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the instance of the input class. 
+
+\mbox{\Hypertarget{classfrontier_1_1_core_a78b3939fe11820a0c041c984a25107b3}\label{classfrontier_1_1_core_a78b3939fe11820a0c041c984a25107b3}} 
+\index{frontier\+::\+Core@{frontier\+::\+Core}!Get\+Main\+Camera@{Get\+Main\+Camera}}
+\index{Get\+Main\+Camera@{Get\+Main\+Camera}!frontier\+::\+Core@{frontier\+::\+Core}}
+\subsubsection{\texorpdfstring{Get\+Main\+Camera()}{GetMainCamera()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_camera}{Camera} $>$ frontier\+::\+Core\+::\+Get\+Main\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to the current main camera. 
+
+\mbox{\Hypertarget{classfrontier_1_1_core_a1ebe697a4700dfc8f3ba4749aa9bd854}\label{classfrontier_1_1_core_a1ebe697a4700dfc8f3ba4749aa9bd854}} 
+\index{frontier\+::\+Core@{frontier\+::\+Core}!Get\+Pooler@{Get\+Pooler}}
+\index{Get\+Pooler@{Get\+Pooler}!frontier\+::\+Core@{frontier\+::\+Core}}
+\subsubsection{\texorpdfstring{Get\+Pooler()}{GetPooler()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_pooler}{Pooler} $>$ frontier\+::\+Core\+::\+Get\+Pooler (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+pool\+ID }\end{DoxyParamCaption})}
+
+
+
+Returns a pooler with the given ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+pool\+ID} & the string identifier of the pool, must match the string created during initialisation of the pool (see add\+Pooler). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_core_af05275451ce494dd3df46ed97b6f643a}\label{classfrontier_1_1_core_af05275451ce494dd3df46ed97b6f643a}} 
+\index{frontier\+::\+Core@{frontier\+::\+Core}!Get\+Resources@{Get\+Resources}}
+\index{Get\+Resources@{Get\+Resources}!frontier\+::\+Core@{frontier\+::\+Core}}
+\subsubsection{\texorpdfstring{Get\+Resources()}{GetResources()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_resources}{Resources} $>$ frontier\+::\+Core\+::\+Get\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the instance of the resources class. 
 
 \mbox{\Hypertarget{classfrontier_1_1_core_a0da8b576b0d812148924827da5c05a3d}\label{classfrontier_1_1_core_a0da8b576b0d812148924827da5c05a3d}} 
 \index{frontier\+::\+Core@{frontier\+::\+Core}!get\+Skybox\+Shader@{get\+Skybox\+Shader}}
@@ -182,11 +287,19 @@ std\+::vector$<$std\+::weak\+\_\+ptr$<$\hyperlink{classfrontier_1_1_entity}{Enti
 \subsubsection{\texorpdfstring{get\+Skybox\+Shader()}{getSkyboxShader()}}
 {\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_shader}{Shader} $>$ frontier\+::\+Core\+::get\+Skybox\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Returns a pointer to the default skybox shader. 
+
 \mbox{\Hypertarget{classfrontier_1_1_core_aac07a29176bd8056e004f7be8c919d3f}\label{classfrontier_1_1_core_aac07a29176bd8056e004f7be8c919d3f}} 
 \index{frontier\+::\+Core@{frontier\+::\+Core}!get\+Textured\+Ui\+Image\+Shader@{get\+Textured\+Ui\+Image\+Shader}}
 \index{get\+Textured\+Ui\+Image\+Shader@{get\+Textured\+Ui\+Image\+Shader}!frontier\+::\+Core@{frontier\+::\+Core}}
 \subsubsection{\texorpdfstring{get\+Textured\+Ui\+Image\+Shader()}{getTexturedUiImageShader()}}
 {\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_shader}{Shader} $>$ frontier\+::\+Core\+::get\+Textured\+Ui\+Image\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to the default textured UI shader. 
 
 \mbox{\Hypertarget{classfrontier_1_1_core_a6b61c169b75acd9a15bf3009bc838901}\label{classfrontier_1_1_core_a6b61c169b75acd9a15bf3009bc838901}} 
 \index{frontier\+::\+Core@{frontier\+::\+Core}!get\+Untextured\+Ui\+Image\+Shader@{get\+Untextured\+Ui\+Image\+Shader}}
@@ -194,35 +307,78 @@ std\+::vector$<$std\+::weak\+\_\+ptr$<$\hyperlink{classfrontier_1_1_entity}{Enti
 \subsubsection{\texorpdfstring{get\+Untextured\+Ui\+Image\+Shader()}{getUntexturedUiImageShader()}}
 {\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_shader}{Shader} $>$ frontier\+::\+Core\+::get\+Untextured\+Ui\+Image\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_core_a33e04425e25f249efb46e116eedca8dc}\label{classfrontier_1_1_core_a33e04425e25f249efb46e116eedca8dc}} 
-\index{frontier\+::\+Core@{frontier\+::\+Core}!get\+Width@{get\+Width}}
-\index{get\+Width@{get\+Width}!frontier\+::\+Core@{frontier\+::\+Core}}
-\subsubsection{\texorpdfstring{get\+Width()}{getWidth()}}
-{\footnotesize\ttfamily int frontier\+::\+Core\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_core_a0f2b7feb2638d3bf3f67919f5596ab6c}\label{classfrontier_1_1_core_a0f2b7feb2638d3bf3f67919f5596ab6c}} 
+
+Returns a pointer to the default untextured UI shader. 
+
+\mbox{\Hypertarget{classfrontier_1_1_core_a92d5a3acd90860e5cdbbe0030a711b22}\label{classfrontier_1_1_core_a92d5a3acd90860e5cdbbe0030a711b22}} 
+\index{frontier\+::\+Core@{frontier\+::\+Core}!Get\+Width@{Get\+Width}}
+\index{Get\+Width@{Get\+Width}!frontier\+::\+Core@{frontier\+::\+Core}}
+\subsubsection{\texorpdfstring{Get\+Width()}{GetWidth()}}
+{\footnotesize\ttfamily int frontier\+::\+Core\+::\+Get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the width of the screen. 
+
+\mbox{\Hypertarget{classfrontier_1_1_core_a4faf575f20b1d83732da965476275371}\label{classfrontier_1_1_core_a4faf575f20b1d83732da965476275371}} 
 \index{frontier\+::\+Core@{frontier\+::\+Core}!Init@{Init}}
 \index{Init@{Init}!frontier\+::\+Core@{frontier\+::\+Core}}
 \subsubsection{\texorpdfstring{Init()}{Init()}}
-{\footnotesize\ttfamily void frontier\+::\+Core\+::\+Init (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_core}{Core} $>$}]{self,  }\item[{int}]{\+\_\+width = {\ttfamily 800},  }\item[{int}]{\+\_\+height = {\ttfamily 600} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void frontier\+::\+Core\+::\+Init (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_core}{Core} $>$}]{\+\_\+self,  }\item[{int}]{\+\_\+width = {\ttfamily 800},  }\item[{int}]{\+\_\+height = {\ttfamily 600} }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_core_ae141ff5c7d41cf7bc22c37bddb9087f9}\label{classfrontier_1_1_core_ae141ff5c7d41cf7bc22c37bddb9087f9}} 
-\index{frontier\+::\+Core@{frontier\+::\+Core}!set\+Main\+Camera@{set\+Main\+Camera}}
-\index{set\+Main\+Camera@{set\+Main\+Camera}!frontier\+::\+Core@{frontier\+::\+Core}}
-\subsubsection{\texorpdfstring{set\+Main\+Camera()}{setMainCamera()}}
-{\footnotesize\ttfamily void frontier\+::\+Core\+::set\+Main\+Camera (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_camera}{Camera} $>$}]{\+\_\+main\+Camera\+To\+Set }\end{DoxyParamCaption})}
 
+
+Initialisation for the core, sets up Open\+GL, S\+DL, Open\+AL and all other classes needed by the core. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & A pointer to the core, used to assign to entities. \\
+\hline
+{\em \+\_\+width} & The window width (set to 800 by default). \\
+\hline
+{\em \+\_\+height} & The window height (set to 600 by default). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_core_a601db94399406b9091a76972d948dc6b}\label{classfrontier_1_1_core_a601db94399406b9091a76972d948dc6b}} 
+\index{frontier\+::\+Core@{frontier\+::\+Core}!Set\+Main\+Camera@{Set\+Main\+Camera}}
+\index{Set\+Main\+Camera@{Set\+Main\+Camera}!frontier\+::\+Core@{frontier\+::\+Core}}
+\subsubsection{\texorpdfstring{Set\+Main\+Camera()}{SetMainCamera()}}
+{\footnotesize\ttfamily void frontier\+::\+Core\+::\+Set\+Main\+Camera (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_camera}{Camera} $>$}]{\+\_\+main\+Camera\+To\+Set }\end{DoxyParamCaption})}
+
+
+
+Sets a new main camera and unsets the previous one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+main\+Camera\+To\+Set} & A pointer to the new main camera. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classfrontier_1_1_core_a92669a2d7754db9bcf3ff600f54952ae}\label{classfrontier_1_1_core_a92669a2d7754db9bcf3ff600f54952ae}} 
 \index{frontier\+::\+Core@{frontier\+::\+Core}!Set\+Self@{Set\+Self}}
 \index{Set\+Self@{Set\+Self}!frontier\+::\+Core@{frontier\+::\+Core}}
 \subsubsection{\texorpdfstring{Set\+Self()}{SetSelf()}}
 {\footnotesize\ttfamily void frontier\+::\+Core\+::\+Set\+Self (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_core}{Core} $>$}]{\+\_\+self\+Ptr }\end{DoxyParamCaption})}
 
+
+
+Sets the self pointer to be used in entity intialisation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & A pointer to the core, used to assign to entities. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classfrontier_1_1_core_a184b56e6f852d9670168111e5e1a1bc2}\label{classfrontier_1_1_core_a184b56e6f852d9670168111e5e1a1bc2}} 
 \index{frontier\+::\+Core@{frontier\+::\+Core}!Start@{Start}}
 \index{Start@{Start}!frontier\+::\+Core@{frontier\+::\+Core}}
 \subsubsection{\texorpdfstring{Start()}{Start()}}
 {\footnotesize\ttfamily void frontier\+::\+Core\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts the game, this starts the game loop and makes everything run. Do not call this until everything has been set up. 
 
 \mbox{\Hypertarget{classfrontier_1_1_core_af73d19f41d8316a7e0a6e11137201ed9}\label{classfrontier_1_1_core_af73d19f41d8316a7e0a6e11137201ed9}} 
 \index{frontier\+::\+Core@{frontier\+::\+Core}!Stop@{Stop}}
@@ -230,11 +386,9 @@ std\+::vector$<$std\+::weak\+\_\+ptr$<$\hyperlink{classfrontier_1_1_entity}{Enti
 \subsubsection{\texorpdfstring{Stop()}{Stop()}}
 {\footnotesize\ttfamily void frontier\+::\+Core\+::\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_core_afc0055ffb384320d59e94003a5873b8c}\label{classfrontier_1_1_core_afc0055ffb384320d59e94003a5873b8c}} 
-\index{frontier\+::\+Core@{frontier\+::\+Core}!Update\+Window\+Size@{Update\+Window\+Size}}
-\index{Update\+Window\+Size@{Update\+Window\+Size}!frontier\+::\+Core@{frontier\+::\+Core}}
-\subsubsection{\texorpdfstring{Update\+Window\+Size()}{UpdateWindowSize()}}
-{\footnotesize\ttfamily void frontier\+::\+Core\+::\+Update\+Window\+Size (\begin{DoxyParamCaption}\item[{int}]{\+\_\+width,  }\item[{int}]{\+\_\+height }\end{DoxyParamCaption})}
+
+
+Stops the game, closes down any classes that need to be de-\/initialised. 
 
 
 

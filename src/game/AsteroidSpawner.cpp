@@ -64,9 +64,9 @@ void AsteroidSpawner::OnTick()
 
 void AsteroidSpawner::Spawn()
 {
-	if (AsteroidPooler.lock()->getActiveInPool() < asteroidLimit)
+	if (AsteroidPooler.lock()->GetActiveInPool() < asteroidLimit)
 	{
-		float determinant = getEnvironment()->getRandomBetweenTwoValues(0.0f, 4.0f);
+		float determinant = GetEnvironment()->GetRandomBetweenTwoValues(0.0f, 4.0f);
 		if (determinant < 1.0f)
 		{
 			//spawnpoint 1
@@ -96,7 +96,7 @@ void AsteroidSpawner::Spawn()
 
 glm::vec3 AsteroidSpawner::GetAsteroidDirection(float val1, float val2)
 {
-	glm::vec3 direction = glm::vec3(0.0f, getEnvironment()->getRandomBetweenTwoValues(val1, val2), 0.0f);
+	glm::vec3 direction = glm::vec3(0.0f, GetEnvironment()->GetRandomBetweenTwoValues(val1, val2), 0.0f);
 	glm::vec3 newForwardVector;
 
 	newForwardVector.x = cos(glm::radians(direction.x)) * sin(glm::radians(direction.y));

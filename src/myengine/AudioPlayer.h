@@ -10,9 +10,7 @@ namespace frontier
 	class Sound;
 	class Entity;
 
-	/*!
-		This class holds a sound resource which can then be attached to a entity can can be played in various different ways.
-	*/
+	//!This class holds a sound resource which can then be attached to a entity can can be played in various different ways.
 	class AudioPlayer : public Component
 	{
 	private:

@@ -7,17 +7,13 @@
 
 namespace frontier
 {
-	std::shared_ptr<Texture> Texture::Create(const char* _path, std::shared_ptr<Resources> _resources, int _TextureLocation)
+	std::shared_ptr<Texture> Texture::Create(const char* _path, std::shared_ptr<Resources> _resources, int _textureLocation)
 	{
 		std::shared_ptr<Texture> rtn = std::make_shared<Texture>();
 		GLuint rtnID;
-		glActiveTexture(GL_TEXTURE0 + _TextureLocation);
+		glActiveTexture(GL_TEXTURE0 + _textureLocation);
 		glGenTextures(1, &rtnID);
 		glBindTexture(GL_TEXTURE_2D, rtnID);
-		//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-		//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-		//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-		//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 		int width, height, nrChannels;
 		stbi_set_flip_vertically_on_load(true);
@@ -33,62 +29,59 @@ namespace frontier
 			std::cout << "Failed to load texture" << std::endl;
 			throw std::exception();
 		}
-		rtn->setWidth(width);
-		rtn->setheight(height);
+		rtn->SetWidth(width);
+		rtn->SetHeight(height);
 		stbi_image_free(data);
 
 
 		glBindTexture(GL_TEXTURE_2D, 0);
 		glActiveTexture(GL_TEXTURE0);
 
-		rtn->SetTexture(rtnID, _TextureLocation);
+		rtn->SetTexture(rtnID, _textureLocation);
 		_resources->AddCreatedResource(rtn);
 		return rtn;
 	}
 
-	void Texture::SetTexture(GLuint _newID, int _TextureLocation)
+	void Texture::SetTexture(GLuint _newID, int _textureLocation)
 	{
-		_id = _newID;
-		_textureLocation = _TextureLocation;
+		m_id = _newID;
+		m_textureLocation = _textureLocation;
 	}
 
 	GLuint Texture::GetTexture()
 	{
-		return _id;
+		return m_id;
 	}
 
 	int Texture::GetTextureLocation()
 	{
-		return _textureLocation;
+		return m_textureLocation;
 	}
 
 	void Texture::BindTexture()
 	{
-		/*glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);*/
-
-		glActiveTexture(GL_TEXTURE0 + _textureLocation);
-		glBindTexture(GL_TEXTURE_2D, _id);
+		glActiveTexture(GL_TEXTURE0 + m_textureLocation);
+		glBindTexture(GL_TEXTURE_2D, m_id);
 
 	}
 
-	void Texture::setWidth(int _newWidth)
+	void Texture::SetWidth(int _newWidth)
 	{
-		_width = _newWidth;
+		m_width = _newWidth;
 	}
 
-	void Texture::setheight(int _newHeight)
+	void Texture::SetHeight(int _newHeight)
 	{
-		_height = _newHeight;
+		m_height = _newHeight;
 	}
 
-	int Texture::getWidth()
+	int Texture::GetWidth()
 	{
-		return _width;
+		return m_width;
 	}
 
-	int Texture::getHeight()
+	int Texture::GetHeight()
 	{
-		return _height;
+		return m_height;
 	}
 }

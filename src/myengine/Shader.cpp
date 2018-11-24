@@ -11,16 +11,6 @@
 namespace frontier
 {
 
-	Shader::Shader()
-	{
-		std::cout << "Shader Created" << std::endl;
-	}
-
-	Shader::~Shader()
-	{
-		std::cout << "Shader Destroyed" << std::endl;
-	}
-
 	std::shared_ptr<Shader> Shader::Create(std::string _fragScr, std::string _vertScr, std::vector<GLchar*> _attributes, std::shared_ptr<Resources> _resources)
 	{
 		std::string vertexCode;
@@ -106,7 +96,7 @@ namespace frontier
 		glDetachShader(ProgramId, fragmentShaderID);
 		glDeleteShader(fragmentShaderID);
 
-		rtn->setID(ProgramId);
+		rtn->SetID(ProgramId);
 
 		_resources->AddCreatedResource(rtn);
 
@@ -116,8 +106,8 @@ namespace frontier
 
 	void Shader::SetUniform(const GLchar* _name, float _value, bool _unsetProgram)
 	{
-		GLint UniformLocation = glGetUniformLocation(_id, _name);
-		glUseProgram(_id);
+		GLint UniformLocation = glGetUniformLocation(m_id, _name);
+		glUseProgram(m_id);
 		glUniform1f(UniformLocation, _value);
 		if (_unsetProgram)
 		{
@@ -127,8 +117,8 @@ namespace frontier
 
 	void Shader::SetUniform(const GLchar* _name, int _value, bool _unsetProgram)
 	{
-		GLint UniformLocation = glGetUniformLocation(_id, _name);
-		glUseProgram(_id);
+		GLint UniformLocation = glGetUniformLocation(m_id, _name);
+		glUseProgram(m_id);
 		glUniform1i(UniformLocation, _value);
 		if (_unsetProgram)
 		{
@@ -138,22 +128,22 @@ namespace frontier
 
 	void Shader::SetUniform(const GLchar* _name, std::weak_ptr<Texture> _texture, bool _unsetProgram)
 	{
-		GLint UniformLocation = glGetUniformLocation(_id, _name);
-		glUseProgram(_id);
+		GLint UniformLocation = glGetUniformLocation(m_id, _name);
+		glUseProgram(m_id);
 		glUniform1i(UniformLocation, _texture.lock()->GetTextureLocation());
 	}
 
 	void Shader::SetUniform(const GLchar* _name, std::weak_ptr<CubemapTexture> _texture, bool _unsetProgram)
 	{
-		GLint UniformLocation = glGetUniformLocation(_id, _name);
-		glUseProgram(_id);
+		GLint UniformLocation = glGetUniformLocation(m_id, _name);
+		glUseProgram(m_id);
 		glUniform1i(UniformLocation, _texture.lock()->GetTextureLocation());
 	}
 
 	void Shader::SetUniform(const GLchar* _name, glm::mat4 _value, bool _transpose, bool _unsetProgram)
 	{
-		GLint UniformLocation = glGetUniformLocation(_id, _name);
-		glUseProgram(_id);
+		GLint UniformLocation = glGetUniformLocation(m_id, _name);
+		glUseProgram(m_id);
 		glUniformMatrix4fv(UniformLocation, 1, _transpose, glm::value_ptr(_value));
 		if (_unsetProgram)
 		{
@@ -163,8 +153,8 @@ namespace frontier
 
 	void Shader::SetUniform(const GLchar* _name, glm::vec3 _value, bool _unsetProgram)
 	{
-		GLint UniformLocation = glGetUniformLocation(_id, _name);
-		glUseProgram(_id);
+		GLint UniformLocation = glGetUniformLocation(m_id, _name);
+		glUseProgram(m_id);
 		glUniform3fv(UniformLocation, 1, &_value[0]);
 		if (_unsetProgram)
 		{
@@ -174,8 +164,8 @@ namespace frontier
 
 	void Shader::SetUniform(const GLchar* _name, glm::vec4 _value, bool _unsetProgram)
 	{
-		GLint UniformLocation = glGetUniformLocation(_id, _name);
-		glUseProgram(_id);
+		GLint UniformLocation = glGetUniformLocation(m_id, _name);
+		glUseProgram(m_id);
 		glUniform4fv(UniformLocation, 1, &_value[0]);
 		if (_unsetProgram)
 		{
@@ -183,32 +173,14 @@ namespace frontier
 		}
 	}
 
-	void Shader::SetUniform(const GLchar* _name, std::vector<std::weak_ptr<Texture>> _values, bool _unsetProgram)
+	void Shader::SetID(GLuint _newID)
 	{
-		std::vector<int> _ids;
-
-		for (size_t i = 0; i < _values.size(); i++)
-		{
-			_ids.push_back(_values.at(i).lock()->GetTextureLocation());
-		}
-
-		GLint UniformLocation = glGetUniformLocation(_id, _name);
-		glUseProgram(_id);
-		glUniform1iv(UniformLocation, _values.size(), &_ids[0]);
-		if (_unsetProgram)
-		{
-			glUseProgram(0);
-		}
+		m_id = _newID;
 	}
 
-	void Shader::setID(GLuint _newID)
+	GLuint Shader::GetID()
 	{
-		_id = _newID;
-	}
-
-	GLuint Shader::getID()
-	{
-		return _id;
+		return m_id;
 	}
 
 }

@@ -1,16 +1,16 @@
-#include "CubemapTexture.h"
-#include "Resources.h"
 #include <stb_image.h>
 #include <iostream>
 #include <exception>
+#include "CubemapTexture.h"
+#include "Resources.h"
 
 namespace frontier
 {
-	std::shared_ptr<CubemapTexture> CubemapTexture::Create(std::vector<std::string> _paths, std::shared_ptr<Resources> _resources, int _TextureLocation)
+	std::shared_ptr<CubemapTexture> CubemapTexture::Create(std::vector<std::string> _paths, std::shared_ptr<Resources> _resources, int _textureLocation)
 	{
 		std::shared_ptr<CubemapTexture> rtn = std::make_shared<CubemapTexture>();
 		GLuint rtnID;
-		glActiveTexture(GL_TEXTURE0 + _TextureLocation);
+		glActiveTexture(GL_TEXTURE0 + _textureLocation);
 		glGenTextures(1, &rtnID);
 		glBindTexture(GL_TEXTURE_CUBE_MAP, rtnID);
 
@@ -44,31 +44,31 @@ namespace frontier
 		glBindTexture(GL_TEXTURE_CUBE_MAP, 0);
 		glActiveTexture(GL_TEXTURE0);
 
-		rtn->SetTexture(rtnID, _TextureLocation);
+		rtn->SetTexture(rtnID, _textureLocation);
 		_resources->AddCreatedResource(rtn);
 		return rtn;
 	}
 
-	void CubemapTexture::SetTexture(GLuint _newID, int _TextureLocation)
+	void CubemapTexture::SetTexture(GLuint _newID, int _textureLocation)
 	{
-		_id = _newID;
-		_textureLocation = _TextureLocation;
+		m_id = _newID;
+		m_textureLocation = _textureLocation;
 	}
 
 	GLuint CubemapTexture::GetTexture()
 	{
-		return _id;
+		return m_id;
 	}
 
 	int CubemapTexture::GetTextureLocation()
 	{
-		return _textureLocation;
+		return m_textureLocation;
 	}
 
 	void CubemapTexture::Bindtexture()
 	{
-		glActiveTexture(GL_TEXTURE0 + _textureLocation);
-		glBindTexture(GL_TEXTURE_CUBE_MAP, _id);
+		glActiveTexture(GL_TEXTURE0 + m_textureLocation);
+		glBindTexture(GL_TEXTURE_CUBE_MAP, m_id);
 	}
 
 

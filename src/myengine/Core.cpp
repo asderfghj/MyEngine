@@ -16,42 +16,151 @@
 
 namespace frontier
 {
-
-	Core::Core()
+	void Core::GameLoop()
 	{
-		std::cout << "Created Core" << std::endl;
-	}
+		m_environment->GetTimer()->Start();
 
+		while (m_running)
+		{
+			m_event = { 0 };
+
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+			//activates any entities that have been flagged for activation.
+			for (size_t i = 0; i < m_entitiesToActivate.size(); i++)
+			{
+				m_entitiesToActivate[i]->SetActive(true);
+				m_entitiesToActivate[i]->SetActivating(false);
+			}
+
+			m_entitiesToActivate.clear();
+
+			//ticks through all ui and regular entities and other classes
+			for (size_t i = 0; i < m_uiElements.size(); i++)
+			{
+				m_uiElements[i]->Tick();
+			}
+
+			for (size_t i = 0; i < m_entities.size(); i++)
+			{
+				m_entities[i]->Tick();
+			}
+
+			m_environment->Tick();
+			m_input->Tick();
+
+			SDL_GL_SwapWindow(m_window);
+
+			//input handling
+			glm::vec2 leftStick, rightStick;
+			while (SDL_PollEvent(&m_event))
+			{
+
+				switch (m_event.type)
+				{
+				case SDL_KEYDOWN:
+				{
+					m_input->QueueKeyboardUpdate();
+					break;
+				}
+				case SDL_KEYUP:
+				{
+					m_input->QueueKeyboardUpdate();
+					break;
+				}
+				case SDL_QUIT:
+				{
+					Stop();
+					break;
+				}
+				case SDL_MOUSEMOTION:
+				{
+					m_input->QueueMouseMovementUpdate();
+					break;
+				}
+				case SDL_MOUSEBUTTONDOWN:
+				{
+					m_input->QueueMouseButtonUpdate();
+				}
+				case SDL_MOUSEBUTTONUP:
+				{
+					m_input->QueueMouseButtonUpdate();
+				}
+				case SDL_JOYAXISMOTION:
+				{
+					m_input->QueueControllerJoystickUpdate();
+					break;
+				}
+				case SDL_JOYBUTTONDOWN:
+				{
+					m_input->QueueControllerButtonUpdate();
+					break;
+				}
+				case SDL_JOYBUTTONUP:
+				{
+					m_input->QueueControllerButtonUpdate();
+					break;
+				}
+				case SDL_JOYHATMOTION:
+				{
+					m_input->QueueControllerDpadUpdate();
+					break;
+				}
+				}
+			}
+
+			m_environment->IncrementFrameCounter();
+
+			if (m_input->GetKey(Input::ESC))
+			{
+				Stop();
+			}
+		}
+		//cleanup
+		m_input->FreeJoystick();
+		alcMakeContextCurrent(NULL);
+		alcDestroyContext(m_context);
+		alcCloseDevice(m_device);
+		SDL_DestroyWindow(m_window);
+		SDL_Quit();
+	}
 
 	Core::~Core()
 	{
-		_entities.clear();
-
-		std::cout << "Destroyed Core, Game Ended" << std::endl;
+		m_entities.clear();
+		m_uiElements.clear();
+		m_prefabs.clear();
+		m_poolers.clear();
+		m_entitiesToActivate.clear();
 	}
 
-	void Core::Init(std::weak_ptr<Core> self, int _width, int _height)
+	void Core::Init(std::weak_ptr<Core> _self, int _width, int _height)
 	{
-		//put other setup stuff here
+		//SDL joystick setup
 		if (SDL_Init(SDL_INIT_JOYSTICK) < 0)
 		{
 			std::cout << "Joystick functionality could not be initialised" << std::endl;
 			throw std::exception();
 		}
-		_environment = std::make_shared<Environment>();
-		_resources = std::make_shared<Resources>();
-		_input = std::make_shared<Input>();
 
-		_window = SDL_CreateWindow("window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, _width, _height, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+		//important class initialisation
+		m_environment = std::make_shared<Environment>();
+		m_resources = std::make_shared<Resources>();
+		m_input = std::make_shared<Input>();
+		m_input->SetCorePtr(_self);
 
-		_windowHeight = _height;
-		_windowWidth = _width;
+		//creating SDL window
+		m_window = SDL_CreateWindow("window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, _width, _height, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 
-		if (!SDL_GL_CreateContext(_window))
+		m_windowHeight = _height;
+		m_windowWidth = _width;
+
+		if (!SDL_GL_CreateContext(m_window))
 		{
 			throw std::exception();
 		}
 
+		//OpenGL intialisation
 		if (glewInit() != GLEW_OK)
 		{
 			throw std::exception();
@@ -59,230 +168,118 @@ namespace frontier
 
 		glEnable(GL_DEPTH_TEST);
 
-		device = alcOpenDevice(NULL);
+		//OpenAL initialisation
+		m_device = alcOpenDevice(NULL);
 
-		if (!device)
+		if (!m_device)
 		{
 			throw std::exception();
 		}
 
-		context = alcCreateContext(device, NULL);
+		m_context = alcCreateContext(m_device, NULL);
 
-		if (!context)
+		if (!m_context)
 		{
-			alcCloseDevice(device);
+			alcCloseDevice(m_device);
 			throw std::exception();
 		}
 
-		if (!alcMakeContextCurrent(context))
+		if (!alcMakeContextCurrent(m_context))
 		{
-			alcDestroyContext(context);
-			alcCloseDevice(device);
+			alcDestroyContext(m_context);
+			alcCloseDevice(m_device);
 			throw std::exception();
 		}
 
-		_self = self;
+		//self pointer
+		m_self = _self;
 
-		std::shared_ptr<Entity> _camera = addEntity();
-		std::shared_ptr<Camera> _cameraComponent = _camera->addComponent<Camera, float, float, float>(45.0f, 0.01f, 100.0f);
-		setMainCamera(_cameraComponent);
+		//main camera initialisation
+		std::shared_ptr<Entity> _camera = AddEntity();
+		std::shared_ptr<Camera> _cameraComponent = _camera->AddComponent<Camera, float, float, float>(45.0f, 0.01f, 100.0f);
+		SetMainCamera(_cameraComponent);
 
-		_input->setCorePtr(_self);
-
-		HitboxShader = Shader::Create("../resources/fragmentshaders/collider.fs", "../resources/vertexshaders/collider.vs", { "in_position" }, _resources);
-		SkyboxShader = Shader::Create("../resources/fragmentshaders/skybox.fs", "../resources/vertexshaders/skybox.vs", { "in_position" }, _resources);
-		UntexturedUiImageShader = Shader::Create("../resources/fragmentshaders/untexui.fs", "../resources/vertexshaders/untexui.vs", { "in_position" }, _resources);
-		TexturedUiImageShader = Shader::Create("../resources/fragmentshaders/texui.fs", "../resources/vertexshaders/texui.vs", { "in_position", "in_texCoord" }, _resources);
+		//default shader initialisation
+		m_hitboxShader = Shader::Create("../resources/fragmentshaders/collider.fs", "../resources/vertexshaders/collider.vs", { "in_position" }, m_resources);
+		m_skyboxShader = Shader::Create("../resources/fragmentshaders/skybox.fs", "../resources/vertexshaders/skybox.vs", { "in_position" }, m_resources);
+		m_untexturedUIImageShader = Shader::Create("../resources/fragmentshaders/untexui.fs", "../resources/vertexshaders/untexui.vs", { "in_position" }, m_resources);
+		m_texturedUIImageShader = Shader::Create("../resources/fragmentshaders/texui.fs", "../resources/vertexshaders/texui.vs", { "in_position", "in_texCoord" }, m_resources);
 
 	}
 
 	void Core::Start()
 	{
-		_running = true;
+		m_running = true;
 		GameLoop();
-	}
-
-	void Core::GameLoop()
-	{
-		_environment->GetTimer()->Start();
-
-		while (_running)
-		{
-			_event = { 0 };
-
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-			
-
-			for (size_t i = 0; i < _entitiesToActivate.size(); i++)
-			{
-				_entitiesToActivate[i]->setActive(true);
-				_entitiesToActivate[i]->setActivating(false);
-			}
-
-			_entitiesToActivate.clear();
-
-			for (size_t i = 0; i < _UIElements.size(); i++)
-			{
-				_UIElements[i]->tick();
-			}
-
-			for (size_t i = 0; i < _entities.size(); i++)
-			{
-				_entities[i]->tick();
-			}
-			_environment->tick();
-			_input->Tick();
-			SDL_GL_SwapWindow(_window);
-			std::map<int, bool> keyboard;
-			glm::vec2 LeftStick, RightStick;
-			while (SDL_PollEvent(&_event))
-			{
-				
-				switch (_event.type)
-				{
-					case SDL_KEYDOWN:
-					{
-						_input->QueueKeyboardUpdate();
-						break;
-					}
-					case SDL_KEYUP:
-					{
-						_input->QueueKeyboardUpdate();
-						break;
-					}
-					case SDL_QUIT:
-					{
-						Stop();
-						break;
-					}
-					case SDL_MOUSEMOTION:
-					{
-						_input->QueueMouseMovementUpdate();
-						break;
-					}
-					case SDL_MOUSEBUTTONDOWN:
-					{
-						_input->QueueMouseButtonUpdate();
-					}
-					case SDL_MOUSEBUTTONUP:
-					{
-						_input->QueueMouseButtonUpdate();
-					}
-					case SDL_JOYAXISMOTION:
-					{
-						_input->QueueControllerJoystickUpdate();
-						break;
-					}
-					case SDL_JOYBUTTONDOWN:
-					{
-						_input->QueueControllerButtonUpdate();
-						break;
-					}
-					case SDL_JOYBUTTONUP:
-					{
-						_input->QueueControllerButtonUpdate();
-						break;
-					}
-					case SDL_JOYHATMOTION:
-					{
-						_input->QueueControllerDpadUpdate();
-						break;
-					}
-					/*case SDL_WINDOWEVENT:
-					{
-						if (_event.window.event == SDL_WINDOWEVENT_RESIZED || _event.window.event == SDL_WINDOWEVENT_SIZE_CHANGED)
-						{
-							UpdateWindowSize(_event.window.data1, _event.window.data2);
-						}
-					}*/
-				}
-			}
-				
-
-
-			_environment->IncrementFrameCounter();
-
-			if (_input->getKey(Input::ESC))
-			{
-				Stop();
-			}
-		}
-
-		_input->FreeJoystick();
-		alcMakeContextCurrent(NULL);
-		alcDestroyContext(context);
-		alcCloseDevice(device);
-		SDL_DestroyWindow(_window);
-		SDL_Quit();
 	}
 
 	void Core::Stop()
 	{
-		_running = false;
+		m_running = false;
 	}
 
-	std::shared_ptr<Entity> Core::addEntity(glm::vec3 _position, glm::vec3 _rotation, glm::vec3 _scale)
+	std::shared_ptr<Entity> Core::AddEntity(glm::vec3 _position, glm::vec3 _rotation, glm::vec3 _scale)
 	{
 		std::shared_ptr <Entity> newEntity = std::make_shared<Entity>();
-		newEntity->init(_self, _position, _rotation, _scale);
+		newEntity->Init(m_self, _position, _rotation, _scale);
 
-		newEntity->setSelf(newEntity);
+		newEntity->SetSelf(newEntity);
 
-		_entities.push_back(newEntity);
+		m_entities.push_back(newEntity);
 		return newEntity;
 	}
 
-	std::shared_ptr<Entity> Core::addEntity(std::shared_ptr<Prefab> _prefab, glm::vec3 _position, glm::vec3 _rotation, glm::vec3 _scale)
+	std::shared_ptr<Entity> Core::AddEntity(std::shared_ptr<Prefab> _prefab, glm::vec3 _position, glm::vec3 _rotation, glm::vec3 _scale)
 	{
 		std::shared_ptr <Entity> newEntity = std::make_shared<Entity>();
 
-		newEntity->setSelf(newEntity);
+		newEntity->SetSelf(newEntity);
 
-		newEntity->init(_self, _prefab, _position, _rotation, _scale);
+		newEntity->Init(m_self, _prefab, _position, _rotation, _scale);
 
-		_entities.push_back(newEntity);
+		m_entities.push_back(newEntity);
 		return newEntity;
 	}
 
-	std::shared_ptr<Entity> Core::addUiElement(glm::vec2 _position, float _rotation, glm::vec3 _scale)
+	std::shared_ptr<Entity> Core::AddUIElement(glm::vec2 _position, float _rotation, glm::vec3 _scale)
 	{
 		std::shared_ptr<Entity> newUiEntity = std::make_shared<Entity>();
-		newUiEntity->init(_self, glm::vec3(_position.x, _position.y, -5.0f), glm::vec3(0.0f, 0.0f, _rotation), _scale);
+		newUiEntity->Init(m_self, glm::vec3(_position.x, _position.y, -5.0f), glm::vec3(0.0f, 0.0f, _rotation), _scale);
 
-		newUiEntity->setSelf(newUiEntity);
+		newUiEntity->SetSelf(newUiEntity);
 
-		_UIElements.push_back(newUiEntity);
+		m_uiElements.push_back(newUiEntity);
 
 		return newUiEntity;
 	}
 
-	std::shared_ptr<Prefab> Core::addPrefab()
+	std::shared_ptr<Prefab> Core::AddPrefab()
 	{
 		std::shared_ptr<Prefab> newPrefab = std::make_shared<Prefab>();
-		newPrefab->init(_self);
+		newPrefab->Init(m_self);
 
-		newPrefab->setSelf(newPrefab);
+		newPrefab->SetSelf(newPrefab);
 
-		_prefabs.push_back(newPrefab);
+		m_prefabs.push_back(newPrefab);
 
 		return newPrefab;
 	}
 
-	std::shared_ptr<Pooler> Core::addPooler(std::string _id, std::shared_ptr<Prefab> _prefab, int initialPoolSize)
+	std::shared_ptr<Pooler> Core::AddPooler(std::string _id, std::shared_ptr<Prefab> _prefab, int _initialPoolSize)
 	{
 		std::shared_ptr<Pooler> rtn = std::make_shared<Pooler>();
-		rtn->OnInit(_self, _id, _prefab, initialPoolSize);
-		_poolers.push_back(rtn);
+		rtn->OnInit(m_self, _id, _prefab, _initialPoolSize);
+		m_poolers.push_back(rtn);
 		return rtn;
 	}
 
-	std::shared_ptr<Pooler> Core::getPooler(std::string _poolID)
+	std::shared_ptr<Pooler> Core::GetPooler(std::string _poolID)
 	{
-		for (size_t i = 0; i < _poolers.size(); i++)
+		for (size_t i = 0; i < m_poolers.size(); i++)
 		{
-			if (_poolers[i]->getID() == _poolID)
+			if (m_poolers[i]->GetID() == _poolID)
 			{
-				return _poolers[i];
+				return m_poolers[i];
 			}
 		}
 
@@ -290,85 +287,78 @@ namespace frontier
 		throw std::exception();
 	}
 
-	std::shared_ptr<Environment> Core::getEnvironment()
+	std::shared_ptr<Environment> Core::GetEnvironment()
 	{
-		return _environment;
+		return m_environment;
 	}
 
-	std::shared_ptr<Input> Core::getInput()
+	std::shared_ptr<Input> Core::GetInput()
 	{
-		return _input;
+		return m_input;
 	}
 
-	std::shared_ptr<Resources> Core::getResources()
+	std::shared_ptr<Resources> Core::GetResources()
 	{
-		return _resources;
+		return m_resources;
 	}
 
 	void Core::SetSelf(std::weak_ptr<Core> _selfPtr)
 	{
-		_self = _selfPtr;
+		m_self = _selfPtr;
 
 	}
 
-	int Core::getWidth()
+	int Core::GetWidth()
 	{
-		return _windowWidth;
+		return m_windowWidth;
 	}
 
-	int Core::getHeight()
+	int Core::GetHeight()
 	{
-		return _windowHeight;
+		return m_windowHeight;
 	}
 
-	void Core::UpdateWindowSize(int _width, int _height)
+	std::shared_ptr<Camera> Core::GetMainCamera()
 	{
-		_windowWidth = _width;
-		_windowHeight = _height;
+		return m_mainCamera;;
 	}
 
-	std::shared_ptr<Camera> Core::getMainCamera()
+	void Core::SetMainCamera(std::shared_ptr<Camera> _mainCameraToSet)
 	{
-		return _mainCamera;;
+		m_mainCamera = _mainCameraToSet;
 	}
 
-	void Core::setMainCamera(std::shared_ptr<Camera> _mainCameraToSet)
+	void Core::DeactivateAllInstancesInPools()
 	{
-		_mainCamera = _mainCameraToSet;
+		for (size_t i = 0; i < m_poolers.size(); i++)
+		{
+			m_poolers[i]->DeactivateAllInstances();
+		}
 	}
 
 	std::shared_ptr<Shader> Core::getHitboxShader()
 	{
-		return HitboxShader;
+		return m_hitboxShader;
 	}
 
 	std::shared_ptr<Shader> Core::getSkyboxShader()
 	{
-		return SkyboxShader;
+		return m_skyboxShader;
 	}
 
 	std::shared_ptr<Shader> Core::getUntexturedUiImageShader()
 	{
-		return UntexturedUiImageShader;
+		return m_untexturedUIImageShader;
 	}
 
 	std::shared_ptr<Shader> Core::getTexturedUiImageShader()
 	{
-		return TexturedUiImageShader;
+		return m_texturedUIImageShader;
 	}
 
 	void Core::AddToEntitiesToActivate(std::shared_ptr<Entity> _entityToActivate)
 	{
-		_entitiesToActivate.push_back(_entityToActivate);
+		m_entitiesToActivate.push_back(_entityToActivate);
 	}
-
-	void Core::deactivateAllInstancesInPools()
-	{
-		for (size_t i = 0; i < _poolers.size(); i++)
-		{
-			_poolers[i]->deactivateAllInstances();
-		}
-	}
-
 
 }

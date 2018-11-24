@@ -2,6 +2,11 @@
 \label{classfrontier_1_1_transform}\index{frontier\+::\+Transform@{frontier\+::\+Transform}}
 
 
+Class that tracks location information on an entity, added by default to an entity on intialisation.  
+
+
+
+
 {\ttfamily \#include $<$Transform.\+h$>$}
 
 Inheritance diagram for frontier\+:\+:Transform\+:\begin{figure}[H]
@@ -13,142 +18,281 @@ Inheritance diagram for frontier\+:\+:Transform\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classfrontier_1_1_transform_a4fef98c5ccbe2bb6303714c7da2ba4ef}{On\+Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ parent) override
-\item 
-void \hyperlink{classfrontier_1_1_transform_a16be3bd6b4a08d457251aea5d65e618f}{On\+Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ parent, glm\+::vec3 position)
-\item 
-void \hyperlink{classfrontier_1_1_transform_a084ca60da3da27b89acd8dd4c88e808c}{On\+Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ parent, glm\+::vec3 position, glm\+::vec3 rotation)
-\item 
-void \hyperlink{classfrontier_1_1_transform_a19b8764fddefc031742d317811b261a0}{On\+Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ parent, glm\+::vec3 position, glm\+::vec3 rotation, glm\+::vec3 scale)
-\item 
-glm\+::vec3 \hyperlink{classfrontier_1_1_transform_ac980c1cd517718fd4546a82659592c7c}{get\+Position} ()
-\item 
-void \hyperlink{classfrontier_1_1_transform_a39431f1267fe227a247f686787682aed}{set\+Position} (glm\+::vec3 \+\_\+pos)
-\item 
-glm\+::vec3 \hyperlink{classfrontier_1_1_transform_acb29cc4c641aa3ef6bed100b0bb96145}{get\+Rotation} ()
-\item 
-void \hyperlink{classfrontier_1_1_transform_a374a31649e6970b984495a287e473cbc}{set\+Rotation} (glm\+::vec3 \+\_\+rot)
-\item 
-glm\+::vec3 \hyperlink{classfrontier_1_1_transform_ae4e4e3f8fa4699d04d11a1a8eae8aff2}{get\+Scale} ()
-\item 
-void \hyperlink{classfrontier_1_1_transform_ae398759cf3fb01eeb6989aa52a602d55}{set\+Scale} (glm\+::vec3 \+\_\+sca)
-\item 
-glm\+::mat4 \hyperlink{classfrontier_1_1_transform_ac6eb361f0481c70157753d7965b92f4c}{get\+Model\+Matrix} (bool apply\+Rotation\+After\+Translation=false)
-\item 
-glm\+::mat4 \hyperlink{classfrontier_1_1_transform_a1a30ca83aca946f87087f70cebaf6c5d}{get\+Model\+Matrix\+Mod\+Scale} (glm\+::vec3 scale\+Modifier)
-\item 
-glm\+::mat4 \hyperlink{classfrontier_1_1_transform_aad2ce67da24359ea8840db6af730b41a}{get\+Position\+Matrix} (int exclude\+Axis=0)
-\item 
-void \hyperlink{classfrontier_1_1_transform_ad4e673db3400d3c505ceb9fc1ececfbb}{set\+Transform\+Parent} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_transform}{Transform} $>$ \+\_\+parent)
-\item 
-void \hyperlink{classfrontier_1_1_transform_a840205cbc6abd6328bf9c6b08d1f45a3}{add\+Child} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_transform}{Transform} $>$ \+\_\+child)
-\item 
-void \hyperlink{classfrontier_1_1_transform_aab8d4bc98d9de708ba1ab9cd8e0d7f64}{set\+Self} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_transform}{Transform} $>$ self)
-\end{DoxyCompactItemize}
+void \hyperlink{classfrontier_1_1_transform_a2d8181ec0003b04822124340fe7772c0}{On\+Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \+\_\+parent) override
+\begin{DoxyCompactList}\small\item\em Initialises the transform. \end{DoxyCompactList}\item 
+void \hyperlink{classfrontier_1_1_transform_a939611da70fc0f33b85fcf92d101ac3e}{On\+Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \+\_\+parent, glm\+::vec3 \+\_\+position)
+\begin{DoxyCompactList}\small\item\em Initialises the transform. \end{DoxyCompactList}\item 
+void \hyperlink{classfrontier_1_1_transform_ab23c1b75f7a02947bddec97abe286fa3}{On\+Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \+\_\+parent, glm\+::vec3 \+\_\+position, glm\+::vec3 \+\_\+rotation)
+\begin{DoxyCompactList}\small\item\em Initialises the transform. \end{DoxyCompactList}\item 
+void \hyperlink{classfrontier_1_1_transform_a8d2f5d6830818cc167a94948a15b2697}{On\+Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \+\_\+parent, glm\+::vec3 \+\_\+position, glm\+::vec3 \+\_\+rotation, glm\+::vec3 \+\_\+scale)
+\begin{DoxyCompactList}\small\item\em Initialises the transform. \end{DoxyCompactList}\item 
+glm\+::vec3 \hyperlink{classfrontier_1_1_transform_a9807f56b882736521e5678853e8a09c5}{Get\+Position} ()
+\begin{DoxyCompactList}\small\item\em Returns the position. \end{DoxyCompactList}\item 
+void \hyperlink{classfrontier_1_1_transform_a45f9ecc9db02d813f49211cdd71ec749}{Set\+Position} (glm\+::vec3 \+\_\+pos)
+\begin{DoxyCompactList}\small\item\em Sets the position. \end{DoxyCompactList}\item 
+glm\+::vec3 \hyperlink{classfrontier_1_1_transform_a1be9d719815ece4e26513567ef2ac23b}{Get\+Rotation} ()
+\begin{DoxyCompactList}\small\item\em Returns the rotation. \end{DoxyCompactList}\item 
+void \hyperlink{classfrontier_1_1_transform_a62ed231d2cfef5b115955741ec838591}{Set\+Rotation} (glm\+::vec3 \+\_\+rot)
+\begin{DoxyCompactList}\small\item\em Sets the rotation. \end{DoxyCompactList}\item 
+glm\+::vec3 \hyperlink{classfrontier_1_1_transform_ab3468e4e7603e07e2a1d305c15fc4fd2}{Get\+Scale} ()
+\begin{DoxyCompactList}\small\item\em Returns the scale. \end{DoxyCompactList}\item 
+void \hyperlink{classfrontier_1_1_transform_ab6803171399b1ba2825f3f47f6eaffaa}{Set\+Scale} (glm\+::vec3 \+\_\+sca)
+\begin{DoxyCompactList}\small\item\em Sets the scale. \end{DoxyCompactList}\item 
+glm\+::mat4 \hyperlink{classfrontier_1_1_transform_a092823a36448cf201cc63e3cd46d6cc4}{Get\+Model\+Matrix} ()
+\begin{DoxyCompactList}\small\item\em Returns the model matrix. \end{DoxyCompactList}\item 
+glm\+::mat4 \hyperlink{classfrontier_1_1_transform_aad5a62d25417a16ad84d6f809eebc8fe}{Get\+Model\+Matrix\+Mod\+Scale} (glm\+::vec3 \+\_\+scale\+Modifier)
+\begin{DoxyCompactList}\small\item\em Returns the model matrix with a modified scale. \end{DoxyCompactList}\item 
+glm\+::mat4 \hyperlink{classfrontier_1_1_transform_ab6bff40a457322589a7f8a1dc92a5c42}{Get\+Position\+Matrix} (int \+\_\+exclude\+Axis=0)
+\begin{DoxyCompactList}\small\item\em Returns a model matrix with just the position. \end{DoxyCompactList}\item 
+void \hyperlink{classfrontier_1_1_transform_a95b6b6407a5ece2e6b188c2e1c2294a2}{Set\+Transform\+Parent} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_transform}{Transform} $>$ \+\_\+parent)
+\begin{DoxyCompactList}\small\item\em Sets the transform parent, this is used for scene graphs. \end{DoxyCompactList}\item 
+void \hyperlink{classfrontier_1_1_transform_a61510be91275313808daa938af87f119}{Add\+Child} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_transform}{Transform} $>$ \+\_\+child)
+\begin{DoxyCompactList}\small\item\em adds a child to the transform. \end{DoxyCompactList}\item 
+void \hyperlink{classfrontier_1_1_transform_a10e72a1e49de0c3c3a36f920612a39ce}{Set\+Self} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_transform}{Transform} $>$ \+\_\+self)
+\begin{DoxyCompactList}\small\item\em Sets the self pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
+\subsection{Detailed Description}
+Class that tracks location information on an entity, added by default to an entity on intialisation. 
+
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classfrontier_1_1_transform_a840205cbc6abd6328bf9c6b08d1f45a3}\label{classfrontier_1_1_transform_a840205cbc6abd6328bf9c6b08d1f45a3}} 
-\index{frontier\+::\+Transform@{frontier\+::\+Transform}!add\+Child@{add\+Child}}
-\index{add\+Child@{add\+Child}!frontier\+::\+Transform@{frontier\+::\+Transform}}
-\subsubsection{\texorpdfstring{add\+Child()}{addChild()}}
-{\footnotesize\ttfamily void frontier\+::\+Transform\+::add\+Child (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_transform}{Transform} $>$}]{\+\_\+child }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classfrontier_1_1_transform_a61510be91275313808daa938af87f119}\label{classfrontier_1_1_transform_a61510be91275313808daa938af87f119}} 
+\index{frontier\+::\+Transform@{frontier\+::\+Transform}!Add\+Child@{Add\+Child}}
+\index{Add\+Child@{Add\+Child}!frontier\+::\+Transform@{frontier\+::\+Transform}}
+\subsubsection{\texorpdfstring{Add\+Child()}{AddChild()}}
+{\footnotesize\ttfamily void frontier\+::\+Transform\+::\+Add\+Child (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_transform}{Transform} $>$}]{\+\_\+child }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_transform_ac6eb361f0481c70157753d7965b92f4c}\label{classfrontier_1_1_transform_ac6eb361f0481c70157753d7965b92f4c}} 
-\index{frontier\+::\+Transform@{frontier\+::\+Transform}!get\+Model\+Matrix@{get\+Model\+Matrix}}
-\index{get\+Model\+Matrix@{get\+Model\+Matrix}!frontier\+::\+Transform@{frontier\+::\+Transform}}
-\subsubsection{\texorpdfstring{get\+Model\+Matrix()}{getModelMatrix()}}
-{\footnotesize\ttfamily glm\+::mat4 frontier\+::\+Transform\+::get\+Model\+Matrix (\begin{DoxyParamCaption}\item[{bool}]{apply\+Rotation\+After\+Translation = {\ttfamily false} }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_transform_a1a30ca83aca946f87087f70cebaf6c5d}\label{classfrontier_1_1_transform_a1a30ca83aca946f87087f70cebaf6c5d}} 
-\index{frontier\+::\+Transform@{frontier\+::\+Transform}!get\+Model\+Matrix\+Mod\+Scale@{get\+Model\+Matrix\+Mod\+Scale}}
-\index{get\+Model\+Matrix\+Mod\+Scale@{get\+Model\+Matrix\+Mod\+Scale}!frontier\+::\+Transform@{frontier\+::\+Transform}}
-\subsubsection{\texorpdfstring{get\+Model\+Matrix\+Mod\+Scale()}{getModelMatrixModScale()}}
-{\footnotesize\ttfamily glm\+::mat4 frontier\+::\+Transform\+::get\+Model\+Matrix\+Mod\+Scale (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{scale\+Modifier }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_transform_ac980c1cd517718fd4546a82659592c7c}\label{classfrontier_1_1_transform_ac980c1cd517718fd4546a82659592c7c}} 
-\index{frontier\+::\+Transform@{frontier\+::\+Transform}!get\+Position@{get\+Position}}
-\index{get\+Position@{get\+Position}!frontier\+::\+Transform@{frontier\+::\+Transform}}
-\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
-{\footnotesize\ttfamily glm\+::vec3 frontier\+::\+Transform\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+adds a child to the transform. 
 
-\mbox{\Hypertarget{classfrontier_1_1_transform_aad2ce67da24359ea8840db6af730b41a}\label{classfrontier_1_1_transform_aad2ce67da24359ea8840db6af730b41a}} 
-\index{frontier\+::\+Transform@{frontier\+::\+Transform}!get\+Position\+Matrix@{get\+Position\+Matrix}}
-\index{get\+Position\+Matrix@{get\+Position\+Matrix}!frontier\+::\+Transform@{frontier\+::\+Transform}}
-\subsubsection{\texorpdfstring{get\+Position\+Matrix()}{getPositionMatrix()}}
-{\footnotesize\ttfamily glm\+::mat4 frontier\+::\+Transform\+::get\+Position\+Matrix (\begin{DoxyParamCaption}\item[{int}]{exclude\+Axis = {\ttfamily 0} }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_transform_acb29cc4c641aa3ef6bed100b0bb96145}\label{classfrontier_1_1_transform_acb29cc4c641aa3ef6bed100b0bb96145}} 
-\index{frontier\+::\+Transform@{frontier\+::\+Transform}!get\+Rotation@{get\+Rotation}}
-\index{get\+Rotation@{get\+Rotation}!frontier\+::\+Transform@{frontier\+::\+Transform}}
-\subsubsection{\texorpdfstring{get\+Rotation()}{getRotation()}}
-{\footnotesize\ttfamily glm\+::vec3 frontier\+::\+Transform\+::get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+child} & The new child for this transform. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_transform_a092823a36448cf201cc63e3cd46d6cc4}\label{classfrontier_1_1_transform_a092823a36448cf201cc63e3cd46d6cc4}} 
+\index{frontier\+::\+Transform@{frontier\+::\+Transform}!Get\+Model\+Matrix@{Get\+Model\+Matrix}}
+\index{Get\+Model\+Matrix@{Get\+Model\+Matrix}!frontier\+::\+Transform@{frontier\+::\+Transform}}
+\subsubsection{\texorpdfstring{Get\+Model\+Matrix()}{GetModelMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 frontier\+::\+Transform\+::\+Get\+Model\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_transform_ae4e4e3f8fa4699d04d11a1a8eae8aff2}\label{classfrontier_1_1_transform_ae4e4e3f8fa4699d04d11a1a8eae8aff2}} 
-\index{frontier\+::\+Transform@{frontier\+::\+Transform}!get\+Scale@{get\+Scale}}
-\index{get\+Scale@{get\+Scale}!frontier\+::\+Transform@{frontier\+::\+Transform}}
-\subsubsection{\texorpdfstring{get\+Scale()}{getScale()}}
-{\footnotesize\ttfamily glm\+::vec3 frontier\+::\+Transform\+::get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_transform_a4fef98c5ccbe2bb6303714c7da2ba4ef}\label{classfrontier_1_1_transform_a4fef98c5ccbe2bb6303714c7da2ba4ef}} 
+
+Returns the model matrix. 
+
+\mbox{\Hypertarget{classfrontier_1_1_transform_aad5a62d25417a16ad84d6f809eebc8fe}\label{classfrontier_1_1_transform_aad5a62d25417a16ad84d6f809eebc8fe}} 
+\index{frontier\+::\+Transform@{frontier\+::\+Transform}!Get\+Model\+Matrix\+Mod\+Scale@{Get\+Model\+Matrix\+Mod\+Scale}}
+\index{Get\+Model\+Matrix\+Mod\+Scale@{Get\+Model\+Matrix\+Mod\+Scale}!frontier\+::\+Transform@{frontier\+::\+Transform}}
+\subsubsection{\texorpdfstring{Get\+Model\+Matrix\+Mod\+Scale()}{GetModelMatrixModScale()}}
+{\footnotesize\ttfamily glm\+::mat4 frontier\+::\+Transform\+::\+Get\+Model\+Matrix\+Mod\+Scale (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{\+\_\+scale\+Modifier }\end{DoxyParamCaption})}
+
+
+
+Returns the model matrix with a modified scale. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+scale\+Modifier} & The scale to multiple the current scale by. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_transform_a9807f56b882736521e5678853e8a09c5}\label{classfrontier_1_1_transform_a9807f56b882736521e5678853e8a09c5}} 
+\index{frontier\+::\+Transform@{frontier\+::\+Transform}!Get\+Position@{Get\+Position}}
+\index{Get\+Position@{Get\+Position}!frontier\+::\+Transform@{frontier\+::\+Transform}}
+\subsubsection{\texorpdfstring{Get\+Position()}{GetPosition()}}
+{\footnotesize\ttfamily glm\+::vec3 frontier\+::\+Transform\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the position. 
+
+\mbox{\Hypertarget{classfrontier_1_1_transform_ab6bff40a457322589a7f8a1dc92a5c42}\label{classfrontier_1_1_transform_ab6bff40a457322589a7f8a1dc92a5c42}} 
+\index{frontier\+::\+Transform@{frontier\+::\+Transform}!Get\+Position\+Matrix@{Get\+Position\+Matrix}}
+\index{Get\+Position\+Matrix@{Get\+Position\+Matrix}!frontier\+::\+Transform@{frontier\+::\+Transform}}
+\subsubsection{\texorpdfstring{Get\+Position\+Matrix()}{GetPositionMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 frontier\+::\+Transform\+::\+Get\+Position\+Matrix (\begin{DoxyParamCaption}\item[{int}]{\+\_\+exclude\+Axis = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Returns a model matrix with just the position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+exclude\+Axis} & Excludes a specifed axis 0 = none, 1 = x, 2 = y, 3 = z. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_transform_a1be9d719815ece4e26513567ef2ac23b}\label{classfrontier_1_1_transform_a1be9d719815ece4e26513567ef2ac23b}} 
+\index{frontier\+::\+Transform@{frontier\+::\+Transform}!Get\+Rotation@{Get\+Rotation}}
+\index{Get\+Rotation@{Get\+Rotation}!frontier\+::\+Transform@{frontier\+::\+Transform}}
+\subsubsection{\texorpdfstring{Get\+Rotation()}{GetRotation()}}
+{\footnotesize\ttfamily glm\+::vec3 frontier\+::\+Transform\+::\+Get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the rotation. 
+
+\mbox{\Hypertarget{classfrontier_1_1_transform_ab3468e4e7603e07e2a1d305c15fc4fd2}\label{classfrontier_1_1_transform_ab3468e4e7603e07e2a1d305c15fc4fd2}} 
+\index{frontier\+::\+Transform@{frontier\+::\+Transform}!Get\+Scale@{Get\+Scale}}
+\index{Get\+Scale@{Get\+Scale}!frontier\+::\+Transform@{frontier\+::\+Transform}}
+\subsubsection{\texorpdfstring{Get\+Scale()}{GetScale()}}
+{\footnotesize\ttfamily glm\+::vec3 frontier\+::\+Transform\+::\+Get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the scale. 
+
+\mbox{\Hypertarget{classfrontier_1_1_transform_a2d8181ec0003b04822124340fe7772c0}\label{classfrontier_1_1_transform_a2d8181ec0003b04822124340fe7772c0}} 
 \index{frontier\+::\+Transform@{frontier\+::\+Transform}!On\+Init@{On\+Init}}
 \index{On\+Init@{On\+Init}!frontier\+::\+Transform@{frontier\+::\+Transform}}
 \subsubsection{\texorpdfstring{On\+Init()}{OnInit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily void frontier\+::\+Transform\+::\+On\+Init (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void frontier\+::\+Transform\+::\+On\+Init (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$}]{\+\_\+parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
+
+
+Initialises the transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+parent} & The parent of the component. \\
+\hline
+\end{DoxyParams}
 
 
 Reimplemented from \hyperlink{classfrontier_1_1_component_af3da02905c4d79219d9b12f260a35ad1}{frontier\+::\+Component}.
 
-\mbox{\Hypertarget{classfrontier_1_1_transform_a16be3bd6b4a08d457251aea5d65e618f}\label{classfrontier_1_1_transform_a16be3bd6b4a08d457251aea5d65e618f}} 
+\mbox{\Hypertarget{classfrontier_1_1_transform_a939611da70fc0f33b85fcf92d101ac3e}\label{classfrontier_1_1_transform_a939611da70fc0f33b85fcf92d101ac3e}} 
 \index{frontier\+::\+Transform@{frontier\+::\+Transform}!On\+Init@{On\+Init}}
 \index{On\+Init@{On\+Init}!frontier\+::\+Transform@{frontier\+::\+Transform}}
 \subsubsection{\texorpdfstring{On\+Init()}{OnInit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily void frontier\+::\+Transform\+::\+On\+Init (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$}]{parent,  }\item[{glm\+::vec3}]{position }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void frontier\+::\+Transform\+::\+On\+Init (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$}]{\+\_\+parent,  }\item[{glm\+::vec3}]{\+\_\+position }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_transform_a084ca60da3da27b89acd8dd4c88e808c}\label{classfrontier_1_1_transform_a084ca60da3da27b89acd8dd4c88e808c}} 
+
+
+Initialises the transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+parent} & The parent of the component. \\
+\hline
+{\em \+\_\+position} & The initial position of the transform. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_transform_ab23c1b75f7a02947bddec97abe286fa3}\label{classfrontier_1_1_transform_ab23c1b75f7a02947bddec97abe286fa3}} 
 \index{frontier\+::\+Transform@{frontier\+::\+Transform}!On\+Init@{On\+Init}}
 \index{On\+Init@{On\+Init}!frontier\+::\+Transform@{frontier\+::\+Transform}}
 \subsubsection{\texorpdfstring{On\+Init()}{OnInit()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily void frontier\+::\+Transform\+::\+On\+Init (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$}]{parent,  }\item[{glm\+::vec3}]{position,  }\item[{glm\+::vec3}]{rotation }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void frontier\+::\+Transform\+::\+On\+Init (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$}]{\+\_\+parent,  }\item[{glm\+::vec3}]{\+\_\+position,  }\item[{glm\+::vec3}]{\+\_\+rotation }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_transform_a19b8764fddefc031742d317811b261a0}\label{classfrontier_1_1_transform_a19b8764fddefc031742d317811b261a0}} 
+
+
+Initialises the transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+parent} & The parent of the component. \\
+\hline
+{\em \+\_\+position} & The initial position of the transform. \\
+\hline
+{\em \+\_\+rotation} & The initial rotation of the transform. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_transform_a8d2f5d6830818cc167a94948a15b2697}\label{classfrontier_1_1_transform_a8d2f5d6830818cc167a94948a15b2697}} 
 \index{frontier\+::\+Transform@{frontier\+::\+Transform}!On\+Init@{On\+Init}}
 \index{On\+Init@{On\+Init}!frontier\+::\+Transform@{frontier\+::\+Transform}}
 \subsubsection{\texorpdfstring{On\+Init()}{OnInit()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily void frontier\+::\+Transform\+::\+On\+Init (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$}]{parent,  }\item[{glm\+::vec3}]{position,  }\item[{glm\+::vec3}]{rotation,  }\item[{glm\+::vec3}]{scale }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void frontier\+::\+Transform\+::\+On\+Init (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$}]{\+\_\+parent,  }\item[{glm\+::vec3}]{\+\_\+position,  }\item[{glm\+::vec3}]{\+\_\+rotation,  }\item[{glm\+::vec3}]{\+\_\+scale }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_transform_a39431f1267fe227a247f686787682aed}\label{classfrontier_1_1_transform_a39431f1267fe227a247f686787682aed}} 
-\index{frontier\+::\+Transform@{frontier\+::\+Transform}!set\+Position@{set\+Position}}
-\index{set\+Position@{set\+Position}!frontier\+::\+Transform@{frontier\+::\+Transform}}
-\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}}
-{\footnotesize\ttfamily void frontier\+::\+Transform\+::set\+Position (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{\+\_\+pos }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_transform_a374a31649e6970b984495a287e473cbc}\label{classfrontier_1_1_transform_a374a31649e6970b984495a287e473cbc}} 
-\index{frontier\+::\+Transform@{frontier\+::\+Transform}!set\+Rotation@{set\+Rotation}}
-\index{set\+Rotation@{set\+Rotation}!frontier\+::\+Transform@{frontier\+::\+Transform}}
-\subsubsection{\texorpdfstring{set\+Rotation()}{setRotation()}}
-{\footnotesize\ttfamily void frontier\+::\+Transform\+::set\+Rotation (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{\+\_\+rot }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_transform_ae398759cf3fb01eeb6989aa52a602d55}\label{classfrontier_1_1_transform_ae398759cf3fb01eeb6989aa52a602d55}} 
-\index{frontier\+::\+Transform@{frontier\+::\+Transform}!set\+Scale@{set\+Scale}}
-\index{set\+Scale@{set\+Scale}!frontier\+::\+Transform@{frontier\+::\+Transform}}
-\subsubsection{\texorpdfstring{set\+Scale()}{setScale()}}
-{\footnotesize\ttfamily void frontier\+::\+Transform\+::set\+Scale (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{\+\_\+sca }\end{DoxyParamCaption})}
+Initialises the transform. 
 
-\mbox{\Hypertarget{classfrontier_1_1_transform_aab8d4bc98d9de708ba1ab9cd8e0d7f64}\label{classfrontier_1_1_transform_aab8d4bc98d9de708ba1ab9cd8e0d7f64}} 
-\index{frontier\+::\+Transform@{frontier\+::\+Transform}!set\+Self@{set\+Self}}
-\index{set\+Self@{set\+Self}!frontier\+::\+Transform@{frontier\+::\+Transform}}
-\subsubsection{\texorpdfstring{set\+Self()}{setSelf()}}
-{\footnotesize\ttfamily void frontier\+::\+Transform\+::set\+Self (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_transform}{Transform} $>$}]{self }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_transform_ad4e673db3400d3c505ceb9fc1ececfbb}\label{classfrontier_1_1_transform_ad4e673db3400d3c505ceb9fc1ececfbb}} 
-\index{frontier\+::\+Transform@{frontier\+::\+Transform}!set\+Transform\+Parent@{set\+Transform\+Parent}}
-\index{set\+Transform\+Parent@{set\+Transform\+Parent}!frontier\+::\+Transform@{frontier\+::\+Transform}}
-\subsubsection{\texorpdfstring{set\+Transform\+Parent()}{setTransformParent()}}
-{\footnotesize\ttfamily void frontier\+::\+Transform\+::set\+Transform\+Parent (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_transform}{Transform} $>$}]{\+\_\+parent }\end{DoxyParamCaption})}
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+parent} & The parent of the component. \\
+\hline
+{\em \+\_\+position} & The initial position of the transform. \\
+\hline
+{\em \+\_\+rotation} & The initial rotation of the transform. \\
+\hline
+{\em \+\_\+scale} & The initial scale of the transform. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_transform_a45f9ecc9db02d813f49211cdd71ec749}\label{classfrontier_1_1_transform_a45f9ecc9db02d813f49211cdd71ec749}} 
+\index{frontier\+::\+Transform@{frontier\+::\+Transform}!Set\+Position@{Set\+Position}}
+\index{Set\+Position@{Set\+Position}!frontier\+::\+Transform@{frontier\+::\+Transform}}
+\subsubsection{\texorpdfstring{Set\+Position()}{SetPosition()}}
+{\footnotesize\ttfamily void frontier\+::\+Transform\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{\+\_\+pos }\end{DoxyParamCaption})}
 
+
+
+Sets the position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+pos} & New position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_transform_a62ed231d2cfef5b115955741ec838591}\label{classfrontier_1_1_transform_a62ed231d2cfef5b115955741ec838591}} 
+\index{frontier\+::\+Transform@{frontier\+::\+Transform}!Set\+Rotation@{Set\+Rotation}}
+\index{Set\+Rotation@{Set\+Rotation}!frontier\+::\+Transform@{frontier\+::\+Transform}}
+\subsubsection{\texorpdfstring{Set\+Rotation()}{SetRotation()}}
+{\footnotesize\ttfamily void frontier\+::\+Transform\+::\+Set\+Rotation (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{\+\_\+rot }\end{DoxyParamCaption})}
+
+
+
+Sets the rotation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+rot} & New rotation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_transform_ab6803171399b1ba2825f3f47f6eaffaa}\label{classfrontier_1_1_transform_ab6803171399b1ba2825f3f47f6eaffaa}} 
+\index{frontier\+::\+Transform@{frontier\+::\+Transform}!Set\+Scale@{Set\+Scale}}
+\index{Set\+Scale@{Set\+Scale}!frontier\+::\+Transform@{frontier\+::\+Transform}}
+\subsubsection{\texorpdfstring{Set\+Scale()}{SetScale()}}
+{\footnotesize\ttfamily void frontier\+::\+Transform\+::\+Set\+Scale (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{\+\_\+sca }\end{DoxyParamCaption})}
+
+
+
+Sets the scale. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+sca} & New scale. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_transform_a10e72a1e49de0c3c3a36f920612a39ce}\label{classfrontier_1_1_transform_a10e72a1e49de0c3c3a36f920612a39ce}} 
+\index{frontier\+::\+Transform@{frontier\+::\+Transform}!Set\+Self@{Set\+Self}}
+\index{Set\+Self@{Set\+Self}!frontier\+::\+Transform@{frontier\+::\+Transform}}
+\subsubsection{\texorpdfstring{Set\+Self()}{SetSelf()}}
+{\footnotesize\ttfamily void frontier\+::\+Transform\+::\+Set\+Self (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_transform}{Transform} $>$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Sets the self pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & A weak pointer to this transform. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_transform_a95b6b6407a5ece2e6b188c2e1c2294a2}\label{classfrontier_1_1_transform_a95b6b6407a5ece2e6b188c2e1c2294a2}} 
+\index{frontier\+::\+Transform@{frontier\+::\+Transform}!Set\+Transform\+Parent@{Set\+Transform\+Parent}}
+\index{Set\+Transform\+Parent@{Set\+Transform\+Parent}!frontier\+::\+Transform@{frontier\+::\+Transform}}
+\subsubsection{\texorpdfstring{Set\+Transform\+Parent()}{SetTransformParent()}}
+{\footnotesize\ttfamily void frontier\+::\+Transform\+::\+Set\+Transform\+Parent (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_transform}{Transform} $>$}]{\+\_\+parent }\end{DoxyParamCaption})}
+
+
+
+Sets the transform parent, this is used for scene graphs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+parent} & The parent of this transform. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

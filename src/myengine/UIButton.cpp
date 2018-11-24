@@ -13,67 +13,67 @@ namespace frontier
 		Component::OnInit(_parent);
 		if (_parent.lock()->hasComponent<UIImage>())
 		{
-			_targetImage = _parent.lock()->getComponent<UIImage>();
+			m_targetImage = _parent.lock()->getComponent<UIImage>();
 			
 		}
 	}
 
-	void UIButton::OnInit(std::weak_ptr<Entity> _parent, std::weak_ptr<UIImage> _targetimg)
+	void UIButton::OnInit(std::weak_ptr<Entity> _parent, std::weak_ptr<UIImage> _targetImg)
 	{
 		Component::OnInit(_parent);
-		_targetImage = _targetimg;
+		m_targetImage = _targetImg;
 	}
 
 	void UIButton::OnTick()
 	{
-		if (isMouseOverlapping() && getInput()->getMouseButton(Input::LEFT_MOUSE_BUTTON))
+		if (IsMouseOverlapping() && GetInput()->GetMouseButton(Input::LEFT_MOUSE_BUTTON))
 		{
 			std::cout << "Button Clicked" << std::endl;
-			if (!_targetImage.expired())
+			if (!m_targetImage.expired())
 			{
-				_targetImage.lock()->setColor(glm::vec4(pressedColor, 1.0f));
+				m_targetImage.lock()->SetColor(glm::vec4(m_pressedColor, 1.0f));
 			}
 		}
-		else if (isMouseOverlapping())
+		else if (IsMouseOverlapping())
 		{
-			if (!_targetImage.expired())
+			if (!m_targetImage.expired())
 			{
-				_targetImage.lock()->setColor(glm::vec4(overlapColor, 1.0f));
+				m_targetImage.lock()->SetColor(glm::vec4(m_overlapColor, 1.0f));
 			}
 		}
 		else
 		{
-			if (!_targetImage.expired())
+			if (!m_targetImage.expired())
 			{
-				_targetImage.lock()->setColor(glm::vec4(idleColor, 1.0f));
+				m_targetImage.lock()->SetColor(glm::vec4(m_idleColor, 1.0f));
 			}
 		}
 	}
 
-	void UIButton::setTargetImage(std::weak_ptr<UIImage> _newImage)
+	void UIButton::SetTargetImage(std::weak_ptr<UIImage> _newImage)
 	{
-		_targetImage = _newImage;
+		m_targetImage = _newImage;
 	}
 
-	void UIButton::setidleColor(glm::vec3 _newIdleColor)
+	void UIButton::SetIdleColor(glm::vec3 _newIdleColor)
 	{
-		idleColor = _newIdleColor;
+		m_idleColor = _newIdleColor;
 	}
 
-	void UIButton::setpressedColor(glm::vec3 _newPressedColor)
+	void UIButton::SetPressedColor(glm::vec3 _newPressedColor)
 	{
-		pressedColor = _newPressedColor;
+		m_pressedColor = _newPressedColor;
 	}
 
-	void UIButton::setOverlapColor(glm::vec3 _newOverlapColor)
+	void UIButton::SetOverlapColor(glm::vec3 _newOverlapColor)
 	{
-		overlapColor = _newOverlapColor;
+		m_overlapColor = _newOverlapColor;
 	}
 
-	bool UIButton::isMouseOverlapping()
+	bool UIButton::IsMouseOverlapping()
 	{
-		return (glm::abs(getEntity()->getComponent<Transform>()->getPosition().x - getInput()->getMousePos().x) < getEntity()->getComponent<Transform>()->getScale().x) &&
-			(glm::abs(getEntity()->getComponent<Transform>()->getPosition().y - getInput()->getMousePos().y) < getEntity()->getComponent<Transform>()->getScale().y);
+		return (glm::abs(GetEntity()->getComponent<Transform>()->GetPosition().x - GetInput()->GetMousePos().x) < GetEntity()->getComponent<Transform>()->GetScale().x) &&
+			(glm::abs(GetEntity()->getComponent<Transform>()->GetPosition().y - GetInput()->GetMousePos().y) < GetEntity()->getComponent<Transform>()->GetScale().y);
 	}
 
 }

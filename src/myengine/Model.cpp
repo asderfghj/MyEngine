@@ -1,36 +1,13 @@
+#include <iostream>
 #define TINYOBJLOADER_IMPLEMENTATION
 #include "tiny_obj_loader.h"
 
 #include "Model.h"
 #include "Mesh.h"
 
-#include <iostream>
-
-
 namespace frontier
 {
-	Model::Model()
-	{
-		std::cout << "Model component created" << std::endl;
-	}
-
-	std::shared_ptr<Model> Model::Create(const char *path, std::weak_ptr<Resources> _resources)
-	{
-		std::shared_ptr<Model> rtn = std::make_shared<Model>();
-		rtn->loadModel(path);
-		_resources.lock()->AddCreatedResource(rtn);
-		return rtn;
-	}
-
-	void Model::Draw(glm::mat4 _model, glm::mat4 _view, glm::mat4 _proj, std::shared_ptr<Texture> _tex, std::shared_ptr<Shader> _shader)
-	{
-		for (size_t i = 0; i < meshes.size(); i++)
-		{
-			meshes[i]->Draw(_model, _view, _proj, _tex, _shader);
-		}
-	}
-
-	void Model::loadModel(std::string path)
+	void Model::LoadModel(std::string _path)
 	{
 		tinyobj::attrib_t inAttrib;
 		std::vector<tinyobj::shape_t> inShapes;
@@ -39,23 +16,23 @@ namespace frontier
 		int basePathEndIndex;
 		bool hasTexCoords = true;
 
-		for (size_t i = 0; i < path.size(); i++)
+		for (size_t i = 0; i < _path.size(); i++)
 		{
-			if (path[i] == '/')
+			if (_path[i] == '/')
 			{
 				basePathEndIndex = i;
 			}
 		}
 
-		tinyobj::LoadObj(&inAttrib, &inShapes, &inMats, &errorMsg, path.c_str(), path.substr(0, basePathEndIndex + 1).c_str());
-		
-		
+		tinyobj::LoadObj(&inAttrib, &inShapes, &inMats, &errorMsg, _path.c_str(), _path.substr(0, basePathEndIndex + 1).c_str());
+
+
 
 		if (!errorMsg.empty())
 		{
 			std::cout << errorMsg << std::endl;
 		}
-		
+
 		std::vector<GLfloat> vertices;
 		std::vector<GLfloat> normals;
 		std::vector<GLfloat> texCoords;
@@ -100,7 +77,7 @@ namespace frontier
 				mesh = std::make_shared<Mesh>(vertices, normals);
 			}
 
-			meshes.push_back(mesh);
+			m_meshes.push_back(mesh);
 
 		}
 
@@ -108,5 +85,20 @@ namespace frontier
 
 	}
 
+	std::shared_ptr<Model> Model::Create(const char *_path, std::weak_ptr<Resources> _resources)
+	{
+		std::shared_ptr<Model> rtn = std::make_shared<Model>();
+		rtn->LoadModel(_path);
+		_resources.lock()->AddCreatedResource(rtn);
+		return rtn;
+	}
+
+	void Model::Draw(glm::mat4 _model, glm::mat4 _view, glm::mat4 _proj, std::shared_ptr<Texture> _tex, std::shared_ptr<Shader> _shader)
+	{
+		for (size_t i = 0; i < m_meshes.size(); i++)
+		{
+			m_meshes[i]->Draw(_model, _view, _proj, _tex, _shader);
+		}
+	}
 
 }

@@ -72,6 +72,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Base component class, use for inheritance to other classes only. Useless on its own.  
+ <a href="classfrontier_1_1_component.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_component_8h_source.html">Component.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for frontier::Component:</div>
@@ -79,94 +82,62 @@ Inheritance diagram for frontier::Component:</div>
  <div class="center">
   <img src="classfrontier_1_1_component.png" usemap="#frontier::Component_map" alt=""/>
   <map id="frontier::Component_map" name="frontier::Component_map">
-<area href="class_asteroid_behavior.html" alt="AsteroidBehavior" shape="rect" coords="170,56,330,80"/>
-<area href="class_asteroid_spawner.html" alt="AsteroidSpawner" shape="rect" coords="170,112,330,136"/>
-<area href="classfrontier_1_1_audio_player.html" alt="frontier::AudioPlayer" shape="rect" coords="170,168,330,192"/>
-<area href="classfrontier_1_1_back_ground_color.html" alt="frontier::BackGroundColor" shape="rect" coords="170,224,330,248"/>
-<area href="classfrontier_1_1_camera.html" alt="frontier::Camera" shape="rect" coords="170,280,330,304"/>
-<area href="classfrontier_1_1_collider.html" alt="frontier::Collider" shape="rect" coords="170,336,330,360"/>
-<area href="classfrontier_1_1_mesh_renderer.html" alt="frontier::MeshRenderer" shape="rect" coords="170,392,330,416"/>
-<area href="classfrontier_1_1_skybox.html" alt="frontier::Skybox" shape="rect" coords="170,448,330,472"/>
-<area href="classfrontier_1_1_transform.html" alt="frontier::Transform" shape="rect" coords="170,504,330,528"/>
-<area href="classfrontier_1_1_triangle_renderer.html" alt="frontier::TriangleRenderer" shape="rect" coords="170,560,330,584"/>
-<area href="classfrontier_1_1_u_i_button.html" alt="frontier::UIButton" shape="rect" coords="170,616,330,640"/>
-<area href="classfrontier_1_1_u_i_image.html" alt="frontier::UIImage" shape="rect" coords="170,672,330,696"/>
-<area href="class_player_controller.html" alt="PlayerController" shape="rect" coords="170,728,330,752"/>
-<area href="class_projectile_behavior.html" alt="ProjectileBehavior" shape="rect" coords="170,784,330,808"/>
+<area href="class_asteroid_behavior.html" alt="AsteroidBehavior" shape="rect" coords="153,56,296,80"/>
+<area href="class_asteroid_spawner.html" alt="AsteroidSpawner" shape="rect" coords="153,112,296,136"/>
+<area href="classfrontier_1_1_audio_player.html" title="This class holds a sound resource which can then be attached to a entity can can be played in various..." alt="frontier::AudioPlayer" shape="rect" coords="153,168,296,192"/>
+<area href="classfrontier_1_1_camera.html" title="Provides the view, projection and orthographic matricies for drawing objects to the screen..." alt="frontier::Camera" shape="rect" coords="153,224,296,248"/>
+<area href="classfrontier_1_1_collider.html" title="A box collider, uses basic AABB collisions against other entities with a collider attached..." alt="frontier::Collider" shape="rect" coords="153,280,296,304"/>
+<area href="classfrontier_1_1_mesh_renderer.html" title="Container for a model. " alt="frontier::MeshRenderer" shape="rect" coords="153,336,296,360"/>
+<area href="classfrontier_1_1_skybox.html" title="Creates a skybox that acts as a backdrop for the scene. This will not move as the camera move..." alt="frontier::Skybox" shape="rect" coords="153,392,296,416"/>
+<area href="classfrontier_1_1_transform.html" title="Class that tracks location information on an entity, added by default to an entity on intialisation..." alt="frontier::Transform" shape="rect" coords="153,448,296,472"/>
+<area href="classfrontier_1_1_u_i_button.html" title="A UI button that will be in screen space. " alt="frontier::UIButton" shape="rect" coords="153,504,296,528"/>
+<area href="classfrontier_1_1_u_i_image.html" title="A UI image that will appear in screen space rather than world space. " alt="frontier::UIImage" shape="rect" coords="153,560,296,584"/>
+<area href="class_player_controller.html" alt="PlayerController" shape="rect" coords="153,616,296,640"/>
+<area href="class_projectile_behavior.html" alt="ProjectileBehavior" shape="rect" coords="153,672,296,696"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a21f8f2b1292143a1e74d985024e34589"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a21f8f2b1292143a1e74d985024e34589">Component</a> ()</td></tr>
-<tr class="separator:a21f8f2b1292143a1e74d985024e34589"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a919c8260a4e6c1a14165bf9d1b903423"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a919c8260a4e6c1a14165bf9d1b903423">~Component</a> ()</td></tr>
-<tr class="separator:a919c8260a4e6c1a14165bf9d1b903423"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3da02905c4d79219d9b12f260a35ad1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#af3da02905c4d79219d9b12f260a35ad1">OnInit</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; _parent)</td></tr>
+<tr class="memdesc:af3da02905c4d79219d9b12f260a35ad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the component. Sets the pointer to the entity that this component is attached to.  <a href="#af3da02905c4d79219d9b12f260a35ad1">More...</a><br /></td></tr>
 <tr class="separator:af3da02905c4d79219d9b12f260a35ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77fca7ba1960aafb9bc05905e300c79d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a77fca7ba1960aafb9bc05905e300c79d">OnActivate</a> ()</td></tr>
+<tr class="memdesc:a77fca7ba1960aafb9bc05905e300c79d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when an entity's active state is changed from false to true.  <a href="#a77fca7ba1960aafb9bc05905e300c79d">More...</a><br /></td></tr>
 <tr class="separator:a77fca7ba1960aafb9bc05905e300c79d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab920f9bc07ce051ebb5559c5a66508d1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#ab920f9bc07ce051ebb5559c5a66508d1">OnTick</a> ()</td></tr>
+<tr class="memdesc:ab920f9bc07ce051ebb5559c5a66508d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called every frame, use for data that needs to be calculated each frame.  <a href="#ab920f9bc07ce051ebb5559c5a66508d1">More...</a><br /></td></tr>
 <tr class="separator:ab920f9bc07ce051ebb5559c5a66508d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8faf337be5ba5fa3ca65c4be79d904c4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a8faf337be5ba5fa3ca65c4be79d904c4">OnDisplay</a> ()</td></tr>
-<tr class="separator:a8faf337be5ba5fa3ca65c4be79d904c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad8262fcb8cd477f226d39c4df93f6d8"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#aad8262fcb8cd477f226d39c4df93f6d8">getEntity</a> ()</td></tr>
-<tr class="separator:aad8262fcb8cd477f226d39c4df93f6d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a32971a12ec277a519b30ba056c9d89"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a1a32971a12ec277a519b30ba056c9d89">isCopyable</a> ()</td></tr>
-<tr class="separator:a1a32971a12ec277a519b30ba056c9d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d4193dbf06629b5e457fb8f7d460e49"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a4d4193dbf06629b5e457fb8f7d460e49">GetEntity</a> ()</td></tr>
+<tr class="memdesc:a4d4193dbf06629b5e457fb8f7d460e49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the entity that this component is attached to.  <a href="#a4d4193dbf06629b5e457fb8f7d460e49">More...</a><br /></td></tr>
+<tr class="separator:a4d4193dbf06629b5e457fb8f7d460e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22a2ac83f030cd83415a51f584cf2d32"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a22a2ac83f030cd83415a51f584cf2d32">IsCopyable</a> ()</td></tr>
+<tr class="memdesc:a22a2ac83f030cd83415a51f584cf2d32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the class is copyable for a prefab.  <a href="#a22a2ac83f030cd83415a51f584cf2d32">More...</a><br /></td></tr>
+<tr class="separator:a22a2ac83f030cd83415a51f584cf2d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a22c7d6b053ca38af4ba1e2a9e16c9a57"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a22c7d6b053ca38af4ba1e2a9e16c9a57">getCore</a> ()</td></tr>
-<tr class="separator:a22c7d6b053ca38af4ba1e2a9e16c9a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02d631ca43dd6d403cbd51ee8654d15a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_input.html">Input</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a02d631ca43dd6d403cbd51ee8654d15a">getInput</a> ()</td></tr>
-<tr class="separator:a02d631ca43dd6d403cbd51ee8654d15a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb3039046e8c62976723d6715a1905b6"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_environment.html">Environment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#acb3039046e8c62976723d6715a1905b6">getEnvironment</a> ()</td></tr>
-<tr class="separator:acb3039046e8c62976723d6715a1905b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0006685ddaadb379360f7f28294d3806"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a0006685ddaadb379360f7f28294d3806">GetCore</a> ()</td></tr>
+<tr class="memdesc:a0006685ddaadb379360f7f28294d3806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the core.  <a href="#a0006685ddaadb379360f7f28294d3806">More...</a><br /></td></tr>
+<tr class="separator:a0006685ddaadb379360f7f28294d3806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25cc51fb97b0b4c5dad1401707d530ea"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_input.html">Input</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a25cc51fb97b0b4c5dad1401707d530ea">GetInput</a> ()</td></tr>
+<tr class="memdesc:a25cc51fb97b0b4c5dad1401707d530ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the input class.  <a href="#a25cc51fb97b0b4c5dad1401707d530ea">More...</a><br /></td></tr>
+<tr class="separator:a25cc51fb97b0b4c5dad1401707d530ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24846c0ac8d4d607aff483ed7ffdf5f8"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_environment.html">Environment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a24846c0ac8d4d607aff483ed7ffdf5f8">GetEnvironment</a> ()</td></tr>
+<tr class="memdesc:a24846c0ac8d4d607aff483ed7ffdf5f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the environment class.  <a href="#a24846c0ac8d4d607aff483ed7ffdf5f8">More...</a><br /></td></tr>
+<tr class="separator:a24846c0ac8d4d607aff483ed7ffdf5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a02ebe1c95395e16efa33ddc8499c259c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a02ebe1c95395e16efa33ddc8499c259c">Copyable</a> = false</td></tr>
-<tr class="separator:a02ebe1c95395e16efa33ddc8499c259c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad15af6da45dff3b37abb83bd5697fd87"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#ad15af6da45dff3b37abb83bd5697fd87">m_copyable</a> = false</td></tr>
+<tr class="memdesc:ad15af6da45dff3b37abb83bd5697fd87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if a component has a copy constructor.  <a href="#ad15af6da45dff3b37abb83bd5697fd87">More...</a><br /></td></tr>
+<tr class="separator:ad15af6da45dff3b37abb83bd5697fd87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a21f8f2b1292143a1e74d985024e34589"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21f8f2b1292143a1e74d985024e34589">&#9670;&nbsp;</a></span>Component()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">frontier::Component::Component </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a919c8260a4e6c1a14165bf9d1b903423"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a919c8260a4e6c1a14165bf9d1b903423">&#9670;&nbsp;</a></span>~Component()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">frontier::Component::~Component </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a22c7d6b053ca38af4ba1e2a9e16c9a57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22c7d6b053ca38af4ba1e2a9e16c9a57">&#9670;&nbsp;</a></span>getCore()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base component class, use for inheritance to other classes only. Useless on its own. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0006685ddaadb379360f7f28294d3806"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0006685ddaadb379360f7f28294d3806">&#9670;&nbsp;</a></span>GetCore()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,7 +146,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt; frontier::Component::getCore </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt; frontier::Component::GetCore </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -188,16 +159,18 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns a pointer to the core. </p>
+
 </div>
 </div>
-<a id="aad8262fcb8cd477f226d39c4df93f6d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad8262fcb8cd477f226d39c4df93f6d8">&#9670;&nbsp;</a></span>getEntity()</h2>
+<a id="a4d4193dbf06629b5e457fb8f7d460e49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d4193dbf06629b5e457fb8f7d460e49">&#9670;&nbsp;</a></span>GetEntity()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; frontier::Component::getEntity </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; frontier::Component::GetEntity </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -205,10 +178,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the entity that this component is attached to. </p>
+
 </div>
 </div>
-<a id="acb3039046e8c62976723d6715a1905b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb3039046e8c62976723d6715a1905b6">&#9670;&nbsp;</a></span>getEnvironment()</h2>
+<a id="a24846c0ac8d4d607aff483ed7ffdf5f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24846c0ac8d4d607aff483ed7ffdf5f8">&#9670;&nbsp;</a></span>GetEnvironment()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -217,7 +192,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_environment.html">Environment</a> &gt; frontier::Component::getEnvironment </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_environment.html">Environment</a> &gt; frontier::Component::GetEnvironment </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -230,10 +205,12 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns a pointer to the environment class. </p>
+
 </div>
 </div>
-<a id="a02d631ca43dd6d403cbd51ee8654d15a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02d631ca43dd6d403cbd51ee8654d15a">&#9670;&nbsp;</a></span>getInput()</h2>
+<a id="a25cc51fb97b0b4c5dad1401707d530ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25cc51fb97b0b4c5dad1401707d530ea">&#9670;&nbsp;</a></span>GetInput()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -242,7 +219,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_input.html">Input</a> &gt; frontier::Component::getInput </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_input.html">Input</a> &gt; frontier::Component::GetInput </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -255,22 +232,26 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns a pointer to the input class. </p>
+
 </div>
 </div>
-<a id="a1a32971a12ec277a519b30ba056c9d89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a32971a12ec277a519b30ba056c9d89">&#9670;&nbsp;</a></span>isCopyable()</h2>
+<a id="a22a2ac83f030cd83415a51f584cf2d32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22a2ac83f030cd83415a51f584cf2d32">&#9670;&nbsp;</a></span>IsCopyable()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool frontier::Component::isCopyable </td>
+          <td class="memname">bool frontier::Component::IsCopyable </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns if the class is copyable for a prefab. </p>
 
 </div>
 </div>
@@ -297,34 +278,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Called when an entity's active state is changed from false to true. </p>
+
 <p>Reimplemented in <a class="el" href="class_asteroid_behavior.html#a7c4f344a9461d1296d4dcfcd51ed3bbc">AsteroidBehavior</a>, and <a class="el" href="class_projectile_behavior.html#aa01c813e541f6069d7ca9c69848ca0a6">ProjectileBehavior</a>.</p>
-
-</div>
-</div>
-<a id="a8faf337be5ba5fa3ca65c4be79d904c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8faf337be5ba5fa3ca65c4be79d904c4">&#9670;&nbsp;</a></span>OnDisplay()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void frontier::Component::OnDisplay </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="classfrontier_1_1_triangle_renderer.html#a2c899b9897b149dd1c7d351c11b53272">frontier::TriangleRenderer</a>.</p>
 
 </div>
 </div>
@@ -352,7 +308,15 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classfrontier_1_1_triangle_renderer.html#af67946b8641608198ae92548b7c002b5">frontier::TriangleRenderer</a>, <a class="el" href="classfrontier_1_1_transform.html#a4fef98c5ccbe2bb6303714c7da2ba4ef">frontier::Transform</a>, <a class="el" href="class_asteroid_behavior.html#a79d9559f0d8e109e928acf7f8ff7acea">AsteroidBehavior</a>, <a class="el" href="classfrontier_1_1_u_i_button.html#a1c4555865094fdd2dd9dd595740c05b0">frontier::UIButton</a>, <a class="el" href="classfrontier_1_1_u_i_image.html#ad862e7dd5bcd1c2847001f5e1b56c114">frontier::UIImage</a>, and <a class="el" href="class_player_controller.html#a22c60d9e4464ee585f3592593f14bc50">PlayerController</a>.</p>
+<p>Initialises the component. Sets the pointer to the entity that this component is attached to. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_parent</td><td>The entity that the component will be attached to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classfrontier_1_1_transform.html#a2d8181ec0003b04822124340fe7772c0">frontier::Transform</a>, <a class="el" href="classfrontier_1_1_u_i_image.html#ad862e7dd5bcd1c2847001f5e1b56c114">frontier::UIImage</a>, <a class="el" href="classfrontier_1_1_u_i_button.html#a1c4555865094fdd2dd9dd595740c05b0">frontier::UIButton</a>, <a class="el" href="class_asteroid_behavior.html#a79d9559f0d8e109e928acf7f8ff7acea">AsteroidBehavior</a>, and <a class="el" href="class_player_controller.html#a22c60d9e4464ee585f3592593f14bc50">PlayerController</a>.</p>
 
 </div>
 </div>
@@ -379,13 +343,15 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classfrontier_1_1_triangle_renderer.html#a1db716057c1fcc2c10500958a732963b">frontier::TriangleRenderer</a>, <a class="el" href="classfrontier_1_1_mesh_renderer.html#acffde7174ddb009751e360df5d346922">frontier::MeshRenderer</a>, <a class="el" href="class_asteroid_spawner.html#acd2744a9a1ac8f13ac28220b33b9f750">AsteroidSpawner</a>, <a class="el" href="classfrontier_1_1_camera.html#a1f318703a68e4c070c85a1d9a27446d0">frontier::Camera</a>, <a class="el" href="class_asteroid_behavior.html#a3c1287599e132b49be851d9eeec6380e">AsteroidBehavior</a>, <a class="el" href="classfrontier_1_1_collider.html#ac03782c94e8f7a2064ea1441cbd12c81">frontier::Collider</a>, <a class="el" href="classfrontier_1_1_skybox.html#a38b2ec1a28314c901f4388745d8f0471">frontier::Skybox</a>, <a class="el" href="classfrontier_1_1_u_i_button.html#a8eda4323e4d0c2cd2c6a4639f39a1a09">frontier::UIButton</a>, <a class="el" href="classfrontier_1_1_u_i_image.html#a4e0d055c0add55fa5e63ae892ea59498">frontier::UIImage</a>, <a class="el" href="class_projectile_behavior.html#a7756651ba998e7f3c0abcafcf25796ae">ProjectileBehavior</a>, and <a class="el" href="class_player_controller.html#a5641058df338563ff6bb6bce7645ef7b">PlayerController</a>.</p>
+<p>Called every frame, use for data that needs to be calculated each frame. </p>
+
+<p>Reimplemented in <a class="el" href="classfrontier_1_1_collider.html#ac03782c94e8f7a2064ea1441cbd12c81">frontier::Collider</a>, <a class="el" href="classfrontier_1_1_mesh_renderer.html#acffde7174ddb009751e360df5d346922">frontier::MeshRenderer</a>, <a class="el" href="classfrontier_1_1_u_i_image.html#a4e0d055c0add55fa5e63ae892ea59498">frontier::UIImage</a>, <a class="el" href="classfrontier_1_1_u_i_button.html#a8eda4323e4d0c2cd2c6a4639f39a1a09">frontier::UIButton</a>, <a class="el" href="classfrontier_1_1_skybox.html#a38b2ec1a28314c901f4388745d8f0471">frontier::Skybox</a>, <a class="el" href="class_asteroid_spawner.html#acd2744a9a1ac8f13ac28220b33b9f750">AsteroidSpawner</a>, <a class="el" href="class_asteroid_behavior.html#a3c1287599e132b49be851d9eeec6380e">AsteroidBehavior</a>, <a class="el" href="class_projectile_behavior.html#a7756651ba998e7f3c0abcafcf25796ae">ProjectileBehavior</a>, and <a class="el" href="class_player_controller.html#a5641058df338563ff6bb6bce7645ef7b">PlayerController</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a02ebe1c95395e16efa33ddc8499c259c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02ebe1c95395e16efa33ddc8499c259c">&#9670;&nbsp;</a></span>Copyable</h2>
+<a id="ad15af6da45dff3b37abb83bd5697fd87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad15af6da45dff3b37abb83bd5697fd87">&#9670;&nbsp;</a></span>m_copyable</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -394,7 +360,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool frontier::Component::Copyable = false</td>
+          <td class="memname">bool frontier::Component::m_copyable = false</td>
         </tr>
       </table>
   </td>
@@ -403,6 +369,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Determines if a component has a copy constructor. </p>
 
 </div>
 </div>

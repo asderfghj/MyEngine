@@ -5,27 +5,16 @@
 
 namespace frontier
 {
-
-	Component::Component()
+	std::shared_ptr<Entity> Component::GetEntity()
 	{
-		std::cout << "Component Created" << std::endl;
+		return m_entity.lock();
 	}
 
-	Component::~Component()
+	std::shared_ptr<Core> Component::GetCore()
 	{
-		std::cout << "Component Destroyed" << std::endl;
-	}
-
-	std::shared_ptr<Entity> Component::getEntity()
-	{
-		return _entity.lock();
-	}
-
-	std::shared_ptr<Core> Component::getCore()
-	{
-		if (!_entity.expired())
+		if (!m_entity.expired())
 		{
-			return _entity.lock()->getCore();
+			return m_entity.lock()->GetCore();
 		}
 		else
 		{
@@ -33,38 +22,34 @@ namespace frontier
 		}
 	}
 
-	std::shared_ptr<Input> Component::getInput()
+	std::shared_ptr<Input> Component::GetInput()
 	{
-		return getCore()->getInput();
+		return GetCore()->GetInput();
 	}
 
-	std::shared_ptr<Environment> Component::getEnvironment()
+	std::shared_ptr<Environment> Component::GetEnvironment()
 	{
-		return getCore()->getEnvironment();
+		return GetCore()->GetEnvironment();
 	}
 
 	void Component::OnInit(std::weak_ptr<Entity> _parent)
 	{
-		_entity = _parent;
+		m_entity = _parent;
 	}
 
 	void Component::OnActivate()
 	{
-
+		//Put activation code here in derived class.
 	}
 
 	void Component::OnTick()
 	{
+		//Put per frame code here in derived class.
 	}
 
-	void Component::OnDisplay()
+	bool Component::IsCopyable()
 	{
-
-	}
-
-	bool Component::isCopyable()
-	{
-		return Copyable;
+		return m_copyable;
 	}
 
 }

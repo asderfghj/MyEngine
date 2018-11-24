@@ -70,6 +70,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>The main core of the engine. This is where all entities, prefabs and resources get created.  
+ <a href="classfrontier_1_1_core.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_core_8h_source.html">Core.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for frontier::Core:</div>
@@ -82,80 +85,86 @@ Inheritance diagram for frontier::Core:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad4bfe6cd519ba43996f9881598d63e50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#ad4bfe6cd519ba43996f9881598d63e50">Core</a> ()</td></tr>
-<tr class="separator:ad4bfe6cd519ba43996f9881598d63e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d5ae078d34758c54c517bede518e2e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a4d5ae078d34758c54c517bede518e2e4">~Core</a> ()</td></tr>
+<tr class="memdesc:a4d5ae078d34758c54c517bede518e2e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the core, removes all entities from stored vector list.  <a href="#a4d5ae078d34758c54c517bede518e2e4">More...</a><br /></td></tr>
 <tr class="separator:a4d5ae078d34758c54c517bede518e2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f2b7feb2638d3bf3f67919f5596ab6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a0f2b7feb2638d3bf3f67919f5596ab6c">Init</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt; self, int _width=800, int _height=600)</td></tr>
-<tr class="separator:a0f2b7feb2638d3bf3f67919f5596ab6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4faf575f20b1d83732da965476275371"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a4faf575f20b1d83732da965476275371">Init</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt; _self, int _width=800, int _height=600)</td></tr>
+<tr class="memdesc:a4faf575f20b1d83732da965476275371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialisation for the core, sets up OpenGL, SDL, OpenAL and all other classes needed by the core.  <a href="#a4faf575f20b1d83732da965476275371">More...</a><br /></td></tr>
+<tr class="separator:a4faf575f20b1d83732da965476275371"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a184b56e6f852d9670168111e5e1a1bc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a184b56e6f852d9670168111e5e1a1bc2">Start</a> ()</td></tr>
+<tr class="memdesc:a184b56e6f852d9670168111e5e1a1bc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the game, this starts the game loop and makes everything run. Do not call this until everything has been set up.  <a href="#a184b56e6f852d9670168111e5e1a1bc2">More...</a><br /></td></tr>
 <tr class="separator:a184b56e6f852d9670168111e5e1a1bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af73d19f41d8316a7e0a6e11137201ed9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#af73d19f41d8316a7e0a6e11137201ed9">Stop</a> ()</td></tr>
+<tr class="memdesc:af73d19f41d8316a7e0a6e11137201ed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the game, closes down any classes that need to be de-initialised.  <a href="#af73d19f41d8316a7e0a6e11137201ed9">More...</a><br /></td></tr>
 <tr class="separator:af73d19f41d8316a7e0a6e11137201ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7224247d328741220fae73fc4893bdc3"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a7224247d328741220fae73fc4893bdc3">addEntity</a> (glm::vec3 _position=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _rotation=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _scale=glm::vec3(1.0f, 1.0f, 1.0f))</td></tr>
-<tr class="separator:a7224247d328741220fae73fc4893bdc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e419fcdea7e95bc334238d425bd8377"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a1e419fcdea7e95bc334238d425bd8377">addEntity</a> (std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_prefab.html">Prefab</a> &gt; _prefab, glm::vec3 _position=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _rotation=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _scale=glm::vec3(1.0f, 1.0f, 1.0f))</td></tr>
-<tr class="separator:a1e419fcdea7e95bc334238d425bd8377"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2386af48e1509dc30a5636968732bf42"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a2386af48e1509dc30a5636968732bf42">addUiElement</a> (glm::vec2 _position=glm::vec2(0.0f, 0.0f), float _rotation=0.0f, glm::vec3 _scale=glm::vec3(1.0f, 1.0f, 1.0f))</td></tr>
-<tr class="separator:a2386af48e1509dc30a5636968732bf42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3e1d6b2e67d82f6cd34af637da7d957"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_prefab.html">Prefab</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#af3e1d6b2e67d82f6cd34af637da7d957">addPrefab</a> ()</td></tr>
-<tr class="separator:af3e1d6b2e67d82f6cd34af637da7d957"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3447ae6e6cbb79e89e78fbdab36ce743"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_pooler.html">Pooler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a3447ae6e6cbb79e89e78fbdab36ce743">addPooler</a> (std::string _id, std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_prefab.html">Prefab</a> &gt; _prefab, int initialPoolSize)</td></tr>
-<tr class="separator:a3447ae6e6cbb79e89e78fbdab36ce743"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25d135e58034991db392afbb585c46e3"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_pooler.html">Pooler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a25d135e58034991db392afbb585c46e3">getPooler</a> (std::string _poolID)</td></tr>
-<tr class="separator:a25d135e58034991db392afbb585c46e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9e6e54c9ea2e9e29c15ea6b50fef89c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_environment.html">Environment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#ad9e6e54c9ea2e9e29c15ea6b50fef89c">getEnvironment</a> ()</td></tr>
-<tr class="separator:ad9e6e54c9ea2e9e29c15ea6b50fef89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1c1a6ee15d7a2062e23d993da2dc74f"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_input.html">Input</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#ae1c1a6ee15d7a2062e23d993da2dc74f">getInput</a> ()</td></tr>
-<tr class="separator:ae1c1a6ee15d7a2062e23d993da2dc74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac001bac9de75ba256fd3ce3251c6d624"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_resources.html">Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#ac001bac9de75ba256fd3ce3251c6d624">getResources</a> ()</td></tr>
-<tr class="separator:ac001bac9de75ba256fd3ce3251c6d624"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e7da5742a26a76b46a6f02aa079929c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a6e7da5742a26a76b46a6f02aa079929c">AddEntity</a> (glm::vec3 _position=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _rotation=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _scale=glm::vec3(1.0f, 1.0f, 1.0f))</td></tr>
+<tr class="memdesc:a6e7da5742a26a76b46a6f02aa079929c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an entity and returns a pointer to it.  <a href="#a6e7da5742a26a76b46a6f02aa079929c">More...</a><br /></td></tr>
+<tr class="separator:a6e7da5742a26a76b46a6f02aa079929c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87217c1aa2c91e76d006c0f3dfeba309"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a87217c1aa2c91e76d006c0f3dfeba309">AddEntity</a> (std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_prefab.html">Prefab</a> &gt; _prefab, glm::vec3 _position=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _rotation=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _scale=glm::vec3(1.0f, 1.0f, 1.0f))</td></tr>
+<tr class="memdesc:a87217c1aa2c91e76d006c0f3dfeba309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an entity using a prefab and returns a pointer to it.  <a href="#a87217c1aa2c91e76d006c0f3dfeba309">More...</a><br /></td></tr>
+<tr class="separator:a87217c1aa2c91e76d006c0f3dfeba309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa83f3a99653170b1f6f6e5661a2a5f5"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#afa83f3a99653170b1f6f6e5661a2a5f5">AddUIElement</a> (glm::vec2 _position=glm::vec2(0.0f, 0.0f), float _rotation=0.0f, glm::vec3 _scale=glm::vec3(1.0f, 1.0f, 1.0f))</td></tr>
+<tr class="memdesc:afa83f3a99653170b1f6f6e5661a2a5f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a UI element entity, a UI element entity has it's on tick function prioritised over non-ui entities.  <a href="#afa83f3a99653170b1f6f6e5661a2a5f5">More...</a><br /></td></tr>
+<tr class="separator:afa83f3a99653170b1f6f6e5661a2a5f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5be4be857929a89eee24411504038c72"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_prefab.html">Prefab</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a5be4be857929a89eee24411504038c72">AddPrefab</a> ()</td></tr>
+<tr class="memdesc:a5be4be857929a89eee24411504038c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a prefab and returns a pointer to it.  <a href="#a5be4be857929a89eee24411504038c72">More...</a><br /></td></tr>
+<tr class="separator:a5be4be857929a89eee24411504038c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75859114b2e1acae74a7ec0ab4175c14"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_pooler.html">Pooler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a75859114b2e1acae74a7ec0ab4175c14">AddPooler</a> (std::string _id, std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_prefab.html">Prefab</a> &gt; _prefab, int _initialPoolSize)</td></tr>
+<tr class="memdesc:a75859114b2e1acae74a7ec0ab4175c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a pooler for use with a lot of instances of entities.  <a href="#a75859114b2e1acae74a7ec0ab4175c14">More...</a><br /></td></tr>
+<tr class="separator:a75859114b2e1acae74a7ec0ab4175c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ebe697a4700dfc8f3ba4749aa9bd854"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_pooler.html">Pooler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a1ebe697a4700dfc8f3ba4749aa9bd854">GetPooler</a> (std::string _poolID)</td></tr>
+<tr class="memdesc:a1ebe697a4700dfc8f3ba4749aa9bd854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pooler with the given ID.  <a href="#a1ebe697a4700dfc8f3ba4749aa9bd854">More...</a><br /></td></tr>
+<tr class="separator:a1ebe697a4700dfc8f3ba4749aa9bd854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38ded93a4688d58e6e3ef2cdd7694a7a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_environment.html">Environment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a38ded93a4688d58e6e3ef2cdd7694a7a">GetEnvironment</a> ()</td></tr>
+<tr class="memdesc:a38ded93a4688d58e6e3ef2cdd7694a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the instance of the environment class.  <a href="#a38ded93a4688d58e6e3ef2cdd7694a7a">More...</a><br /></td></tr>
+<tr class="separator:a38ded93a4688d58e6e3ef2cdd7694a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4098db42dc9ad76fb1b7f579cea45bd2"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_input.html">Input</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a4098db42dc9ad76fb1b7f579cea45bd2">GetInput</a> ()</td></tr>
+<tr class="memdesc:a4098db42dc9ad76fb1b7f579cea45bd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the instance of the input class.  <a href="#a4098db42dc9ad76fb1b7f579cea45bd2">More...</a><br /></td></tr>
+<tr class="separator:a4098db42dc9ad76fb1b7f579cea45bd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af05275451ce494dd3df46ed97b6f643a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_resources.html">Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#af05275451ce494dd3df46ed97b6f643a">GetResources</a> ()</td></tr>
+<tr class="memdesc:af05275451ce494dd3df46ed97b6f643a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the instance of the resources class.  <a href="#af05275451ce494dd3df46ed97b6f643a">More...</a><br /></td></tr>
+<tr class="separator:af05275451ce494dd3df46ed97b6f643a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92669a2d7754db9bcf3ff600f54952ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a92669a2d7754db9bcf3ff600f54952ae">SetSelf</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt; _selfPtr)</td></tr>
+<tr class="memdesc:a92669a2d7754db9bcf3ff600f54952ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the self pointer to be used in entity intialisation.  <a href="#a92669a2d7754db9bcf3ff600f54952ae">More...</a><br /></td></tr>
 <tr class="separator:a92669a2d7754db9bcf3ff600f54952ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33e04425e25f249efb46e116eedca8dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a33e04425e25f249efb46e116eedca8dc">getWidth</a> ()</td></tr>
-<tr class="separator:a33e04425e25f249efb46e116eedca8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a030aa01041c12b979420523b6be96d12"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a030aa01041c12b979420523b6be96d12">getHeight</a> ()</td></tr>
-<tr class="separator:a030aa01041c12b979420523b6be96d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc0055ffb384320d59e94003a5873b8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#afc0055ffb384320d59e94003a5873b8c">UpdateWindowSize</a> (int _width, int _height)</td></tr>
-<tr class="separator:afc0055ffb384320d59e94003a5873b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaac15b0d42e84ab56a18058721b275de"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#aaac15b0d42e84ab56a18058721b275de">getMainCamera</a> ()</td></tr>
-<tr class="separator:aaac15b0d42e84ab56a18058721b275de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae141ff5c7d41cf7bc22c37bddb9087f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#ae141ff5c7d41cf7bc22c37bddb9087f9">setMainCamera</a> (std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_camera.html">Camera</a> &gt; _mainCameraToSet)</td></tr>
-<tr class="separator:ae141ff5c7d41cf7bc22c37bddb9087f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5a33059b33eec0ab216b45aa9772297"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#ac5a33059b33eec0ab216b45aa9772297">deactivateAllInstancesInPools</a> ()</td></tr>
-<tr class="separator:ac5a33059b33eec0ab216b45aa9772297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92d5a3acd90860e5cdbbe0030a711b22"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a92d5a3acd90860e5cdbbe0030a711b22">GetWidth</a> ()</td></tr>
+<tr class="memdesc:a92d5a3acd90860e5cdbbe0030a711b22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the width of the screen.  <a href="#a92d5a3acd90860e5cdbbe0030a711b22">More...</a><br /></td></tr>
+<tr class="separator:a92d5a3acd90860e5cdbbe0030a711b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30d2a3deec19493bba0e3a7a9d04a11b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a30d2a3deec19493bba0e3a7a9d04a11b">GetHeight</a> ()</td></tr>
+<tr class="memdesc:a30d2a3deec19493bba0e3a7a9d04a11b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the height of the screen.  <a href="#a30d2a3deec19493bba0e3a7a9d04a11b">More...</a><br /></td></tr>
+<tr class="separator:a30d2a3deec19493bba0e3a7a9d04a11b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78b3939fe11820a0c041c984a25107b3"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a78b3939fe11820a0c041c984a25107b3">GetMainCamera</a> ()</td></tr>
+<tr class="memdesc:a78b3939fe11820a0c041c984a25107b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the current main camera.  <a href="#a78b3939fe11820a0c041c984a25107b3">More...</a><br /></td></tr>
+<tr class="separator:a78b3939fe11820a0c041c984a25107b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a601db94399406b9091a76972d948dc6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a601db94399406b9091a76972d948dc6b">SetMainCamera</a> (std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_camera.html">Camera</a> &gt; _mainCameraToSet)</td></tr>
+<tr class="memdesc:a601db94399406b9091a76972d948dc6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new main camera and unsets the previous one.  <a href="#a601db94399406b9091a76972d948dc6b">More...</a><br /></td></tr>
+<tr class="separator:a601db94399406b9091a76972d948dc6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10aea6f8fa81b54595845386c3d3f6cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a10aea6f8fa81b54595845386c3d3f6cf">DeactivateAllInstancesInPools</a> ()</td></tr>
+<tr class="memdesc:a10aea6f8fa81b54595845386c3d3f6cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all entities in pools to inactive.  <a href="#a10aea6f8fa81b54595845386c3d3f6cf">More...</a><br /></td></tr>
+<tr class="separator:a10aea6f8fa81b54595845386c3d3f6cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c92add403b305f061f691d9c21d63c0"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_shader.html">Shader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a5c92add403b305f061f691d9c21d63c0">getHitboxShader</a> ()</td></tr>
+<tr class="memdesc:a5c92add403b305f061f691d9c21d63c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the default hitbox shader.  <a href="#a5c92add403b305f061f691d9c21d63c0">More...</a><br /></td></tr>
 <tr class="separator:a5c92add403b305f061f691d9c21d63c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0da8b576b0d812148924827da5c05a3d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_shader.html">Shader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a0da8b576b0d812148924827da5c05a3d">getSkyboxShader</a> ()</td></tr>
+<tr class="memdesc:a0da8b576b0d812148924827da5c05a3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the default skybox shader.  <a href="#a0da8b576b0d812148924827da5c05a3d">More...</a><br /></td></tr>
 <tr class="separator:a0da8b576b0d812148924827da5c05a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b61c169b75acd9a15bf3009bc838901"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_shader.html">Shader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a6b61c169b75acd9a15bf3009bc838901">getUntexturedUiImageShader</a> ()</td></tr>
+<tr class="memdesc:a6b61c169b75acd9a15bf3009bc838901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the default untextured UI shader.  <a href="#a6b61c169b75acd9a15bf3009bc838901">More...</a><br /></td></tr>
 <tr class="separator:a6b61c169b75acd9a15bf3009bc838901"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac07a29176bd8056e004f7be8c919d3f"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_shader.html">Shader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#aac07a29176bd8056e004f7be8c919d3f">getTexturedUiImageShader</a> ()</td></tr>
+<tr class="memdesc:aac07a29176bd8056e004f7be8c919d3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the default textured UI shader.  <a href="#aac07a29176bd8056e004f7be8c919d3f">More...</a><br /></td></tr>
 <tr class="separator:aac07a29176bd8056e004f7be8c919d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d510b25cca36dddb10b562913ae24c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a0d510b25cca36dddb10b562913ae24c7">AddToEntitiesToActivate</a> (std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; _entityToActivate)</td></tr>
+<tr class="memdesc:a0d510b25cca36dddb10b562913ae24c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an entity to activation list so that it can be activated next frame.  <a href="#a0d510b25cca36dddb10b562913ae24c7">More...</a><br /></td></tr>
 <tr class="separator:a0d510b25cca36dddb10b562913ae24c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c42c287ec4a96ff3be194f92e82c367"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a8c42c287ec4a96ff3be194f92e82c367"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_core.html#a8c42c287ec4a96ff3be194f92e82c367">getEntitiesWithComponent</a> ()</td></tr>
+<tr class="memdesc:a8c42c287ec4a96ff3be194f92e82c367"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a vector with all entities with a specified component.  <a href="#a8c42c287ec4a96ff3be194f92e82c367">More...</a><br /></td></tr>
 <tr class="separator:a8c42c287ec4a96ff3be194f92e82c367"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ad4bfe6cd519ba43996f9881598d63e50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4bfe6cd519ba43996f9881598d63e50">&#9670;&nbsp;</a></span>Core()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">frontier::Core::Core </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The main core of the engine. This is where all entities, prefabs and resources get created. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4d5ae078d34758c54c517bede518e2e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4d5ae078d34758c54c517bede518e2e4">&#9670;&nbsp;</a></span>~Core()</h2>
 
@@ -171,17 +180,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Destructor for the core, removes all entities from stored vector list. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7224247d328741220fae73fc4893bdc3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7224247d328741220fae73fc4893bdc3">&#9670;&nbsp;</a></span>addEntity() <span class="overload">[1/2]</span></h2>
+<a id="a6e7da5742a26a76b46a6f02aa079929c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e7da5742a26a76b46a6f02aa079929c">&#9670;&nbsp;</a></span>AddEntity() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; frontier::Core::addEntity </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; frontier::Core::AddEntity </td>
           <td>(</td>
           <td class="paramtype">glm::vec3&#160;</td>
           <td class="paramname"><em>_position</em> = <code>glm::vec3(0.0f,&#160;0.0f,&#160;0.0f)</code>, </td>
@@ -206,16 +217,26 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Adds an entity and returns a pointer to it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_position</td><td>The initial position of the entity (set to glm::vec3(0.0f, 0.0f, 0.0f) by default). </td></tr>
+    <tr><td class="paramname">_rotation</td><td>The initial rotation of the entity (set to glm::vec3(0.0f, 0.0f, 0.0f) by default). </td></tr>
+    <tr><td class="paramname">_scale</td><td>The initial scale of the entity (set to glm::vec3(1.0f, 1.0f, 1.0f) by default). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a1e419fcdea7e95bc334238d425bd8377"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e419fcdea7e95bc334238d425bd8377">&#9670;&nbsp;</a></span>addEntity() <span class="overload">[2/2]</span></h2>
+<a id="a87217c1aa2c91e76d006c0f3dfeba309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87217c1aa2c91e76d006c0f3dfeba309">&#9670;&nbsp;</a></span>AddEntity() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; frontier::Core::addEntity </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; frontier::Core::AddEntity </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_prefab.html">Prefab</a> &gt;&#160;</td>
           <td class="paramname"><em>_prefab</em>, </td>
@@ -246,16 +267,27 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Adds an entity using a prefab and returns a pointer to it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_prefab</td><td>The prefab which the entity will be copied from. </td></tr>
+    <tr><td class="paramname">_position</td><td>The initial position of the entity (set to glm::vec3(0.0f, 0.0f, 0.0f) by default). </td></tr>
+    <tr><td class="paramname">_rotation</td><td>The initial rotation of the entity (set to glm::vec3(0.0f, 0.0f, 0.0f) by default). </td></tr>
+    <tr><td class="paramname">_scale</td><td>The initial scale of the entity (set to glm::vec3(1.0f, 1.0f, 1.0f) by default). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a3447ae6e6cbb79e89e78fbdab36ce743"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3447ae6e6cbb79e89e78fbdab36ce743">&#9670;&nbsp;</a></span>addPooler()</h2>
+<a id="a75859114b2e1acae74a7ec0ab4175c14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75859114b2e1acae74a7ec0ab4175c14">&#9670;&nbsp;</a></span>AddPooler()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_pooler.html">Pooler</a> &gt; frontier::Core::addPooler </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_pooler.html">Pooler</a> &gt; frontier::Core::AddPooler </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>_id</em>, </td>
@@ -270,7 +302,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>initialPoolSize</em>&#160;</td>
+          <td class="paramname"><em>_initialPoolSize</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -280,22 +312,34 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Adds a pooler for use with a lot of instances of entities. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_id</td><td>string identifier for the pooler. </td></tr>
+    <tr><td class="paramname">_prefab</td><td>The prefab that entities will be created from. </td></tr>
+    <tr><td class="paramname">_initalPoolSize</td><td>The intial number of entities to be created. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="af3e1d6b2e67d82f6cd34af637da7d957"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3e1d6b2e67d82f6cd34af637da7d957">&#9670;&nbsp;</a></span>addPrefab()</h2>
+<a id="a5be4be857929a89eee24411504038c72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5be4be857929a89eee24411504038c72">&#9670;&nbsp;</a></span>AddPrefab()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_prefab.html">Prefab</a> &gt; frontier::Core::addPrefab </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_prefab.html">Prefab</a> &gt; frontier::Core::AddPrefab </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Adds a prefab and returns a pointer to it. </p>
 
 </div>
 </div>
@@ -315,16 +359,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Adds an entity to activation list so that it can be activated next frame. </p>
+
 </div>
 </div>
-<a id="a2386af48e1509dc30a5636968732bf42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2386af48e1509dc30a5636968732bf42">&#9670;&nbsp;</a></span>addUiElement()</h2>
+<a id="afa83f3a99653170b1f6f6e5661a2a5f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa83f3a99653170b1f6f6e5661a2a5f5">&#9670;&nbsp;</a></span>AddUIElement()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; frontier::Core::addUiElement </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; frontier::Core::AddUIElement </td>
           <td>(</td>
           <td class="paramtype">glm::vec2&#160;</td>
           <td class="paramname"><em>_position</em> = <code>glm::vec2(0.0f,&#160;0.0f)</code>, </td>
@@ -349,22 +395,34 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Adds a UI element entity, a UI element entity has it's on tick function prioritised over non-ui entities. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_position</td><td>The initial position of the entity in screen space (set to glm::vec2(0.0f, 0.0f) by default). </td></tr>
+    <tr><td class="paramname">_rotation</td><td>The initial rotation of the entity (set to 0.0f by default). </td></tr>
+    <tr><td class="paramname">_scale</td><td>The initial scale of the entity (set to glm::vec3(1.0f, 1.0f, 1.0f) by default). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="ac5a33059b33eec0ab216b45aa9772297"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5a33059b33eec0ab216b45aa9772297">&#9670;&nbsp;</a></span>deactivateAllInstancesInPools()</h2>
+<a id="a10aea6f8fa81b54595845386c3d3f6cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10aea6f8fa81b54595845386c3d3f6cf">&#9670;&nbsp;</a></span>DeactivateAllInstancesInPools()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void frontier::Core::deactivateAllInstancesInPools </td>
+          <td class="memname">void frontier::Core::DeactivateAllInstancesInPools </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets all entities in pools to inactive. </p>
 
 </div>
 </div>
@@ -393,16 +451,18 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>returns a vector with all entities with a specified component. </p>
+
 </div>
 </div>
-<a id="ad9e6e54c9ea2e9e29c15ea6b50fef89c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9e6e54c9ea2e9e29c15ea6b50fef89c">&#9670;&nbsp;</a></span>getEnvironment()</h2>
+<a id="a38ded93a4688d58e6e3ef2cdd7694a7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38ded93a4688d58e6e3ef2cdd7694a7a">&#9670;&nbsp;</a></span>GetEnvironment()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_environment.html">Environment</a> &gt; frontier::Core::getEnvironment </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_environment.html">Environment</a> &gt; frontier::Core::GetEnvironment </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -410,22 +470,26 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the instance of the environment class. </p>
+
 </div>
 </div>
-<a id="a030aa01041c12b979420523b6be96d12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a030aa01041c12b979420523b6be96d12">&#9670;&nbsp;</a></span>getHeight()</h2>
+<a id="a30d2a3deec19493bba0e3a7a9d04a11b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30d2a3deec19493bba0e3a7a9d04a11b">&#9670;&nbsp;</a></span>GetHeight()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int frontier::Core::getHeight </td>
+          <td class="memname">int frontier::Core::GetHeight </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the height of the screen. </p>
 
 </div>
 </div>
@@ -444,16 +508,18 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Returns a pointer to the default hitbox shader. </p>
+
 </div>
 </div>
-<a id="ae1c1a6ee15d7a2062e23d993da2dc74f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1c1a6ee15d7a2062e23d993da2dc74f">&#9670;&nbsp;</a></span>getInput()</h2>
+<a id="a4098db42dc9ad76fb1b7f579cea45bd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4098db42dc9ad76fb1b7f579cea45bd2">&#9670;&nbsp;</a></span>GetInput()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_input.html">Input</a> &gt; frontier::Core::getInput </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_input.html">Input</a> &gt; frontier::Core::GetInput </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -461,16 +527,18 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the instance of the input class. </p>
+
 </div>
 </div>
-<a id="aaac15b0d42e84ab56a18058721b275de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaac15b0d42e84ab56a18058721b275de">&#9670;&nbsp;</a></span>getMainCamera()</h2>
+<a id="a78b3939fe11820a0c041c984a25107b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78b3939fe11820a0c041c984a25107b3">&#9670;&nbsp;</a></span>GetMainCamera()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_camera.html">Camera</a> &gt; frontier::Core::getMainCamera </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_camera.html">Camera</a> &gt; frontier::Core::GetMainCamera </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -478,16 +546,18 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Returns a pointer to the current main camera. </p>
+
 </div>
 </div>
-<a id="a25d135e58034991db392afbb585c46e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25d135e58034991db392afbb585c46e3">&#9670;&nbsp;</a></span>getPooler()</h2>
+<a id="a1ebe697a4700dfc8f3ba4749aa9bd854"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ebe697a4700dfc8f3ba4749aa9bd854">&#9670;&nbsp;</a></span>GetPooler()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_pooler.html">Pooler</a> &gt; frontier::Core::getPooler </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_pooler.html">Pooler</a> &gt; frontier::Core::GetPooler </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>_poolID</em></td><td>)</td>
@@ -496,22 +566,32 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Returns a pooler with the given ID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_poolID</td><td>the string identifier of the pool, must match the string created during initialisation of the pool (see addPooler). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="ac001bac9de75ba256fd3ce3251c6d624"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac001bac9de75ba256fd3ce3251c6d624">&#9670;&nbsp;</a></span>getResources()</h2>
+<a id="af05275451ce494dd3df46ed97b6f643a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af05275451ce494dd3df46ed97b6f643a">&#9670;&nbsp;</a></span>GetResources()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_resources.html">Resources</a> &gt; frontier::Core::getResources </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_resources.html">Resources</a> &gt; frontier::Core::GetResources </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the instance of the resources class. </p>
 
 </div>
 </div>
@@ -530,6 +610,8 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Returns a pointer to the default skybox shader. </p>
+
 </div>
 </div>
 <a id="aac07a29176bd8056e004f7be8c919d3f"></a>
@@ -546,6 +628,8 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns a pointer to the default textured UI shader. </p>
 
 </div>
 </div>
@@ -564,16 +648,18 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Returns a pointer to the default untextured UI shader. </p>
+
 </div>
 </div>
-<a id="a33e04425e25f249efb46e116eedca8dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33e04425e25f249efb46e116eedca8dc">&#9670;&nbsp;</a></span>getWidth()</h2>
+<a id="a92d5a3acd90860e5cdbbe0030a711b22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92d5a3acd90860e5cdbbe0030a711b22">&#9670;&nbsp;</a></span>GetWidth()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int frontier::Core::getWidth </td>
+          <td class="memname">int frontier::Core::GetWidth </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -581,10 +667,12 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the width of the screen. </p>
+
 </div>
 </div>
-<a id="a0f2b7feb2638d3bf3f67919f5596ab6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f2b7feb2638d3bf3f67919f5596ab6c">&#9670;&nbsp;</a></span>Init()</h2>
+<a id="a4faf575f20b1d83732da965476275371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4faf575f20b1d83732da965476275371">&#9670;&nbsp;</a></span>Init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -593,7 +681,7 @@ template&lt;typename T &gt; </div>
           <td class="memname">void frontier::Core::Init </td>
           <td>(</td>
           <td class="paramtype">std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt;&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramname"><em>_self</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -615,16 +703,26 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Initialisation for the core, sets up OpenGL, SDL, OpenAL and all other classes needed by the core. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_self</td><td>A pointer to the core, used to assign to entities. </td></tr>
+    <tr><td class="paramname">_width</td><td>The window width (set to 800 by default). </td></tr>
+    <tr><td class="paramname">_height</td><td>The window height (set to 600 by default). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="ae141ff5c7d41cf7bc22c37bddb9087f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae141ff5c7d41cf7bc22c37bddb9087f9">&#9670;&nbsp;</a></span>setMainCamera()</h2>
+<a id="a601db94399406b9091a76972d948dc6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a601db94399406b9091a76972d948dc6b">&#9670;&nbsp;</a></span>SetMainCamera()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void frontier::Core::setMainCamera </td>
+          <td class="memname">void frontier::Core::SetMainCamera </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_camera.html">Camera</a> &gt;&#160;</td>
           <td class="paramname"><em>_mainCameraToSet</em></td><td>)</td>
@@ -632,6 +730,14 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets a new main camera and unsets the previous one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_mainCameraToSet</td><td>A pointer to the new main camera. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -651,6 +757,14 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Sets the self pointer to be used in entity intialisation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_self</td><td>A pointer to the core, used to assign to entities. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a184b56e6f852d9670168111e5e1a1bc2"></a>
@@ -667,6 +781,8 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Starts the game, this starts the game loop and makes everything run. Do not call this until everything has been set up. </p>
 
 </div>
 </div>
@@ -685,33 +801,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="afc0055ffb384320d59e94003a5873b8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc0055ffb384320d59e94003a5873b8c">&#9670;&nbsp;</a></span>UpdateWindowSize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void frontier::Core::UpdateWindowSize </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>_width</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>_height</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Stops the game, closes down any classes that need to be de-initialised. </p>
 
 </div>
 </div>

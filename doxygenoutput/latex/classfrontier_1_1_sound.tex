@@ -2,6 +2,11 @@
 \label{classfrontier_1_1_sound}\index{frontier\+::\+Sound@{frontier\+::\+Sound}}
 
 
+Container for a sound. Uses Open\+AL.  
+
+
+
+
 {\ttfamily \#include $<$Sound.\+h$>$}
 
 Inheritance diagram for frontier\+:\+:Sound\+:\begin{figure}[H]
@@ -13,63 +18,108 @@ Inheritance diagram for frontier\+:\+:Sound\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classfrontier_1_1_sound_ab0940b4b5e83737b071a4334c2a7850c}{Sound} ()
-\item 
-void \hyperlink{classfrontier_1_1_sound_ac175fd9a053e4126ccfb3b5e008e059d}{load} (std\+::string path)
-\item 
-void \hyperlink{classfrontier_1_1_sound_af16c7e18be028f8ecde1423d19b7216d}{play} (float vol, float var\+Min, float var\+Max, glm\+::vec3 \+\_\+sound\+Position=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3 \+\_\+listener\+Position=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f))
-\item 
-void \hyperlink{classfrontier_1_1_sound_ad46b70e56c1425a08e0658032c841dbd}{play} (glm\+::vec3 \+\_\+sound\+Position=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3 \+\_\+listener\+Position=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), bool looping=false)
-\item 
-void \hyperlink{classfrontier_1_1_sound_a29249749885a1bdeff05d120df153207}{stop} ()
-\end{DoxyCompactItemize}
+void \hyperlink{classfrontier_1_1_sound_a9a34b2a30c3eb91702b07c35de9d140b}{Load} (std\+::string \+\_\+path)
+\begin{DoxyCompactList}\small\item\em Loads the sound file from a filepath. \end{DoxyCompactList}\item 
+void \hyperlink{classfrontier_1_1_sound_a10dbe1366c8069e71e4d3d9f3d8def59}{Play} (float \+\_\+vol, float \+\_\+var\+Min, float \+\_\+var\+Max, glm\+::vec3 \+\_\+sound\+Position=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3 \+\_\+listener\+Position=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f))
+\begin{DoxyCompactList}\small\item\em Plays the sound with a pitch shift. \end{DoxyCompactList}\item 
+void \hyperlink{classfrontier_1_1_sound_ae3a9579cf18de757f4bfb02ebf7c688f}{Play} (glm\+::vec3 \+\_\+sound\+Position=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3 \+\_\+listener\+Position=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), bool \+\_\+looping=false)
+\begin{DoxyCompactList}\small\item\em Plays the sound. \end{DoxyCompactList}\item 
+void \hyperlink{classfrontier_1_1_sound_abece17f8675b311e509c969254411c73}{Stop} ()
+\begin{DoxyCompactList}\small\item\em Stops playing the sound if it is already playing. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_sound}{Sound} $>$ \hyperlink{classfrontier_1_1_sound_ab605185af084b415e84a1eac043c7fb7}{Create} (std\+::string path, std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_resources}{Resources} $>$ \+\_\+resources)
-\end{DoxyCompactItemize}
-\subsection*{Additional Inherited Members}
+static std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_sound}{Sound} $>$ \hyperlink{classfrontier_1_1_sound_af5b4d6b995926f68fe4219b144046093}{Create} (std\+::string \+\_\+path, std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_resources}{Resources} $>$ \+\_\+resources)
+\begin{DoxyCompactList}\small\item\em Creates a sound from an ogg file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classfrontier_1_1_sound_ab0940b4b5e83737b071a4334c2a7850c}\label{classfrontier_1_1_sound_ab0940b4b5e83737b071a4334c2a7850c}} 
-\index{frontier\+::\+Sound@{frontier\+::\+Sound}!Sound@{Sound}}
-\index{Sound@{Sound}!frontier\+::\+Sound@{frontier\+::\+Sound}}
-\subsubsection{\texorpdfstring{Sound()}{Sound()}}
-{\footnotesize\ttfamily frontier\+::\+Sound\+::\+Sound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
+\subsection{Detailed Description}
+Container for a sound. Uses Open\+AL. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classfrontier_1_1_sound_ab605185af084b415e84a1eac043c7fb7}\label{classfrontier_1_1_sound_ab605185af084b415e84a1eac043c7fb7}} 
+\mbox{\Hypertarget{classfrontier_1_1_sound_af5b4d6b995926f68fe4219b144046093}\label{classfrontier_1_1_sound_af5b4d6b995926f68fe4219b144046093}} 
 \index{frontier\+::\+Sound@{frontier\+::\+Sound}!Create@{Create}}
 \index{Create@{Create}!frontier\+::\+Sound@{frontier\+::\+Sound}}
 \subsubsection{\texorpdfstring{Create()}{Create()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_sound}{Sound} $>$ frontier\+::\+Sound\+::\+Create (\begin{DoxyParamCaption}\item[{std\+::string}]{path,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_resources}{Resources} $>$}]{\+\_\+resources }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_sound}{Sound} $>$ frontier\+::\+Sound\+::\+Create (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+path,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_resources}{Resources} $>$}]{\+\_\+resources }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{classfrontier_1_1_sound_ac175fd9a053e4126ccfb3b5e008e059d}\label{classfrontier_1_1_sound_ac175fd9a053e4126ccfb3b5e008e059d}} 
-\index{frontier\+::\+Sound@{frontier\+::\+Sound}!load@{load}}
-\index{load@{load}!frontier\+::\+Sound@{frontier\+::\+Sound}}
-\subsubsection{\texorpdfstring{load()}{load()}}
-{\footnotesize\ttfamily void frontier\+::\+Sound\+::load (\begin{DoxyParamCaption}\item[{std\+::string}]{path }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_sound_af16c7e18be028f8ecde1423d19b7216d}\label{classfrontier_1_1_sound_af16c7e18be028f8ecde1423d19b7216d}} 
-\index{frontier\+::\+Sound@{frontier\+::\+Sound}!play@{play}}
-\index{play@{play}!frontier\+::\+Sound@{frontier\+::\+Sound}}
-\subsubsection{\texorpdfstring{play()}{play()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void frontier\+::\+Sound\+::play (\begin{DoxyParamCaption}\item[{float}]{vol,  }\item[{float}]{var\+Min,  }\item[{float}]{var\+Max,  }\item[{glm\+::vec3}]{\+\_\+sound\+Position = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)},  }\item[{glm\+::vec3}]{\+\_\+listener\+Position = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)} }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_sound_ad46b70e56c1425a08e0658032c841dbd}\label{classfrontier_1_1_sound_ad46b70e56c1425a08e0658032c841dbd}} 
-\index{frontier\+::\+Sound@{frontier\+::\+Sound}!play@{play}}
-\index{play@{play}!frontier\+::\+Sound@{frontier\+::\+Sound}}
-\subsubsection{\texorpdfstring{play()}{play()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void frontier\+::\+Sound\+::play (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{\+\_\+sound\+Position = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)},  }\item[{glm\+::vec3}]{\+\_\+listener\+Position = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)},  }\item[{bool}]{looping = {\ttfamily false} }\end{DoxyParamCaption})}
+Creates a sound from an ogg file. 
 
-\mbox{\Hypertarget{classfrontier_1_1_sound_a29249749885a1bdeff05d120df153207}\label{classfrontier_1_1_sound_a29249749885a1bdeff05d120df153207}} 
-\index{frontier\+::\+Sound@{frontier\+::\+Sound}!stop@{stop}}
-\index{stop@{stop}!frontier\+::\+Sound@{frontier\+::\+Sound}}
-\subsubsection{\texorpdfstring{stop()}{stop()}}
-{\footnotesize\ttfamily void frontier\+::\+Sound\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+path} & The filepath for the sound. \\
+\hline
+{\em \+\_\+resources} & A pointer to the resources file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_sound_a9a34b2a30c3eb91702b07c35de9d140b}\label{classfrontier_1_1_sound_a9a34b2a30c3eb91702b07c35de9d140b}} 
+\index{frontier\+::\+Sound@{frontier\+::\+Sound}!Load@{Load}}
+\index{Load@{Load}!frontier\+::\+Sound@{frontier\+::\+Sound}}
+\subsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily void frontier\+::\+Sound\+::\+Load (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Loads the sound file from a filepath. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+path} & The filepath for the sound. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_sound_a10dbe1366c8069e71e4d3d9f3d8def59}\label{classfrontier_1_1_sound_a10dbe1366c8069e71e4d3d9f3d8def59}} 
+\index{frontier\+::\+Sound@{frontier\+::\+Sound}!Play@{Play}}
+\index{Play@{Play}!frontier\+::\+Sound@{frontier\+::\+Sound}}
+\subsubsection{\texorpdfstring{Play()}{Play()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void frontier\+::\+Sound\+::\+Play (\begin{DoxyParamCaption}\item[{float}]{\+\_\+vol,  }\item[{float}]{\+\_\+var\+Min,  }\item[{float}]{\+\_\+var\+Max,  }\item[{glm\+::vec3}]{\+\_\+sound\+Position = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)},  }\item[{glm\+::vec3}]{\+\_\+listener\+Position = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)} }\end{DoxyParamCaption})}
+
+
+
+Plays the sound with a pitch shift. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+vol} & The volume of the sound when playing. \\
+\hline
+{\em \+\_\+var\+Min} & The minimum pitch of the sound. \\
+\hline
+{\em \+\_\+var\+Max} & The maximum pitch of the sound. \\
+\hline
+{\em \+\_\+sound\+Position} & The position of the sound. \\
+\hline
+{\em \+\_\+listener\+Position} & The position of the listener. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_sound_ae3a9579cf18de757f4bfb02ebf7c688f}\label{classfrontier_1_1_sound_ae3a9579cf18de757f4bfb02ebf7c688f}} 
+\index{frontier\+::\+Sound@{frontier\+::\+Sound}!Play@{Play}}
+\index{Play@{Play}!frontier\+::\+Sound@{frontier\+::\+Sound}}
+\subsubsection{\texorpdfstring{Play()}{Play()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void frontier\+::\+Sound\+::\+Play (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{\+\_\+sound\+Position = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)},  }\item[{glm\+::vec3}]{\+\_\+listener\+Position = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)},  }\item[{bool}]{\+\_\+looping = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Plays the sound. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+sound\+Position} & The position of the sound. \\
+\hline
+{\em \+\_\+listener\+Position} & The position of the listener. \\
+\hline
+{\em \+\_\+looping} & Whether the sound should loop. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_sound_abece17f8675b311e509c969254411c73}\label{classfrontier_1_1_sound_abece17f8675b311e509c969254411c73}} 
+\index{frontier\+::\+Sound@{frontier\+::\+Sound}!Stop@{Stop}}
+\index{Stop@{Stop}!frontier\+::\+Sound@{frontier\+::\+Sound}}
+\subsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily void frontier\+::\+Sound\+::\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stops playing the sound if it is already playing. 
 
 
 

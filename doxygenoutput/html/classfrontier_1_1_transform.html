@@ -70,6 +70,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class that tracks location information on an entity, added by default to an entity on intialisation.  
+ <a href="classfrontier_1_1_transform.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_transform_8h_source.html">Transform.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for frontier::Transform:</div>
@@ -77,82 +80,102 @@ Inheritance diagram for frontier::Transform:</div>
  <div class="center">
   <img src="classfrontier_1_1_transform.png" usemap="#frontier::Transform_map" alt=""/>
   <map id="frontier::Transform_map" name="frontier::Transform_map">
-<area href="classfrontier_1_1_component.html" alt="frontier::Component" shape="rect" coords="0,0,122,24"/>
+<area href="classfrontier_1_1_component.html" title="Base component class, use for inheritance to other classes only. Useless on its own. " alt="frontier::Component" shape="rect" coords="0,0,122,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4fef98c5ccbe2bb6303714c7da2ba4ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a4fef98c5ccbe2bb6303714c7da2ba4ef">OnInit</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; parent) override</td></tr>
-<tr class="separator:a4fef98c5ccbe2bb6303714c7da2ba4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16be3bd6b4a08d457251aea5d65e618f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a16be3bd6b4a08d457251aea5d65e618f">OnInit</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; parent, glm::vec3 position)</td></tr>
-<tr class="separator:a16be3bd6b4a08d457251aea5d65e618f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a084ca60da3da27b89acd8dd4c88e808c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a084ca60da3da27b89acd8dd4c88e808c">OnInit</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; parent, glm::vec3 position, glm::vec3 rotation)</td></tr>
-<tr class="separator:a084ca60da3da27b89acd8dd4c88e808c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19b8764fddefc031742d317811b261a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a19b8764fddefc031742d317811b261a0">OnInit</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; parent, glm::vec3 position, glm::vec3 rotation, glm::vec3 scale)</td></tr>
-<tr class="separator:a19b8764fddefc031742d317811b261a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac980c1cd517718fd4546a82659592c7c"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#ac980c1cd517718fd4546a82659592c7c">getPosition</a> ()</td></tr>
-<tr class="separator:ac980c1cd517718fd4546a82659592c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39431f1267fe227a247f686787682aed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a39431f1267fe227a247f686787682aed">setPosition</a> (glm::vec3 _pos)</td></tr>
-<tr class="separator:a39431f1267fe227a247f686787682aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb29cc4c641aa3ef6bed100b0bb96145"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#acb29cc4c641aa3ef6bed100b0bb96145">getRotation</a> ()</td></tr>
-<tr class="separator:acb29cc4c641aa3ef6bed100b0bb96145"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a374a31649e6970b984495a287e473cbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a374a31649e6970b984495a287e473cbc">setRotation</a> (glm::vec3 _rot)</td></tr>
-<tr class="separator:a374a31649e6970b984495a287e473cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4e4e3f8fa4699d04d11a1a8eae8aff2"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#ae4e4e3f8fa4699d04d11a1a8eae8aff2">getScale</a> ()</td></tr>
-<tr class="separator:ae4e4e3f8fa4699d04d11a1a8eae8aff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae398759cf3fb01eeb6989aa52a602d55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#ae398759cf3fb01eeb6989aa52a602d55">setScale</a> (glm::vec3 _sca)</td></tr>
-<tr class="separator:ae398759cf3fb01eeb6989aa52a602d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6eb361f0481c70157753d7965b92f4c"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#ac6eb361f0481c70157753d7965b92f4c">getModelMatrix</a> (bool applyRotationAfterTranslation=false)</td></tr>
-<tr class="separator:ac6eb361f0481c70157753d7965b92f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a30ca83aca946f87087f70cebaf6c5d"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a1a30ca83aca946f87087f70cebaf6c5d">getModelMatrixModScale</a> (glm::vec3 scaleModifier)</td></tr>
-<tr class="separator:a1a30ca83aca946f87087f70cebaf6c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad2ce67da24359ea8840db6af730b41a"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#aad2ce67da24359ea8840db6af730b41a">getPositionMatrix</a> (int excludeAxis=0)</td></tr>
-<tr class="separator:aad2ce67da24359ea8840db6af730b41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4e673db3400d3c505ceb9fc1ececfbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#ad4e673db3400d3c505ceb9fc1ececfbb">setTransformParent</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_transform.html">Transform</a> &gt; _parent)</td></tr>
-<tr class="separator:ad4e673db3400d3c505ceb9fc1ececfbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a840205cbc6abd6328bf9c6b08d1f45a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a840205cbc6abd6328bf9c6b08d1f45a3">addChild</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_transform.html">Transform</a> &gt; _child)</td></tr>
-<tr class="separator:a840205cbc6abd6328bf9c6b08d1f45a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab8d4bc98d9de708ba1ab9cd8e0d7f64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#aab8d4bc98d9de708ba1ab9cd8e0d7f64">setSelf</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_transform.html">Transform</a> &gt; self)</td></tr>
-<tr class="separator:aab8d4bc98d9de708ba1ab9cd8e0d7f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d8181ec0003b04822124340fe7772c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a2d8181ec0003b04822124340fe7772c0">OnInit</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; _parent) override</td></tr>
+<tr class="memdesc:a2d8181ec0003b04822124340fe7772c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the transform.  <a href="#a2d8181ec0003b04822124340fe7772c0">More...</a><br /></td></tr>
+<tr class="separator:a2d8181ec0003b04822124340fe7772c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a939611da70fc0f33b85fcf92d101ac3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a939611da70fc0f33b85fcf92d101ac3e">OnInit</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; _parent, glm::vec3 _position)</td></tr>
+<tr class="memdesc:a939611da70fc0f33b85fcf92d101ac3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the transform.  <a href="#a939611da70fc0f33b85fcf92d101ac3e">More...</a><br /></td></tr>
+<tr class="separator:a939611da70fc0f33b85fcf92d101ac3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab23c1b75f7a02947bddec97abe286fa3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#ab23c1b75f7a02947bddec97abe286fa3">OnInit</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; _parent, glm::vec3 _position, glm::vec3 _rotation)</td></tr>
+<tr class="memdesc:ab23c1b75f7a02947bddec97abe286fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the transform.  <a href="#ab23c1b75f7a02947bddec97abe286fa3">More...</a><br /></td></tr>
+<tr class="separator:ab23c1b75f7a02947bddec97abe286fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d2f5d6830818cc167a94948a15b2697"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a8d2f5d6830818cc167a94948a15b2697">OnInit</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; _parent, glm::vec3 _position, glm::vec3 _rotation, glm::vec3 _scale)</td></tr>
+<tr class="memdesc:a8d2f5d6830818cc167a94948a15b2697"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the transform.  <a href="#a8d2f5d6830818cc167a94948a15b2697">More...</a><br /></td></tr>
+<tr class="separator:a8d2f5d6830818cc167a94948a15b2697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9807f56b882736521e5678853e8a09c5"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a9807f56b882736521e5678853e8a09c5">GetPosition</a> ()</td></tr>
+<tr class="memdesc:a9807f56b882736521e5678853e8a09c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the position.  <a href="#a9807f56b882736521e5678853e8a09c5">More...</a><br /></td></tr>
+<tr class="separator:a9807f56b882736521e5678853e8a09c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45f9ecc9db02d813f49211cdd71ec749"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a45f9ecc9db02d813f49211cdd71ec749">SetPosition</a> (glm::vec3 _pos)</td></tr>
+<tr class="memdesc:a45f9ecc9db02d813f49211cdd71ec749"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the position.  <a href="#a45f9ecc9db02d813f49211cdd71ec749">More...</a><br /></td></tr>
+<tr class="separator:a45f9ecc9db02d813f49211cdd71ec749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1be9d719815ece4e26513567ef2ac23b"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a1be9d719815ece4e26513567ef2ac23b">GetRotation</a> ()</td></tr>
+<tr class="memdesc:a1be9d719815ece4e26513567ef2ac23b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the rotation.  <a href="#a1be9d719815ece4e26513567ef2ac23b">More...</a><br /></td></tr>
+<tr class="separator:a1be9d719815ece4e26513567ef2ac23b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62ed231d2cfef5b115955741ec838591"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a62ed231d2cfef5b115955741ec838591">SetRotation</a> (glm::vec3 _rot)</td></tr>
+<tr class="memdesc:a62ed231d2cfef5b115955741ec838591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the rotation.  <a href="#a62ed231d2cfef5b115955741ec838591">More...</a><br /></td></tr>
+<tr class="separator:a62ed231d2cfef5b115955741ec838591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3468e4e7603e07e2a1d305c15fc4fd2"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#ab3468e4e7603e07e2a1d305c15fc4fd2">GetScale</a> ()</td></tr>
+<tr class="memdesc:ab3468e4e7603e07e2a1d305c15fc4fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the scale.  <a href="#ab3468e4e7603e07e2a1d305c15fc4fd2">More...</a><br /></td></tr>
+<tr class="separator:ab3468e4e7603e07e2a1d305c15fc4fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6803171399b1ba2825f3f47f6eaffaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#ab6803171399b1ba2825f3f47f6eaffaa">SetScale</a> (glm::vec3 _sca)</td></tr>
+<tr class="memdesc:ab6803171399b1ba2825f3f47f6eaffaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the scale.  <a href="#ab6803171399b1ba2825f3f47f6eaffaa">More...</a><br /></td></tr>
+<tr class="separator:ab6803171399b1ba2825f3f47f6eaffaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a092823a36448cf201cc63e3cd46d6cc4"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a092823a36448cf201cc63e3cd46d6cc4">GetModelMatrix</a> ()</td></tr>
+<tr class="memdesc:a092823a36448cf201cc63e3cd46d6cc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the model matrix.  <a href="#a092823a36448cf201cc63e3cd46d6cc4">More...</a><br /></td></tr>
+<tr class="separator:a092823a36448cf201cc63e3cd46d6cc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad5a62d25417a16ad84d6f809eebc8fe"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#aad5a62d25417a16ad84d6f809eebc8fe">GetModelMatrixModScale</a> (glm::vec3 _scaleModifier)</td></tr>
+<tr class="memdesc:aad5a62d25417a16ad84d6f809eebc8fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the model matrix with a modified scale.  <a href="#aad5a62d25417a16ad84d6f809eebc8fe">More...</a><br /></td></tr>
+<tr class="separator:aad5a62d25417a16ad84d6f809eebc8fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6bff40a457322589a7f8a1dc92a5c42"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#ab6bff40a457322589a7f8a1dc92a5c42">GetPositionMatrix</a> (int _excludeAxis=0)</td></tr>
+<tr class="memdesc:ab6bff40a457322589a7f8a1dc92a5c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a model matrix with just the position.  <a href="#ab6bff40a457322589a7f8a1dc92a5c42">More...</a><br /></td></tr>
+<tr class="separator:ab6bff40a457322589a7f8a1dc92a5c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b6b6407a5ece2e6b188c2e1c2294a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a95b6b6407a5ece2e6b188c2e1c2294a2">SetTransformParent</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_transform.html">Transform</a> &gt; _parent)</td></tr>
+<tr class="memdesc:a95b6b6407a5ece2e6b188c2e1c2294a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the transform parent, this is used for scene graphs.  <a href="#a95b6b6407a5ece2e6b188c2e1c2294a2">More...</a><br /></td></tr>
+<tr class="separator:a95b6b6407a5ece2e6b188c2e1c2294a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61510be91275313808daa938af87f119"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a61510be91275313808daa938af87f119">AddChild</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_transform.html">Transform</a> &gt; _child)</td></tr>
+<tr class="memdesc:a61510be91275313808daa938af87f119"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds a child to the transform.  <a href="#a61510be91275313808daa938af87f119">More...</a><br /></td></tr>
+<tr class="separator:a61510be91275313808daa938af87f119"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10e72a1e49de0c3c3a36f920612a39ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_transform.html#a10e72a1e49de0c3c3a36f920612a39ce">SetSelf</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_transform.html">Transform</a> &gt; _self)</td></tr>
+<tr class="memdesc:a10e72a1e49de0c3c3a36f920612a39ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the self pointer.  <a href="#a10e72a1e49de0c3c3a36f920612a39ce">More...</a><br /></td></tr>
+<tr class="separator:a10e72a1e49de0c3c3a36f920612a39ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classfrontier_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classfrontier_1_1_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classfrontier_1_1_component.html">frontier::Component</a></td></tr>
-<tr class="memitem:a21f8f2b1292143a1e74d985024e34589 inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a21f8f2b1292143a1e74d985024e34589">Component</a> ()</td></tr>
-<tr class="separator:a21f8f2b1292143a1e74d985024e34589 inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a919c8260a4e6c1a14165bf9d1b903423 inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a919c8260a4e6c1a14165bf9d1b903423">~Component</a> ()</td></tr>
-<tr class="separator:a919c8260a4e6c1a14165bf9d1b903423 inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77fca7ba1960aafb9bc05905e300c79d inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a77fca7ba1960aafb9bc05905e300c79d">OnActivate</a> ()</td></tr>
+<tr class="memdesc:a77fca7ba1960aafb9bc05905e300c79d inherit pub_methods_classfrontier_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when an entity's active state is changed from false to true.  <a href="classfrontier_1_1_component.html#a77fca7ba1960aafb9bc05905e300c79d">More...</a><br /></td></tr>
 <tr class="separator:a77fca7ba1960aafb9bc05905e300c79d inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab920f9bc07ce051ebb5559c5a66508d1 inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#ab920f9bc07ce051ebb5559c5a66508d1">OnTick</a> ()</td></tr>
+<tr class="memdesc:ab920f9bc07ce051ebb5559c5a66508d1 inherit pub_methods_classfrontier_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called every frame, use for data that needs to be calculated each frame.  <a href="classfrontier_1_1_component.html#ab920f9bc07ce051ebb5559c5a66508d1">More...</a><br /></td></tr>
 <tr class="separator:ab920f9bc07ce051ebb5559c5a66508d1 inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8faf337be5ba5fa3ca65c4be79d904c4 inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a8faf337be5ba5fa3ca65c4be79d904c4">OnDisplay</a> ()</td></tr>
-<tr class="separator:a8faf337be5ba5fa3ca65c4be79d904c4 inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad8262fcb8cd477f226d39c4df93f6d8 inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#aad8262fcb8cd477f226d39c4df93f6d8">getEntity</a> ()</td></tr>
-<tr class="separator:aad8262fcb8cd477f226d39c4df93f6d8 inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a32971a12ec277a519b30ba056c9d89 inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a1a32971a12ec277a519b30ba056c9d89">isCopyable</a> ()</td></tr>
-<tr class="separator:a1a32971a12ec277a519b30ba056c9d89 inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d4193dbf06629b5e457fb8f7d460e49 inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a4d4193dbf06629b5e457fb8f7d460e49">GetEntity</a> ()</td></tr>
+<tr class="memdesc:a4d4193dbf06629b5e457fb8f7d460e49 inherit pub_methods_classfrontier_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the entity that this component is attached to.  <a href="classfrontier_1_1_component.html#a4d4193dbf06629b5e457fb8f7d460e49">More...</a><br /></td></tr>
+<tr class="separator:a4d4193dbf06629b5e457fb8f7d460e49 inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22a2ac83f030cd83415a51f584cf2d32 inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a22a2ac83f030cd83415a51f584cf2d32">IsCopyable</a> ()</td></tr>
+<tr class="memdesc:a22a2ac83f030cd83415a51f584cf2d32 inherit pub_methods_classfrontier_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the class is copyable for a prefab.  <a href="classfrontier_1_1_component.html#a22a2ac83f030cd83415a51f584cf2d32">More...</a><br /></td></tr>
+<tr class="separator:a22a2ac83f030cd83415a51f584cf2d32 inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classfrontier_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classfrontier_1_1_component')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classfrontier_1_1_component.html">frontier::Component</a></td></tr>
-<tr class="memitem:a22c7d6b053ca38af4ba1e2a9e16c9a57 inherit pro_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a22c7d6b053ca38af4ba1e2a9e16c9a57">getCore</a> ()</td></tr>
-<tr class="separator:a22c7d6b053ca38af4ba1e2a9e16c9a57 inherit pro_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02d631ca43dd6d403cbd51ee8654d15a inherit pro_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_input.html">Input</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a02d631ca43dd6d403cbd51ee8654d15a">getInput</a> ()</td></tr>
-<tr class="separator:a02d631ca43dd6d403cbd51ee8654d15a inherit pro_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb3039046e8c62976723d6715a1905b6 inherit pro_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_environment.html">Environment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#acb3039046e8c62976723d6715a1905b6">getEnvironment</a> ()</td></tr>
-<tr class="separator:acb3039046e8c62976723d6715a1905b6 inherit pro_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0006685ddaadb379360f7f28294d3806 inherit pro_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a0006685ddaadb379360f7f28294d3806">GetCore</a> ()</td></tr>
+<tr class="memdesc:a0006685ddaadb379360f7f28294d3806 inherit pro_methods_classfrontier_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the core.  <a href="classfrontier_1_1_component.html#a0006685ddaadb379360f7f28294d3806">More...</a><br /></td></tr>
+<tr class="separator:a0006685ddaadb379360f7f28294d3806 inherit pro_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25cc51fb97b0b4c5dad1401707d530ea inherit pro_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_input.html">Input</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a25cc51fb97b0b4c5dad1401707d530ea">GetInput</a> ()</td></tr>
+<tr class="memdesc:a25cc51fb97b0b4c5dad1401707d530ea inherit pro_methods_classfrontier_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the input class.  <a href="classfrontier_1_1_component.html#a25cc51fb97b0b4c5dad1401707d530ea">More...</a><br /></td></tr>
+<tr class="separator:a25cc51fb97b0b4c5dad1401707d530ea inherit pro_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24846c0ac8d4d607aff483ed7ffdf5f8 inherit pro_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_environment.html">Environment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a24846c0ac8d4d607aff483ed7ffdf5f8">GetEnvironment</a> ()</td></tr>
+<tr class="memdesc:a24846c0ac8d4d607aff483ed7ffdf5f8 inherit pro_methods_classfrontier_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the environment class.  <a href="classfrontier_1_1_component.html#a24846c0ac8d4d607aff483ed7ffdf5f8">More...</a><br /></td></tr>
+<tr class="separator:a24846c0ac8d4d607aff483ed7ffdf5f8 inherit pro_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classfrontier_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classfrontier_1_1_component')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classfrontier_1_1_component.html">frontier::Component</a></td></tr>
-<tr class="memitem:a02ebe1c95395e16efa33ddc8499c259c inherit pro_attribs_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a02ebe1c95395e16efa33ddc8499c259c">Copyable</a> = false</td></tr>
-<tr class="separator:a02ebe1c95395e16efa33ddc8499c259c inherit pro_attribs_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad15af6da45dff3b37abb83bd5697fd87 inherit pro_attribs_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#ad15af6da45dff3b37abb83bd5697fd87">m_copyable</a> = false</td></tr>
+<tr class="memdesc:ad15af6da45dff3b37abb83bd5697fd87 inherit pro_attribs_classfrontier_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if a component has a copy constructor.  <a href="classfrontier_1_1_component.html#ad15af6da45dff3b37abb83bd5697fd87">More...</a><br /></td></tr>
+<tr class="separator:ad15af6da45dff3b37abb83bd5697fd87 inherit pro_attribs_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a840205cbc6abd6328bf9c6b08d1f45a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a840205cbc6abd6328bf9c6b08d1f45a3">&#9670;&nbsp;</a></span>addChild()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class that tracks location information on an entity, added by default to an entity on intialisation. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a61510be91275313808daa938af87f119"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61510be91275313808daa938af87f119">&#9670;&nbsp;</a></span>AddChild()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void frontier::Transform::addChild </td>
+          <td class="memname">void frontier::Transform::AddChild </td>
           <td>(</td>
           <td class="paramtype">std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_transform.html">Transform</a> &gt;&#160;</td>
           <td class="paramname"><em>_child</em></td><td>)</td>
@@ -161,52 +184,69 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>adds a child to the transform. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_child</td><td>The new child for this transform. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="ac6eb361f0481c70157753d7965b92f4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6eb361f0481c70157753d7965b92f4c">&#9670;&nbsp;</a></span>getModelMatrix()</h2>
+<a id="a092823a36448cf201cc63e3cd46d6cc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a092823a36448cf201cc63e3cd46d6cc4">&#9670;&nbsp;</a></span>GetModelMatrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">glm::mat4 frontier::Transform::getModelMatrix </td>
+          <td class="memname">glm::mat4 frontier::Transform::GetModelMatrix </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>applyRotationAfterTranslation</em> = <code>false</code></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the model matrix. </p>
+
 </div>
 </div>
-<a id="a1a30ca83aca946f87087f70cebaf6c5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a30ca83aca946f87087f70cebaf6c5d">&#9670;&nbsp;</a></span>getModelMatrixModScale()</h2>
+<a id="aad5a62d25417a16ad84d6f809eebc8fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad5a62d25417a16ad84d6f809eebc8fe">&#9670;&nbsp;</a></span>GetModelMatrixModScale()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">glm::mat4 frontier::Transform::getModelMatrixModScale </td>
+          <td class="memname">glm::mat4 frontier::Transform::GetModelMatrixModScale </td>
           <td>(</td>
           <td class="paramtype">glm::vec3&#160;</td>
-          <td class="paramname"><em>scaleModifier</em></td><td>)</td>
+          <td class="paramname"><em>_scaleModifier</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the model matrix with a modified scale. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_scaleModifier</td><td>The scale to multiple the current scale by. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="ac980c1cd517718fd4546a82659592c7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac980c1cd517718fd4546a82659592c7c">&#9670;&nbsp;</a></span>getPosition()</h2>
+<a id="a9807f56b882736521e5678853e8a09c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9807f56b882736521e5678853e8a09c5">&#9670;&nbsp;</a></span>GetPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">glm::vec3 frontier::Transform::getPosition </td>
+          <td class="memname">glm::vec3 frontier::Transform::GetPosition </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -214,34 +254,44 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the position. </p>
+
 </div>
 </div>
-<a id="aad2ce67da24359ea8840db6af730b41a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad2ce67da24359ea8840db6af730b41a">&#9670;&nbsp;</a></span>getPositionMatrix()</h2>
+<a id="ab6bff40a457322589a7f8a1dc92a5c42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6bff40a457322589a7f8a1dc92a5c42">&#9670;&nbsp;</a></span>GetPositionMatrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">glm::mat4 frontier::Transform::getPositionMatrix </td>
+          <td class="memname">glm::mat4 frontier::Transform::GetPositionMatrix </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>excludeAxis</em> = <code>0</code></td><td>)</td>
+          <td class="paramname"><em>_excludeAxis</em> = <code>0</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns a model matrix with just the position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_excludeAxis</td><td>Excludes a specifed axis 0 = none, 1 = x, 2 = y, 3 = z. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="acb29cc4c641aa3ef6bed100b0bb96145"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb29cc4c641aa3ef6bed100b0bb96145">&#9670;&nbsp;</a></span>getRotation()</h2>
+<a id="a1be9d719815ece4e26513567ef2ac23b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1be9d719815ece4e26513567ef2ac23b">&#9670;&nbsp;</a></span>GetRotation()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">glm::vec3 frontier::Transform::getRotation </td>
+          <td class="memname">glm::vec3 frontier::Transform::GetRotation </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -249,16 +299,18 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the rotation. </p>
+
 </div>
 </div>
-<a id="ae4e4e3f8fa4699d04d11a1a8eae8aff2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4e4e3f8fa4699d04d11a1a8eae8aff2">&#9670;&nbsp;</a></span>getScale()</h2>
+<a id="ab3468e4e7603e07e2a1d305c15fc4fd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3468e4e7603e07e2a1d305c15fc4fd2">&#9670;&nbsp;</a></span>GetScale()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">glm::vec3 frontier::Transform::getScale </td>
+          <td class="memname">glm::vec3 frontier::Transform::GetScale </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -266,10 +318,12 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the scale. </p>
+
 </div>
 </div>
-<a id="a4fef98c5ccbe2bb6303714c7da2ba4ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fef98c5ccbe2bb6303714c7da2ba4ef">&#9670;&nbsp;</a></span>OnInit() <span class="overload">[1/4]</span></h2>
+<a id="a2d8181ec0003b04822124340fe7772c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d8181ec0003b04822124340fe7772c0">&#9670;&nbsp;</a></span>OnInit() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -281,7 +335,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void frontier::Transform::OnInit </td>
           <td>(</td>
           <td class="paramtype">std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td>
-          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td class="paramname"><em>_parent</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -292,12 +346,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Initialises the transform. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_parent</td><td>The parent of the component. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Reimplemented from <a class="el" href="classfrontier_1_1_component.html#af3da02905c4d79219d9b12f260a35ad1">frontier::Component</a>.</p>
 
 </div>
 </div>
-<a id="a16be3bd6b4a08d457251aea5d65e618f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16be3bd6b4a08d457251aea5d65e618f">&#9670;&nbsp;</a></span>OnInit() <span class="overload">[2/4]</span></h2>
+<a id="a939611da70fc0f33b85fcf92d101ac3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a939611da70fc0f33b85fcf92d101ac3e">&#9670;&nbsp;</a></span>OnInit() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,13 +368,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void frontier::Transform::OnInit </td>
           <td>(</td>
           <td class="paramtype">std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td>
-          <td class="paramname"><em>parent</em>, </td>
+          <td class="paramname"><em>_parent</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">glm::vec3&#160;</td>
-          <td class="paramname"><em>position</em>&#160;</td>
+          <td class="paramname"><em>_position</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -322,10 +384,19 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Initialises the transform. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_parent</td><td>The parent of the component. </td></tr>
+    <tr><td class="paramname">_position</td><td>The initial position of the transform. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a084ca60da3da27b89acd8dd4c88e808c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a084ca60da3da27b89acd8dd4c88e808c">&#9670;&nbsp;</a></span>OnInit() <span class="overload">[3/4]</span></h2>
+<a id="ab23c1b75f7a02947bddec97abe286fa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab23c1b75f7a02947bddec97abe286fa3">&#9670;&nbsp;</a></span>OnInit() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -334,19 +405,19 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void frontier::Transform::OnInit </td>
           <td>(</td>
           <td class="paramtype">std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td>
-          <td class="paramname"><em>parent</em>, </td>
+          <td class="paramname"><em>_parent</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">glm::vec3&#160;</td>
-          <td class="paramname"><em>position</em>, </td>
+          <td class="paramname"><em>_position</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">glm::vec3&#160;</td>
-          <td class="paramname"><em>rotation</em>&#160;</td>
+          <td class="paramname"><em>_rotation</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -356,10 +427,20 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Initialises the transform. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_parent</td><td>The parent of the component. </td></tr>
+    <tr><td class="paramname">_position</td><td>The initial position of the transform. </td></tr>
+    <tr><td class="paramname">_rotation</td><td>The initial rotation of the transform. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a19b8764fddefc031742d317811b261a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19b8764fddefc031742d317811b261a0">&#9670;&nbsp;</a></span>OnInit() <span class="overload">[4/4]</span></h2>
+<a id="a8d2f5d6830818cc167a94948a15b2697"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d2f5d6830818cc167a94948a15b2697">&#9670;&nbsp;</a></span>OnInit() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -368,25 +449,25 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void frontier::Transform::OnInit </td>
           <td>(</td>
           <td class="paramtype">std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td>
-          <td class="paramname"><em>parent</em>, </td>
+          <td class="paramname"><em>_parent</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">glm::vec3&#160;</td>
-          <td class="paramname"><em>position</em>, </td>
+          <td class="paramname"><em>_position</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">glm::vec3&#160;</td>
-          <td class="paramname"><em>rotation</em>, </td>
+          <td class="paramname"><em>_rotation</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">glm::vec3&#160;</td>
-          <td class="paramname"><em>scale</em>&#160;</td>
+          <td class="paramname"><em>_scale</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -396,16 +477,27 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Initialises the transform. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_parent</td><td>The parent of the component. </td></tr>
+    <tr><td class="paramname">_position</td><td>The initial position of the transform. </td></tr>
+    <tr><td class="paramname">_rotation</td><td>The initial rotation of the transform. </td></tr>
+    <tr><td class="paramname">_scale</td><td>The initial scale of the transform. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a39431f1267fe227a247f686787682aed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39431f1267fe227a247f686787682aed">&#9670;&nbsp;</a></span>setPosition()</h2>
+<a id="a45f9ecc9db02d813f49211cdd71ec749"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45f9ecc9db02d813f49211cdd71ec749">&#9670;&nbsp;</a></span>SetPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void frontier::Transform::setPosition </td>
+          <td class="memname">void frontier::Transform::SetPosition </td>
           <td>(</td>
           <td class="paramtype">glm::vec3&#160;</td>
           <td class="paramname"><em>_pos</em></td><td>)</td>
@@ -414,16 +506,24 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets the position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_pos</td><td>New position. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a374a31649e6970b984495a287e473cbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a374a31649e6970b984495a287e473cbc">&#9670;&nbsp;</a></span>setRotation()</h2>
+<a id="a62ed231d2cfef5b115955741ec838591"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62ed231d2cfef5b115955741ec838591">&#9670;&nbsp;</a></span>SetRotation()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void frontier::Transform::setRotation </td>
+          <td class="memname">void frontier::Transform::SetRotation </td>
           <td>(</td>
           <td class="paramtype">glm::vec3&#160;</td>
           <td class="paramname"><em>_rot</em></td><td>)</td>
@@ -432,16 +532,24 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets the rotation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_rot</td><td>New rotation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="ae398759cf3fb01eeb6989aa52a602d55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae398759cf3fb01eeb6989aa52a602d55">&#9670;&nbsp;</a></span>setScale()</h2>
+<a id="ab6803171399b1ba2825f3f47f6eaffaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6803171399b1ba2825f3f47f6eaffaa">&#9670;&nbsp;</a></span>SetScale()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void frontier::Transform::setScale </td>
+          <td class="memname">void frontier::Transform::SetScale </td>
           <td>(</td>
           <td class="paramtype">glm::vec3&#160;</td>
           <td class="paramname"><em>_sca</em></td><td>)</td>
@@ -450,34 +558,50 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets the scale. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_sca</td><td>New scale. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="aab8d4bc98d9de708ba1ab9cd8e0d7f64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab8d4bc98d9de708ba1ab9cd8e0d7f64">&#9670;&nbsp;</a></span>setSelf()</h2>
+<a id="a10e72a1e49de0c3c3a36f920612a39ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10e72a1e49de0c3c3a36f920612a39ce">&#9670;&nbsp;</a></span>SetSelf()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void frontier::Transform::setSelf </td>
+          <td class="memname">void frontier::Transform::SetSelf </td>
           <td>(</td>
           <td class="paramtype">std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_transform.html">Transform</a> &gt;&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramname"><em>_self</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets the self pointer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_self</td><td>A weak pointer to this transform. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="ad4e673db3400d3c505ceb9fc1ececfbb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4e673db3400d3c505ceb9fc1ececfbb">&#9670;&nbsp;</a></span>setTransformParent()</h2>
+<a id="a95b6b6407a5ece2e6b188c2e1c2294a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95b6b6407a5ece2e6b188c2e1c2294a2">&#9670;&nbsp;</a></span>SetTransformParent()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void frontier::Transform::setTransformParent </td>
+          <td class="memname">void frontier::Transform::SetTransformParent </td>
           <td>(</td>
           <td class="paramtype">std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_transform.html">Transform</a> &gt;&#160;</td>
           <td class="paramname"><em>_parent</em></td><td>)</td>
@@ -485,6 +609,14 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets the transform parent, this is used for scene graphs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_parent</td><td>The parent of this transform. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

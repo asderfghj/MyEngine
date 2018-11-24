@@ -70,30 +70,41 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Creates a pool of entities.  
+ <a href="classfrontier_1_1_pooler.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_pooler_8h_source.html">Pooler.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad62089e85f54e4cfa198f1f796e2bfea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_pooler.html#ad62089e85f54e4cfa198f1f796e2bfea">OnInit</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt; _core, std::string _id, std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_prefab.html">Prefab</a> &gt; _prefab, int initialPoolSize)</td></tr>
-<tr class="separator:ad62089e85f54e4cfa198f1f796e2bfea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd7ce56f3b19b8fb6e4eb2ba94328573"><td class="memItemLeft" align="right" valign="top">std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_pooler.html#acd7ce56f3b19b8fb6e4eb2ba94328573">Spawn</a> (glm::vec3 _position, bool modifyScale=false, glm::vec3 _scale=glm::vec3(1.0f, 1.0f, 1.0f))</td></tr>
-<tr class="separator:acd7ce56f3b19b8fb6e4eb2ba94328573"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fb9072149f17191cdf585a4200561a9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_pooler.html#a5fb9072149f17191cdf585a4200561a9">getID</a> ()</td></tr>
-<tr class="separator:a5fb9072149f17191cdf585a4200561a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b4e2884404c3c939b0d6feccade6a70"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_pooler.html#a7b4e2884404c3c939b0d6feccade6a70">getActiveInPool</a> ()</td></tr>
-<tr class="separator:a7b4e2884404c3c939b0d6feccade6a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67a23cf20cbe59488f26d0a9bd481e63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_pooler.html#a67a23cf20cbe59488f26d0a9bd481e63">deactivateAllInstances</a> ()</td></tr>
-<tr class="separator:a67a23cf20cbe59488f26d0a9bd481e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae025d63772f4b794c743974586e2cab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_pooler.html#aae025d63772f4b794c743974586e2cab">OnInit</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt; _core, std::string _id, std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_prefab.html">Prefab</a> &gt; _prefab, int _initialPoolSize)</td></tr>
+<tr class="memdesc:aae025d63772f4b794c743974586e2cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the pooler.  <a href="#aae025d63772f4b794c743974586e2cab">More...</a><br /></td></tr>
+<tr class="separator:aae025d63772f4b794c743974586e2cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49c30c8f2df300b4c49b9ea6476d2c3f"><td class="memItemLeft" align="right" valign="top">std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_pooler.html#a49c30c8f2df300b4c49b9ea6476d2c3f">Spawn</a> (glm::vec3 _position, bool _modifyScale=false, glm::vec3 _scale=glm::vec3(1.0f, 1.0f, 1.0f))</td></tr>
+<tr class="memdesc:a49c30c8f2df300b4c49b9ea6476d2c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns an entity from the pool and returns a pointer to it.  <a href="#a49c30c8f2df300b4c49b9ea6476d2c3f">More...</a><br /></td></tr>
+<tr class="separator:a49c30c8f2df300b4c49b9ea6476d2c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a701a377a0be49d7fdf95df383c5ee873"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_pooler.html#a701a377a0be49d7fdf95df383c5ee873">GetID</a> ()</td></tr>
+<tr class="memdesc:a701a377a0be49d7fdf95df383c5ee873"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the pool identifier.  <a href="#a701a377a0be49d7fdf95df383c5ee873">More...</a><br /></td></tr>
+<tr class="separator:a701a377a0be49d7fdf95df383c5ee873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abce85fe89ac04c600e447d3b722f6fc2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_pooler.html#abce85fe89ac04c600e447d3b722f6fc2">GetActiveInPool</a> ()</td></tr>
+<tr class="memdesc:abce85fe89ac04c600e447d3b722f6fc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of active entities in the pool.  <a href="#abce85fe89ac04c600e447d3b722f6fc2">More...</a><br /></td></tr>
+<tr class="separator:abce85fe89ac04c600e447d3b722f6fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4dced5034fd806568b03f59f0bcb4a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_pooler.html#ad4dced5034fd806568b03f59f0bcb4a7">DeactivateAllInstances</a> ()</td></tr>
+<tr class="memdesc:ad4dced5034fd806568b03f59f0bcb4a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deactivates all active entities in the pool.  <a href="#ad4dced5034fd806568b03f59f0bcb4a7">More...</a><br /></td></tr>
+<tr class="separator:ad4dced5034fd806568b03f59f0bcb4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a67a23cf20cbe59488f26d0a9bd481e63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67a23cf20cbe59488f26d0a9bd481e63">&#9670;&nbsp;</a></span>deactivateAllInstances()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Creates a pool of entities. </p>
+<p>Rather than creating a new instance of an entity every time one is needed, this class creates several at once, switches them to inactive and actives them when the spawn function is called. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad4dced5034fd806568b03f59f0bcb4a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4dced5034fd806568b03f59f0bcb4a7">&#9670;&nbsp;</a></span>DeactivateAllInstances()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void frontier::Pooler::deactivateAllInstances </td>
+          <td class="memname">void frontier::Pooler::DeactivateAllInstances </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -101,16 +112,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Deactivates all active entities in the pool. </p>
+
 </div>
 </div>
-<a id="a7b4e2884404c3c939b0d6feccade6a70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b4e2884404c3c939b0d6feccade6a70">&#9670;&nbsp;</a></span>getActiveInPool()</h2>
+<a id="abce85fe89ac04c600e447d3b722f6fc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abce85fe89ac04c600e447d3b722f6fc2">&#9670;&nbsp;</a></span>GetActiveInPool()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int frontier::Pooler::getActiveInPool </td>
+          <td class="memname">int frontier::Pooler::GetActiveInPool </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -118,16 +131,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the number of active entities in the pool. </p>
+
 </div>
 </div>
-<a id="a5fb9072149f17191cdf585a4200561a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fb9072149f17191cdf585a4200561a9">&#9670;&nbsp;</a></span>getID()</h2>
+<a id="a701a377a0be49d7fdf95df383c5ee873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a701a377a0be49d7fdf95df383c5ee873">&#9670;&nbsp;</a></span>GetID()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string frontier::Pooler::getID </td>
+          <td class="memname">std::string frontier::Pooler::GetID </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -135,10 +150,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the pool identifier. </p>
+
 </div>
 </div>
-<a id="ad62089e85f54e4cfa198f1f796e2bfea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad62089e85f54e4cfa198f1f796e2bfea">&#9670;&nbsp;</a></span>OnInit()</h2>
+<a id="aae025d63772f4b794c743974586e2cab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae025d63772f4b794c743974586e2cab">&#9670;&nbsp;</a></span>OnInit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -165,7 +182,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>initialPoolSize</em>&#160;</td>
+          <td class="paramname"><em>_initialPoolSize</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -175,10 +192,21 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Initialises the pooler. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_core</td><td>Pointer to the core. </td></tr>
+    <tr><td class="paramname">_id</td><td>Identifier for the pooler so that it can be refered back to later. </td></tr>
+    <tr><td class="paramname">_prefab</td><td>The prefab that all entities in the pool will be created from. </td></tr>
+    <tr><td class="paramname">_initialPoolSize</td><td>The initial number of entities that will be created. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="acd7ce56f3b19b8fb6e4eb2ba94328573"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd7ce56f3b19b8fb6e4eb2ba94328573">&#9670;&nbsp;</a></span>Spawn()</h2>
+<a id="a49c30c8f2df300b4c49b9ea6476d2c3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49c30c8f2df300b4c49b9ea6476d2c3f">&#9670;&nbsp;</a></span>Spawn()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,7 +221,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>modifyScale</em> = <code>false</code>, </td>
+          <td class="paramname"><em>_modifyScale</em> = <code>false</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -208,6 +236,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Spawns an entity from the pool and returns a pointer to it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_position</td><td>The initial position of the new entity. </td></tr>
+    <tr><td class="paramname">_modifyScale</td><td>Whether the scale needs to be modified. </td></tr>
+    <tr><td class="paramname">_scale</td><td>The initial scale of the new entity. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -2,31 +2,35 @@
 \label{classfrontier_1_1_resources}\index{frontier\+::\+Resources@{frontier\+::\+Resources}}
 
 
+The resources manager. Holds pointers of all created resources.  
+
+
+
+
 {\ttfamily \#include $<$Resources.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classfrontier_1_1_resources_abd97410717435c463dccdb6e2d45043c}{Resources} ()
-\item 
 \hyperlink{classfrontier_1_1_resources_aa286a888a19e4ea5b5a94aa7ac1898b8}{$\sim$\+Resources} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor for the \hyperlink{classfrontier_1_1_resources}{Resources}, clears the resources list. \end{DoxyCompactList}\item 
 void \hyperlink{classfrontier_1_1_resources_a34e0df1d6b935644bccee94ebe600a4a}{Add\+Created\+Resource} (std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_resource}{Resource} $>$ \+\_\+resource)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Adds the created resource to the resources list. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+The resources manager. Holds pointers of all created resources. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classfrontier_1_1_resources_abd97410717435c463dccdb6e2d45043c}\label{classfrontier_1_1_resources_abd97410717435c463dccdb6e2d45043c}} 
-\index{frontier\+::\+Resources@{frontier\+::\+Resources}!Resources@{Resources}}
-\index{Resources@{Resources}!frontier\+::\+Resources@{frontier\+::\+Resources}}
-\subsubsection{\texorpdfstring{Resources()}{Resources()}}
-{\footnotesize\ttfamily frontier\+::\+Resources\+::\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
 \mbox{\Hypertarget{classfrontier_1_1_resources_aa286a888a19e4ea5b5a94aa7ac1898b8}\label{classfrontier_1_1_resources_aa286a888a19e4ea5b5a94aa7ac1898b8}} 
 \index{frontier\+::\+Resources@{frontier\+::\+Resources}!````~Resources@{$\sim$\+Resources}}
 \index{````~Resources@{$\sim$\+Resources}!frontier\+::\+Resources@{frontier\+::\+Resources}}
 \subsubsection{\texorpdfstring{$\sim$\+Resources()}{~Resources()}}
 {\footnotesize\ttfamily frontier\+::\+Resources\+::$\sim$\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \hyperlink{classfrontier_1_1_resources}{Resources}, clears the resources list. 
 
 
 
@@ -37,6 +41,15 @@ void \hyperlink{classfrontier_1_1_resources_a34e0df1d6b935644bccee94ebe600a4a}{A
 \subsubsection{\texorpdfstring{Add\+Created\+Resource()}{AddCreatedResource()}}
 {\footnotesize\ttfamily void frontier\+::\+Resources\+::\+Add\+Created\+Resource (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_resource}{Resource} $>$}]{\+\_\+resource }\end{DoxyParamCaption})}
 
+
+
+Adds the created resource to the resources list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+resource} & Pointer to the resource to be added. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

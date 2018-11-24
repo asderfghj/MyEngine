@@ -9,24 +9,45 @@ namespace frontier
 
 	class Timer;
 
+	//!Deals with framerate, time and random values.
 	class Environment
 	{
 	private:
-		double _deltatime;
-		Uint64 LAST, NOW;
-		std::shared_ptr<Timer> _timer;
-		int _countedFrames;
+		double m_deltaTime;
+		Uint64 m_last, m_now;
+		std::shared_ptr<Timer> m_timer;
+		int m_countedFrames;
 	public:
+		//!Initialises the default variables in environment.
 		Environment();
-		~Environment();
-		float getDeltaTime();
-		void tick();
+
+		//!Returns the current delta time.
+		float GetDeltaTime();
+
+		//!Updates the delta time
+		void Tick();
+
+		//!Returns the active timer.
 		std::shared_ptr<Timer> GetTimer();
+
+		//!Increments the frame counter.
 		void IncrementFrameCounter();
+
+		//!Returns the counted frames.
 		int GetCountedFrames();
-		float getFPS();
-		float getRandomBetweenTwoValues(float _val1, float _val2);
-		Uint32 getTime();
+
+		//!Returns the current frames per second.
+		float GetFPS();
+
+		//!Returns a random value between two specified values.
+		/*!
+			\param _val1 Lowest value for the random float.
+			\param _val2 Highest value for the random float.
+		*/
+		float GetRandomBetweenTwoValues(float _val1, float _val2);
+
+		//!Returns the time since the program began.
+		Uint32 GetTime();
 	};
 }
 

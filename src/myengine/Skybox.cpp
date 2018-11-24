@@ -11,9 +11,9 @@ namespace frontier
 	void Skybox::OnInit(std::weak_ptr<Entity> _parent, std::shared_ptr<CubemapTexture> _skyboxTexture)
 	{
 		Component::OnInit(_parent);
-		_texture = _skyboxTexture;
+		m_texture = _skyboxTexture;
 
-		skyboxVertices = {
+		m_skyboxVertices = {
 			// cube positions          
 			-1.0f,  1.0f, -1.0f,
 			-1.0f, -1.0f, -1.0f,
@@ -58,13 +58,13 @@ namespace frontier
 			 1.0f, -1.0f,  1.0f
 		};
 
-		glGenVertexArrays(1, &VAO);
-		glGenBuffers(1, &VBO);
+		glGenVertexArrays(1, &m_VAO);
+		glGenBuffers(1, &m_VBO);
 
-		glBindVertexArray(VAO);
-		glBindBuffer(GL_ARRAY_BUFFER, VBO);
+		glBindVertexArray(m_VAO);
+		glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
 
-		glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * skyboxVertices.size(), &skyboxVertices.at(0), GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * m_skyboxVertices.size(), &m_skyboxVertices.at(0), GL_STATIC_DRAW);
 
 		glEnableVertexAttribArray(0);
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (void*)0);
@@ -72,7 +72,7 @@ namespace frontier
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		glBindVertexArray(0);
 
-		_shaderProgram = getCore()->getSkyboxShader();
+		m_shaderProgram = GetCore()->getSkyboxShader();
 
 	}
 
@@ -81,21 +81,21 @@ namespace frontier
 		Component::OnTick();
 		
 		glDepthMask(false);
-		_shaderProgram->SetUniform("skybox", _texture);
-		_texture->Bindtexture();
+		m_shaderProgram->SetUniform("skybox", m_texture);
+		m_texture->Bindtexture();
 		
-		glUseProgram(_shaderProgram->getID());
+		glUseProgram(m_shaderProgram->GetID());
 
-		_shaderProgram->SetUniform("projection", getEntity()->getCore()->getMainCamera()->GetProjectionMatrix());
-		_shaderProgram->SetUniform("view", glm::mat4(glm::mat3(getEntity()->getCore()->getMainCamera()->GetViewMatrix())));
+		m_shaderProgram->SetUniform("projection", GetEntity()->GetCore()->GetMainCamera()->GetProjectionMatrix());
+		m_shaderProgram->SetUniform("view", glm::mat4(glm::mat3(GetEntity()->GetCore()->GetMainCamera()->GetViewMatrix())));
 		glm::mat4 scaler = glm::scale(glm::mat4(1.0f), glm::vec3(50.0f, 50.0f, 50.0f));
 		
 
 
-		_shaderProgram->SetUniform("scaler", scaler);
+		m_shaderProgram->SetUniform("scaler", scaler);
 
-		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, skyboxVertices.size() / 3);
+		glBindVertexArray(m_VAO);
+		glDrawArrays(GL_TRIANGLES, 0, m_skyboxVertices.size() / 3);
 		glBindVertexArray(0);
 		glUseProgram(0);
 		glDepthMask(true);

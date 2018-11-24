@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['playercontroller',['PlayerController',['../class_player_controller.html',1,'']]],
-  ['pooler',['Pooler',['../classfrontier_1_1_pooler.html',1,'frontier']]],
-  ['prefab',['Prefab',['../classfrontier_1_1_prefab.html',1,'frontier']]],
-  ['projectilebehavior',['ProjectileBehavior',['../class_projectile_behavior.html',1,'']]]
+  ['resource',['Resource',['../classfrontier_1_1_resource.html',1,'frontier']]],
+  ['resources',['Resources',['../classfrontier_1_1_resources.html',1,'frontier']]]
 ];

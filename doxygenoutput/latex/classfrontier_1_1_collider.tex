@@ -2,6 +2,11 @@
 \label{classfrontier_1_1_collider}\index{frontier\+::\+Collider@{frontier\+::\+Collider}}
 
 
+A box collider, uses basic A\+A\+BB collisions against other entities with a collider attached.  
+
+
+
+
 {\ttfamily \#include $<$Collider.\+h$>$}
 
 Inheritance diagram for frontier\+:\+:Collider\+:\begin{figure}[H]
@@ -13,22 +18,27 @@ Inheritance diagram for frontier\+:\+:Collider\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classfrontier_1_1_collider_a111e91b9ed9a336e0a231daeaa6f3490}{On\+Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \+\_\+parent, glm\+::vec3 boxscale=glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f))
-\item 
+void \hyperlink{classfrontier_1_1_collider_aa11b97036f0962e2abcb79b4d84b8687}{On\+Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \+\_\+parent, glm\+::vec3 \+\_\+box\+Scale=glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f))
+\begin{DoxyCompactList}\small\item\em Initialises the collider component, this will be called by Add\+Component in the \hyperlink{classfrontier_1_1_entity}{Entity} class, intialises the collider class with the box scale. \end{DoxyCompactList}\item 
 void \hyperlink{classfrontier_1_1_collider_a06dfeb56017f45597f1812fc5cf8236d}{On\+Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \+\_\+parent, std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_collider}{Collider} $>$ \+\_\+original)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialises the collider component, this will be called by Add\+Component in the \hyperlink{classfrontier_1_1_entity}{Entity} class, this is a copy contructor used for making an entity from a prefab. \end{DoxyCompactList}\item 
 void \hyperlink{classfrontier_1_1_collider_ac03782c94e8f7a2064ea1441cbd12c81}{On\+Tick} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Runs every frame, checks all other collider components to see if any are colliding. \end{DoxyCompactList}\item 
 bool \hyperlink{classfrontier_1_1_collider_aa0269702eb2d87a12087e933821ad6e0}{Check\+If\+Colliding} (glm\+::vec3 \+\_\+position, glm\+::vec3 \+\_\+scale)
-\item 
-std\+::vector$<$ std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ $>$ \hyperlink{classfrontier_1_1_collider_aad1c0f7d7a9353caded05cf383e3b3c9}{get\+Colliding\+Entities} ()
-\item 
-bool \hyperlink{classfrontier_1_1_collider_ad0ad92d0d5a2060284548a990e6aef58}{is\+Colliding} ()
-\item 
-glm\+::vec3 \hyperlink{classfrontier_1_1_collider_a1bec632fd9941d7ebea79e349bc53059}{get\+Box\+Scale} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Checks against another entity\textquotesingle{}s position and scale to determine whether this collider is collding with another. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ $>$ \hyperlink{classfrontier_1_1_collider_a95ae710a5b6e370fc79967ff650f2f6f}{Get\+Colliding\+Entities} ()
+\begin{DoxyCompactList}\small\item\em Returns the vector of entities currently colliding with this collider. \end{DoxyCompactList}\item 
+bool \hyperlink{classfrontier_1_1_collider_abcc4976d3ac48d591a0e725fb457260a}{Is\+Colliding} ()
+\begin{DoxyCompactList}\small\item\em Returns whether the collider is currently colliding with anything. \end{DoxyCompactList}\item 
+glm\+::vec3 \hyperlink{classfrontier_1_1_collider_a2f8285a81d952b72bf0a02703f7d3481}{Get\+Box\+Scale} ()
+\begin{DoxyCompactList}\small\item\em Returns the box scale. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
+
+\subsection{Detailed Description}
+A box collider, uses basic A\+A\+BB collisions against other entities with a collider attached. 
+
+If other colliders are intersecting, then the collider component will trigger a boolean to confirm the collsion and will store a vector of weak pointers to each entity colliding with this one. Currently the collider only works based on positions and scale, rotations are not applied. 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classfrontier_1_1_collider_aa0269702eb2d87a12087e933821ad6e0}\label{classfrontier_1_1_collider_aa0269702eb2d87a12087e933821ad6e0}} 
@@ -37,41 +47,90 @@ glm\+::vec3 \hyperlink{classfrontier_1_1_collider_a1bec632fd9941d7ebea79e349bc53
 \subsubsection{\texorpdfstring{Check\+If\+Colliding()}{CheckIfColliding()}}
 {\footnotesize\ttfamily bool frontier\+::\+Collider\+::\+Check\+If\+Colliding (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{\+\_\+position,  }\item[{glm\+::vec3}]{\+\_\+scale }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_collider_a1bec632fd9941d7ebea79e349bc53059}\label{classfrontier_1_1_collider_a1bec632fd9941d7ebea79e349bc53059}} 
-\index{frontier\+::\+Collider@{frontier\+::\+Collider}!get\+Box\+Scale@{get\+Box\+Scale}}
-\index{get\+Box\+Scale@{get\+Box\+Scale}!frontier\+::\+Collider@{frontier\+::\+Collider}}
-\subsubsection{\texorpdfstring{get\+Box\+Scale()}{getBoxScale()}}
-{\footnotesize\ttfamily glm\+::vec3 frontier\+::\+Collider\+::get\+Box\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_collider_aad1c0f7d7a9353caded05cf383e3b3c9}\label{classfrontier_1_1_collider_aad1c0f7d7a9353caded05cf383e3b3c9}} 
-\index{frontier\+::\+Collider@{frontier\+::\+Collider}!get\+Colliding\+Entities@{get\+Colliding\+Entities}}
-\index{get\+Colliding\+Entities@{get\+Colliding\+Entities}!frontier\+::\+Collider@{frontier\+::\+Collider}}
-\subsubsection{\texorpdfstring{get\+Colliding\+Entities()}{getCollidingEntities()}}
-{\footnotesize\ttfamily std\+::vector$<$ std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ $>$ frontier\+::\+Collider\+::get\+Colliding\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfrontier_1_1_collider_ad0ad92d0d5a2060284548a990e6aef58}\label{classfrontier_1_1_collider_ad0ad92d0d5a2060284548a990e6aef58}} 
-\index{frontier\+::\+Collider@{frontier\+::\+Collider}!is\+Colliding@{is\+Colliding}}
-\index{is\+Colliding@{is\+Colliding}!frontier\+::\+Collider@{frontier\+::\+Collider}}
-\subsubsection{\texorpdfstring{is\+Colliding()}{isColliding()}}
-{\footnotesize\ttfamily bool frontier\+::\+Collider\+::is\+Colliding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+Checks against another entity\textquotesingle{}s position and scale to determine whether this collider is collding with another. 
 
-\mbox{\Hypertarget{classfrontier_1_1_collider_a111e91b9ed9a336e0a231daeaa6f3490}\label{classfrontier_1_1_collider_a111e91b9ed9a336e0a231daeaa6f3490}} 
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+position} & The position of the other entity. \\
+\hline
+{\em \+\_\+scale} & The scale of the other entity. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfrontier_1_1_collider_a2f8285a81d952b72bf0a02703f7d3481}\label{classfrontier_1_1_collider_a2f8285a81d952b72bf0a02703f7d3481}} 
+\index{frontier\+::\+Collider@{frontier\+::\+Collider}!Get\+Box\+Scale@{Get\+Box\+Scale}}
+\index{Get\+Box\+Scale@{Get\+Box\+Scale}!frontier\+::\+Collider@{frontier\+::\+Collider}}
+\subsubsection{\texorpdfstring{Get\+Box\+Scale()}{GetBoxScale()}}
+{\footnotesize\ttfamily glm\+::vec3 frontier\+::\+Collider\+::\+Get\+Box\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the box scale. 
+
+\mbox{\Hypertarget{classfrontier_1_1_collider_a95ae710a5b6e370fc79967ff650f2f6f}\label{classfrontier_1_1_collider_a95ae710a5b6e370fc79967ff650f2f6f}} 
+\index{frontier\+::\+Collider@{frontier\+::\+Collider}!Get\+Colliding\+Entities@{Get\+Colliding\+Entities}}
+\index{Get\+Colliding\+Entities@{Get\+Colliding\+Entities}!frontier\+::\+Collider@{frontier\+::\+Collider}}
+\subsubsection{\texorpdfstring{Get\+Colliding\+Entities()}{GetCollidingEntities()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ $>$ frontier\+::\+Collider\+::\+Get\+Colliding\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the vector of entities currently colliding with this collider. 
+
+\mbox{\Hypertarget{classfrontier_1_1_collider_abcc4976d3ac48d591a0e725fb457260a}\label{classfrontier_1_1_collider_abcc4976d3ac48d591a0e725fb457260a}} 
+\index{frontier\+::\+Collider@{frontier\+::\+Collider}!Is\+Colliding@{Is\+Colliding}}
+\index{Is\+Colliding@{Is\+Colliding}!frontier\+::\+Collider@{frontier\+::\+Collider}}
+\subsubsection{\texorpdfstring{Is\+Colliding()}{IsColliding()}}
+{\footnotesize\ttfamily bool frontier\+::\+Collider\+::\+Is\+Colliding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns whether the collider is currently colliding with anything. 
+
+\mbox{\Hypertarget{classfrontier_1_1_collider_aa11b97036f0962e2abcb79b4d84b8687}\label{classfrontier_1_1_collider_aa11b97036f0962e2abcb79b4d84b8687}} 
 \index{frontier\+::\+Collider@{frontier\+::\+Collider}!On\+Init@{On\+Init}}
 \index{On\+Init@{On\+Init}!frontier\+::\+Collider@{frontier\+::\+Collider}}
 \subsubsection{\texorpdfstring{On\+Init()}{OnInit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void frontier\+::\+Collider\+::\+On\+Init (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$}]{\+\_\+parent,  }\item[{glm\+::vec3}]{boxscale = {\ttfamily glm\+:\+:vec3(1.0f,1.0f,1.0f)} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void frontier\+::\+Collider\+::\+On\+Init (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$}]{\+\_\+parent,  }\item[{glm\+::vec3}]{\+\_\+box\+Scale = {\ttfamily glm\+:\+:vec3(1.0f,1.0f,1.0f)} }\end{DoxyParamCaption})}
 
+
+
+Initialises the collider component, this will be called by Add\+Component in the \hyperlink{classfrontier_1_1_entity}{Entity} class, intialises the collider class with the box scale. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+parent} & The entity that this component is attached to. \\
+\hline
+{\em \+\_\+box\+Scale} & The scale of the collision box, this is relative to the scale in the transform component on the entity (Set to glm\+::vec3(1.\+0f, 1.\+0f, 1.\+0f) by default). \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classfrontier_1_1_collider_a06dfeb56017f45597f1812fc5cf8236d}\label{classfrontier_1_1_collider_a06dfeb56017f45597f1812fc5cf8236d}} 
 \index{frontier\+::\+Collider@{frontier\+::\+Collider}!On\+Init@{On\+Init}}
 \index{On\+Init@{On\+Init}!frontier\+::\+Collider@{frontier\+::\+Collider}}
 \subsubsection{\texorpdfstring{On\+Init()}{OnInit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void frontier\+::\+Collider\+::\+On\+Init (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$}]{\+\_\+parent,  }\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_collider}{Collider} $>$}]{\+\_\+original }\end{DoxyParamCaption})}
 
+
+
+Initialises the collider component, this will be called by Add\+Component in the \hyperlink{classfrontier_1_1_entity}{Entity} class, this is a copy contructor used for making an entity from a prefab. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+parent} & The entity that this component is attached to. \\
+\hline
+{\em \+\_\+original} & The original version of the component, typically taken from a prefab \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classfrontier_1_1_collider_ac03782c94e8f7a2064ea1441cbd12c81}\label{classfrontier_1_1_collider_ac03782c94e8f7a2064ea1441cbd12c81}} 
 \index{frontier\+::\+Collider@{frontier\+::\+Collider}!On\+Tick@{On\+Tick}}
 \index{On\+Tick@{On\+Tick}!frontier\+::\+Collider@{frontier\+::\+Collider}}
 \subsubsection{\texorpdfstring{On\+Tick()}{OnTick()}}
 {\footnotesize\ttfamily void frontier\+::\+Collider\+::\+On\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Runs every frame, checks all other collider components to see if any are colliding. 
 
 
 

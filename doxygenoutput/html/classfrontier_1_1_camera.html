@@ -70,6 +70,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Provides the view, projection and orthographic matricies for drawing objects to the screen.  
+ <a href="classfrontier_1_1_camera.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_camera_8h_source.html">Camera.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for frontier::Camera:</div>
@@ -77,66 +80,75 @@ Inheritance diagram for frontier::Camera:</div>
  <div class="center">
   <img src="classfrontier_1_1_camera.png" usemap="#frontier::Camera_map" alt=""/>
   <map id="frontier::Camera_map" name="frontier::Camera_map">
-<area href="classfrontier_1_1_component.html" alt="frontier::Component" shape="rect" coords="0,0,122,24"/>
+<area href="classfrontier_1_1_component.html" title="Base component class, use for inheritance to other classes only. Useless on its own. " alt="frontier::Component" shape="rect" coords="0,0,122,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a90858bfacddb80bedb062889b15d2d47"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_camera.html#a90858bfacddb80bedb062889b15d2d47">getViewMatrix</a> ()</td></tr>
-<tr class="separator:a90858bfacddb80bedb062889b15d2d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3e5871e68bcb0d5577cc09b2273c641"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_camera.html#ae3e5871e68bcb0d5577cc09b2273c641">getProjectionMatrix</a> ()</td></tr>
-<tr class="separator:ae3e5871e68bcb0d5577cc09b2273c641"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c5d631b29e93e4e8772577dd3e62378"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_camera.html#a7c5d631b29e93e4e8772577dd3e62378">getOrthographicMatrix</a> ()</td></tr>
-<tr class="separator:a7c5d631b29e93e4e8772577dd3e62378"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bec1b9133e266bf50396883cb3e2b83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_camera.html#a7bec1b9133e266bf50396883cb3e2b83">OnInit</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; _parent, float fov, float near, float far)</td></tr>
-<tr class="separator:a7bec1b9133e266bf50396883cb3e2b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e6077e5c7dd76f58e055a13e18ab8c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_camera.html#a8e6077e5c7dd76f58e055a13e18ab8c6">getMain</a> ()</td></tr>
-<tr class="separator:a8e6077e5c7dd76f58e055a13e18ab8c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8a9b95bf6e4eacdae709d188725e72a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_camera.html#ae8a9b95bf6e4eacdae709d188725e72a">setMain</a> (bool <a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>)</td></tr>
-<tr class="separator:ae8a9b95bf6e4eacdae709d188725e72a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1872f3ceccbb6dcfa4fcf043f0eb5f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_camera.html#ab1872f3ceccbb6dcfa4fcf043f0eb5f8">setControllable</a> (bool _control)</td></tr>
-<tr class="separator:ab1872f3ceccbb6dcfa4fcf043f0eb5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f318703a68e4c070c85a1d9a27446d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_camera.html#a1f318703a68e4c070c85a1d9a27446d0">OnTick</a> () override</td></tr>
-<tr class="separator:a1f318703a68e4c070c85a1d9a27446d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f3aa751dc37b1167b643c6aa1923b26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_camera.html#a8f3aa751dc37b1167b643c6aa1923b26">OnInit</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; _parent, float _fov, float _near, float _far)</td></tr>
+<tr class="memdesc:a8f3aa751dc37b1167b643c6aa1923b26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the camera component, this will be called by AddComponent in the <a class="el" href="classfrontier_1_1_entity.html" title="The base entity which components can be attached to. ">Entity</a> class, initialises the field of view, near and far variables.  <a href="#a8f3aa751dc37b1167b643c6aa1923b26">More...</a><br /></td></tr>
+<tr class="separator:a8f3aa751dc37b1167b643c6aa1923b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad31e39125db73f05bfb9aabbf221c8e3"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_camera.html#ad31e39125db73f05bfb9aabbf221c8e3">GetViewMatrix</a> ()</td></tr>
+<tr class="memdesc:ad31e39125db73f05bfb9aabbf221c8e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a view matrix based on the inverse of the camera entity's model matrix.  <a href="#ad31e39125db73f05bfb9aabbf221c8e3">More...</a><br /></td></tr>
+<tr class="separator:ad31e39125db73f05bfb9aabbf221c8e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0332baf6ac3b2f062f6da519f6ae2b43"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_camera.html#a0332baf6ac3b2f062f6da519f6ae2b43">GetProjectionMatrix</a> ()</td></tr>
+<tr class="memdesc:a0332baf6ac3b2f062f6da519f6ae2b43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a projection matrix based on the field of view, near and far variables provided on initalisation.  <a href="#a0332baf6ac3b2f062f6da519f6ae2b43">More...</a><br /></td></tr>
+<tr class="separator:a0332baf6ac3b2f062f6da519f6ae2b43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a299ffcda274b10443e7f5dfe49a3866e"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_camera.html#a299ffcda274b10443e7f5dfe49a3866e">GetOrthographicMatrix</a> ()</td></tr>
+<tr class="memdesc:a299ffcda274b10443e7f5dfe49a3866e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an orthographic matrix based on the screen size and the near and far variables provided at initialisation.  <a href="#a299ffcda274b10443e7f5dfe49a3866e">More...</a><br /></td></tr>
+<tr class="separator:a299ffcda274b10443e7f5dfe49a3866e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abccd21681649a9474ac1708522a4b89d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_camera.html#abccd21681649a9474ac1708522a4b89d">IsMainCamera</a> ()</td></tr>
+<tr class="memdesc:abccd21681649a9474ac1708522a4b89d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries whether this camera is the main one that is being used for drawing.  <a href="#abccd21681649a9474ac1708522a4b89d">More...</a><br /></td></tr>
+<tr class="separator:abccd21681649a9474ac1708522a4b89d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a177d7bf6ab9df81d673cef6489be156a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_camera.html#a177d7bf6ab9df81d673cef6489be156a">SetIsMainCamera</a> (bool _main)</td></tr>
+<tr class="memdesc:a177d7bf6ab9df81d673cef6489be156a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the isMainCamera value, Unless you have a good reason, do not change this. this is handled by the <a class="el" href="classfrontier_1_1_core.html" title="The main core of the engine. This is where all entities, prefabs and resources get created...">Core</a>.  <a href="#a177d7bf6ab9df81d673cef6489be156a">More...</a><br /></td></tr>
+<tr class="separator:a177d7bf6ab9df81d673cef6489be156a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classfrontier_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classfrontier_1_1_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classfrontier_1_1_component.html">frontier::Component</a></td></tr>
-<tr class="memitem:a21f8f2b1292143a1e74d985024e34589 inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a21f8f2b1292143a1e74d985024e34589">Component</a> ()</td></tr>
-<tr class="separator:a21f8f2b1292143a1e74d985024e34589 inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a919c8260a4e6c1a14165bf9d1b903423 inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a919c8260a4e6c1a14165bf9d1b903423">~Component</a> ()</td></tr>
-<tr class="separator:a919c8260a4e6c1a14165bf9d1b903423 inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3da02905c4d79219d9b12f260a35ad1 inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#af3da02905c4d79219d9b12f260a35ad1">OnInit</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; _parent)</td></tr>
+<tr class="memdesc:af3da02905c4d79219d9b12f260a35ad1 inherit pub_methods_classfrontier_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the component. Sets the pointer to the entity that this component is attached to.  <a href="classfrontier_1_1_component.html#af3da02905c4d79219d9b12f260a35ad1">More...</a><br /></td></tr>
 <tr class="separator:af3da02905c4d79219d9b12f260a35ad1 inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77fca7ba1960aafb9bc05905e300c79d inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a77fca7ba1960aafb9bc05905e300c79d">OnActivate</a> ()</td></tr>
+<tr class="memdesc:a77fca7ba1960aafb9bc05905e300c79d inherit pub_methods_classfrontier_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when an entity's active state is changed from false to true.  <a href="classfrontier_1_1_component.html#a77fca7ba1960aafb9bc05905e300c79d">More...</a><br /></td></tr>
 <tr class="separator:a77fca7ba1960aafb9bc05905e300c79d inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8faf337be5ba5fa3ca65c4be79d904c4 inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a8faf337be5ba5fa3ca65c4be79d904c4">OnDisplay</a> ()</td></tr>
-<tr class="separator:a8faf337be5ba5fa3ca65c4be79d904c4 inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad8262fcb8cd477f226d39c4df93f6d8 inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#aad8262fcb8cd477f226d39c4df93f6d8">getEntity</a> ()</td></tr>
-<tr class="separator:aad8262fcb8cd477f226d39c4df93f6d8 inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a32971a12ec277a519b30ba056c9d89 inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a1a32971a12ec277a519b30ba056c9d89">isCopyable</a> ()</td></tr>
-<tr class="separator:a1a32971a12ec277a519b30ba056c9d89 inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab920f9bc07ce051ebb5559c5a66508d1 inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#ab920f9bc07ce051ebb5559c5a66508d1">OnTick</a> ()</td></tr>
+<tr class="memdesc:ab920f9bc07ce051ebb5559c5a66508d1 inherit pub_methods_classfrontier_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called every frame, use for data that needs to be calculated each frame.  <a href="classfrontier_1_1_component.html#ab920f9bc07ce051ebb5559c5a66508d1">More...</a><br /></td></tr>
+<tr class="separator:ab920f9bc07ce051ebb5559c5a66508d1 inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d4193dbf06629b5e457fb8f7d460e49 inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a4d4193dbf06629b5e457fb8f7d460e49">GetEntity</a> ()</td></tr>
+<tr class="memdesc:a4d4193dbf06629b5e457fb8f7d460e49 inherit pub_methods_classfrontier_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the entity that this component is attached to.  <a href="classfrontier_1_1_component.html#a4d4193dbf06629b5e457fb8f7d460e49">More...</a><br /></td></tr>
+<tr class="separator:a4d4193dbf06629b5e457fb8f7d460e49 inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22a2ac83f030cd83415a51f584cf2d32 inherit pub_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a22a2ac83f030cd83415a51f584cf2d32">IsCopyable</a> ()</td></tr>
+<tr class="memdesc:a22a2ac83f030cd83415a51f584cf2d32 inherit pub_methods_classfrontier_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the class is copyable for a prefab.  <a href="classfrontier_1_1_component.html#a22a2ac83f030cd83415a51f584cf2d32">More...</a><br /></td></tr>
+<tr class="separator:a22a2ac83f030cd83415a51f584cf2d32 inherit pub_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classfrontier_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classfrontier_1_1_component')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classfrontier_1_1_component.html">frontier::Component</a></td></tr>
-<tr class="memitem:a22c7d6b053ca38af4ba1e2a9e16c9a57 inherit pro_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a22c7d6b053ca38af4ba1e2a9e16c9a57">getCore</a> ()</td></tr>
-<tr class="separator:a22c7d6b053ca38af4ba1e2a9e16c9a57 inherit pro_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02d631ca43dd6d403cbd51ee8654d15a inherit pro_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_input.html">Input</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a02d631ca43dd6d403cbd51ee8654d15a">getInput</a> ()</td></tr>
-<tr class="separator:a02d631ca43dd6d403cbd51ee8654d15a inherit pro_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb3039046e8c62976723d6715a1905b6 inherit pro_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_environment.html">Environment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#acb3039046e8c62976723d6715a1905b6">getEnvironment</a> ()</td></tr>
-<tr class="separator:acb3039046e8c62976723d6715a1905b6 inherit pro_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0006685ddaadb379360f7f28294d3806 inherit pro_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a0006685ddaadb379360f7f28294d3806">GetCore</a> ()</td></tr>
+<tr class="memdesc:a0006685ddaadb379360f7f28294d3806 inherit pro_methods_classfrontier_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the core.  <a href="classfrontier_1_1_component.html#a0006685ddaadb379360f7f28294d3806">More...</a><br /></td></tr>
+<tr class="separator:a0006685ddaadb379360f7f28294d3806 inherit pro_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25cc51fb97b0b4c5dad1401707d530ea inherit pro_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_input.html">Input</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a25cc51fb97b0b4c5dad1401707d530ea">GetInput</a> ()</td></tr>
+<tr class="memdesc:a25cc51fb97b0b4c5dad1401707d530ea inherit pro_methods_classfrontier_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the input class.  <a href="classfrontier_1_1_component.html#a25cc51fb97b0b4c5dad1401707d530ea">More...</a><br /></td></tr>
+<tr class="separator:a25cc51fb97b0b4c5dad1401707d530ea inherit pro_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24846c0ac8d4d607aff483ed7ffdf5f8 inherit pro_methods_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_environment.html">Environment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a24846c0ac8d4d607aff483ed7ffdf5f8">GetEnvironment</a> ()</td></tr>
+<tr class="memdesc:a24846c0ac8d4d607aff483ed7ffdf5f8 inherit pro_methods_classfrontier_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the environment class.  <a href="classfrontier_1_1_component.html#a24846c0ac8d4d607aff483ed7ffdf5f8">More...</a><br /></td></tr>
+<tr class="separator:a24846c0ac8d4d607aff483ed7ffdf5f8 inherit pro_methods_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classfrontier_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classfrontier_1_1_component')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classfrontier_1_1_component.html">frontier::Component</a></td></tr>
-<tr class="memitem:a02ebe1c95395e16efa33ddc8499c259c inherit pro_attribs_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#a02ebe1c95395e16efa33ddc8499c259c">Copyable</a> = false</td></tr>
-<tr class="separator:a02ebe1c95395e16efa33ddc8499c259c inherit pro_attribs_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad15af6da45dff3b37abb83bd5697fd87 inherit pro_attribs_classfrontier_1_1_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_component.html#ad15af6da45dff3b37abb83bd5697fd87">m_copyable</a> = false</td></tr>
+<tr class="memdesc:ad15af6da45dff3b37abb83bd5697fd87 inherit pro_attribs_classfrontier_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if a component has a copy constructor.  <a href="classfrontier_1_1_component.html#ad15af6da45dff3b37abb83bd5697fd87">More...</a><br /></td></tr>
+<tr class="separator:ad15af6da45dff3b37abb83bd5697fd87 inherit pro_attribs_classfrontier_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8e6077e5c7dd76f58e055a13e18ab8c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e6077e5c7dd76f58e055a13e18ab8c6">&#9670;&nbsp;</a></span>getMain()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Provides the view, projection and orthographic matricies for drawing objects to the screen. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a299ffcda274b10443e7f5dfe49a3866e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a299ffcda274b10443e7f5dfe49a3866e">&#9670;&nbsp;</a></span>GetOrthographicMatrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool frontier::Camera::getMain </td>
+          <td class="memname">glm::mat4 frontier::Camera::GetOrthographicMatrix </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -144,16 +156,18 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns an orthographic matrix based on the screen size and the near and far variables provided at initialisation. </p>
+
 </div>
 </div>
-<a id="a7c5d631b29e93e4e8772577dd3e62378"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c5d631b29e93e4e8772577dd3e62378">&#9670;&nbsp;</a></span>getOrthographicMatrix()</h2>
+<a id="a0332baf6ac3b2f062f6da519f6ae2b43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0332baf6ac3b2f062f6da519f6ae2b43">&#9670;&nbsp;</a></span>GetProjectionMatrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">glm::mat4 frontier::Camera::getOrthographicMatrix </td>
+          <td class="memname">glm::mat4 frontier::Camera::GetProjectionMatrix </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -161,16 +175,18 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns a projection matrix based on the field of view, near and far variables provided on initalisation. </p>
+
 </div>
 </div>
-<a id="ae3e5871e68bcb0d5577cc09b2273c641"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3e5871e68bcb0d5577cc09b2273c641">&#9670;&nbsp;</a></span>getProjectionMatrix()</h2>
+<a id="ad31e39125db73f05bfb9aabbf221c8e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad31e39125db73f05bfb9aabbf221c8e3">&#9670;&nbsp;</a></span>GetViewMatrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">glm::mat4 frontier::Camera::getProjectionMatrix </td>
+          <td class="memname">glm::mat4 frontier::Camera::GetViewMatrix </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -178,16 +194,18 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns a view matrix based on the inverse of the camera entity's model matrix. </p>
+
 </div>
 </div>
-<a id="a90858bfacddb80bedb062889b15d2d47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90858bfacddb80bedb062889b15d2d47">&#9670;&nbsp;</a></span>getViewMatrix()</h2>
+<a id="abccd21681649a9474ac1708522a4b89d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abccd21681649a9474ac1708522a4b89d">&#9670;&nbsp;</a></span>IsMainCamera()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">glm::mat4 frontier::Camera::getViewMatrix </td>
+          <td class="memname">bool frontier::Camera::IsMainCamera </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -195,10 +213,12 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Queries whether this camera is the main one that is being used for drawing. </p>
+
 </div>
 </div>
-<a id="a7bec1b9133e266bf50396883cb3e2b83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bec1b9133e266bf50396883cb3e2b83">&#9670;&nbsp;</a></span>OnInit()</h2>
+<a id="a8f3aa751dc37b1167b643c6aa1923b26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f3aa751dc37b1167b643c6aa1923b26">&#9670;&nbsp;</a></span>OnInit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -213,19 +233,19 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>fov</em>, </td>
+          <td class="paramname"><em>_fov</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>near</em>, </td>
+          <td class="paramname"><em>_near</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>far</em>&#160;</td>
+          <td class="paramname"><em>_far</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -235,68 +255,42 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a1f318703a68e4c070c85a1d9a27446d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f318703a68e4c070c85a1d9a27446d0">&#9670;&nbsp;</a></span>OnTick()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void frontier::Camera::OnTick </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="classfrontier_1_1_component.html#ab920f9bc07ce051ebb5559c5a66508d1">frontier::Component</a>.</p>
+<p>Initialises the camera component, this will be called by AddComponent in the <a class="el" href="classfrontier_1_1_entity.html" title="The base entity which components can be attached to. ">Entity</a> class, initialises the field of view, near and far variables. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_parent</td><td>The entity that this component is attached to. </td></tr>
+    <tr><td class="paramname">_fov</td><td>The field of view for the camera (used in the projection matrix). </td></tr>
+    <tr><td class="paramname">_near</td><td>The near plane for the camera. </td></tr>
+    <tr><td class="paramname">_far</td><td>The far plane for the camera. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="ab1872f3ceccbb6dcfa4fcf043f0eb5f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1872f3ceccbb6dcfa4fcf043f0eb5f8">&#9670;&nbsp;</a></span>setControllable()</h2>
+<a id="a177d7bf6ab9df81d673cef6489be156a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a177d7bf6ab9df81d673cef6489be156a">&#9670;&nbsp;</a></span>SetIsMainCamera()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void frontier::Camera::setControllable </td>
+          <td class="memname">void frontier::Camera::SetIsMainCamera </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>_control</em></td><td>)</td>
+          <td class="paramname"><em>_main</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ae8a9b95bf6e4eacdae709d188725e72a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8a9b95bf6e4eacdae709d188725e72a">&#9670;&nbsp;</a></span>setMain()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void frontier::Camera::setMain </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>main</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Sets the isMainCamera value, Unless you have a good reason, do not change this. this is handled by the <a class="el" href="classfrontier_1_1_core.html" title="The main core of the engine. This is where all entities, prefabs and resources get created...">Core</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_main</td><td>The new value for m_isMainCamera. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

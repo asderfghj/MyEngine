@@ -11,48 +11,48 @@ namespace frontier
 	void UIImage::OnInit(std::weak_ptr<Entity> _parent)
 	{
 		Component::OnInit(_parent);
-		_shader = _parent.lock()->getCore()->getUntexturedUiImageShader();
-		_preserveAspect = false;
-		_customShader = false;
-		_color = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
+		m_shader = _parent.lock()->GetCore()->getUntexturedUiImageShader();
+		m_preserveAspect = false;
+		m_customShader = false;
+		m_color = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
 		InitialiseQuad();
 	}
 
-	void UIImage::OnInit(std::weak_ptr<Entity> _parent, std::shared_ptr<Texture> _newtexture, bool preserveAspect)
+	void UIImage::OnInit(std::weak_ptr<Entity> _parent, std::shared_ptr<Texture> _newtexture, bool _preserveAspect)
 	{
 		Component::OnInit(_parent);
-		_shader = _parent.lock()->getCore()->getTexturedUiImageShader();
-		_preserveAspect = preserveAspect;
-		_customShader = false;
-		_texture = _newtexture;
-		_color = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
+		m_shader = _parent.lock()->GetCore()->getTexturedUiImageShader();
+		m_preserveAspect = _preserveAspect;
+		m_customShader = false;
+		m_texture = _newtexture;
+		m_color = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
 		InitialiseQuad();
 	}
 
 	void UIImage::OnTick()
 	{
 		glEnable(GL_BLEND);
-		if (_texture)
+		if (m_texture)
 		{
-			_shader->SetUniform("texture", _texture);
-			_texture->BindTexture();
+			m_shader->SetUniform("texture", m_texture);
+			m_texture->BindTexture();
 		}
 
-		glUseProgram(_shader->getID());
+		glUseProgram(m_shader->GetID());
 
-		_shader->SetUniform("ortho", getCore()->getMainCamera()->GetOrthographicMatrix());
-		if (_preserveAspect)
+		m_shader->SetUniform("ortho", GetCore()->GetMainCamera()->GetOrthographicMatrix());
+		if (m_preserveAspect)
 		{
-			_shader->SetUniform("model", getEntity()->getComponent<Transform>()->getModelMatrixModScale(glm::vec3(_texture->getWidth(), _texture->getHeight(), 1.0f)));
+			m_shader->SetUniform("model", GetEntity()->getComponent<Transform>()->GetModelMatrixModScale(glm::vec3(m_texture->GetWidth(), m_texture->GetHeight(), 1.0f)));
 		}
 		else
 		{
-			_shader->SetUniform("model", getEntity()->getComponent<Transform>()->getModelMatrix());
+			m_shader->SetUniform("model", GetEntity()->getComponent<Transform>()->GetModelMatrix());
 		}
-		_shader->SetUniform("color", _color);
+		m_shader->SetUniform("color", m_color);
 
-		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, verticesCount / 3);
+		glBindVertexArray(m_VAO);
+		glDrawArrays(GL_TRIANGLES, 0, m_verticesCount / 3);
 		glBindVertexArray(0);
 		glUseProgram(0);
 		glDisable(GL_BLEND);
@@ -61,41 +61,41 @@ namespace frontier
 
 	void UIImage::AttachShader(std::shared_ptr<Shader> _newShader)
 	{
-		_shader = _newShader;
-		_customShader = true;
+		m_shader = _newShader;
+		m_customShader = true;
 	}
 
-	void UIImage::AttachTexture(std::shared_ptr<Texture> _newTexture, bool preserveAspect)
+	void UIImage::AttachTexture(std::shared_ptr<Texture> _newTexture, bool _preserveAspect)
 	{
-		_texture = _newTexture;
-		_preserveAspect = preserveAspect;
-		if (!_customShader)
+		m_texture = _newTexture;
+		m_preserveAspect = _preserveAspect;
+		if (!m_customShader)
 		{
-			if (_texture)
+			if (m_texture)
 			{
-				_shader = getEntity()->getCore()->getTexturedUiImageShader();
+				m_shader = GetEntity()->GetCore()->getTexturedUiImageShader();
 			}
 			else
 			{
-				_shader = getEntity()->getCore()->getUntexturedUiImageShader();
+				m_shader = GetEntity()->GetCore()->getUntexturedUiImageShader();
 			}
 		}
 	}
 
-	void UIImage::setColor(glm::vec4 _newColor)
+	void UIImage::SetColor(glm::vec4 _newColor)
 	{
-		_color = _newColor;
+		m_color = _newColor;
 	}
 
 	void UIImage::InitialiseQuad()
 	{
-		glGenVertexArrays(1, &VAO);
-		glGenBuffers(1, &posVBO);
-		glGenBuffers(1, &texVBO);
+		glGenVertexArrays(1, &m_VAO);
+		glGenBuffers(1, &m_posVBO);
+		glGenBuffers(1, &m_texVBO);
 
-		glBindVertexArray(VAO);
+		glBindVertexArray(m_VAO);
 
-		glBindBuffer(GL_ARRAY_BUFFER, posVBO);
+		glBindBuffer(GL_ARRAY_BUFFER, m_posVBO);
 
 		std::vector<GLfloat> verts = {
 			-1.0f,  1.0f,  0.0f,
@@ -107,16 +107,16 @@ namespace frontier
 			-1.0f,  1.0f,  0.0f
 		};
 
-		verticesCount = verts.size();
+		m_verticesCount = verts.size();
 
 		glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * verts.size(), &verts.at(0), GL_STATIC_DRAW);
 
 		glEnableVertexAttribArray(0);
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (void*)0);
 
-		if (_texture)
+		if (m_texture)
 		{
-			glBindBuffer(GL_ARRAY_BUFFER, texVBO);
+			glBindBuffer(GL_ARRAY_BUFFER, m_texVBO);
 
 			std::vector<GLfloat> texcoords = {
 				0.0f, 1.0f,

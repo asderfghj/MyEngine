@@ -2,14 +2,14 @@
 
 namespace frontier
 {
-	void Prefab::init(std::weak_ptr<Core> _coreptr)
+	void Prefab::Init(std::weak_ptr<Core> _coreptr)
 	{
-		_core = _coreptr;
+		m_core = _coreptr;
 	}
 
 	std::vector<std::shared_ptr<Component>> Prefab::getComponents()
 	{
-		return _components;
+		return m_components;
 	}
 
 }

@@ -2,6 +2,11 @@
 \label{classfrontier_1_1_skybox}\index{frontier\+::\+Skybox@{frontier\+::\+Skybox}}
 
 
+Creates a skybox that acts as a backdrop for the scene. This will not move as the camera move.  
+
+
+
+
 {\ttfamily \#include $<$Skybox.\+h$>$}
 
 Inheritance diagram for frontier\+:\+:Skybox\+:\begin{figure}[H]
@@ -14,11 +19,14 @@ Inheritance diagram for frontier\+:\+:Skybox\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classfrontier_1_1_skybox_a02a06c87053a2efd6893c0b07465f3c2}{On\+Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \+\_\+parent, std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_cubemap_texture}{Cubemap\+Texture} $>$ \+\_\+skybox\+Texture)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialises the skybox with a cubemap texture. \end{DoxyCompactList}\item 
 void \hyperlink{classfrontier_1_1_skybox_a38b2ec1a28314c901f4388745d8f0471}{On\+Tick} () override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Draws the skybox. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
+
+\subsection{Detailed Description}
+Creates a skybox that acts as a backdrop for the scene. This will not move as the camera move. 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classfrontier_1_1_skybox_a02a06c87053a2efd6893c0b07465f3c2}\label{classfrontier_1_1_skybox_a02a06c87053a2efd6893c0b07465f3c2}} 
@@ -27,11 +35,26 @@ void \hyperlink{classfrontier_1_1_skybox_a38b2ec1a28314c901f4388745d8f0471}{On\+
 \subsubsection{\texorpdfstring{On\+Init()}{OnInit()}}
 {\footnotesize\ttfamily void frontier\+::\+Skybox\+::\+On\+Init (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$}]{\+\_\+parent,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_cubemap_texture}{Cubemap\+Texture} $>$}]{\+\_\+skybox\+Texture }\end{DoxyParamCaption})}
 
+
+
+Initialises the skybox with a cubemap texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+parent} & The entity that this component will be attached to. \\
+\hline
+{\em \+\_\+skybox\+Texture} & The texture that will be rendered on the skybox. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classfrontier_1_1_skybox_a38b2ec1a28314c901f4388745d8f0471}\label{classfrontier_1_1_skybox_a38b2ec1a28314c901f4388745d8f0471}} 
 \index{frontier\+::\+Skybox@{frontier\+::\+Skybox}!On\+Tick@{On\+Tick}}
 \index{On\+Tick@{On\+Tick}!frontier\+::\+Skybox@{frontier\+::\+Skybox}}
 \subsubsection{\texorpdfstring{On\+Tick()}{OnTick()}}
 {\footnotesize\ttfamily void frontier\+::\+Skybox\+::\+On\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Draws the skybox. 
 
 
 

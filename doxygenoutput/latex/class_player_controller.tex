@@ -14,9 +14,9 @@ Inheritance diagram for Player\+Controller\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_player_controller_a22c60d9e4464ee585f3592593f14bc50}{On\+Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{frontier\+::\+Entity} $>$ \+\_\+parent)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialises the component. Sets the pointer to the entity that this component is attached to. \end{DoxyCompactList}\item 
 void \hyperlink{class_player_controller_a5641058df338563ff6bb6bce7645ef7b}{On\+Tick} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Called every frame, use for data that needs to be calculated each frame. \end{DoxyCompactList}\item 
 glm\+::vec3 \hyperlink{class_player_controller_a32543b8dc76ddb473c77afa03760e4d6}{get\+Forward\+Vector} ()
 \item 
 void \hyperlink{class_player_controller_a6fe2f80c8a3bac13c044e848b12f86ab}{set\+U\+I\+Icons} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{frontier\+::\+Entity} $>$ \+\_\+icon1, std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{frontier\+::\+Entity} $>$ \+\_\+icon2, std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{frontier\+::\+Entity} $>$ \+\_\+icon3, std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{frontier\+::\+Entity} $>$ \+\_\+game\+Over)
@@ -65,6 +65,15 @@ bool \hyperlink{class_player_controller_a8cd8a56ee0332aebb447db6a691aa639}{Is\+I
 
 
 
+Initialises the component. Sets the pointer to the entity that this component is attached to. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+parent} & The entity that the component will be attached to. \\
+\hline
+\end{DoxyParams}
+
+
 Reimplemented from \hyperlink{classfrontier_1_1_component_af3da02905c4d79219d9b12f260a35ad1}{frontier\+::\+Component}.
 
 \mbox{\Hypertarget{class_player_controller_a5641058df338563ff6bb6bce7645ef7b}\label{class_player_controller_a5641058df338563ff6bb6bce7645ef7b}} 
@@ -72,6 +81,10 @@ Reimplemented from \hyperlink{classfrontier_1_1_component_af3da02905c4d79219d9b1
 \index{On\+Tick@{On\+Tick}!Player\+Controller@{Player\+Controller}}
 \subsubsection{\texorpdfstring{On\+Tick()}{OnTick()}}
 {\footnotesize\ttfamily void Player\+Controller\+::\+On\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame, use for data that needs to be calculated each frame. 
 
 
 

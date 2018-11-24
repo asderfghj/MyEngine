@@ -70,6 +70,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Acts as a template for an entity, can be passed into a new entity and the information stored will pass on to the new entity.  
+ <a href="classfrontier_1_1_prefab.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_prefab_8h_source.html">Prefab.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for frontier::Prefab:</div>
@@ -77,93 +80,120 @@ Inheritance diagram for frontier::Prefab:</div>
  <div class="center">
   <img src="classfrontier_1_1_prefab.png" usemap="#frontier::Prefab_map" alt=""/>
   <map id="frontier::Prefab_map" name="frontier::Prefab_map">
-<area href="classfrontier_1_1_entity.html" alt="frontier::Entity" shape="rect" coords="0,56,231,80"/>
+<area href="classfrontier_1_1_entity.html" title="The base entity which components can be attached to. " alt="frontier::Entity" shape="rect" coords="0,56,231,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6f41f76c2c8484ba9d4451a936f43e42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_prefab.html#a6f41f76c2c8484ba9d4451a936f43e42">init</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt; _coreptr) override</td></tr>
-<tr class="separator:a6f41f76c2c8484ba9d4451a936f43e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69924d353fb96975efbba17dc0ba3f3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_prefab.html#a69924d353fb96975efbba17dc0ba3f3a">Init</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt; _corePtr) override</td></tr>
+<tr class="memdesc:a69924d353fb96975efbba17dc0ba3f3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the <a class="el" href="classfrontier_1_1_prefab.html" title="Acts as a template for an entity, can be passed into a new entity and the information stored will pas...">Prefab</a>.  <a href="#a69924d353fb96975efbba17dc0ba3f3a">More...</a><br /></td></tr>
+<tr class="separator:a69924d353fb96975efbba17dc0ba3f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d857efae6fb692384a6ab0144d66898"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_component.html">Component</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_prefab.html#a0d857efae6fb692384a6ab0144d66898">getComponents</a> ()</td></tr>
+<tr class="memdesc:a0d857efae6fb692384a6ab0144d66898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector of components attached to the prefab.  <a href="#a0d857efae6fb692384a6ab0144d66898">More...</a><br /></td></tr>
 <tr class="separator:a0d857efae6fb692384a6ab0144d66898"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcc3288adb9bf3369b6d9f22d54cce1f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:abcc3288adb9bf3369b6d9f22d54cce1f"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_prefab.html#abcc3288adb9bf3369b6d9f22d54cce1f">addComponent</a> ()</td></tr>
-<tr class="separator:abcc3288adb9bf3369b6d9f22d54cce1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf0e874502568d298797aabfa631f5c1"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A &gt; </td></tr>
-<tr class="memitem:aaf0e874502568d298797aabfa631f5c1"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_prefab.html#aaf0e874502568d298797aabfa631f5c1">addComponent</a> (A _a)</td></tr>
-<tr class="separator:aaf0e874502568d298797aabfa631f5c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4925e859bce6f80b73f65e363cf192b8"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A , typename B &gt; </td></tr>
-<tr class="memitem:a4925e859bce6f80b73f65e363cf192b8"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_prefab.html#a4925e859bce6f80b73f65e363cf192b8">addComponent</a> (A _a, B _b)</td></tr>
-<tr class="separator:a4925e859bce6f80b73f65e363cf192b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11de7e559ff0fd682803ce32cbc5bbc9"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A , typename B , typename C &gt; </td></tr>
-<tr class="memitem:a11de7e559ff0fd682803ce32cbc5bbc9"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_prefab.html#a11de7e559ff0fd682803ce32cbc5bbc9">addComponent</a> (A _a, B _b, C _c)</td></tr>
-<tr class="separator:a11de7e559ff0fd682803ce32cbc5bbc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08333ffa5f6ea5e9dee3366bb6a98e85"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A , typename B , typename C , typename D &gt; </td></tr>
-<tr class="memitem:a08333ffa5f6ea5e9dee3366bb6a98e85"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_prefab.html#a08333ffa5f6ea5e9dee3366bb6a98e85">addComponent</a> (A _a, B _b, C _c, D _d)</td></tr>
-<tr class="separator:a08333ffa5f6ea5e9dee3366bb6a98e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9b0194d37a4d02cb6c5a81757e0fb4d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:af9b0194d37a4d02cb6c5a81757e0fb4d"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_prefab.html#af9b0194d37a4d02cb6c5a81757e0fb4d">getComponent</a> ()</td></tr>
-<tr class="separator:af9b0194d37a4d02cb6c5a81757e0fb4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3099b0a889fb31500c7620bf96d878a1"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a3099b0a889fb31500c7620bf96d878a1"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_prefab.html#a3099b0a889fb31500c7620bf96d878a1">AddComponent</a> ()</td></tr>
+<tr class="memdesc:a3099b0a889fb31500c7620bf96d878a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a component with no parameters in the initialiser.  <a href="#a3099b0a889fb31500c7620bf96d878a1">More...</a><br /></td></tr>
+<tr class="separator:a3099b0a889fb31500c7620bf96d878a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96024d1688036fa4e6f7ec1a9d27b906"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A &gt; </td></tr>
+<tr class="memitem:a96024d1688036fa4e6f7ec1a9d27b906"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_prefab.html#a96024d1688036fa4e6f7ec1a9d27b906">AddComponent</a> (A _a)</td></tr>
+<tr class="memdesc:a96024d1688036fa4e6f7ec1a9d27b906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a component with one parameters in the initialiser.  <a href="#a96024d1688036fa4e6f7ec1a9d27b906">More...</a><br /></td></tr>
+<tr class="separator:a96024d1688036fa4e6f7ec1a9d27b906"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfe04a37ed21051b13f6c238505d654a"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A , typename B &gt; </td></tr>
+<tr class="memitem:acfe04a37ed21051b13f6c238505d654a"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_prefab.html#acfe04a37ed21051b13f6c238505d654a">AddComponent</a> (A _a, B _b)</td></tr>
+<tr class="memdesc:acfe04a37ed21051b13f6c238505d654a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a component with two parameters in the initialiser.  <a href="#acfe04a37ed21051b13f6c238505d654a">More...</a><br /></td></tr>
+<tr class="separator:acfe04a37ed21051b13f6c238505d654a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c7f7106b06aa35137eb9edc37221f68"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A , typename B , typename C &gt; </td></tr>
+<tr class="memitem:a6c7f7106b06aa35137eb9edc37221f68"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_prefab.html#a6c7f7106b06aa35137eb9edc37221f68">AddComponent</a> (A _a, B _b, C _c)</td></tr>
+<tr class="memdesc:a6c7f7106b06aa35137eb9edc37221f68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a component with three parameters in the initialiser.  <a href="#a6c7f7106b06aa35137eb9edc37221f68">More...</a><br /></td></tr>
+<tr class="separator:a6c7f7106b06aa35137eb9edc37221f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abee1253ab0b10d162df0b7729916a441"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A , typename B , typename C , typename D &gt; </td></tr>
+<tr class="memitem:abee1253ab0b10d162df0b7729916a441"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_prefab.html#abee1253ab0b10d162df0b7729916a441">AddComponent</a> (A _a, B _b, C _c, D _d)</td></tr>
+<tr class="memdesc:abee1253ab0b10d162df0b7729916a441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a component with four parameters in the initialiser.  <a href="#abee1253ab0b10d162df0b7729916a441">More...</a><br /></td></tr>
+<tr class="separator:abee1253ab0b10d162df0b7729916a441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54eab9e949addd7f9ed382893d60a56c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a54eab9e949addd7f9ed382893d60a56c"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_prefab.html#a54eab9e949addd7f9ed382893d60a56c">GetComponent</a> ()</td></tr>
+<tr class="memdesc:a54eab9e949addd7f9ed382893d60a56c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a component of the specified type if one is attached.  <a href="#a54eab9e949addd7f9ed382893d60a56c">More...</a><br /></td></tr>
+<tr class="separator:a54eab9e949addd7f9ed382893d60a56c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classfrontier_1_1_entity"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classfrontier_1_1_entity')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classfrontier_1_1_entity.html">frontier::Entity</a></td></tr>
-<tr class="memitem:a1d3f7c7fd0e6f01fa609e06fe76c8791 inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a1d3f7c7fd0e6f01fa609e06fe76c8791">Entity</a> ()</td></tr>
-<tr class="separator:a1d3f7c7fd0e6f01fa609e06fe76c8791 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56e4bc3a132b605bd8432259d8209808 inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a56e4bc3a132b605bd8432259d8209808">~Entity</a> ()</td></tr>
+<tr class="memdesc:a56e4bc3a132b605bd8432259d8209808 inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for <a class="el" href="classfrontier_1_1_entity.html" title="The base entity which components can be attached to. ">Entity</a>.  <a href="classfrontier_1_1_entity.html#a56e4bc3a132b605bd8432259d8209808">More...</a><br /></td></tr>
 <tr class="separator:a56e4bc3a132b605bd8432259d8209808 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dd740cd4134ddab40663239527959e1 inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a8dd740cd4134ddab40663239527959e1">init</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt; _corePtr, glm::vec3 _position=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _rotation=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _scale=glm::vec3(1.0f, 1.0f, 1.0f))</td></tr>
-<tr class="separator:a8dd740cd4134ddab40663239527959e1 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba15243f8a661c4c9248e405fd869894 inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#aba15243f8a661c4c9248e405fd869894">init</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt; _corePtr, std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_prefab.html">Prefab</a> &gt; _prefab, glm::vec3 _position=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _rotation=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _scale=glm::vec3(1.0f, 1.0f, 1.0f))</td></tr>
-<tr class="separator:aba15243f8a661c4c9248e405fd869894 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16f971a959ad628436e92368c342e2a2 inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a16f971a959ad628436e92368c342e2a2">getCore</a> ()</td></tr>
-<tr class="separator:a16f971a959ad628436e92368c342e2a2 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99e123fc3c5fae5de4451fa5ea30d998 inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a99e123fc3c5fae5de4451fa5ea30d998">tick</a> ()</td></tr>
-<tr class="separator:a99e123fc3c5fae5de4451fa5ea30d998 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35704148ee2160386445e9aaed3cbc78 inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a35704148ee2160386445e9aaed3cbc78">setSelf</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; _selfPtr)</td></tr>
-<tr class="separator:a35704148ee2160386445e9aaed3cbc78 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14b8bf3af26752cdd0240a9f48d411e1 inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a14b8bf3af26752cdd0240a9f48d411e1">setActive</a> (bool active)</td></tr>
-<tr class="separator:a14b8bf3af26752cdd0240a9f48d411e1 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a5eba11cf4dacc3de15ef460ee9d7de inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a3a5eba11cf4dacc3de15ef460ee9d7de">setActivating</a> (bool activating)</td></tr>
-<tr class="separator:a3a5eba11cf4dacc3de15ef460ee9d7de inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b19a21c357e557a3c12b6257d21ff09 inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a1b19a21c357e557a3c12b6257d21ff09">isActive</a> ()</td></tr>
-<tr class="separator:a1b19a21c357e557a3c12b6257d21ff09 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4de39f3a34645051d7d223b3f744761c inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a4de39f3a34645051d7d223b3f744761c">isActivating</a> ()</td></tr>
-<tr class="separator:a4de39f3a34645051d7d223b3f744761c inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f78d98f8636d2db6fd9f6c6259f35cd inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a7f78d98f8636d2db6fd9f6c6259f35cd inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a7f78d98f8636d2db6fd9f6c6259f35cd">addComponent</a> ()</td></tr>
-<tr class="separator:a7f78d98f8636d2db6fd9f6c6259f35cd inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2a5a12a0f5047bc0fbb5f7eab573213 inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#ae2a5a12a0f5047bc0fbb5f7eab573213">Init</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt; _corePtr, glm::vec3 _position=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _rotation=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _scale=glm::vec3(1.0f, 1.0f, 1.0f))</td></tr>
+<tr class="memdesc:ae2a5a12a0f5047bc0fbb5f7eab573213 inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the entity, sets the core pointer and adds a transform component and sets the initial parameters in the transform.  <a href="classfrontier_1_1_entity.html#ae2a5a12a0f5047bc0fbb5f7eab573213">More...</a><br /></td></tr>
+<tr class="separator:ae2a5a12a0f5047bc0fbb5f7eab573213 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7c75267698a00c70bbcf4d81a96bb9a inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#ae7c75267698a00c70bbcf4d81a96bb9a">Init</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt; _corePtr, std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_prefab.html">Prefab</a> &gt; _prefab, glm::vec3 _position=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _rotation=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _scale=glm::vec3(1.0f, 1.0f, 1.0f))</td></tr>
+<tr class="memdesc:ae7c75267698a00c70bbcf4d81a96bb9a inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the entity using a prefab, sets the core pointer and adds a transform component and sets the initial parameters in the transform.  <a href="classfrontier_1_1_entity.html#ae7c75267698a00c70bbcf4d81a96bb9a">More...</a><br /></td></tr>
+<tr class="separator:ae7c75267698a00c70bbcf4d81a96bb9a inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1c56e995259d4cef5221dbc3304b819 inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#af1c56e995259d4cef5221dbc3304b819">GetCore</a> ()</td></tr>
+<tr class="memdesc:af1c56e995259d4cef5221dbc3304b819 inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the core.  <a href="classfrontier_1_1_entity.html#af1c56e995259d4cef5221dbc3304b819">More...</a><br /></td></tr>
+<tr class="separator:af1c56e995259d4cef5221dbc3304b819 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f8063271fecd3ff15cfb2f3d6afa2e4 inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a9f8063271fecd3ff15cfb2f3d6afa2e4">Tick</a> ()</td></tr>
+<tr class="memdesc:a9f8063271fecd3ff15cfb2f3d6afa2e4 inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates all of the components in the entity, call handled by main.  <a href="classfrontier_1_1_entity.html#a9f8063271fecd3ff15cfb2f3d6afa2e4">More...</a><br /></td></tr>
+<tr class="separator:a9f8063271fecd3ff15cfb2f3d6afa2e4 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431409dd431097a4c523cb6cc83edb0c inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a431409dd431097a4c523cb6cc83edb0c">SetSelf</a> (std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt; _selfPtr)</td></tr>
+<tr class="memdesc:a431409dd431097a4c523cb6cc83edb0c inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pointer to the entity, call handled by main.  <a href="classfrontier_1_1_entity.html#a431409dd431097a4c523cb6cc83edb0c">More...</a><br /></td></tr>
+<tr class="separator:a431409dd431097a4c523cb6cc83edb0c inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5fd143b1a7bd1955717c850382a0794 inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#ae5fd143b1a7bd1955717c850382a0794">SetActive</a> (bool _active)</td></tr>
+<tr class="memdesc:ae5fd143b1a7bd1955717c850382a0794 inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the entity to active or inactive, inactive entities to not run tick until they have been activated again.  <a href="classfrontier_1_1_entity.html#ae5fd143b1a7bd1955717c850382a0794">More...</a><br /></td></tr>
+<tr class="separator:ae5fd143b1a7bd1955717c850382a0794 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa990e97d41e4c2c48d4e91247def935 inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#aaa990e97d41e4c2c48d4e91247def935">SetActivating</a> (bool _activating)</td></tr>
+<tr class="memdesc:aaa990e97d41e4c2c48d4e91247def935 inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the activating state (handled internally)  <a href="classfrontier_1_1_entity.html#aaa990e97d41e4c2c48d4e91247def935">More...</a><br /></td></tr>
+<tr class="separator:aaa990e97d41e4c2c48d4e91247def935 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18ff08281282ad84e50678009ba7d5f8 inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a18ff08281282ad84e50678009ba7d5f8">IsActive</a> ()</td></tr>
+<tr class="memdesc:a18ff08281282ad84e50678009ba7d5f8 inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the active state.  <a href="classfrontier_1_1_entity.html#a18ff08281282ad84e50678009ba7d5f8">More...</a><br /></td></tr>
+<tr class="separator:a18ff08281282ad84e50678009ba7d5f8 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7fad9388c0d91307c7103871e10aeeb inherit pub_methods_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#ae7fad9388c0d91307c7103871e10aeeb">IsActivating</a> ()</td></tr>
+<tr class="memdesc:ae7fad9388c0d91307c7103871e10aeeb inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the activating state.  <a href="classfrontier_1_1_entity.html#ae7fad9388c0d91307c7103871e10aeeb">More...</a><br /></td></tr>
+<tr class="separator:ae7fad9388c0d91307c7103871e10aeeb inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e19d6aee12b8d96605887e5576e6eb0 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5e19d6aee12b8d96605887e5576e6eb0 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a5e19d6aee12b8d96605887e5576e6eb0">AddComponent</a> ()</td></tr>
+<tr class="memdesc:a5e19d6aee12b8d96605887e5576e6eb0 inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a component of the specified type with no additional parameters.  <a href="classfrontier_1_1_entity.html#a5e19d6aee12b8d96605887e5576e6eb0">More...</a><br /></td></tr>
+<tr class="separator:a5e19d6aee12b8d96605887e5576e6eb0 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e8950fc46a87fca465a94f66ac40494 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a7e8950fc46a87fca465a94f66ac40494 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a7e8950fc46a87fca465a94f66ac40494">addCopyOfComponent</a> (std::weak_ptr&lt; T &gt; _original)</td></tr>
+<tr class="memdesc:a7e8950fc46a87fca465a94f66ac40494 inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a copy of a component, usually taken from a prefab.  <a href="classfrontier_1_1_entity.html#a7e8950fc46a87fca465a94f66ac40494">More...</a><br /></td></tr>
 <tr class="separator:a7e8950fc46a87fca465a94f66ac40494 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab47b8543ddd540ce1ffb37c42f1d26fd inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A &gt; </td></tr>
-<tr class="memitem:ab47b8543ddd540ce1ffb37c42f1d26fd inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#ab47b8543ddd540ce1ffb37c42f1d26fd">addComponent</a> (A _a)</td></tr>
-<tr class="separator:ab47b8543ddd540ce1ffb37c42f1d26fd inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b52a24fa9ecfe390bf0353ce9f87432 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A , typename B &gt; </td></tr>
-<tr class="memitem:a7b52a24fa9ecfe390bf0353ce9f87432 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a7b52a24fa9ecfe390bf0353ce9f87432">addComponent</a> (A _a, B _b)</td></tr>
-<tr class="separator:a7b52a24fa9ecfe390bf0353ce9f87432 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e27fe11f4f655d6ba1a63a5594d4efb inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A , typename B , typename C &gt; </td></tr>
-<tr class="memitem:a0e27fe11f4f655d6ba1a63a5594d4efb inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a0e27fe11f4f655d6ba1a63a5594d4efb">addComponent</a> (A _a, B _b, C _c)</td></tr>
-<tr class="separator:a0e27fe11f4f655d6ba1a63a5594d4efb inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a77572b04da8df53eea3aab783df9c7 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A , typename B , typename C , typename D &gt; </td></tr>
-<tr class="memitem:a0a77572b04da8df53eea3aab783df9c7 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a0a77572b04da8df53eea3aab783df9c7">addComponent</a> (A _a, B _b, C _c, D _d)</td></tr>
-<tr class="separator:a0a77572b04da8df53eea3aab783df9c7 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac554988ee6313f4ef9d5e777825d82a0 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A &gt; </td></tr>
+<tr class="memitem:ac554988ee6313f4ef9d5e777825d82a0 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#ac554988ee6313f4ef9d5e777825d82a0">AddComponent</a> (A _a)</td></tr>
+<tr class="memdesc:ac554988ee6313f4ef9d5e777825d82a0 inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a component of the specified type with one additional parameters.  <a href="classfrontier_1_1_entity.html#ac554988ee6313f4ef9d5e777825d82a0">More...</a><br /></td></tr>
+<tr class="separator:ac554988ee6313f4ef9d5e777825d82a0 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a203192666b3d100e5cf2e0f4427e3d85 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A , typename B &gt; </td></tr>
+<tr class="memitem:a203192666b3d100e5cf2e0f4427e3d85 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a203192666b3d100e5cf2e0f4427e3d85">AddComponent</a> (A _a, B _b)</td></tr>
+<tr class="memdesc:a203192666b3d100e5cf2e0f4427e3d85 inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a component of the specified type with two additional parameters.  <a href="classfrontier_1_1_entity.html#a203192666b3d100e5cf2e0f4427e3d85">More...</a><br /></td></tr>
+<tr class="separator:a203192666b3d100e5cf2e0f4427e3d85 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1af2d9f16c04053a3370afdf08ce3ea inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A , typename B , typename C &gt; </td></tr>
+<tr class="memitem:ac1af2d9f16c04053a3370afdf08ce3ea inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#ac1af2d9f16c04053a3370afdf08ce3ea">AddComponent</a> (A _a, B _b, C _c)</td></tr>
+<tr class="memdesc:ac1af2d9f16c04053a3370afdf08ce3ea inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a component of the specified type with three additional parameters.  <a href="classfrontier_1_1_entity.html#ac1af2d9f16c04053a3370afdf08ce3ea">More...</a><br /></td></tr>
+<tr class="separator:ac1af2d9f16c04053a3370afdf08ce3ea inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a892c1807ca5a19e92b9e4f4d04b26131 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A , typename B , typename C , typename D &gt; </td></tr>
+<tr class="memitem:a892c1807ca5a19e92b9e4f4d04b26131 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a892c1807ca5a19e92b9e4f4d04b26131">AddComponent</a> (A _a, B _b, C _c, D _d)</td></tr>
+<tr class="memdesc:a892c1807ca5a19e92b9e4f4d04b26131 inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a component of the specified type with four additional parameters.  <a href="classfrontier_1_1_entity.html#a892c1807ca5a19e92b9e4f4d04b26131">More...</a><br /></td></tr>
+<tr class="separator:a892c1807ca5a19e92b9e4f4d04b26131 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7657bce9cd7f405f69e59c61a69adf86 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a7657bce9cd7f405f69e59c61a69adf86 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a7657bce9cd7f405f69e59c61a69adf86">getComponent</a> ()</td></tr>
+<tr class="memdesc:a7657bce9cd7f405f69e59c61a69adf86 inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a component of the specified type if one exists.  <a href="classfrontier_1_1_entity.html#a7657bce9cd7f405f69e59c61a69adf86">More...</a><br /></td></tr>
 <tr class="separator:a7657bce9cd7f405f69e59c61a69adf86 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52e5f9cb6d6f8fddef34f58b7cc5daa8 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a52e5f9cb6d6f8fddef34f58b7cc5daa8 inherit pub_methods_classfrontier_1_1_entity"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a52e5f9cb6d6f8fddef34f58b7cc5daa8">hasComponent</a> ()</td></tr>
+<tr class="memdesc:a52e5f9cb6d6f8fddef34f58b7cc5daa8 inherit pub_methods_classfrontier_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries whether a component of the specified type exists on the entity.  <a href="classfrontier_1_1_entity.html#a52e5f9cb6d6f8fddef34f58b7cc5daa8">More...</a><br /></td></tr>
 <tr class="separator:a52e5f9cb6d6f8fddef34f58b7cc5daa8 inherit pub_methods_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classfrontier_1_1_entity"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classfrontier_1_1_entity')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classfrontier_1_1_entity.html">frontier::Entity</a></td></tr>
-<tr class="memitem:aa6157be575485f3a37f11e57b5c8898e inherit pro_attribs_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#aa6157be575485f3a37f11e57b5c8898e">_core</a></td></tr>
-<tr class="separator:aa6157be575485f3a37f11e57b5c8898e inherit pro_attribs_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29a54e9eb639ffa8ac51d2087b2c1ed5 inherit pro_attribs_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a29a54e9eb639ffa8ac51d2087b2c1ed5">_self</a></td></tr>
-<tr class="separator:a29a54e9eb639ffa8ac51d2087b2c1ed5 inherit pro_attribs_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51d9396520afa49f35aa9459ce4f6134 inherit pro_attribs_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#a51d9396520afa49f35aa9459ce4f6134">m_core</a></td></tr>
+<tr class="separator:a51d9396520afa49f35aa9459ce4f6134 inherit pro_attribs_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba38b7e5d44225066175d451de59c50 inherit pro_attribs_classfrontier_1_1_entity"><td class="memItemLeft" align="right" valign="top">std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_entity.html#acba38b7e5d44225066175d451de59c50">m_self</a></td></tr>
+<tr class="separator:acba38b7e5d44225066175d451de59c50 inherit pro_attribs_classfrontier_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="abcc3288adb9bf3369b6d9f22d54cce1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcc3288adb9bf3369b6d9f22d54cce1f">&#9670;&nbsp;</a></span>addComponent() <span class="overload">[1/5]</span></h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Acts as a template for an entity, can be passed into a new entity and the information stored will pass on to the new entity. </p>
+<p>Currently, only these components will be copied into an entity: -collider -mesh renderer (with mesh, textures and shaders) -asteroid behaviour -projectile behaviour </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3099b0a889fb31500c7620bf96d878a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3099b0a889fb31500c7620bf96d878a1">&#9670;&nbsp;</a></span>AddComponent() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,7 +204,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;T&gt; frontier::Prefab::addComponent </td>
+          <td class="memname">std::shared_ptr&lt;T&gt; frontier::Prefab::AddComponent </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -187,10 +217,12 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Adds a component with no parameters in the initialiser. </p>
+
 </div>
 </div>
-<a id="aaf0e874502568d298797aabfa631f5c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf0e874502568d298797aabfa631f5c1">&#9670;&nbsp;</a></span>addComponent() <span class="overload">[2/5]</span></h2>
+<a id="a96024d1688036fa4e6f7ec1a9d27b906"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96024d1688036fa4e6f7ec1a9d27b906">&#9670;&nbsp;</a></span>AddComponent() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -201,7 +233,7 @@ template&lt;typename T , typename A &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;T&gt; frontier::Prefab::addComponent </td>
+          <td class="memname">std::shared_ptr&lt;T&gt; frontier::Prefab::AddComponent </td>
           <td>(</td>
           <td class="paramtype">A&#160;</td>
           <td class="paramname"><em>_a</em></td><td>)</td>
@@ -215,10 +247,12 @@ template&lt;typename T , typename A &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Adds a component with one parameters in the initialiser. </p>
+
 </div>
 </div>
-<a id="a4925e859bce6f80b73f65e363cf192b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4925e859bce6f80b73f65e363cf192b8">&#9670;&nbsp;</a></span>addComponent() <span class="overload">[3/5]</span></h2>
+<a id="acfe04a37ed21051b13f6c238505d654a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfe04a37ed21051b13f6c238505d654a">&#9670;&nbsp;</a></span>AddComponent() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,7 +263,7 @@ template&lt;typename T , typename A , typename B &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;T&gt; frontier::Prefab::addComponent </td>
+          <td class="memname">std::shared_ptr&lt;T&gt; frontier::Prefab::AddComponent </td>
           <td>(</td>
           <td class="paramtype">A&#160;</td>
           <td class="paramname"><em>_a</em>, </td>
@@ -253,10 +287,12 @@ template&lt;typename T , typename A , typename B &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Adds a component with two parameters in the initialiser. </p>
+
 </div>
 </div>
-<a id="a11de7e559ff0fd682803ce32cbc5bbc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11de7e559ff0fd682803ce32cbc5bbc9">&#9670;&nbsp;</a></span>addComponent() <span class="overload">[4/5]</span></h2>
+<a id="a6c7f7106b06aa35137eb9edc37221f68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c7f7106b06aa35137eb9edc37221f68">&#9670;&nbsp;</a></span>AddComponent() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -267,7 +303,7 @@ template&lt;typename T , typename A , typename B , typename C &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;T&gt; frontier::Prefab::addComponent </td>
+          <td class="memname">std::shared_ptr&lt;T&gt; frontier::Prefab::AddComponent </td>
           <td>(</td>
           <td class="paramtype">A&#160;</td>
           <td class="paramname"><em>_a</em>, </td>
@@ -297,10 +333,12 @@ template&lt;typename T , typename A , typename B , typename C &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Adds a component with three parameters in the initialiser. </p>
+
 </div>
 </div>
-<a id="a08333ffa5f6ea5e9dee3366bb6a98e85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08333ffa5f6ea5e9dee3366bb6a98e85">&#9670;&nbsp;</a></span>addComponent() <span class="overload">[5/5]</span></h2>
+<a id="abee1253ab0b10d162df0b7729916a441"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abee1253ab0b10d162df0b7729916a441">&#9670;&nbsp;</a></span>AddComponent() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -311,7 +349,7 @@ template&lt;typename T , typename A , typename B , typename C , typename D &gt; 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;T&gt; frontier::Prefab::addComponent </td>
+          <td class="memname">std::shared_ptr&lt;T&gt; frontier::Prefab::AddComponent </td>
           <td>(</td>
           <td class="paramtype">A&#160;</td>
           <td class="paramname"><em>_a</em>, </td>
@@ -347,10 +385,12 @@ template&lt;typename T , typename A , typename B , typename C , typename D &gt; 
 </table>
 </div><div class="memdoc">
 
+<p>Adds a component with four parameters in the initialiser. </p>
+
 </div>
 </div>
-<a id="af9b0194d37a4d02cb6c5a81757e0fb4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9b0194d37a4d02cb6c5a81757e0fb4d">&#9670;&nbsp;</a></span>getComponent()</h2>
+<a id="a54eab9e949addd7f9ed382893d60a56c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54eab9e949addd7f9ed382893d60a56c">&#9670;&nbsp;</a></span>GetComponent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -361,7 +401,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;T&gt; frontier::Prefab::getComponent </td>
+          <td class="memname">std::shared_ptr&lt;T&gt; frontier::Prefab::GetComponent </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -373,6 +413,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns a component of the specified type if one is attached. </p>
 
 </div>
 </div>
@@ -391,10 +433,12 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Returns a vector of components attached to the prefab. </p>
+
 </div>
 </div>
-<a id="a6f41f76c2c8484ba9d4451a936f43e42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f41f76c2c8484ba9d4451a936f43e42">&#9670;&nbsp;</a></span>init()</h2>
+<a id="a69924d353fb96975efbba17dc0ba3f3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69924d353fb96975efbba17dc0ba3f3a">&#9670;&nbsp;</a></span>Init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -403,10 +447,10 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void frontier::Prefab::init </td>
+          <td class="memname">void frontier::Prefab::Init </td>
           <td>(</td>
           <td class="paramtype">std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_core.html">Core</a> &gt;&#160;</td>
-          <td class="paramname"><em>_coreptr</em></td><td>)</td>
+          <td class="paramname"><em>_corePtr</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -417,7 +461,15 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classfrontier_1_1_entity.html#a9a37ec4188e73c190471a5de2db21c77">frontier::Entity</a>.</p>
+<p>Initialises the <a class="el" href="classfrontier_1_1_prefab.html" title="Acts as a template for an entity, can be passed into a new entity and the information stored will pas...">Prefab</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_corePtr</td><td>Pointer to the core. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classfrontier_1_1_entity.html#a94c998d26ccda48af3048eacd6d3c973">frontier::Entity</a>.</p>
 
 </div>
 </div>

@@ -72,6 +72,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>A group of meshes that make up a model.  
+ <a href="classfrontier_1_1_model.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_model_8h_source.html">Model.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for frontier::Model:</div>
@@ -79,61 +82,32 @@ Inheritance diagram for frontier::Model:</div>
  <div class="center">
   <img src="classfrontier_1_1_model.png" usemap="#frontier::Model_map" alt=""/>
   <map id="frontier::Model_map" name="frontier::Model_map">
-<area href="classfrontier_1_1_resource.html" alt="frontier::Resource" shape="rect" coords="0,0,113,24"/>
+<area href="classfrontier_1_1_resource.html" title="Base class for a resource, all other resource types derive from this. " alt="frontier::Resource" shape="rect" coords="0,0,113,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8285f56a5eff764d33adba7ba20b5a81"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_model.html#a8285f56a5eff764d33adba7ba20b5a81">Model</a> ()</td></tr>
-<tr class="separator:a8285f56a5eff764d33adba7ba20b5a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab969b8ae4c222ac60f347a5008b19bad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_model.html#ab969b8ae4c222ac60f347a5008b19bad">Draw</a> (glm::mat4 _model, glm::mat4 _view, glm::mat4 _proj, std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_texture.html">Texture</a> &gt; _tex, std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_shader.html">Shader</a> &gt; _shader)</td></tr>
+<tr class="memdesc:ab969b8ae4c222ac60f347a5008b19bad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the model.  <a href="#ab969b8ae4c222ac60f347a5008b19bad">More...</a><br /></td></tr>
 <tr class="separator:ab969b8ae4c222ac60f347a5008b19bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classfrontier_1_1_resource"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classfrontier_1_1_resource')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classfrontier_1_1_resource.html">frontier::Resource</a></td></tr>
-<tr class="memitem:a4ff9f98abc38d11f70b688a9886988c2 inherit pub_methods_classfrontier_1_1_resource"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_resource.html#a4ff9f98abc38d11f70b688a9886988c2">Resource</a> ()</td></tr>
-<tr class="separator:a4ff9f98abc38d11f70b688a9886988c2 inherit pub_methods_classfrontier_1_1_resource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea4c158b678419246b21b69ef27ffca6 inherit pub_methods_classfrontier_1_1_resource"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_resource.html#aea4c158b678419246b21b69ef27ffca6">Resource</a> (std::string _pathStr)</td></tr>
-<tr class="separator:aea4c158b678419246b21b69ef27ffca6 inherit pub_methods_classfrontier_1_1_resource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bad96aa980d5300ddce81602a8d2f91 inherit pub_methods_classfrontier_1_1_resource"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_resource.html#a3bad96aa980d5300ddce81602a8d2f91">~Resource</a> ()</td></tr>
-<tr class="separator:a3bad96aa980d5300ddce81602a8d2f91 inherit pub_methods_classfrontier_1_1_resource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:abd0a135e820403384354644e5a348e84"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_model.html">Model</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_model.html#abd0a135e820403384354644e5a348e84">Create</a> (const char *path, std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_resources.html">Resources</a> &gt; _resources)</td></tr>
-<tr class="separator:abd0a135e820403384354644e5a348e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78f05cbc47e201551ccf3bbbd1d0fcbd"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_model.html">Model</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_model.html#a78f05cbc47e201551ccf3bbbd1d0fcbd">Create</a> (const char *_path, std::weak_ptr&lt; <a class="el" href="classfrontier_1_1_resources.html">Resources</a> &gt; _resources)</td></tr>
+<tr class="memdesc:a78f05cbc47e201551ccf3bbbd1d0fcbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a model froma filepath to be used in a <a class="el" href="classfrontier_1_1_mesh_renderer.html" title="Container for a model. ">MeshRenderer</a>.  <a href="#a78f05cbc47e201551ccf3bbbd1d0fcbd">More...</a><br /></td></tr>
+<tr class="separator:a78f05cbc47e201551ccf3bbbd1d0fcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:aa41a130f156b145bffb3f4b5172c4c93"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_model.html#aa41a130f156b145bffb3f4b5172c4c93">Mesh</a></td></tr>
 <tr class="separator:aa41a130f156b145bffb3f4b5172c4c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_attribs_classfrontier_1_1_resource"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classfrontier_1_1_resource')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classfrontier_1_1_resource.html">frontier::Resource</a></td></tr>
-<tr class="memitem:a69fe22a83fc57a08efd043e2c37edf7a inherit pro_attribs_classfrontier_1_1_resource"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfrontier_1_1_resource.html#a69fe22a83fc57a08efd043e2c37edf7a">_path</a></td></tr>
-<tr class="separator:a69fe22a83fc57a08efd043e2c37edf7a inherit pro_attribs_classfrontier_1_1_resource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8285f56a5eff764d33adba7ba20b5a81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8285f56a5eff764d33adba7ba20b5a81">&#9670;&nbsp;</a></span>Model()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">frontier::Model::Model </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="abd0a135e820403384354644e5a348e84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd0a135e820403384354644e5a348e84">&#9670;&nbsp;</a></span>Create()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A group of meshes that make up a model. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a78f05cbc47e201551ccf3bbbd1d0fcbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78f05cbc47e201551ccf3bbbd1d0fcbd">&#9670;&nbsp;</a></span>Create()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -145,7 +119,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">std::shared_ptr&lt; <a class="el" href="classfrontier_1_1_model.html">Model</a> &gt; frontier::Model::Create </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>path</em>, </td>
+          <td class="paramname"><em>_path</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -165,6 +139,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates a model froma filepath to be used in a <a class="el" href="classfrontier_1_1_mesh_renderer.html" title="Container for a model. ">MeshRenderer</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_path</td><td>The filepath for the model. </td></tr>
+    <tr><td class="paramname">_resources</td><td>The resources class located in core. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -211,6 +194,18 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Draws the model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_model</td><td>The model matrix. </td></tr>
+    <tr><td class="paramname">_view</td><td>The view matrix, taken from the camera. </td></tr>
+    <tr><td class="paramname">_proj</td><td>The projection matrix, taken from the camera. </td></tr>
+    <tr><td class="paramname">_tex</td><td>The texture for the model. </td></tr>
+    <tr><td class="paramname">_shader</td><td>The shader for the model. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
