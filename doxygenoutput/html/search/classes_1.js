@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['component',['Component',['../classmyengine_1_1_component.html',1,'myengine']]],
-  ['core',['Core',['../classmyengine_1_1_core.html',1,'myengine']]]
+  ['backgroundcolor',['BackGroundColor',['../classfrontier_1_1_back_ground_color.html',1,'frontier']]]
 ];

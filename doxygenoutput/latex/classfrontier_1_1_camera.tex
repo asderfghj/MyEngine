@@ -1,0 +1,93 @@
+\hypertarget{classfrontier_1_1_camera}{}\section{frontier\+:\+:Camera Class Reference}
+\label{classfrontier_1_1_camera}\index{frontier\+::\+Camera@{frontier\+::\+Camera}}
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+Inheritance diagram for frontier\+:\+:Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classfrontier_1_1_camera}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::mat4 \hyperlink{classfrontier_1_1_camera_a90858bfacddb80bedb062889b15d2d47}{get\+View\+Matrix} ()
+\item 
+glm\+::mat4 \hyperlink{classfrontier_1_1_camera_ae3e5871e68bcb0d5577cc09b2273c641}{get\+Projection\+Matrix} ()
+\item 
+glm\+::mat4 \hyperlink{classfrontier_1_1_camera_a7c5d631b29e93e4e8772577dd3e62378}{get\+Orthographic\+Matrix} ()
+\item 
+void \hyperlink{classfrontier_1_1_camera_a7bec1b9133e266bf50396883cb3e2b83}{On\+Init} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$ \+\_\+parent, float fov, float near, float far)
+\item 
+bool \hyperlink{classfrontier_1_1_camera_a8e6077e5c7dd76f58e055a13e18ab8c6}{get\+Main} ()
+\item 
+void \hyperlink{classfrontier_1_1_camera_ae8a9b95bf6e4eacdae709d188725e72a}{set\+Main} (bool \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main})
+\item 
+void \hyperlink{classfrontier_1_1_camera_ab1872f3ceccbb6dcfa4fcf043f0eb5f8}{set\+Controllable} (bool \+\_\+control)
+\item 
+void \hyperlink{classfrontier_1_1_camera_a1f318703a68e4c070c85a1d9a27446d0}{On\+Tick} () override
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classfrontier_1_1_camera_a8e6077e5c7dd76f58e055a13e18ab8c6}\label{classfrontier_1_1_camera_a8e6077e5c7dd76f58e055a13e18ab8c6}} 
+\index{frontier\+::\+Camera@{frontier\+::\+Camera}!get\+Main@{get\+Main}}
+\index{get\+Main@{get\+Main}!frontier\+::\+Camera@{frontier\+::\+Camera}}
+\subsubsection{\texorpdfstring{get\+Main()}{getMain()}}
+{\footnotesize\ttfamily bool frontier\+::\+Camera\+::get\+Main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_camera_a7c5d631b29e93e4e8772577dd3e62378}\label{classfrontier_1_1_camera_a7c5d631b29e93e4e8772577dd3e62378}} 
+\index{frontier\+::\+Camera@{frontier\+::\+Camera}!get\+Orthographic\+Matrix@{get\+Orthographic\+Matrix}}
+\index{get\+Orthographic\+Matrix@{get\+Orthographic\+Matrix}!frontier\+::\+Camera@{frontier\+::\+Camera}}
+\subsubsection{\texorpdfstring{get\+Orthographic\+Matrix()}{getOrthographicMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 frontier\+::\+Camera\+::get\+Orthographic\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_camera_ae3e5871e68bcb0d5577cc09b2273c641}\label{classfrontier_1_1_camera_ae3e5871e68bcb0d5577cc09b2273c641}} 
+\index{frontier\+::\+Camera@{frontier\+::\+Camera}!get\+Projection\+Matrix@{get\+Projection\+Matrix}}
+\index{get\+Projection\+Matrix@{get\+Projection\+Matrix}!frontier\+::\+Camera@{frontier\+::\+Camera}}
+\subsubsection{\texorpdfstring{get\+Projection\+Matrix()}{getProjectionMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 frontier\+::\+Camera\+::get\+Projection\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_camera_a90858bfacddb80bedb062889b15d2d47}\label{classfrontier_1_1_camera_a90858bfacddb80bedb062889b15d2d47}} 
+\index{frontier\+::\+Camera@{frontier\+::\+Camera}!get\+View\+Matrix@{get\+View\+Matrix}}
+\index{get\+View\+Matrix@{get\+View\+Matrix}!frontier\+::\+Camera@{frontier\+::\+Camera}}
+\subsubsection{\texorpdfstring{get\+View\+Matrix()}{getViewMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 frontier\+::\+Camera\+::get\+View\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_camera_a7bec1b9133e266bf50396883cb3e2b83}\label{classfrontier_1_1_camera_a7bec1b9133e266bf50396883cb3e2b83}} 
+\index{frontier\+::\+Camera@{frontier\+::\+Camera}!On\+Init@{On\+Init}}
+\index{On\+Init@{On\+Init}!frontier\+::\+Camera@{frontier\+::\+Camera}}
+\subsubsection{\texorpdfstring{On\+Init()}{OnInit()}}
+{\footnotesize\ttfamily void frontier\+::\+Camera\+::\+On\+Init (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_entity}{Entity} $>$}]{\+\_\+parent,  }\item[{float}]{fov,  }\item[{float}]{near,  }\item[{float}]{far }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_camera_a1f318703a68e4c070c85a1d9a27446d0}\label{classfrontier_1_1_camera_a1f318703a68e4c070c85a1d9a27446d0}} 
+\index{frontier\+::\+Camera@{frontier\+::\+Camera}!On\+Tick@{On\+Tick}}
+\index{On\+Tick@{On\+Tick}!frontier\+::\+Camera@{frontier\+::\+Camera}}
+\subsubsection{\texorpdfstring{On\+Tick()}{OnTick()}}
+{\footnotesize\ttfamily void frontier\+::\+Camera\+::\+On\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \hyperlink{classfrontier_1_1_component_ab920f9bc07ce051ebb5559c5a66508d1}{frontier\+::\+Component}.
+
+\mbox{\Hypertarget{classfrontier_1_1_camera_ab1872f3ceccbb6dcfa4fcf043f0eb5f8}\label{classfrontier_1_1_camera_ab1872f3ceccbb6dcfa4fcf043f0eb5f8}} 
+\index{frontier\+::\+Camera@{frontier\+::\+Camera}!set\+Controllable@{set\+Controllable}}
+\index{set\+Controllable@{set\+Controllable}!frontier\+::\+Camera@{frontier\+::\+Camera}}
+\subsubsection{\texorpdfstring{set\+Controllable()}{setControllable()}}
+{\footnotesize\ttfamily void frontier\+::\+Camera\+::set\+Controllable (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+control }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_camera_ae8a9b95bf6e4eacdae709d188725e72a}\label{classfrontier_1_1_camera_ae8a9b95bf6e4eacdae709d188725e72a}} 
+\index{frontier\+::\+Camera@{frontier\+::\+Camera}!set\+Main@{set\+Main}}
+\index{set\+Main@{set\+Main}!frontier\+::\+Camera@{frontier\+::\+Camera}}
+\subsubsection{\texorpdfstring{set\+Main()}{setMain()}}
+{\footnotesize\ttfamily void frontier\+::\+Camera\+::set\+Main (\begin{DoxyParamCaption}\item[{bool}]{main }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/myengine/\hyperlink{_camera_8h}{Camera.\+h}\item 
+src/myengine/\hyperlink{_camera_8cpp}{Camera.\+cpp}\end{DoxyCompactItemize}

@@ -1,28 +1,47 @@
 #include "glm.hpp"
+
 #include "Component.h"
 
 namespace frontier
 {
 	class Transform;
-
+	//!Provides the view, projection and orthographic matricies for drawing objects to the screen.
 	class Camera: public Component
 	{
-	public:
-		glm::mat4 getViewMatrix();
-		glm::mat4 getProjectionMatrix();
-		glm::mat4 getOrthographicMatrix();
-		using Component::OnInit;
-		void OnInit(std::weak_ptr<Entity> _parent, float fov, float near, float far);
-		bool getMain();
-		void setMain(bool main);
-		void setControllable(bool _control);
-		void OnTick() override;
 
 	private:
-		bool _controlable;
-		bool _main;
-		float _FOV;
-		float _near;
-		float _far;
+		bool m_isMainCamera;
+		float m_FOV;
+		float m_near;
+		float m_far;
+
+	public:
+		//!Initialises the camera component, this will be called by AddComponent in the Entity class, initialises the field of view, near and far variables.
+		/*!
+			\param _parent The entity that this component is attached to.
+			\param _fov The field of view for the camera (used in the projection matrix).
+			\param _near The near plane for the camera.
+			\param _far The far plane for the camera.
+		*/
+		void OnInit(std::weak_ptr<Entity> _parent, float _fov, float _near, float _far);
+
+		//!Returns a view matrix based on the inverse of the camera entity's model matrix.
+		glm::mat4 GetViewMatrix();
+
+		//!Returns a projection matrix based on the field of view, near and far variables provided on initalisation.
+		glm::mat4 GetProjectionMatrix();
+
+		//!Returns an orthographic matrix based on the screen size and the near and far variables provided at initialisation.
+		glm::mat4 GetOrthographicMatrix();
+
+		//!Queries whether this camera is the main one that is being used for drawing.
+		bool IsMainCamera();
+
+		//!Sets the isMainCamera value, Unless you have a good reason, do not change this. this is handled by the Core.
+		/*!
+			\param _main The new value for m_isMainCamera.
+		*/
+		void SetIsMainCamera(bool _main);
+
 	};
 }

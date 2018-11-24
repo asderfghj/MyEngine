@@ -61,7 +61,7 @@ namespace frontier
 
 	int Pooler::getActiveInPool()
 	{
-		int activeObjects;
+		int activeObjects = 0;
 		for (size_t i = 0; i < entities.size(); i++)
 		{
 			if (entities[i].lock()->isActive())
@@ -71,6 +71,17 @@ namespace frontier
 		}
 
 		return activeObjects;
+	}
+
+	void Pooler::deactivateAllInstances()
+	{
+		for (size_t i = 0; i < entities.size(); i++)
+		{
+			if (entities[i].lock()->isActive())
+			{
+				entities[i].lock()->setActive(false);
+			}
+		}
 	}
 
 }

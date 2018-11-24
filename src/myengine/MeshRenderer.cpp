@@ -29,7 +29,7 @@ namespace frontier
 	void MeshRenderer::OnTick()
 	{
 		Component::OnTick();
-		_meshData->Draw(getEntity()->getComponent<Transform>()->getModelMatrix(), getCore()->getMainCamera()->getViewMatrix(), getCore()->getMainCamera()->getProjectionMatrix(), _texture, _shaderProgram);
+		_meshData->Draw(getEntity()->getComponent<Transform>()->getModelMatrix(), getCore()->getMainCamera()->GetViewMatrix(), getCore()->getMainCamera()->GetProjectionMatrix(), _texture, _shaderProgram);
 
 	}
 

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['texture_2ecpp',['Texture.cpp',['../_texture_8cpp.html',1,'']]],
-  ['texture_2eh',['Texture.h',['../_texture_8h.html',1,'']]],
-  ['trianglerenderer_2ecpp',['TriangleRenderer.cpp',['../_triangle_renderer_8cpp.html',1,'']]],
-  ['trianglerenderer_2eh',['TriangleRenderer.h',['../_triangle_renderer_8h.html',1,'']]]
+  ['resource_2ecpp',['Resource.cpp',['../_resource_8cpp.html',1,'']]],
+  ['resource_2eh',['Resource.h',['../_resource_8h.html',1,'']]],
+  ['resources_2ecpp',['Resources.cpp',['../_resources_8cpp.html',1,'']]],
+  ['resources_2eh',['Resources.h',['../_resources_8h.html',1,'']]]
 ];

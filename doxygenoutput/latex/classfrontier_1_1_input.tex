@@ -1,0 +1,403 @@
+\hypertarget{classfrontier_1_1_input}{}\section{frontier\+:\+:Input Class Reference}
+\label{classfrontier_1_1_input}\index{frontier\+::\+Input@{frontier\+::\+Input}}
+
+
+{\ttfamily \#include $<$Input.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096}{Listed\+Buttons} \{ \newline
+\hyperlink{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096acf85ba7c8b56fe96ae704fcad0835413}{F\+O\+R\+W\+A\+RD}, 
+\hyperlink{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096a854a2566d855b54f71c31b1a80af7f7f}{B\+A\+CK}, 
+\hyperlink{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096a054bf540c4446c6dd0ebfbc47d3b86d6}{L\+E\+FT}, 
+\hyperlink{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096a3f8c1b55a3e0fa5b9e49e013af3aa898}{R\+I\+G\+HT}, 
+\newline
+\hyperlink{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096ab29a79dea09fc2efd9195b5bd9f9cb59}{UP}, 
+\hyperlink{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096ae77fe1ca5149c538bcbe2d3220e065d5}{D\+O\+WN}, 
+\hyperlink{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096ac8790ceaafc8368972a3d7129c0d08e9}{S\+H\+O\+OT}, 
+\hyperlink{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096aa10db7305f9845cff63ba11af6092c0c}{E\+SC}, 
+\newline
+\hyperlink{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096a0bf7f4342c9ece5810241620ccf09f45}{N\+U\+M\+\_\+\+O\+F\+\_\+\+B\+U\+T\+T\+O\+NS}
+ \}
+\item 
+enum \hyperlink{classfrontier_1_1_input_aa34e103eba0f13faf437863692310859}{Controller\+Axes} \{ \hyperlink{classfrontier_1_1_input_aa34e103eba0f13faf437863692310859a7d1d161914b2562dfd89a471e7b8e62c}{L\+E\+F\+T\+S\+T\+I\+CK}, 
+\hyperlink{classfrontier_1_1_input_aa34e103eba0f13faf437863692310859a14768741d70c19c7ae2e8dce9769bd1f}{R\+I\+G\+H\+T\+S\+T\+I\+CK}
+ \}
+\item 
+enum \hyperlink{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6}{Controller\+Buttons} \{ \newline
+\hyperlink{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6ab98b6db8bb04b0cd9b060563de575431}{A\+\_\+\+B\+U\+T\+T\+ON}, 
+\hyperlink{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6ab46fd416a811b0451b5a802bd9f1eb48}{B\+\_\+\+B\+U\+T\+T\+ON}, 
+\hyperlink{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6aa0a9d5ad07cd52b12ac3f0eca19def5e}{X\+\_\+\+B\+U\+T\+T\+ON}, 
+\hyperlink{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6a4f354b5fec8fc772cc16d2e4bc4bfe6c}{Y\+\_\+\+B\+U\+T\+T\+ON}, 
+\newline
+\hyperlink{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6a5672b73465339f25df575781ffde8b26}{L\+B\+\_\+\+B\+U\+T\+T\+ON}, 
+\hyperlink{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6a968ba0271c5460a6257343793d58705e}{R\+B\+\_\+\+B\+U\+T\+T\+ON}, 
+\hyperlink{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6a75d2264ccde59cd652a91f4586f51195}{B\+A\+C\+K\+\_\+\+B\+U\+T\+T\+ON}, 
+\hyperlink{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6a471892265caa9eae7cc4c0a6e23df9fc}{S\+T\+A\+R\+T\+\_\+\+B\+U\+T\+T\+ON}, 
+\newline
+\hyperlink{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6aa9e5245811241b92209343b55b54c571}{N\+U\+M\+\_\+\+O\+F\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+B\+U\+T\+T\+O\+NS}
+ \}
+\item 
+enum \hyperlink{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94e}{Dpad\+States} \{ \newline
+\hyperlink{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea90e2661b34a449c518cca1ab5d1885a6}{D\+P\+A\+D\+\_\+\+L\+E\+F\+T\+UP}, 
+\hyperlink{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94eabe6be4880b0b1fc4751638cffecefd66}{D\+P\+A\+D\+\_\+\+UP}, 
+\hyperlink{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea7f86e34b1c13663ef1de1df3b1d044ae}{D\+P\+A\+D\+\_\+\+R\+I\+G\+H\+T\+UP}, 
+\hyperlink{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea85f9a1abd0eced9a30383d7b3a8cc3a8}{D\+P\+A\+D\+\_\+\+L\+E\+FT}, 
+\newline
+\hyperlink{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ead0c3b8e3f4898b47b58438e313ec0eae}{D\+P\+A\+D\+\_\+\+C\+E\+N\+T\+ER}, 
+\hyperlink{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea08ad5e3e995efa810669a28c4ca5b40f}{D\+P\+A\+D\+\_\+\+R\+I\+G\+HT}, 
+\hyperlink{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea1ef79cd021e1b05bc9221f0ee924bc3b}{D\+P\+A\+D\+\_\+\+L\+E\+F\+T\+D\+O\+WN}, 
+\hyperlink{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94eaadd85ed517b115983baa8d34c07b54b6}{D\+P\+A\+D\+\_\+\+D\+O\+WN}, 
+\newline
+\hyperlink{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea1ae57661e6161c2928171b0414b5db0b}{D\+P\+A\+D\+\_\+\+R\+I\+G\+H\+T\+D\+O\+WN}, 
+\hyperlink{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94eaefa7fef0e2de7538b95c3d1fe2128f96}{N\+U\+M\+\_\+\+O\+F\+\_\+\+S\+T\+A\+T\+ES}
+ \}
+\item 
+enum \hyperlink{classfrontier_1_1_input_ae78744e8c0799230bc6533be5d4b40f7}{Mouse\+Button\+States} \{ \hyperlink{classfrontier_1_1_input_ae78744e8c0799230bc6533be5d4b40f7af8f5828e820f88896b4983bfc1dc4528}{L\+E\+F\+T\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+ON}, 
+\hyperlink{classfrontier_1_1_input_ae78744e8c0799230bc6533be5d4b40f7a0c6c60dbc5386980eb6023b111c0a640}{R\+I\+G\+H\+T\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+ON}, 
+\hyperlink{classfrontier_1_1_input_ae78744e8c0799230bc6533be5d4b40f7aacc218f0e73c463a61b92ba1a7b7b7ba}{N\+U\+M\+\_\+\+O\+F\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+O\+N\+\_\+\+S\+T\+A\+T\+ES}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfrontier_1_1_input_a42044ec5fabe49b52de3437eac14dab0}{Input} ()
+\item 
+bool \hyperlink{classfrontier_1_1_input_a9db590e5a79e86162f930f9d80cd70a3}{get\+Key} (\hyperlink{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096}{Listed\+Buttons} \+\_\+keycode)
+\item 
+bool \hyperlink{classfrontier_1_1_input_ab0f4c13a20e12f8679666fb6e4f4ccaf}{get\+Mouse\+Button} (\hyperlink{classfrontier_1_1_input_ae78744e8c0799230bc6533be5d4b40f7}{Mouse\+Button\+States} \+\_\+btn)
+\item 
+glm\+::vec2 \hyperlink{classfrontier_1_1_input_ac3330b7e20d086eb7b9da283dec779dc}{get\+Mouse\+Pos} ()
+\item 
+bool \hyperlink{classfrontier_1_1_input_ac4204ad7ae1c395c26c8a5d397e99532}{get\+Joystick\+Button} (\hyperlink{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6}{Controller\+Buttons} \+\_\+btn)
+\item 
+bool \hyperlink{classfrontier_1_1_input_a8a4efb296d3f78e8eea6064da50af43b}{get\+Joystick\+Dpad\+State} (\hyperlink{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94e}{Dpad\+States} \+\_\+state)
+\item 
+glm\+::vec2 \hyperlink{classfrontier_1_1_input_a60c4086a12484369d9e96c065b5cce52}{Get\+Joystick\+Axis} (\hyperlink{classfrontier_1_1_input_aa34e103eba0f13faf437863692310859}{Controller\+Axes} \+\_\+axis)
+\item 
+void \hyperlink{classfrontier_1_1_input_ab3326fdae63e71c2d6c7e5bc8dad167c}{set\+Core\+Ptr} (std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_core}{Core} $>$ \+\_\+core)
+\item 
+bool \hyperlink{classfrontier_1_1_input_ac05050b8aef9b669840c69868c157019}{is\+Joystick\+Connected} ()
+\item 
+void \hyperlink{classfrontier_1_1_input_a93acada680176426a09bd5cc4606fe6c}{Free\+Joystick} ()
+\item 
+void \hyperlink{classfrontier_1_1_input_ace92d811ccd65b1cccc8be927c840720}{Update\+Left\+Joystick} (glm\+::vec2 axes)
+\item 
+void \hyperlink{classfrontier_1_1_input_a19763242a418ba60581b767eb4c40b78}{Update\+Right\+Joystick} (glm\+::vec2 axes)
+\item 
+void \hyperlink{classfrontier_1_1_input_ab3d78d816a9ae5ed02c9c91900097149}{Tick} ()
+\item 
+void \hyperlink{classfrontier_1_1_input_adad2b084e3ddc0ddcf6db9d6f5ebf307}{Queue\+Mouse\+Movement\+Update} ()
+\item 
+void \hyperlink{classfrontier_1_1_input_a3a78acf75eb63bfcd504b0eca34ce7c2}{Queue\+Mouse\+Button\+Update} ()
+\item 
+void \hyperlink{classfrontier_1_1_input_ae3e8301699a5ba6d74fe78cab9410230}{Queue\+Keyboard\+Update} ()
+\item 
+void \hyperlink{classfrontier_1_1_input_adeb3f9c5c6e93ca7406a03314ccfede6}{Queue\+Controller\+Joystick\+Update} ()
+\item 
+void \hyperlink{classfrontier_1_1_input_aef3fb33e53dfad959d197f07dd3811ce}{Queue\+Controller\+Button\+Update} ()
+\item 
+void \hyperlink{classfrontier_1_1_input_a99b2f7b890ffeb5f1079a57af7945892}{Queue\+Controller\+Dpad\+Update} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classfrontier_1_1_input_aa34e103eba0f13faf437863692310859}\label{classfrontier_1_1_input_aa34e103eba0f13faf437863692310859}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!Controller\+Axes@{Controller\+Axes}}
+\index{Controller\+Axes@{Controller\+Axes}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{Controller\+Axes}{ControllerAxes}}
+{\footnotesize\ttfamily enum \hyperlink{classfrontier_1_1_input_aa34e103eba0f13faf437863692310859}{frontier\+::\+Input\+::\+Controller\+Axes}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+E\+F\+T\+S\+T\+I\+CK@{L\+E\+F\+T\+S\+T\+I\+CK}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!L\+E\+F\+T\+S\+T\+I\+CK@{L\+E\+F\+T\+S\+T\+I\+CK}}}\mbox{\Hypertarget{classfrontier_1_1_input_aa34e103eba0f13faf437863692310859a7d1d161914b2562dfd89a471e7b8e62c}\label{classfrontier_1_1_input_aa34e103eba0f13faf437863692310859a7d1d161914b2562dfd89a471e7b8e62c}} 
+L\+E\+F\+T\+S\+T\+I\+CK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+I\+G\+H\+T\+S\+T\+I\+CK@{R\+I\+G\+H\+T\+S\+T\+I\+CK}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!R\+I\+G\+H\+T\+S\+T\+I\+CK@{R\+I\+G\+H\+T\+S\+T\+I\+CK}}}\mbox{\Hypertarget{classfrontier_1_1_input_aa34e103eba0f13faf437863692310859a14768741d70c19c7ae2e8dce9769bd1f}\label{classfrontier_1_1_input_aa34e103eba0f13faf437863692310859a14768741d70c19c7ae2e8dce9769bd1f}} 
+R\+I\+G\+H\+T\+S\+T\+I\+CK&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6}\label{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!Controller\+Buttons@{Controller\+Buttons}}
+\index{Controller\+Buttons@{Controller\+Buttons}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{Controller\+Buttons}{ControllerButtons}}
+{\footnotesize\ttfamily enum \hyperlink{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6}{frontier\+::\+Input\+::\+Controller\+Buttons}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+\_\+\+B\+U\+T\+T\+ON@{A\+\_\+\+B\+U\+T\+T\+ON}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!A\+\_\+\+B\+U\+T\+T\+ON@{A\+\_\+\+B\+U\+T\+T\+ON}}}\mbox{\Hypertarget{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6ab98b6db8bb04b0cd9b060563de575431}\label{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6ab98b6db8bb04b0cd9b060563de575431}} 
+A\+\_\+\+B\+U\+T\+T\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+\_\+\+B\+U\+T\+T\+ON@{B\+\_\+\+B\+U\+T\+T\+ON}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!B\+\_\+\+B\+U\+T\+T\+ON@{B\+\_\+\+B\+U\+T\+T\+ON}}}\mbox{\Hypertarget{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6ab46fd416a811b0451b5a802bd9f1eb48}\label{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6ab46fd416a811b0451b5a802bd9f1eb48}} 
+B\+\_\+\+B\+U\+T\+T\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{X\+\_\+\+B\+U\+T\+T\+ON@{X\+\_\+\+B\+U\+T\+T\+ON}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!X\+\_\+\+B\+U\+T\+T\+ON@{X\+\_\+\+B\+U\+T\+T\+ON}}}\mbox{\Hypertarget{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6aa0a9d5ad07cd52b12ac3f0eca19def5e}\label{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6aa0a9d5ad07cd52b12ac3f0eca19def5e}} 
+X\+\_\+\+B\+U\+T\+T\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Y\+\_\+\+B\+U\+T\+T\+ON@{Y\+\_\+\+B\+U\+T\+T\+ON}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!Y\+\_\+\+B\+U\+T\+T\+ON@{Y\+\_\+\+B\+U\+T\+T\+ON}}}\mbox{\Hypertarget{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6a4f354b5fec8fc772cc16d2e4bc4bfe6c}\label{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6a4f354b5fec8fc772cc16d2e4bc4bfe6c}} 
+Y\+\_\+\+B\+U\+T\+T\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+B\+\_\+\+B\+U\+T\+T\+ON@{L\+B\+\_\+\+B\+U\+T\+T\+ON}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!L\+B\+\_\+\+B\+U\+T\+T\+ON@{L\+B\+\_\+\+B\+U\+T\+T\+ON}}}\mbox{\Hypertarget{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6a5672b73465339f25df575781ffde8b26}\label{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6a5672b73465339f25df575781ffde8b26}} 
+L\+B\+\_\+\+B\+U\+T\+T\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+B\+\_\+\+B\+U\+T\+T\+ON@{R\+B\+\_\+\+B\+U\+T\+T\+ON}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!R\+B\+\_\+\+B\+U\+T\+T\+ON@{R\+B\+\_\+\+B\+U\+T\+T\+ON}}}\mbox{\Hypertarget{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6a968ba0271c5460a6257343793d58705e}\label{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6a968ba0271c5460a6257343793d58705e}} 
+R\+B\+\_\+\+B\+U\+T\+T\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+A\+C\+K\+\_\+\+B\+U\+T\+T\+ON@{B\+A\+C\+K\+\_\+\+B\+U\+T\+T\+ON}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!B\+A\+C\+K\+\_\+\+B\+U\+T\+T\+ON@{B\+A\+C\+K\+\_\+\+B\+U\+T\+T\+ON}}}\mbox{\Hypertarget{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6a75d2264ccde59cd652a91f4586f51195}\label{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6a75d2264ccde59cd652a91f4586f51195}} 
+B\+A\+C\+K\+\_\+\+B\+U\+T\+T\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+R\+T\+\_\+\+B\+U\+T\+T\+ON@{S\+T\+A\+R\+T\+\_\+\+B\+U\+T\+T\+ON}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!S\+T\+A\+R\+T\+\_\+\+B\+U\+T\+T\+ON@{S\+T\+A\+R\+T\+\_\+\+B\+U\+T\+T\+ON}}}\mbox{\Hypertarget{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6a471892265caa9eae7cc4c0a6e23df9fc}\label{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6a471892265caa9eae7cc4c0a6e23df9fc}} 
+S\+T\+A\+R\+T\+\_\+\+B\+U\+T\+T\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+U\+M\+\_\+\+O\+F\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+B\+U\+T\+T\+O\+NS@{N\+U\+M\+\_\+\+O\+F\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+B\+U\+T\+T\+O\+NS}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!N\+U\+M\+\_\+\+O\+F\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+B\+U\+T\+T\+O\+NS@{N\+U\+M\+\_\+\+O\+F\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+B\+U\+T\+T\+O\+NS}}}\mbox{\Hypertarget{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6aa9e5245811241b92209343b55b54c571}\label{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6aa9e5245811241b92209343b55b54c571}} 
+N\+U\+M\+\_\+\+O\+F\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+B\+U\+T\+T\+O\+NS&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94e}\label{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94e}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!Dpad\+States@{Dpad\+States}}
+\index{Dpad\+States@{Dpad\+States}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{Dpad\+States}{DpadStates}}
+{\footnotesize\ttfamily enum \hyperlink{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94e}{frontier\+::\+Input\+::\+Dpad\+States}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+P\+A\+D\+\_\+\+L\+E\+F\+T\+UP@{D\+P\+A\+D\+\_\+\+L\+E\+F\+T\+UP}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!D\+P\+A\+D\+\_\+\+L\+E\+F\+T\+UP@{D\+P\+A\+D\+\_\+\+L\+E\+F\+T\+UP}}}\mbox{\Hypertarget{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea90e2661b34a449c518cca1ab5d1885a6}\label{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea90e2661b34a449c518cca1ab5d1885a6}} 
+D\+P\+A\+D\+\_\+\+L\+E\+F\+T\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+P\+A\+D\+\_\+\+UP@{D\+P\+A\+D\+\_\+\+UP}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!D\+P\+A\+D\+\_\+\+UP@{D\+P\+A\+D\+\_\+\+UP}}}\mbox{\Hypertarget{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94eabe6be4880b0b1fc4751638cffecefd66}\label{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94eabe6be4880b0b1fc4751638cffecefd66}} 
+D\+P\+A\+D\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+P\+A\+D\+\_\+\+R\+I\+G\+H\+T\+UP@{D\+P\+A\+D\+\_\+\+R\+I\+G\+H\+T\+UP}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!D\+P\+A\+D\+\_\+\+R\+I\+G\+H\+T\+UP@{D\+P\+A\+D\+\_\+\+R\+I\+G\+H\+T\+UP}}}\mbox{\Hypertarget{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea7f86e34b1c13663ef1de1df3b1d044ae}\label{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea7f86e34b1c13663ef1de1df3b1d044ae}} 
+D\+P\+A\+D\+\_\+\+R\+I\+G\+H\+T\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+P\+A\+D\+\_\+\+L\+E\+FT@{D\+P\+A\+D\+\_\+\+L\+E\+FT}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!D\+P\+A\+D\+\_\+\+L\+E\+FT@{D\+P\+A\+D\+\_\+\+L\+E\+FT}}}\mbox{\Hypertarget{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea85f9a1abd0eced9a30383d7b3a8cc3a8}\label{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea85f9a1abd0eced9a30383d7b3a8cc3a8}} 
+D\+P\+A\+D\+\_\+\+L\+E\+FT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+P\+A\+D\+\_\+\+C\+E\+N\+T\+ER@{D\+P\+A\+D\+\_\+\+C\+E\+N\+T\+ER}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!D\+P\+A\+D\+\_\+\+C\+E\+N\+T\+ER@{D\+P\+A\+D\+\_\+\+C\+E\+N\+T\+ER}}}\mbox{\Hypertarget{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ead0c3b8e3f4898b47b58438e313ec0eae}\label{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ead0c3b8e3f4898b47b58438e313ec0eae}} 
+D\+P\+A\+D\+\_\+\+C\+E\+N\+T\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+P\+A\+D\+\_\+\+R\+I\+G\+HT@{D\+P\+A\+D\+\_\+\+R\+I\+G\+HT}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!D\+P\+A\+D\+\_\+\+R\+I\+G\+HT@{D\+P\+A\+D\+\_\+\+R\+I\+G\+HT}}}\mbox{\Hypertarget{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea08ad5e3e995efa810669a28c4ca5b40f}\label{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea08ad5e3e995efa810669a28c4ca5b40f}} 
+D\+P\+A\+D\+\_\+\+R\+I\+G\+HT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+P\+A\+D\+\_\+\+L\+E\+F\+T\+D\+O\+WN@{D\+P\+A\+D\+\_\+\+L\+E\+F\+T\+D\+O\+WN}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!D\+P\+A\+D\+\_\+\+L\+E\+F\+T\+D\+O\+WN@{D\+P\+A\+D\+\_\+\+L\+E\+F\+T\+D\+O\+WN}}}\mbox{\Hypertarget{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea1ef79cd021e1b05bc9221f0ee924bc3b}\label{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea1ef79cd021e1b05bc9221f0ee924bc3b}} 
+D\+P\+A\+D\+\_\+\+L\+E\+F\+T\+D\+O\+WN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+P\+A\+D\+\_\+\+D\+O\+WN@{D\+P\+A\+D\+\_\+\+D\+O\+WN}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!D\+P\+A\+D\+\_\+\+D\+O\+WN@{D\+P\+A\+D\+\_\+\+D\+O\+WN}}}\mbox{\Hypertarget{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94eaadd85ed517b115983baa8d34c07b54b6}\label{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94eaadd85ed517b115983baa8d34c07b54b6}} 
+D\+P\+A\+D\+\_\+\+D\+O\+WN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+P\+A\+D\+\_\+\+R\+I\+G\+H\+T\+D\+O\+WN@{D\+P\+A\+D\+\_\+\+R\+I\+G\+H\+T\+D\+O\+WN}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!D\+P\+A\+D\+\_\+\+R\+I\+G\+H\+T\+D\+O\+WN@{D\+P\+A\+D\+\_\+\+R\+I\+G\+H\+T\+D\+O\+WN}}}\mbox{\Hypertarget{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea1ae57661e6161c2928171b0414b5db0b}\label{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94ea1ae57661e6161c2928171b0414b5db0b}} 
+D\+P\+A\+D\+\_\+\+R\+I\+G\+H\+T\+D\+O\+WN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+U\+M\+\_\+\+O\+F\+\_\+\+S\+T\+A\+T\+ES@{N\+U\+M\+\_\+\+O\+F\+\_\+\+S\+T\+A\+T\+ES}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!N\+U\+M\+\_\+\+O\+F\+\_\+\+S\+T\+A\+T\+ES@{N\+U\+M\+\_\+\+O\+F\+\_\+\+S\+T\+A\+T\+ES}}}\mbox{\Hypertarget{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94eaefa7fef0e2de7538b95c3d1fe2128f96}\label{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94eaefa7fef0e2de7538b95c3d1fe2128f96}} 
+N\+U\+M\+\_\+\+O\+F\+\_\+\+S\+T\+A\+T\+ES&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096}\label{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!Listed\+Buttons@{Listed\+Buttons}}
+\index{Listed\+Buttons@{Listed\+Buttons}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{Listed\+Buttons}{ListedButtons}}
+{\footnotesize\ttfamily enum \hyperlink{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096}{frontier\+::\+Input\+::\+Listed\+Buttons}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+O\+R\+W\+A\+RD@{F\+O\+R\+W\+A\+RD}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!F\+O\+R\+W\+A\+RD@{F\+O\+R\+W\+A\+RD}}}\mbox{\Hypertarget{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096acf85ba7c8b56fe96ae704fcad0835413}\label{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096acf85ba7c8b56fe96ae704fcad0835413}} 
+F\+O\+R\+W\+A\+RD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+A\+CK@{B\+A\+CK}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!B\+A\+CK@{B\+A\+CK}}}\mbox{\Hypertarget{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096a854a2566d855b54f71c31b1a80af7f7f}\label{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096a854a2566d855b54f71c31b1a80af7f7f}} 
+B\+A\+CK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+E\+FT@{L\+E\+FT}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!L\+E\+FT@{L\+E\+FT}}}\mbox{\Hypertarget{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096a054bf540c4446c6dd0ebfbc47d3b86d6}\label{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096a054bf540c4446c6dd0ebfbc47d3b86d6}} 
+L\+E\+FT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+I\+G\+HT@{R\+I\+G\+HT}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!R\+I\+G\+HT@{R\+I\+G\+HT}}}\mbox{\Hypertarget{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096a3f8c1b55a3e0fa5b9e49e013af3aa898}\label{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096a3f8c1b55a3e0fa5b9e49e013af3aa898}} 
+R\+I\+G\+HT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UP@{UP}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!UP@{UP}}}\mbox{\Hypertarget{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096ab29a79dea09fc2efd9195b5bd9f9cb59}\label{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096ab29a79dea09fc2efd9195b5bd9f9cb59}} 
+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+O\+WN@{D\+O\+WN}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!D\+O\+WN@{D\+O\+WN}}}\mbox{\Hypertarget{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096ae77fe1ca5149c538bcbe2d3220e065d5}\label{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096ae77fe1ca5149c538bcbe2d3220e065d5}} 
+D\+O\+WN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+H\+O\+OT@{S\+H\+O\+OT}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!S\+H\+O\+OT@{S\+H\+O\+OT}}}\mbox{\Hypertarget{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096ac8790ceaafc8368972a3d7129c0d08e9}\label{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096ac8790ceaafc8368972a3d7129c0d08e9}} 
+S\+H\+O\+OT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+SC@{E\+SC}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!E\+SC@{E\+SC}}}\mbox{\Hypertarget{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096aa10db7305f9845cff63ba11af6092c0c}\label{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096aa10db7305f9845cff63ba11af6092c0c}} 
+E\+SC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+U\+M\+\_\+\+O\+F\+\_\+\+B\+U\+T\+T\+O\+NS@{N\+U\+M\+\_\+\+O\+F\+\_\+\+B\+U\+T\+T\+O\+NS}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!N\+U\+M\+\_\+\+O\+F\+\_\+\+B\+U\+T\+T\+O\+NS@{N\+U\+M\+\_\+\+O\+F\+\_\+\+B\+U\+T\+T\+O\+NS}}}\mbox{\Hypertarget{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096a0bf7f4342c9ece5810241620ccf09f45}\label{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096a0bf7f4342c9ece5810241620ccf09f45}} 
+N\+U\+M\+\_\+\+O\+F\+\_\+\+B\+U\+T\+T\+O\+NS&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classfrontier_1_1_input_ae78744e8c0799230bc6533be5d4b40f7}\label{classfrontier_1_1_input_ae78744e8c0799230bc6533be5d4b40f7}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!Mouse\+Button\+States@{Mouse\+Button\+States}}
+\index{Mouse\+Button\+States@{Mouse\+Button\+States}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{Mouse\+Button\+States}{MouseButtonStates}}
+{\footnotesize\ttfamily enum \hyperlink{classfrontier_1_1_input_ae78744e8c0799230bc6533be5d4b40f7}{frontier\+::\+Input\+::\+Mouse\+Button\+States}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+E\+F\+T\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+ON@{L\+E\+F\+T\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+ON}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!L\+E\+F\+T\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+ON@{L\+E\+F\+T\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+ON}}}\mbox{\Hypertarget{classfrontier_1_1_input_ae78744e8c0799230bc6533be5d4b40f7af8f5828e820f88896b4983bfc1dc4528}\label{classfrontier_1_1_input_ae78744e8c0799230bc6533be5d4b40f7af8f5828e820f88896b4983bfc1dc4528}} 
+L\+E\+F\+T\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+I\+G\+H\+T\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+ON@{R\+I\+G\+H\+T\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+ON}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!R\+I\+G\+H\+T\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+ON@{R\+I\+G\+H\+T\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+ON}}}\mbox{\Hypertarget{classfrontier_1_1_input_ae78744e8c0799230bc6533be5d4b40f7a0c6c60dbc5386980eb6023b111c0a640}\label{classfrontier_1_1_input_ae78744e8c0799230bc6533be5d4b40f7a0c6c60dbc5386980eb6023b111c0a640}} 
+R\+I\+G\+H\+T\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+U\+M\+\_\+\+O\+F\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+O\+N\+\_\+\+S\+T\+A\+T\+ES@{N\+U\+M\+\_\+\+O\+F\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+O\+N\+\_\+\+S\+T\+A\+T\+ES}!frontier\+::\+Input@{frontier\+::\+Input}}\index{frontier\+::\+Input@{frontier\+::\+Input}!N\+U\+M\+\_\+\+O\+F\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+O\+N\+\_\+\+S\+T\+A\+T\+ES@{N\+U\+M\+\_\+\+O\+F\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+O\+N\+\_\+\+S\+T\+A\+T\+ES}}}\mbox{\Hypertarget{classfrontier_1_1_input_ae78744e8c0799230bc6533be5d4b40f7aacc218f0e73c463a61b92ba1a7b7b7ba}\label{classfrontier_1_1_input_ae78744e8c0799230bc6533be5d4b40f7aacc218f0e73c463a61b92ba1a7b7b7ba}} 
+N\+U\+M\+\_\+\+O\+F\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+U\+T\+T\+O\+N\+\_\+\+S\+T\+A\+T\+ES&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfrontier_1_1_input_a42044ec5fabe49b52de3437eac14dab0}\label{classfrontier_1_1_input_a42044ec5fabe49b52de3437eac14dab0}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!Input@{Input}}
+\index{Input@{Input}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{Input()}{Input()}}
+{\footnotesize\ttfamily frontier\+::\+Input\+::\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classfrontier_1_1_input_a93acada680176426a09bd5cc4606fe6c}\label{classfrontier_1_1_input_a93acada680176426a09bd5cc4606fe6c}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!Free\+Joystick@{Free\+Joystick}}
+\index{Free\+Joystick@{Free\+Joystick}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{Free\+Joystick()}{FreeJoystick()}}
+{\footnotesize\ttfamily void frontier\+::\+Input\+::\+Free\+Joystick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_input_a60c4086a12484369d9e96c065b5cce52}\label{classfrontier_1_1_input_a60c4086a12484369d9e96c065b5cce52}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!Get\+Joystick\+Axis@{Get\+Joystick\+Axis}}
+\index{Get\+Joystick\+Axis@{Get\+Joystick\+Axis}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{Get\+Joystick\+Axis()}{GetJoystickAxis()}}
+{\footnotesize\ttfamily glm\+::vec2 frontier\+::\+Input\+::\+Get\+Joystick\+Axis (\begin{DoxyParamCaption}\item[{\hyperlink{classfrontier_1_1_input_aa34e103eba0f13faf437863692310859}{Controller\+Axes}}]{\+\_\+axis }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_input_ac4204ad7ae1c395c26c8a5d397e99532}\label{classfrontier_1_1_input_ac4204ad7ae1c395c26c8a5d397e99532}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!get\+Joystick\+Button@{get\+Joystick\+Button}}
+\index{get\+Joystick\+Button@{get\+Joystick\+Button}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{get\+Joystick\+Button()}{getJoystickButton()}}
+{\footnotesize\ttfamily bool frontier\+::\+Input\+::get\+Joystick\+Button (\begin{DoxyParamCaption}\item[{\hyperlink{classfrontier_1_1_input_affa0331a173268233d6630184a105bb6}{Controller\+Buttons}}]{\+\_\+btn }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_input_a8a4efb296d3f78e8eea6064da50af43b}\label{classfrontier_1_1_input_a8a4efb296d3f78e8eea6064da50af43b}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!get\+Joystick\+Dpad\+State@{get\+Joystick\+Dpad\+State}}
+\index{get\+Joystick\+Dpad\+State@{get\+Joystick\+Dpad\+State}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{get\+Joystick\+Dpad\+State()}{getJoystickDpadState()}}
+{\footnotesize\ttfamily bool frontier\+::\+Input\+::get\+Joystick\+Dpad\+State (\begin{DoxyParamCaption}\item[{\hyperlink{classfrontier_1_1_input_a53a85fe24f5b35e1a42ab370dcd0d94e}{Dpad\+States}}]{\+\_\+state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_input_a9db590e5a79e86162f930f9d80cd70a3}\label{classfrontier_1_1_input_a9db590e5a79e86162f930f9d80cd70a3}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!get\+Key@{get\+Key}}
+\index{get\+Key@{get\+Key}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{get\+Key()}{getKey()}}
+{\footnotesize\ttfamily bool frontier\+::\+Input\+::get\+Key (\begin{DoxyParamCaption}\item[{\hyperlink{classfrontier_1_1_input_ada5b6b09af9c827bacee6fbc69015096}{Listed\+Buttons}}]{\+\_\+keycode }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_input_ab0f4c13a20e12f8679666fb6e4f4ccaf}\label{classfrontier_1_1_input_ab0f4c13a20e12f8679666fb6e4f4ccaf}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!get\+Mouse\+Button@{get\+Mouse\+Button}}
+\index{get\+Mouse\+Button@{get\+Mouse\+Button}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{get\+Mouse\+Button()}{getMouseButton()}}
+{\footnotesize\ttfamily bool frontier\+::\+Input\+::get\+Mouse\+Button (\begin{DoxyParamCaption}\item[{\hyperlink{classfrontier_1_1_input_ae78744e8c0799230bc6533be5d4b40f7}{Mouse\+Button\+States}}]{\+\_\+btn }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_input_ac3330b7e20d086eb7b9da283dec779dc}\label{classfrontier_1_1_input_ac3330b7e20d086eb7b9da283dec779dc}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!get\+Mouse\+Pos@{get\+Mouse\+Pos}}
+\index{get\+Mouse\+Pos@{get\+Mouse\+Pos}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{get\+Mouse\+Pos()}{getMousePos()}}
+{\footnotesize\ttfamily glm\+::vec2 frontier\+::\+Input\+::get\+Mouse\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_input_ac05050b8aef9b669840c69868c157019}\label{classfrontier_1_1_input_ac05050b8aef9b669840c69868c157019}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!is\+Joystick\+Connected@{is\+Joystick\+Connected}}
+\index{is\+Joystick\+Connected@{is\+Joystick\+Connected}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{is\+Joystick\+Connected()}{isJoystickConnected()}}
+{\footnotesize\ttfamily bool frontier\+::\+Input\+::is\+Joystick\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_input_aef3fb33e53dfad959d197f07dd3811ce}\label{classfrontier_1_1_input_aef3fb33e53dfad959d197f07dd3811ce}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!Queue\+Controller\+Button\+Update@{Queue\+Controller\+Button\+Update}}
+\index{Queue\+Controller\+Button\+Update@{Queue\+Controller\+Button\+Update}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{Queue\+Controller\+Button\+Update()}{QueueControllerButtonUpdate()}}
+{\footnotesize\ttfamily void frontier\+::\+Input\+::\+Queue\+Controller\+Button\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_input_a99b2f7b890ffeb5f1079a57af7945892}\label{classfrontier_1_1_input_a99b2f7b890ffeb5f1079a57af7945892}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!Queue\+Controller\+Dpad\+Update@{Queue\+Controller\+Dpad\+Update}}
+\index{Queue\+Controller\+Dpad\+Update@{Queue\+Controller\+Dpad\+Update}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{Queue\+Controller\+Dpad\+Update()}{QueueControllerDpadUpdate()}}
+{\footnotesize\ttfamily void frontier\+::\+Input\+::\+Queue\+Controller\+Dpad\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_input_adeb3f9c5c6e93ca7406a03314ccfede6}\label{classfrontier_1_1_input_adeb3f9c5c6e93ca7406a03314ccfede6}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!Queue\+Controller\+Joystick\+Update@{Queue\+Controller\+Joystick\+Update}}
+\index{Queue\+Controller\+Joystick\+Update@{Queue\+Controller\+Joystick\+Update}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{Queue\+Controller\+Joystick\+Update()}{QueueControllerJoystickUpdate()}}
+{\footnotesize\ttfamily void frontier\+::\+Input\+::\+Queue\+Controller\+Joystick\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_input_ae3e8301699a5ba6d74fe78cab9410230}\label{classfrontier_1_1_input_ae3e8301699a5ba6d74fe78cab9410230}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!Queue\+Keyboard\+Update@{Queue\+Keyboard\+Update}}
+\index{Queue\+Keyboard\+Update@{Queue\+Keyboard\+Update}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{Queue\+Keyboard\+Update()}{QueueKeyboardUpdate()}}
+{\footnotesize\ttfamily void frontier\+::\+Input\+::\+Queue\+Keyboard\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_input_a3a78acf75eb63bfcd504b0eca34ce7c2}\label{classfrontier_1_1_input_a3a78acf75eb63bfcd504b0eca34ce7c2}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!Queue\+Mouse\+Button\+Update@{Queue\+Mouse\+Button\+Update}}
+\index{Queue\+Mouse\+Button\+Update@{Queue\+Mouse\+Button\+Update}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{Queue\+Mouse\+Button\+Update()}{QueueMouseButtonUpdate()}}
+{\footnotesize\ttfamily void frontier\+::\+Input\+::\+Queue\+Mouse\+Button\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_input_adad2b084e3ddc0ddcf6db9d6f5ebf307}\label{classfrontier_1_1_input_adad2b084e3ddc0ddcf6db9d6f5ebf307}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!Queue\+Mouse\+Movement\+Update@{Queue\+Mouse\+Movement\+Update}}
+\index{Queue\+Mouse\+Movement\+Update@{Queue\+Mouse\+Movement\+Update}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{Queue\+Mouse\+Movement\+Update()}{QueueMouseMovementUpdate()}}
+{\footnotesize\ttfamily void frontier\+::\+Input\+::\+Queue\+Mouse\+Movement\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_input_ab3326fdae63e71c2d6c7e5bc8dad167c}\label{classfrontier_1_1_input_ab3326fdae63e71c2d6c7e5bc8dad167c}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!set\+Core\+Ptr@{set\+Core\+Ptr}}
+\index{set\+Core\+Ptr@{set\+Core\+Ptr}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{set\+Core\+Ptr()}{setCorePtr()}}
+{\footnotesize\ttfamily void frontier\+::\+Input\+::set\+Core\+Ptr (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classfrontier_1_1_core}{Core} $>$}]{\+\_\+core }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_input_ab3d78d816a9ae5ed02c9c91900097149}\label{classfrontier_1_1_input_ab3d78d816a9ae5ed02c9c91900097149}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!Tick@{Tick}}
+\index{Tick@{Tick}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void frontier\+::\+Input\+::\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_input_ace92d811ccd65b1cccc8be927c840720}\label{classfrontier_1_1_input_ace92d811ccd65b1cccc8be927c840720}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!Update\+Left\+Joystick@{Update\+Left\+Joystick}}
+\index{Update\+Left\+Joystick@{Update\+Left\+Joystick}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{Update\+Left\+Joystick()}{UpdateLeftJoystick()}}
+{\footnotesize\ttfamily void frontier\+::\+Input\+::\+Update\+Left\+Joystick (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{axes }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classfrontier_1_1_input_a19763242a418ba60581b767eb4c40b78}\label{classfrontier_1_1_input_a19763242a418ba60581b767eb4c40b78}} 
+\index{frontier\+::\+Input@{frontier\+::\+Input}!Update\+Right\+Joystick@{Update\+Right\+Joystick}}
+\index{Update\+Right\+Joystick@{Update\+Right\+Joystick}!frontier\+::\+Input@{frontier\+::\+Input}}
+\subsubsection{\texorpdfstring{Update\+Right\+Joystick()}{UpdateRightJoystick()}}
+{\footnotesize\ttfamily void frontier\+::\+Input\+::\+Update\+Right\+Joystick (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{axes }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/myengine/\hyperlink{_input_8h}{Input.\+h}\item 
+src/myengine/\hyperlink{_input_8cpp}{Input.\+cpp}\end{DoxyCompactItemize}

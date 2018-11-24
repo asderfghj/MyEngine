@@ -86,8 +86,8 @@ namespace frontier
 		
 		glUseProgram(_shaderProgram->getID());
 
-		_shaderProgram->SetUniform("projection", getEntity()->getCore()->getMainCamera()->getProjectionMatrix());
-		_shaderProgram->SetUniform("view", glm::mat4(glm::mat3(getEntity()->getCore()->getMainCamera()->getViewMatrix())));
+		_shaderProgram->SetUniform("projection", getEntity()->getCore()->getMainCamera()->GetProjectionMatrix());
+		_shaderProgram->SetUniform("view", glm::mat4(glm::mat3(getEntity()->getCore()->getMainCamera()->GetViewMatrix())));
 		glm::mat4 scaler = glm::scale(glm::mat4(1.0f), glm::vec3(50.0f, 50.0f, 50.0f));
 		
 

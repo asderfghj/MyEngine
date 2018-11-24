@@ -1,9 +1,17 @@
 var searchData=
 [
-  ['entity',['Entity',['../classmyengine_1_1_entity.html',1,'myengine::Entity'],['../classmyengine_1_1_entity.html#a5d604268b8ba4244f61bb94f94cd733e',1,'myengine::Entity::Entity()']]],
-  ['entity_2ecpp',['Entity.cpp',['../_entity_8cpp.html',1,'']]],
-  ['entity_2eh',['Entity.h',['../_entity_8h.html',1,'']]],
-  ['environment',['Environment',['../classmyengine_1_1_environment.html',1,'myengine::Environment'],['../classmyengine_1_1_environment.html#a3b0875e176697100bcc7e56671e9a3b1',1,'myengine::Environment::Environment()']]],
-  ['environment_2ecpp',['Environment.cpp',['../_environment_8cpp.html',1,'']]],
-  ['environment_2eh',['Environment.h',['../_environment_8h.html',1,'']]]
+  ['deactivateallinstances',['deactivateAllInstances',['../classfrontier_1_1_pooler.html#a67a23cf20cbe59488f26d0a9bd481e63',1,'frontier::Pooler']]],
+  ['deactivateallinstancesinpools',['deactivateAllInstancesInPools',['../classfrontier_1_1_core.html#ac5a33059b33eec0ab216b45aa9772297',1,'frontier::Core']]],
+  ['down',['DOWN',['../classfrontier_1_1_input.html#ada5b6b09af9c827bacee6fbc69015096ae77fe1ca5149c538bcbe2d3220e065d5',1,'frontier::Input']]],
+  ['dpad_5fcenter',['DPAD_CENTER',['../classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94ead0c3b8e3f4898b47b58438e313ec0eae',1,'frontier::Input']]],
+  ['dpad_5fdown',['DPAD_DOWN',['../classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94eaadd85ed517b115983baa8d34c07b54b6',1,'frontier::Input']]],
+  ['dpad_5fleft',['DPAD_LEFT',['../classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94ea85f9a1abd0eced9a30383d7b3a8cc3a8',1,'frontier::Input']]],
+  ['dpad_5fleftdown',['DPAD_LEFTDOWN',['../classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94ea1ef79cd021e1b05bc9221f0ee924bc3b',1,'frontier::Input']]],
+  ['dpad_5fleftup',['DPAD_LEFTUP',['../classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94ea90e2661b34a449c518cca1ab5d1885a6',1,'frontier::Input']]],
+  ['dpad_5fright',['DPAD_RIGHT',['../classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94ea08ad5e3e995efa810669a28c4ca5b40f',1,'frontier::Input']]],
+  ['dpad_5frightdown',['DPAD_RIGHTDOWN',['../classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94ea1ae57661e6161c2928171b0414b5db0b',1,'frontier::Input']]],
+  ['dpad_5frightup',['DPAD_RIGHTUP',['../classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94ea7f86e34b1c13663ef1de1df3b1d044ae',1,'frontier::Input']]],
+  ['dpad_5fup',['DPAD_UP',['../classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94eabe6be4880b0b1fc4751638cffecefd66',1,'frontier::Input']]],
+  ['dpadstates',['DpadStates',['../classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94e',1,'frontier::Input']]],
+  ['draw',['Draw',['../classfrontier_1_1_mesh.html#a37daa84e24b750bb8b488794fa34ed1e',1,'frontier::Mesh::Draw()'],['../classfrontier_1_1_model.html#ab969b8ae4c222ac60f347a5008b19bad',1,'frontier::Model::Draw()']]]
 ];

@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['_7ecomponent',['~Component',['../classmyengine_1_1_component.html#ae2938d7961851517b781318a9005ba2c',1,'myengine::Component']]],
-  ['_7ecore',['~Core',['../classmyengine_1_1_core.html#af8293765bd17b1e0003df3820fa38990',1,'myengine::Core']]],
-  ['_7eentity',['~Entity',['../classmyengine_1_1_entity.html#a1f09697ca205ce1322e33b8e30c6fd98',1,'myengine::Entity']]],
-  ['_7eenvironment',['~Environment',['../classmyengine_1_1_environment.html#a9e1bcf2cb77d6b5729e4d66006c88ce7',1,'myengine::Environment']]],
-  ['_7eresource',['~Resource',['../classmyengine_1_1_resource.html#a450384125daf3876d16ee6f655dce578',1,'myengine::Resource']]],
-  ['_7eresources',['~Resources',['../classmyengine_1_1_resources.html#a70ec392cd9f38bb1752f868c00a755c6',1,'myengine::Resources']]],
-  ['_7eshader',['~Shader',['../classmyengine_1_1_shader.html#a857cbbb1aa3eb09212cadd9d5bd5edf9',1,'myengine::Shader']]],
-  ['_7etrianglerenderer',['~TriangleRenderer',['../classmyengine_1_1_triangle_renderer.html#a5802b748911e8f3a4a4bbc2411c98ef7',1,'myengine::TriangleRenderer']]]
+  ['normals',['normals',['../classfrontier_1_1_mesh.html#a4edd8881188aec021d81b60e7b240fe8',1,'frontier::Mesh']]],
+  ['num_5fof_5fbuttons',['NUM_OF_BUTTONS',['../classfrontier_1_1_input.html#ada5b6b09af9c827bacee6fbc69015096a0bf7f4342c9ece5810241620ccf09f45',1,'frontier::Input']]],
+  ['num_5fof_5fcontroller_5fbuttons',['NUM_OF_CONTROLLER_BUTTONS',['../classfrontier_1_1_input.html#affa0331a173268233d6630184a105bb6aa9e5245811241b92209343b55b54c571',1,'frontier::Input']]],
+  ['num_5fof_5fmouse_5fbutton_5fstates',['NUM_OF_MOUSE_BUTTON_STATES',['../classfrontier_1_1_input.html#ae78744e8c0799230bc6533be5d4b40f7aacc218f0e73c463a61b92ba1a7b7b7ba',1,'frontier::Input']]],
+  ['num_5fof_5fstates',['NUM_OF_STATES',['../classfrontier_1_1_input.html#a53a85fe24f5b35e1a42ab370dcd0d94eaefa7fef0e2de7538b95c3d1fe2128f96',1,'frontier::Input']]]
 ];

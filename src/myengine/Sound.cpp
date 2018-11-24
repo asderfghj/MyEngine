@@ -1,7 +1,6 @@
 #include "Sound.h"
 #include "Resources.h"
 
-#include <AL/al.h>
 #include <vorbis/vorbisfile.h>
 
 #include <iostream>
@@ -97,12 +96,13 @@ namespace frontier
 
 	}
 
-	void Sound::play(glm::vec3 _soundPosition, glm::vec3 _listenerPosition)
+	void Sound::play(glm::vec3 _soundPosition, glm::vec3 _listenerPosition, bool _looping)
 	{
-		ALuint sid = 0;
+		sid = 0;
 		alGenSources(1, &sid);
 		alListener3f(AL_POSITION, _listenerPosition.x, _listenerPosition.y, _listenerPosition.z);
 		alSource3f(sid, AL_POSITION, _soundPosition.x, _soundPosition.y, _soundPosition.z);
+		alSourcei(sid, AL_LOOPING, _looping);
 		alSourcei(sid, AL_BUFFER, impl->id);
 		alSourcePlay(sid);
 	}
@@ -112,7 +112,7 @@ namespace frontier
 		varMin *= 1000.0f;
 		varMax *= 1000.0f;
 		float variance = (std::rand() % ((int)varMin + 1 - (int)varMax) + (int)varMin) / 1000.0f;
-		ALuint sid = 0;
+		sid = 0;
 		alGenSources(1, &sid);
 		alListener3f(AL_POSITION, _listenerPosition.x, _listenerPosition.y, _listenerPosition.z);
 		alSource3f(sid, AL_POSITION, _soundPosition.x, _soundPosition.y, _soundPosition.z);
@@ -120,6 +120,11 @@ namespace frontier
 		alSourcef(sid, AL_PITCH, variance);
 		alSourcef(sid, AL_GAIN, vol);
 		alSourcePlay(sid);
+	}
+
+	void Sound::stop()
+	{
+		alSourceStop(sid);
 	}
 
 }

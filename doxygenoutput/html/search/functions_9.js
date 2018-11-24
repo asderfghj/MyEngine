@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tick',['tick',['../classmyengine_1_1_entity.html#ab0a125079867c099760260086386f4c2',1,'myengine::Entity::tick()'],['../classmyengine_1_1_environment.html#a899c1088832b702e5c4e7d309a68e8fb',1,'myengine::Environment::tick()']]],
-  ['trianglerenderer',['TriangleRenderer',['../classmyengine_1_1_triangle_renderer.html#a5b8c8b84f420ef262c0409a6fe5340b4',1,'myengine::TriangleRenderer']]]
+  ['load',['load',['../classfrontier_1_1_sound.html#ac175fd9a053e4126ccfb3b5e008e059d',1,'frontier::Sound']]],
+  ['load_5fogg',['load_ogg',['../structfrontier_1_1_sound_impl.html#ae4f90e7fb56a7ad9b4d506071e90fa58',1,'frontier::SoundImpl']]]
 ];

@@ -25,6 +25,7 @@ namespace frontier
 		std::weak_ptr<Entity> Spawn(glm::vec3 _position, bool modifyScale = false, glm::vec3 _scale = glm::vec3(1.0f, 1.0f, 1.0f));
 		std::string getID();
 		int getActiveInPool();
+		void deactivateAllInstances();
 
 	};
 

@@ -76,6 +76,8 @@ namespace frontier
 		void UpdateWindowSize(int _width, int _height);
 		std::shared_ptr<Camera> getMainCamera();
 		void setMainCamera(std::shared_ptr<Camera> _mainCameraToSet);
+		void deactivateAllInstancesInPools();
+
 
 		//default shader getters
 		std::shared_ptr<Shader> getHitboxShader();

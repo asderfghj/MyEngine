@@ -1,3 +1,7 @@
+#include <SDL2/SDL_keycode.h>
+#include "gtc/matrix_transform.hpp"
+#include "gtc/type_ptr.hpp"
+
 #include "Camera.h"
 #include "Core.h"
 #include "Entity.h"
@@ -6,13 +10,11 @@
 #include "Input.h"
 #include "Environment.h"
 #include "Timer.h"
-#include <SDL2/SDL_keycode.h>
-#include "gtc/matrix_transform.hpp"
-#include "gtc/type_ptr.hpp"
+
 
 namespace frontier
 {
-	glm::mat4 Camera::getViewMatrix()
+	glm::mat4 Camera::GetViewMatrix()
 	{
 		glm::mat4 view;
 
@@ -21,44 +23,34 @@ namespace frontier
 		return view;
 	}
 
-	glm::mat4 Camera::getProjectionMatrix()
+	glm::mat4 Camera::GetProjectionMatrix()
 	{
-		glm::mat4 proj = glm::perspective(glm::radians(_FOV), (float)getCore()->getWidth() / (float)getCore()->getHeight(), _near, _far);
+		glm::mat4 proj = glm::perspective(glm::radians(m_FOV), (float)getCore()->getWidth() / (float)getCore()->getHeight(), m_near, m_far);
 		return proj;
 	}
 
-	glm::mat4 Camera::getOrthographicMatrix()
+	glm::mat4 Camera::GetOrthographicMatrix()
 	{
-		glm::mat4 orth = glm::ortho(0.0f, (float)getCore()->getWidth(), 0.0f, (float)getCore()->getHeight(), 0.1f, 100.0f);
+		glm::mat4 orth = glm::ortho(0.0f, (float)getCore()->getWidth(), 0.0f, (float)getCore()->getHeight(), m_near, m_far);
 		return orth;
 	}
 
-	void Camera::OnInit(std::weak_ptr<Entity> _parent, float fov, float near, float far)
+	void Camera::OnInit(std::weak_ptr<Entity> _parent, float _fov, float _near, float _far)
 	{
 		Component::OnInit(_parent);
-		_FOV = fov;
-		_near = near;
-		_far = far;
+		m_FOV = _fov;
+		m_near = _near;
+		m_far = _far;
 	}
 
-	bool Camera::getMain()
+	bool Camera::IsMainCamera()
 	{
-		return _main;
+		return m_isMainCamera;
 	}
 
-	void Camera::setMain(bool main)
+	void Camera::SetIsMainCamera(bool _main)
 	{
-		_main = main;
-	}
-
-	void Camera::setControllable(bool _control)
-	{
-		_controlable = _control;
-	}
-
-	void Camera::OnTick()
-	{
-
+		m_isMainCamera = _main;
 	}
 
 }

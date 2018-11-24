@@ -10,26 +10,31 @@ namespace frontier
 	void AudioPlayer::OnInit(std::weak_ptr<Entity> _parent, std::shared_ptr<Sound> _sound)
 	{
 		Component::OnInit(_parent);
-		_attachedSound = _sound;
+		m_attachedSound = _sound;
 	}
 
-	void AudioPlayer::Play()
+	void AudioPlayer::Play(bool _looping)
 	{
-		_attachedSound->play(getEntity()->getComponent<Transform>()->getPosition(), getCore()->getMainCamera()->getEntity()->getComponent<Transform>()->getPosition());
+		m_attachedSound->play(getEntity()->getComponent<Transform>()->getPosition(), getCore()->getMainCamera()->getEntity()->getComponent<Transform>()->getPosition(), _looping);
 	}
 
-	void AudioPlayer::Play(glm::vec3 _soundPosition, glm::vec3 _listenerPosition)
+	void AudioPlayer::Play(glm::vec3 _soundPosition, glm::vec3 _listenerPosition, bool _looping)
 	{
-		_attachedSound->play(_soundPosition, _listenerPosition);
+		m_attachedSound->play(_soundPosition, _listenerPosition, _looping);
 	}
 
-	void AudioPlayer::PlayWithVariance(float vol, float varMin, float varMax)
+	void AudioPlayer::PlayWithVariance(float _vol, float _varMin, float _varMax)
 	{
-		_attachedSound->play(vol, varMin, varMax, getEntity()->getComponent<Transform>()->getPosition(), getCore()->getMainCamera()->getEntity()->getComponent<Transform>()->getPosition());
+		m_attachedSound->play(_vol, _varMin, _varMax, getEntity()->getComponent<Transform>()->getPosition(), getCore()->getMainCamera()->getEntity()->getComponent<Transform>()->getPosition());
 	}
 
 	void AudioPlayer::AttachSound(std::shared_ptr<Sound> _sound)
 	{
-		_attachedSound = _sound;
+		m_attachedSound = _sound;
+	}
+
+	void AudioPlayer::Stop()
+	{
+		m_attachedSound->stop();
 	}
 }

@@ -1,11 +1,15 @@
 var searchData=
 [
-  ['safe_5fmain',['safe_main',['../main_8cpp.html#ac108aa5035d66c9a5e3c857b8e21df0b',1,'main.cpp']]],
-  ['setid',['setID',['../classmyengine_1_1_shader.html#a9753467c609016a7c1c7a1156da2533f',1,'myengine::Shader']]],
-  ['setself',['setSelf',['../classmyengine_1_1_entity.html#a04394bae3f2ce6b6ee0cd2e2a0d62898',1,'myengine::Entity::setSelf()'],['../classmyengine_1_1_core.html#a250805a435bee8689d7f9bd44c8e7f79',1,'myengine::Core::SetSelf()']]],
-  ['settexture',['SetTexture',['../classmyengine_1_1_texture.html#af178f6cbc4278bcc884a5651025d3dd9',1,'myengine::Texture']]],
-  ['setuniform',['SetUniform',['../classmyengine_1_1_shader.html#ac73d2e97c8afd63cc0b826f596dd330e',1,'myengine::Shader::SetUniform(GLchar *_name, float _value, bool _unsetProgram=false)'],['../classmyengine_1_1_shader.html#a8f90d7986843c6e462f51b574fb2494a',1,'myengine::Shader::SetUniform(GLchar *_name, std::weak_ptr&lt; Texture &gt; _texture, bool _unsetProgram=false)'],['../classmyengine_1_1_shader.html#a3a1a27a7aaa38dad35d2505e4b99380f',1,'myengine::Shader::SetUniform(GLchar *_name, glm::mat4 _value, bool _unsetProgram=false, bool _transpose=false)'],['../classmyengine_1_1_shader.html#a63e19986143ad7857d270e22ea0a4ff0',1,'myengine::Shader::SetUniform(GLchar *_name, glm::vec3 _value, bool _unsetProgram=false)']]],
-  ['shader',['Shader',['../classmyengine_1_1_shader.html#aee2f3e6536000e55269b4f3a2f9c478f',1,'myengine::Shader']]],
-  ['start',['Start',['../classmyengine_1_1_core.html#a15a52e8674f890144428059b80cf1330',1,'myengine::Core']]],
-  ['stop',['Stop',['../classmyengine_1_1_core.html#ab93156cb1b35d422d2827ffe1e431b4a',1,'myengine::Core']]]
+  ['incrementframecounter',['IncrementFrameCounter',['../classfrontier_1_1_environment.html#a8cc8f5708b26f9366e620d13bb031e42',1,'frontier::Environment']]],
+  ['init',['init',['../classfrontier_1_1_entity.html#a9a37ec4188e73c190471a5de2db21c77',1,'frontier::Entity::init(std::weak_ptr&lt; Core &gt; _corePtr)'],['../classfrontier_1_1_entity.html#a8dd740cd4134ddab40663239527959e1',1,'frontier::Entity::init(std::weak_ptr&lt; Core &gt; _corePtr, glm::vec3 _position=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _rotation=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _scale=glm::vec3(1.0f, 1.0f, 1.0f))'],['../classfrontier_1_1_entity.html#aba15243f8a661c4c9248e405fd869894',1,'frontier::Entity::init(std::weak_ptr&lt; Core &gt; _corePtr, std::shared_ptr&lt; Prefab &gt; _prefab, glm::vec3 _position=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _rotation=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 _scale=glm::vec3(1.0f, 1.0f, 1.0f))'],['../classfrontier_1_1_prefab.html#a6f41f76c2c8484ba9d4451a936f43e42',1,'frontier::Prefab::init()'],['../classfrontier_1_1_core.html#a0f2b7feb2638d3bf3f67919f5596ab6c',1,'frontier::Core::Init()']]],
+  ['input',['Input',['../classfrontier_1_1_input.html#a42044ec5fabe49b52de3437eac14dab0',1,'frontier::Input']]],
+  ['isactivating',['isActivating',['../classfrontier_1_1_entity.html#a4de39f3a34645051d7d223b3f744761c',1,'frontier::Entity']]],
+  ['isactive',['isActive',['../classfrontier_1_1_entity.html#a1b19a21c357e557a3c12b6257d21ff09',1,'frontier::Entity']]],
+  ['iscolliding',['isColliding',['../classfrontier_1_1_collider.html#ad0ad92d0d5a2060284548a990e6aef58',1,'frontier::Collider']]],
+  ['iscopyable',['isCopyable',['../classfrontier_1_1_component.html#a1a32971a12ec277a519b30ba056c9d89',1,'frontier::Component']]],
+  ['isgameover',['IsGameOver',['../class_player_controller.html#a420a6722e37b0eb5219d4c2475c47041',1,'PlayerController']]],
+  ['isinvicible',['IsInvicible',['../class_player_controller.html#a8cd8a56ee0332aebb447db6a691aa639',1,'PlayerController']]],
+  ['isjoystickconnected',['isJoystickConnected',['../classfrontier_1_1_input.html#ac05050b8aef9b669840c69868c157019',1,'frontier::Input']]],
+  ['ispaused',['IsPaused',['../classfrontier_1_1_timer.html#ab1436c1f41e9226977fc8500b6fe3b41',1,'frontier::Timer']]],
+  ['isstarted',['IsStarted',['../classfrontier_1_1_timer.html#a955bac73463eb53813b84c945f0b9327',1,'frontier::Timer']]]
 ];

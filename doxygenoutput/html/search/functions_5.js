@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]]
+  ['freejoystick',['FreeJoystick',['../classfrontier_1_1_input.html#a93acada680176426a09bd5cc4606fe6c',1,'frontier::Input']]]
 ];

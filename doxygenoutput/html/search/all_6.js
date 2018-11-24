@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['init',['Init',['../classmyengine_1_1_core.html#aa0e8cb43d17f7294adf039064bc555bc',1,'myengine::Core::Init()'],['../classmyengine_1_1_core.html#ac7ce6b74d6b0228a1b5125ec3373e8b0',1,'myengine::Core::Init(int _width, int _height)'],['../classmyengine_1_1_entity.html#a8b69d2ad88cb674d36b14251d8795d9c',1,'myengine::Entity::init()']]],
-  ['input_2ecpp',['Input.cpp',['../_input_8cpp.html',1,'']]],
-  ['input_2eh',['Input.h',['../_input_8h.html',1,'']]]
+  ['forward',['FORWARD',['../classfrontier_1_1_input.html#ada5b6b09af9c827bacee6fbc69015096acf85ba7c8b56fe96ae704fcad0835413',1,'frontier::Input']]],
+  ['freejoystick',['FreeJoystick',['../classfrontier_1_1_input.html#a93acada680176426a09bd5cc4606fe6c',1,'frontier::Input']]],
+  ['frontier',['frontier',['../namespacefrontier.html',1,'']]]
 ];

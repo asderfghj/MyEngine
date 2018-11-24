@@ -31,6 +31,7 @@ namespace frontier
 
 	void UIImage::OnTick()
 	{
+		glEnable(GL_BLEND);
 		if (_texture)
 		{
 			_shader->SetUniform("texture", _texture);
@@ -39,7 +40,7 @@ namespace frontier
 
 		glUseProgram(_shader->getID());
 
-		_shader->SetUniform("ortho", getCore()->getMainCamera()->getOrthographicMatrix());
+		_shader->SetUniform("ortho", getCore()->getMainCamera()->GetOrthographicMatrix());
 		if (_preserveAspect)
 		{
 			_shader->SetUniform("model", getEntity()->getComponent<Transform>()->getModelMatrixModScale(glm::vec3(_texture->getWidth(), _texture->getHeight(), 1.0f)));
@@ -54,6 +55,7 @@ namespace frontier
 		glDrawArrays(GL_TRIANGLES, 0, verticesCount / 3);
 		glBindVertexArray(0);
 		glUseProgram(0);
+		glDisable(GL_BLEND);
 
 	}
 

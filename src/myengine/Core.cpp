@@ -362,4 +362,13 @@ namespace frontier
 		_entitiesToActivate.push_back(_entityToActivate);
 	}
 
+	void Core::deactivateAllInstancesInPools()
+	{
+		for (size_t i = 0; i < _poolers.size(); i++)
+		{
+			_poolers[i]->deactivateAllInstances();
+		}
+	}
+
+
 }

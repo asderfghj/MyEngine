@@ -1,3 +1,6 @@
+#ifndef PREFAB_H_
+#define PREFAB_H_
+
 #include <vector>
 #include <memory>
 #include "Transform.h"
@@ -91,3 +94,5 @@ namespace frontier
 
 	};
 }
+
+#endif // !PREFAB_H_

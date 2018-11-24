@@ -1,7 +1,6 @@
 #ifndef _MYENGINE_H_
 #define _MYENGINE_H_
 
-#include "BackgroundColor.h"
 #include "Component.h"
 #include "Core.h"
 #include "Entity.h"
@@ -11,7 +10,6 @@
 #include "Resource.h"
 #include "Shader.h"
 #include "Texture.h"
-#include "TriangleRenderer.h"
 #include "Resources.h"
 #include "Camera.h"
 #include "Transform.h"
@@ -21,13 +19,10 @@
 #include "AudioPlayer.h"
 #include "Skybox.h"
 #include "CubemapTexture.h"
-#include "PlayerController.h"
 #include "Collider.h"
 #include "UIImage.h"
 #include "UIButton.h"
 #include "Prefab.h"
-#include "AsteroidBehavior.h"
-#include "ProjectileBehavior.h"
 #include "Pooler.h"
 #include "AudioPlayer.h"
 

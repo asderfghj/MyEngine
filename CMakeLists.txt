@@ -33,11 +33,18 @@ endif()
 
 add_executable(game
 	src/game/main.cpp
+	src/game/asteroidbehavior.cpp
+	src/game/asteroidbehavior.h
+	src/game/PlayerController.cpp
+	src/game/PlayerController.h
+	src/game/ProjectileBehavior.cpp
+	src/game/ProjectileBehavior.h
+	src/game/AsteroidSpawner.cpp
+	src/game/AsteroidSpawner.h
 )
 
 add_library(frontier
-	src/myengine/asteroidbehavior.cpp
-	src/myengine/asteroidbehavior.h
+
 	src/myengine/Camera.cpp
 	src/myengine/Camera.h
 	src/myengine/Core.cpp
@@ -50,12 +57,8 @@ add_library(frontier
 	src/myengine/Input.h
 	src/myengine/Environment.cpp
 	src/myengine/Environment.h
-	src/myengine/BackgroundColor.cpp
-	src/myengine/BackgroundColor.h
 	src/myengine/Timer.cpp
 	src/myengine/Timer.h
-	src/myengine/TriangleRenderer.cpp
-	src/myengine/TriangleRenderer.h
 	src/myengine/MeshRenderer.cpp
 	src/myengine/MeshRenderer.h
 	src/myengine/Resource.cpp
@@ -81,8 +84,6 @@ add_library(frontier
 	src/myengine/Skybox.h
 	src/myengine/CubemapTexture.cpp
 	src/myengine/CubemapTexture.h
-	src/myengine/PlayerController.cpp
-	src/myengine/PlayerController.h
 	src/myengine/Collider.cpp
 	src/myengine/Collider.h
 	src/myengine/UIImage.cpp
@@ -91,12 +92,8 @@ add_library(frontier
 	src/myengine/UIButton.h
 	src/myengine/Prefab.cpp
 	src/myengine/Prefab.h
-	src/myengine/ProjectileBehavior.cpp
-	src/myengine/ProjectileBehavior.h
 	src/myengine/Pooler.cpp
 	src/myengine/Pooler.h
-	src/myengine/AsteroidSpawner.cpp
-	src/myengine/AsteroidSpawner.h
 )
 
 if(MSVC)

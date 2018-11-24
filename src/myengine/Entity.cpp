@@ -4,8 +4,8 @@
 #include "Prefab.h"
 #include "MeshRenderer.h"
 #include "Collider.h"
-#include "AsteroidBehavior.h"
-#include "ProjectileBehavior.h"
+#include "game/AsteroidBehavior.h"
+#include "game/ProjectileBehavior.h"
 #include <iostream>
 
 namespace frontier
@@ -57,7 +57,7 @@ namespace frontier
 	{
 		_core = _corePtr;
 		addComponent<Transform, glm::vec3, glm::vec3, glm::vec3>(_position, _rotation, _scale);
-		for (int i = 0; i < _prefab->getComponents().size(); i++)
+		for (size_t i = 0; i < _prefab->getComponents().size(); i++)
 		{
 
 			if (typeid(*_prefab->getComponents()[i]).name() == typeid(MeshRenderer).name())
@@ -97,7 +97,7 @@ namespace frontier
 		if (active && !_active)
 		{
 			_active = active;
-			for (int i = 0; i < _components.size(); i++)
+			for (size_t i = 0; i < _components.size(); i++)
 			{
 				_components[i]->OnActivate();
 			}
