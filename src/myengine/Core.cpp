@@ -111,7 +111,7 @@ namespace frontier
 
 			m_environment->IncrementFrameCounter();
 
-			if (m_input->GetKey(Input::ESC))
+			if (m_input->GetKey(Input::ESC) && !m_input->IsJoystickConnected())
 			{
 				Stop();
 			}

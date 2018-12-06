@@ -83,7 +83,7 @@ namespace frontier
 		rotz = glm::rotate(rotz, glm::radians(m_rotation.z), glm::vec3(0.0f, 0.0f, 1.0f));
 
 	
-		rtn =  rotz * rotx * roty * trans * sca;
+		rtn =   trans * rotz * rotx * roty  * sca;
 
 
 		if(m_isChildOfOtherTransform)

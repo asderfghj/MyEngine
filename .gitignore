@@ -6,6 +6,12 @@ build
 build/*
 build/
 
+*/doxygenoutput/*
+doxygenoutput
+doxygenoutput/*
+doxygenoutput/
+
+
 # Compiled Object files
 *.slo
 *.lo
